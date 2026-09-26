@@ -23,7 +23,8 @@ export type PartOfSpeech =
   | 'preposition'
   | 'conjunction'
   | 'pronoun'
-  | 'expression';
+  | 'expression'
+  | 'article';
 
 export type Gender = 'masculine' | 'feminine' | 'both';
 
@@ -73,6 +74,8 @@ export interface VocabularyItem {
   relatedWords?: RelatedWord[];
   commonExpressions?: CommonExpression[];
   notes?: string;
+  flag?: string;
+  enrichmentStatus?: string;
 }
 
 export type MasteryLevel = 'new' | 'learning' | 'reviewing' | 'mastered';
@@ -95,6 +98,8 @@ export interface UserSettings {
   masteryStreakThreshold: number; // Consecutive recalls required for Mastered (default 7)
 }
 
+export type RecallDirection = 'en_to_fr' | 'fr_to_en';
+
 export interface WordProgress {
   wordId: string;
   mastery: MasteryLevel;
@@ -108,6 +113,11 @@ export interface WordProgress {
   lastReviewedAt?: string;
   nextDueAt?: string;
   lastRating?: SpacedRepetitionRating;
+  // Directional recall statistics
+  attemptsEnFr?: number;
+  correctEnFr?: number;
+  attemptsFrEn?: number;
+  correctFrEn?: number;
   // Compatibility aliases
   timesReviewed: number;
   timesCorrect: number;
@@ -148,6 +158,7 @@ export interface ReviewLogEntry {
   rating: SpacedRepetitionRating;
   reviewedAt: string;
   nextDueAt: string;
+  direction?: RecallDirection;
 }
 
 export interface UserStats {

@@ -5,16 +5,17 @@ import {
   FrequencyBand, 
   UserStats, 
   UserSettings, 
-  SpacedRepetitionRating 
+  SpacedRepetitionRating,
+  RecallDirection
 } from '../types';
 import { MOCK_VOCABULARY } from '../data/vocabulary';
 import { speakFrench, speakEnglish } from '../services/tts';
-import { evaluateFrenchAnswer, EvaluationResult } from '../services/evaluator';
+import { evaluateFrenchAnswer, evaluateEnglishAnswer, EvaluationResult } from '../services/evaluator';
 import { 
   getWeakWords, 
   getNewWords, 
   getSpacedDueWords, 
-  getCumulativeLevelsProgression,
+  getCumulativeLevelsProgression, 
   DEFAULT_MASTERY_STREAK_THRESHOLD,
   buildReviewSessionQueue
 } from '../services/progression';
@@ -35,7 +36,8 @@ import {
   Eye,
   Send,
   Target,
-  AlertTriangle
+  AlertTriangle,
+  ArrowRightLeft
 } from 'lucide-react';
 
 export type ReviewModeFilter = 'due' | 'weak' | 'new' | 'all';
@@ -49,7 +51,8 @@ interface ReviewViewProps {
     isCorrect: boolean,
     rating: SpacedRepetitionRating,
     userAnswer: string,
-    isExact?: boolean
+    isExact?: boolean,
+    direction?: RecallDirection
   ) => void;
   initialWord?: VocabularyItem | null;
   initialMode?: ReviewModeFilter;
@@ -73,6 +76,7 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Active recall interaction state
+  const [currentDirection, setCurrentDirection] = useState<RecallDirection>('en_to_fr');
   const [userInput, setUserInput] = useState('');
   const [isEvaluated, setIsEvaluated] = useState(false);
   const [evaluationResult, setEvaluationResult] = useState<EvaluationResult | null>(null);
@@ -91,6 +95,10 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
     incorrect: 0,
     revealed: 0,
     totalAnswered: 0,
+    enToFrTotal: 0,
+    enToFrCorrect: 0,
+    frToEnTotal: 0,
+    frToEnCorrect: 0,
     ratings: {
       again: 0,
       hard: 0,
@@ -140,6 +148,8 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
 
     setSessionQueue(items);
     setCurrentIndex(0);
+    // Dynamic random direction (approx. 50/50 distribution) per card
+    setCurrentDirection(Math.random() < 0.5 ? 'en_to_fr' : 'fr_to_en');
     setUserInput('');
     setIsEvaluated(false);
     setEvaluationResult(null);
@@ -154,6 +164,10 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
       incorrect: 0,
       revealed: 0,
       totalAnswered: 0,
+      enToFrTotal: 0,
+      enToFrCorrect: 0,
+      frToEnTotal: 0,
+      frToEnCorrect: 0,
       ratings: { again: 0, hard: 0, good: 0, easy: 0 },
     });
     setIsSessionComplete(false);
@@ -177,11 +191,14 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
 
   const currentWord = sessionQueue[currentIndex];
 
-  // CHECK ANSWER: Evaluates user's typed input
+  // CHECK ANSWER: Evaluates user's typed input based on current card direction
   const handleCheckAnswer = () => {
     if (!currentWord || isEvaluated) return;
 
-    const result = evaluateFrenchAnswer(userInput, currentWord.french, settings.typoTolerance);
+    const result = currentDirection === 'en_to_fr'
+      ? evaluateFrenchAnswer(userInput, currentWord.french, settings.typoTolerance)
+      : evaluateEnglishAnswer(userInput, currentWord.english, settings.typoTolerance);
+
     setEvaluationResult(result);
     setWasRevealedWithoutTyping(false);
     setIsEvaluated(true);
@@ -217,9 +234,10 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
     const isCorrect = evaluationResult.isCorrect;
     const isExact = evaluationResult.isExact;
     const answerRecorded = wasRevealedWithoutTyping ? '' : userInput;
+    const directionOfCard = currentDirection;
 
-    // Record review result with rating, isExact, and settings
-    onRecordResult(currentWord.id, isCorrect, rating, answerRecorded, isExact);
+    // Record review result with rating, isExact, settings, and card direction
+    onRecordResult(currentWord.id, isCorrect, rating, answerRecorded, isExact, directionOfCard);
 
     setSessionStats((prev) => ({
       correct: isCorrect ? prev.correct + 1 : prev.correct,
@@ -228,6 +246,10 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
       incorrect: (!isCorrect && !wasRevealedWithoutTyping) ? prev.incorrect + 1 : prev.incorrect,
       revealed: wasRevealedWithoutTyping ? prev.revealed + 1 : prev.revealed,
       totalAnswered: prev.totalAnswered + 1,
+      enToFrTotal: directionOfCard === 'en_to_fr' ? prev.enToFrTotal + 1 : prev.enToFrTotal,
+      enToFrCorrect: directionOfCard === 'en_to_fr' && isCorrect ? prev.enToFrCorrect + 1 : prev.enToFrCorrect,
+      frToEnTotal: directionOfCard === 'fr_to_en' ? prev.frToEnTotal + 1 : prev.frToEnTotal,
+      frToEnCorrect: directionOfCard === 'fr_to_en' && isCorrect ? prev.frToEnCorrect + 1 : prev.frToEnCorrect,
       ratings: {
         ...prev.ratings,
         [rating]: prev.ratings[rating] + 1,
@@ -237,6 +259,8 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
     // Advance to next card
     if (currentIndex + 1 < sessionQueue.length) {
       setCurrentIndex((prev) => prev + 1);
+      // Pick random direction for next card
+      setCurrentDirection(Math.random() < 0.5 ? 'en_to_fr' : 'fr_to_en');
       setUserInput('');
       setIsEvaluated(false);
       setEvaluationResult(null);
@@ -347,6 +371,34 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
                 </div>
               </div>
 
+              {/* Direction Breakdown */}
+              {(sessionStats.enToFrTotal > 0 || sessionStats.frToEnTotal > 0) && (
+                <div className="mb-4 grid grid-cols-2 gap-2 text-xs">
+                  <div className="rounded-xl border border-stone-200 bg-stone-50/50 p-3 text-left">
+                    <span className="block text-[10px] font-semibold text-stone-400 uppercase tracking-wider">English → French</span>
+                    <div className="flex items-baseline justify-between mt-1">
+                      <span className="text-base font-bold text-stone-800">
+                        {sessionStats.enToFrCorrect}/{sessionStats.enToFrTotal}
+                      </span>
+                      <span className="text-stone-500 font-medium">
+                        {sessionStats.enToFrTotal > 0 ? Math.round((sessionStats.enToFrCorrect / sessionStats.enToFrTotal) * 100) : 0}%
+                      </span>
+                    </div>
+                  </div>
+                  <div className="rounded-xl border border-stone-200 bg-stone-50/50 p-3 text-left">
+                    <span className="block text-[10px] font-semibold text-stone-400 uppercase tracking-wider">French → English</span>
+                    <div className="flex items-baseline justify-between mt-1">
+                      <span className="text-base font-bold text-stone-800">
+                        {sessionStats.frToEnCorrect}/{sessionStats.frToEnTotal}
+                      </span>
+                      <span className="text-stone-500 font-medium">
+                        {sessionStats.frToEnTotal > 0 ? Math.round((sessionStats.frToEnCorrect / sessionStats.frToEnTotal) * 100) : 0}%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Rating breakdown */}
               <div className="mb-6 rounded-xl border border-stone-100 bg-stone-50/50 p-3.5">
                 <span className="text-[11px] font-semibold text-stone-400 uppercase tracking-wider block mb-2">
@@ -408,8 +460,9 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
         <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-serif text-sm font-semibold tracking-wide text-stone-900 uppercase">
-                Active Recall • English → French
+              <span className="font-serif text-sm font-semibold tracking-wide text-stone-900 uppercase flex items-center gap-1.5">
+                <ArrowRightLeft className="h-3.5 w-3.5 text-stone-400" />
+                <span>Active Recall • {currentDirection === 'en_to_fr' ? 'English → French' : 'French → English'}</span>
               </span>
             </div>
             <p className="text-xs text-stone-500">
@@ -538,20 +591,21 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
           </div>
         </div>
 
-        {/* STEP 1: English Prompt Area */}
+        {/* STEP 1: Prompt Area */}
         <div className="my-6 text-center sm:my-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-stone-400">
-            ENGLISH TO FRENCH
+          <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 flex items-center justify-center gap-1.5">
+            <ArrowRightLeft className="h-3 w-3 text-stone-400" />
+            <span>{currentDirection === 'en_to_fr' ? 'ENGLISH TO FRENCH' : 'FRENCH TO ENGLISH'}</span>
           </p>
 
           <div className="mt-2 flex items-center justify-center gap-3">
             <h1 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
-              {currentWord.english}
+              {currentDirection === 'en_to_fr' ? currentWord.english : currentWord.french}
             </h1>
             <button
               id="prompt-audio-btn"
-              onClick={() => speakEnglish(currentWord.english)}
-              title="Listen to English prompt (shortcut: E)"
+              onClick={() => (currentDirection === 'en_to_fr' ? speakEnglish(currentWord.english) : speakFrench(currentWord.french))}
+              title={currentDirection === 'en_to_fr' ? "Listen to English prompt (shortcut: E)" : "Listen to French prompt (shortcut: F)"}
               className="rounded-full p-2 text-stone-400 hover:bg-stone-100 hover:text-stone-700 transition-colors"
             >
               <Volume2 className="h-5 w-5" />
@@ -559,7 +613,11 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
           </div>
 
           <p className="mt-2 text-xs text-stone-400">
-            {isEvaluated ? 'Review your production below' : 'Type the French equivalent, then press ENTER'}
+            {isEvaluated 
+              ? 'Review your recall below' 
+              : currentDirection === 'en_to_fr'
+              ? 'Type the French translation, then press ENTER'
+              : 'Type the English translation, then press ENTER'}
           </p>
         </div>
 
@@ -569,11 +627,11 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
             <div className="relative">
               <input
                 ref={inputRef}
-                id="french-answer-input"
+                id="active-recall-input"
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
-                placeholder="Type the French word or phrase..."
+                placeholder={currentDirection === 'en_to_fr' ? "Type the French word or phrase..." : "Type the English word or phrase..."}
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="off"
@@ -654,7 +712,7 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
                 className="rounded-xl border border-stone-200 bg-stone-50/80 p-3.5 text-stone-900"
               >
                 <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-stone-500 mb-1">
-                  <span>Correct French</span>
+                  <span>{currentDirection === 'en_to_fr' ? 'Correct French' : 'Correct English'}</span>
                   <button
                     id="french-audio-btn"
                     onClick={() => speakFrench(currentWord.french)}
@@ -662,16 +720,25 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
                     className="flex items-center gap-1 text-xs font-medium text-stone-700 hover:text-stone-950"
                   >
                     <Volume2 className="h-3.5 w-3.5" />
-                    <span>Listen</span>
+                    <span>French</span>
                   </button>
                 </div>
 
                 <div className="text-xl font-bold font-serif text-stone-900 flex items-center justify-between">
-                  <span>{currentWord.french}</span>
-                  <span className="text-xs font-normal font-sans text-stone-500">
-                    {currentWord.pronunciation}
-                  </span>
+                  <span>{currentDirection === 'en_to_fr' ? currentWord.french : currentWord.english}</span>
+                  {currentDirection === 'en_to_fr' && (
+                    <span className="text-xs font-normal font-sans text-stone-500">
+                      {currentWord.pronunciation}
+                    </span>
+                  )}
                 </div>
+                {currentDirection === 'fr_to_en' && (
+                  <div className="mt-1 text-xs text-stone-500 flex items-center gap-2">
+                    <span className="font-medium text-stone-700">{currentWord.french}</span>
+                    <span>•</span>
+                    <span className="italic">{currentWord.pronunciation}</span>
+                  </div>
+                )}
               </div>
             </div>
 

@@ -61,10 +61,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
   let totalLearning = 0;
   let totalNew = 0;
 
-  Object.values(progressMap).forEach((p) => {
-    if (p.mastery === 'mastered' || p.currentStreak >= masteryThreshold) totalMastered++;
-    else if (p.mastery === 'reviewing') totalReviewing++;
-    else if (p.mastery === 'learning') totalLearning++;
+  MOCK_VOCABULARY.forEach((item) => {
+    const p = progressMap[item.id];
+    if (p && (p.mastery === 'mastered' || p.currentStreak >= masteryThreshold)) totalMastered++;
+    else if (p && p.mastery === 'reviewing') totalReviewing++;
+    else if (p && p.mastery === 'learning') totalLearning++;
     else totalNew++;
   });
 
@@ -213,7 +214,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               Cumulative Corpus Progress
             </h2>
             <p className="text-xs text-stone-500">
-              Target: 2,000 / 2,500 core French units mastered (80% threshold)
+              Target: 2,000 / 2,500 core French units mastered (80% threshold) • Active Exposure: {totalMastered + totalReviewing + totalLearning} words
             </p>
           </div>
           <div className="text-right">
@@ -222,11 +223,19 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
         </div>
 
-        {/* Global Progress Bar */}
-        <div className="h-2.5 w-full overflow-hidden rounded-full bg-stone-100">
+        {/* Dual-Indicator Visual Progress Bar: Exposure vs Mastered */}
+        <div className="h-3 w-full overflow-hidden rounded-full bg-stone-100 flex">
+          {/* Mastered portion */}
           <div
             className="h-full bg-stone-900 transition-all duration-500"
             style={{ width: `${overallMasteryPct}%` }}
+            title={`Mastered: ${totalMastered} words (${overallMasteryPct}%)`}
+          />
+          {/* Active Exposure (Reviewing + Learning) portion */}
+          <div
+            className="h-full bg-stone-400/60 transition-all duration-500"
+            style={{ width: `${totalMockWords > 0 ? Math.round(((totalReviewing + totalLearning) / totalMockWords) * 100) : 0}%` }}
+            title={`In Progress (Reviewing + Learning): ${totalReviewing + totalLearning} words`}
           />
         </div>
 

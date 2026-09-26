@@ -60,7 +60,8 @@ export const LearnView: React.FC<LearnViewProps> = ({
     const isMastered = mastery === 'mastered' || streak >= masteryThreshold;
 
     if (statusFilter === 'weak') {
-      if (isMastered) return false;
+      const hasBeenAttempted = prog && prog.totalAttempts > 0 && prog.mastery !== 'new';
+      if (!hasBeenAttempted || isMastered) return false;
     } else if (statusFilter !== 'all' && mastery !== statusFilter) {
       return false;
     }

@@ -20,10 +20,10 @@ export const LEVELS_CONFIG: LevelDefinition[] = [
     levelNumber: 1,
     band: 'ESSENTIAL',
     name: 'ESSENTIAL',
-    rankRange: 'Ranks 1–500',
+    rankRange: 'Ranks 1–100',
     minRank: 1,
-    maxRank: 500,
-    cumulativeTargetRank: 500,
+    maxRank: 100,
+    cumulativeTargetRank: 100,
     description: 'High-frequency structural core and fundamental verbs/nouns forming the foundation of French.',
   },
   {
@@ -102,7 +102,9 @@ export function getCumulativeLevelsProgression(
 
   for (let i = 0; i < LEVELS_CONFIG.length; i++) {
     const config = LEVELS_CONFIG[i];
-    const wordsInLevel = vocabulary.filter((w) => w.frequencyBand === config.band);
+    const wordsInLevel = vocabulary.filter(
+      (w) => w.frequencyBand === config.band && w.rank >= config.minRank && w.rank <= config.maxRank
+    );
     const totalWordsInLevel = wordsInLevel.length;
 
     let masteredCount = 0;
@@ -241,7 +243,7 @@ export function getWeakWords(
     // Optional level/band filter
     if (typeof filterLevelOrBand === 'number') {
       const levelCfg = LEVELS_CONFIG.find((c) => c.levelNumber === filterLevelOrBand);
-      if (levelCfg && item.frequencyBand !== levelCfg.band) return false;
+      if (levelCfg && (item.frequencyBand !== levelCfg.band || item.rank < levelCfg.minRank || item.rank > levelCfg.maxRank)) return false;
     } else if (typeof filterLevelOrBand === 'string') {
       if (item.frequencyBand !== filterLevelOrBand) return false;
     }
@@ -285,7 +287,7 @@ export function getNewWords(
 
       if (typeof filterLevelOrBand === 'number') {
         const levelCfg = LEVELS_CONFIG.find((c) => c.levelNumber === filterLevelOrBand);
-        if (levelCfg && item.frequencyBand !== levelCfg.band) return false;
+        if (levelCfg && (item.frequencyBand !== levelCfg.band || item.rank < levelCfg.minRank || item.rank > levelCfg.maxRank)) return false;
       } else if (typeof filterLevelOrBand === 'string') {
         if (item.frequencyBand !== filterLevelOrBand) return false;
       }
@@ -337,7 +339,7 @@ export function getSpacedDueWords(
 
       if (typeof filterLevelOrBand === 'number') {
         const levelCfg = LEVELS_CONFIG.find((c) => c.levelNumber === filterLevelOrBand);
-        if (levelCfg && item.frequencyBand !== levelCfg.band) return false;
+        if (levelCfg && (item.frequencyBand !== levelCfg.band || item.rank < levelCfg.minRank || item.rank > levelCfg.maxRank)) return false;
       } else if (typeof filterLevelOrBand === 'string') {
         if (item.frequencyBand !== filterLevelOrBand) return false;
       }

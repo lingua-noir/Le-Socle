@@ -6,7 +6,8 @@ import {
   WordProgress, 
   UserStats, 
   UserSettings, 
-  SpacedRepetitionRating 
+  SpacedRepetitionRating,
+  RecallDirection
 } from './types';
 import { Header } from './components/Header';
 import { HomeView } from './components/HomeView';
@@ -82,7 +83,8 @@ export default function App() {
     isCorrect: boolean, 
     rating: SpacedRepetitionRating, 
     userAnswer: string,
-    isExact: boolean = false
+    isExact: boolean = false,
+    direction: RecallDirection = 'en_to_fr'
   ) => {
     const { updatedProgress, updatedStats } = recordReviewResult(
       wordId,
@@ -92,7 +94,8 @@ export default function App() {
       progressMap,
       userStats,
       settings,
-      isExact
+      isExact,
+      direction
     );
     setProgressMap(updatedProgress);
     setUserStats(updatedStats);
@@ -232,6 +235,7 @@ export default function App() {
           <SettingsView
             settings={settings}
             onUpdateSettings={handleUpdateSettings}
+            onResetProgress={handleResetProgress}
           />
         )}
       </main>
