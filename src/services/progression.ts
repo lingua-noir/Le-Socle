@@ -20,10 +20,10 @@ export const LEVELS_CONFIG: LevelDefinition[] = [
     levelNumber: 1,
     band: 'ESSENTIAL',
     name: 'ESSENTIAL',
-    rankRange: 'Ranks 1–100',
+    rankRange: 'Ranks 1–500',
     minRank: 1,
-    maxRank: 100,
-    cumulativeTargetRank: 100,
+    maxRank: 500,
+    cumulativeTargetRank: 500,
     description: 'High-frequency structural core and fundamental verbs/nouns forming the foundation of French.',
   },
   {
