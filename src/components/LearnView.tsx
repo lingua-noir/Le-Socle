@@ -44,7 +44,8 @@ export const LearnView: React.FC<LearnViewProps> = ({
   const [query, setQuery] = useState('');
 
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
-  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold);
+  const previewLocked = Boolean(settings.previewLockedLevels);
+  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
 
   const currentLevelInfo = levels.find((l) => l.band === selectedBand) || levels[0];
   const currentBandInfo = FREQUENCY_BANDS.find((b) => b.id === selectedBand) || FREQUENCY_BANDS[0];

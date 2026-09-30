@@ -45,11 +45,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onSelectBandForLearn,
 }) => {
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
-  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold);
+  const previewLocked = Boolean(settings.previewLockedLevels);
+  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
 
-  const dueWords = getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
-  const weakWords = getWeakWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
-  const newWords = getNewWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
+  const dueWords = getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLocked);
+  const weakWords = getWeakWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLocked);
+  const newWords = getNewWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLocked);
 
   // Overall cumulative calculations
   const totalCorpusTarget = 2500;

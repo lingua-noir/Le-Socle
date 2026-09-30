@@ -110,9 +110,10 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
 
   const inputRef = useRef<HTMLInputElement>(null);
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
+  const previewLocked = Boolean(settings.previewLockedLevels);
 
   // Progression context
-  const levelsProgression = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold);
+  const levelsProgression = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
   const unlockedBands = new Set(levelsProgression.filter((l) => l.isUnlocked).map((l) => l.band));
 
   // Maintain ref to latest progressMap so session answers don't trigger unwanted re-initialization
@@ -144,6 +145,7 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
       specificWord,
       masteryThreshold,
       newBatchSize: 5,
+      previewLockedLevels: previewLocked,
     });
 
     setSessionQueue(items);

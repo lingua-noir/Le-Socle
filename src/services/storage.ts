@@ -24,6 +24,7 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
   typoTolerance: 80,
   speechRate: 0.9,
   masteryStreakThreshold: DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: false,
   intervals: {
     again: 1,
     hard: 2,
@@ -45,6 +46,7 @@ export function loadUserSettings(): UserSettings {
       typoTolerance: typeof parsed.typoTolerance === 'number' ? parsed.typoTolerance : DEFAULT_USER_SETTINGS.typoTolerance,
       speechRate: typeof parsed.speechRate === 'number' ? parsed.speechRate : DEFAULT_USER_SETTINGS.speechRate,
       masteryStreakThreshold: typeof parsed.masteryStreakThreshold === 'number' ? parsed.masteryStreakThreshold : DEFAULT_MASTERY_STREAK_THRESHOLD,
+      previewLockedLevels: typeof parsed.previewLockedLevels === 'boolean' ? parsed.previewLockedLevels : false,
       intervals: {
         again: typeof parsed.intervals?.again === 'number' ? parsed.intervals.again : DEFAULT_USER_SETTINGS.intervals.again,
         hard: typeof parsed.intervals?.hard === 'number' ? parsed.intervals.hard : DEFAULT_USER_SETTINGS.intervals.hard,
@@ -102,8 +104,7 @@ export function getDefaultWordProgressMap(): Record<string, WordProgress> {
 
 export const OBSOLETE_DEMO_WORD_IDS = new Set([
   'v-112', 'v-210', 'v-225',
-  // Removed Level 2-5 sample entries
-  'v-540', 'v-615', 'v-720', 'v-845', 'v-910',
+  // Removed Level 3-5 sample entries
   'v-1080', 'v-1150', 'v-1240', 'v-1320', 'v-1410',
   'v-1560', 'v-1680', 'v-1750', 'v-1890',
   'v-2050', 'v-2140', 'v-2280', 'v-2410', 'v-2490'
@@ -606,7 +607,8 @@ export function getBandProgressSummary(
 
 export function getDueWords(
   progressMap: Record<string, WordProgress>,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ) {
-  return getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
+  return getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLockedLevels);
 }

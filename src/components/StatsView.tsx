@@ -41,10 +41,11 @@ export const StatsView: React.FC<StatsViewProps> = ({
   onSeedDemoProgress,
 }) => {
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
-  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold);
-  const weakWords = getWeakWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
+  const previewLocked = Boolean(settings.previewLockedLevels);
+  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
+  const weakWords = getWeakWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLocked);
   const totalWords = MOCK_VOCABULARY.length;
-  const dueWords = getDueWords(progressMap, masteryThreshold);
+  const dueWords = getDueWords(progressMap, masteryThreshold, previewLocked);
 
   let wordsMastered = 0;
   let wordsReviewing = 0;

@@ -96,6 +96,7 @@ export interface UserSettings {
   speechRate: number;    // 0.5 to 1.5 (default 0.9)
   intervals: ReviewIntervals;
   masteryStreakThreshold: number; // Consecutive recalls required for Mastered (default 7)
+  previewLockedLevels?: boolean; // Developer Mode → Preview Locked Levels
 }
 
 export type RecallDirection = 'en_to_fr' | 'fr_to_en';

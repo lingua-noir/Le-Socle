@@ -92,7 +92,8 @@ export function calculateWordMasteryLevel(
 export function getCumulativeLevelsProgression(
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): LevelProgression[] {
   const result: LevelProgression[] = [];
   
@@ -135,7 +136,8 @@ export function getCumulativeLevelsProgression(
     } else {
       // Required cumulative mastered in prior levels
       unlockRequiredMasteredCount = Math.ceil(runningCumulativeTotal * UNLOCK_THRESHOLD_RATIO);
-      isUnlocked = runningCumulativeTotal === 0 || runningCumulativeMastered >= unlockRequiredMasteredCount;
+      const naturallyUnlocked = runningCumulativeTotal === 0 || runningCumulativeMastered >= unlockRequiredMasteredCount;
+      isUnlocked = naturallyUnlocked || (previewLockedLevels && totalWordsInLevel > 0);
       wordsNeededToUnlock = Math.max(0, unlockRequiredMasteredCount - runningCumulativeMastered);
       unlockProgressPercentage = unlockRequiredMasteredCount > 0
         ? Math.min(100, Math.round((runningCumulativeMastered / unlockRequiredMasteredCount) * 100))
@@ -201,9 +203,10 @@ export function isLevelUnlocked(
   levelNumber: number,
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): boolean {
-  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold);
+  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold, previewLockedLevels);
   const target = levels.find((l) => l.levelNumber === levelNumber);
   return target ? target.isUnlocked : false;
 }
@@ -215,11 +218,12 @@ export function isWordUnlocked(
   word: VocabularyItem,
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): boolean {
   const config = LEVELS_CONFIG.find((c) => c.band === word.frequencyBand);
   if (!config) return true;
-  return isLevelUnlocked(config.levelNumber, progressMap, vocabulary, masteryThreshold);
+  return isLevelUnlocked(config.levelNumber, progressMap, vocabulary, masteryThreshold, previewLockedLevels);
 }
 
 /**
@@ -231,9 +235,10 @@ export function getWeakWords(
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
   filterLevelOrBand?: number | FrequencyBand,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): VocabularyItem[] {
-  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold);
+  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold, previewLockedLevels);
   const unlockedBands = new Set(levels.filter((l) => l.isUnlocked).map((l) => l.band));
 
   return vocabulary.filter((item) => {
@@ -251,6 +256,7 @@ export function getWeakWords(
     const p = progressMap[item.id];
     // Only words that have entered the learning system (attempted at least once)
     if (!p || !p.totalAttempts || p.totalAttempts === 0 || p.mastery === 'new') return false;
+
     const isMastered = p.currentStreak >= masteryThreshold || p.mastery === 'mastered';
     return !isMastered;
   }).sort((a, b) => {
@@ -276,9 +282,10 @@ export function getNewWords(
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
   filterLevelOrBand?: number | FrequencyBand,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): VocabularyItem[] {
-  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold);
+  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold, previewLockedLevels);
   const unlockedBands = new Set(levels.filter((l) => l.isUnlocked).map((l) => l.band));
 
   return vocabulary
@@ -307,9 +314,10 @@ export function getNextNewWord(
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
   filterLevelOrBand?: number | FrequencyBand,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): VocabularyItem | null {
-  const newWords = getNewWords(progressMap, vocabulary, filterLevelOrBand, masteryThreshold);
+  const newWords = getNewWords(progressMap, vocabulary, filterLevelOrBand, masteryThreshold, previewLockedLevels);
   return newWords.length > 0 ? newWords[0] : null;
 }
 
@@ -327,10 +335,11 @@ export function getSpacedDueWords(
   progressMap: Record<string, WordProgress>,
   vocabulary: VocabularyItem[] = MOCK_VOCABULARY,
   filterLevelOrBand?: number | FrequencyBand,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ): VocabularyItem[] {
   const now = Date.now();
-  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold);
+  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold, previewLockedLevels);
   const unlockedBands = new Set(levels.filter((l) => l.isUnlocked).map((l) => l.band));
 
   return vocabulary
@@ -357,6 +366,7 @@ export function getSpacedDueWords(
       const timeA = dueA ? new Date(dueA).getTime() : 0;
       const timeB = dueB ? new Date(dueB).getTime() : 0;
       if (timeA !== timeB) return timeA - timeB;
+
       // Secondary SRS tie-breaker: lower streak first
       const streakA = progressMap[a.id]?.currentStreak ?? 0;
       const streakB = progressMap[b.id]?.currentStreak ?? 0;
@@ -370,6 +380,7 @@ export interface ReviewSessionQueueOptions {
   specificWord?: VocabularyItem | null;
   masteryThreshold?: number;
   newBatchSize?: number;
+  previewLockedLevels?: boolean;
 }
 
 /**
@@ -393,6 +404,7 @@ export function buildReviewSessionQueue(
     specificWord = null,
     masteryThreshold = DEFAULT_MASTERY_STREAK_THRESHOLD,
     newBatchSize = 5,
+    previewLockedLevels = false,
   } = options;
 
   if (specificWord) {
@@ -400,24 +412,25 @@ export function buildReviewSessionQueue(
   }
 
   const bandArg = bandFilter === 'all' ? undefined : bandFilter;
-  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold);
+  const levels = getCumulativeLevelsProgression(progressMap, vocabulary, masteryThreshold, previewLockedLevels);
   const unlockedBands = new Set(levels.filter((l) => l.isUnlocked).map((l) => l.band));
 
   if (mode === 'weak') {
-    return getWeakWords(progressMap, vocabulary, bandArg, masteryThreshold);
+    return getWeakWords(progressMap, vocabulary, bandArg, masteryThreshold, previewLockedLevels);
   }
 
   if (mode === 'new') {
     // Pure new intake: strict frequency-rank order (lowest rank first)
-    const newWords = getNewWords(progressMap, vocabulary, bandArg, masteryThreshold);
+    const newWords = getNewWords(progressMap, vocabulary, bandArg, masteryThreshold, previewLockedLevels);
     return newWords.slice(0, 15);
   }
 
   if (mode === 'due') {
     // 1. Identify words genuinely DUE for review (SRS schedule priority)
-    const dueWords = getSpacedDueWords(progressMap, vocabulary, bandArg, masteryThreshold);
+    const dueWords = getSpacedDueWords(progressMap, vocabulary, bandArg, masteryThreshold, previewLockedLevels);
+    
     // 2. Identify eligible NEW words in strict frequency-rank order (lowest rank first)
-    const newWords = getNewWords(progressMap, vocabulary, bandArg, masteryThreshold);
+    const newWords = getNewWords(progressMap, vocabulary, bandArg, masteryThreshold, previewLockedLevels);
 
     if (dueWords.length > 0) {
       // Due reviews first according to SRS system, followed by the lowest-ranked eligible new words

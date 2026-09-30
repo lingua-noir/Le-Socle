@@ -447,7 +447,59 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           </p>
         </div>
 
-        {/* SECTION 5: DATA MANAGEMENT & RESET */}
+        {/* SECTION 5: DEVELOPER TESTING BYPASS */}
+        <div className="rounded-2xl border border-amber-300 bg-amber-50/40 p-6 shadow-2xs sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[11px] rounded bg-amber-200 px-2 py-0.5 font-bold text-amber-900">
+                  DEVELOPER MODE
+                </span>
+                <h2 className="font-serif text-lg font-bold text-stone-900">
+                  Preview Locked Levels
+                </h2>
+              </div>
+              <p className="mt-2 text-xs text-stone-600 max-w-xl leading-relaxed">
+                Temporarily unlocks Level 2 (FOUNDATION, ranks 501–1,000) for testing and inspection without requiring 400 mastered Level 1 words.
+              </p>
+              <ul className="mt-2 space-y-1 text-[11px] text-stone-500 list-disc list-inside">
+                <li>Inspect, learn, search, and test ranks 501–1,000 directly.</li>
+                <li>Does <strong>NOT</strong> alter actual mastery counts or streak statistics.</li>
+                <li>Does <strong>NOT</strong> modify the production 80% unlock requirement when disabled.</li>
+              </ul>
+            </div>
+            <button
+              id="dev-preview-locked-toggle"
+              type="button"
+              role="switch"
+              aria-checked={Boolean(localSettings.previewLockedLevels)}
+              onClick={() => {
+                handleUpdate({
+                  ...localSettings,
+                  previewLockedLevels: !localSettings.previewLockedLevels,
+                });
+              }}
+              className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                localSettings.previewLockedLevels ? 'bg-amber-600' : 'bg-stone-300'
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
+                  localSettings.previewLockedLevels ? 'translate-x-5' : 'translate-x-0'
+                }`}
+              />
+            </button>
+          </div>
+          {localSettings.previewLockedLevels && (
+            <div className="mt-4 rounded-xl border border-amber-300 bg-amber-100/60 p-3 text-xs text-amber-900 font-medium flex items-center justify-between">
+              <span>Preview Mode is <strong>ACTIVE</strong>: Level 2 (ranks 501–1,000) is accessible across the app.</span>
+              <span className="font-mono text-[10px] bg-amber-200 px-2 py-0.5 rounded text-amber-800">TESTING ONLY</span>
+            </div>
+          )}
+        </div>
+
+        {/* SECTION 6: DATA MANAGEMENT & RESET */}
         {onResetProgress && (
           <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
             <div className="flex items-start justify-between gap-4">
