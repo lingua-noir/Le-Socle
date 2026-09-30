@@ -6,7 +6,8 @@ import {
   WordProgress, 
   UserStats, 
   UserSettings, 
-  SpacedRepetitionRating 
+  SpacedRepetitionRating,
+  RecallDirection
 } from './types';
 import { Header } from './components/Header';
 import { HomeView } from './components/HomeView';
@@ -82,7 +83,8 @@ export default function App() {
     isCorrect: boolean, 
     rating: SpacedRepetitionRating, 
     userAnswer: string,
-    isExact: boolean = false
+    isExact: boolean = false,
+    direction: RecallDirection = 'en_to_fr'
   ) => {
     const { updatedProgress, updatedStats } = recordReviewResult(
       wordId,
@@ -92,7 +94,8 @@ export default function App() {
       progressMap,
       userStats,
       settings,
-      isExact
+      isExact,
+      direction
     );
     setProgressMap(updatedProgress);
     setUserStats(updatedStats);
@@ -142,7 +145,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const dueCount = getDueWords(progressMap, settings.masteryStreakThreshold).length;
+  const dueCount = getDueWords(progressMap, settings.masteryStreakThreshold, Boolean(settings.previewLockedLevels)).length;
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F6] text-stone-900 selection:bg-amber-100 selection:text-stone-900 pb-20 md:pb-12">
@@ -160,6 +163,26 @@ export default function App() {
         }}
         dueCount={dueCount}
       />
+
+      {/* Developer Mode Active Banner */}
+      {settings.previewLockedLevels && (
+        <div className="bg-amber-400 text-stone-950 px-4 py-2 text-xs font-medium flex items-center justify-between shadow-2xs border-b border-amber-500/30">
+          <div className="flex flex-wrap items-center justify-center gap-2 mx-auto text-center">
+            <span className="font-mono text-[10px] bg-amber-900 text-amber-50 font-bold px-1.5 py-0.5 rounded">
+              DEV MODE
+            </span>
+            <span>
+              Preview Locked Levels is <strong>ACTIVE</strong> (Level 2 ranks 501–1,000 unlocked for developer testing).
+            </span>
+            <button
+              onClick={() => handleUpdateSettings({ ...settings, previewLockedLevels: false })}
+              className="ml-2 underline text-amber-950 hover:text-black text-xs font-bold cursor-pointer"
+            >
+              Turn Off
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Main View Router */}
       <main className="flex-1">
@@ -232,6 +255,7 @@ export default function App() {
           <SettingsView
             settings={settings}
             onUpdateSettings={handleUpdateSettings}
+            onResetProgress={handleResetProgress}
           />
         )}
       </main>

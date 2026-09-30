@@ -7,7 +7,8 @@ import {
   UserSettings, 
   SpacedRepetitionRating, 
   ReviewLogEntry,
-  RecallQuality
+  RecallQuality,
+  RecallDirection
 } from '../types';
 import { 
   calculateWordMasteryLevel, 
@@ -23,6 +24,7 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
   typoTolerance: 80,
   speechRate: 0.9,
   masteryStreakThreshold: DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: false,
   intervals: {
     again: 1,
     hard: 2,
@@ -44,6 +46,7 @@ export function loadUserSettings(): UserSettings {
       typoTolerance: typeof parsed.typoTolerance === 'number' ? parsed.typoTolerance : DEFAULT_USER_SETTINGS.typoTolerance,
       speechRate: typeof parsed.speechRate === 'number' ? parsed.speechRate : DEFAULT_USER_SETTINGS.speechRate,
       masteryStreakThreshold: typeof parsed.masteryStreakThreshold === 'number' ? parsed.masteryStreakThreshold : DEFAULT_MASTERY_STREAK_THRESHOLD,
+      previewLockedLevels: typeof parsed.previewLockedLevels === 'boolean' ? parsed.previewLockedLevels : false,
       intervals: {
         again: typeof parsed.intervals?.again === 'number' ? parsed.intervals.again : DEFAULT_USER_SETTINGS.intervals.again,
         hard: typeof parsed.intervals?.hard === 'number' ? parsed.intervals.hard : DEFAULT_USER_SETTINGS.intervals.hard,
@@ -99,8 +102,16 @@ export function getDefaultWordProgressMap(): Record<string, WordProgress> {
   return initial;
 }
 
+export const OBSOLETE_DEMO_WORD_IDS = new Set([
+  'v-112', 'v-210', 'v-225',
+  // Removed Level 3-5 sample entries
+  'v-1080', 'v-1150', 'v-1240', 'v-1320', 'v-1410',
+  'v-1560', 'v-1680', 'v-1750', 'v-1890',
+  'v-2050', 'v-2140', 'v-2280', 'v-2410', 'v-2490'
+]);
+
 /**
- * Sample progress distribution for demonstration/testing via StatsView
+ * Sample progress distribution for developer mode testing only
  */
 export function getSampleDemoProgressMap(): Record<string, WordProgress> {
   const initial = getDefaultWordProgressMap();
@@ -169,26 +180,73 @@ export function getSampleDemoProgressMap(): Record<string, WordProgress> {
 export function loadWordProgressMap(): Record<string, WordProgress> {
   if (typeof window === 'undefined') return getDefaultWordProgressMap();
   try {
+    const validWordIds = new Set(MOCK_VOCABULARY.map((item) => item.id));
+    const migrationKey = 'le_socle_demo_cleanup_v3';
+    const hasMigrated = localStorage.getItem(migrationKey);
+
     const saved = localStorage.getItem(PROGRESS_STORAGE_KEY);
     if (!saved) {
       const initial = getDefaultWordProgressMap();
       saveWordProgressMap(initial);
+      localStorage.setItem(migrationKey, 'true');
       return initial;
     }
+
     const parsed = JSON.parse(saved);
-    // Ensure any newly added vocabulary items get default entry
+    let hasMutated = false;
+
+    // 1. Remove obsolete demo keys (v-112, v-210, v-225) and orphan keys
+    Object.keys(parsed).forEach((key) => {
+      if (OBSOLETE_DEMO_WORD_IDS.has(key) || !validWordIds.has(key)) {
+        delete parsed[key];
+        hasMutated = true;
+      }
+    });
+
+    // 2. Migration check: if old demo seed is present or old browser state has not migrated
+    if (!hasMigrated) {
+      const attemptedKeys = Object.keys(parsed).filter(
+        (k) => (parsed[k]?.totalAttempts ?? 0) > 0 || parsed[k]?.mastery !== 'new'
+      );
+      // Check if it's the exact old demo sample state (only v-1, v-2, v-3 had attempts)
+      const isDemoSampleSeed =
+        attemptedKeys.length <= 3 &&
+        attemptedKeys.every((k) => k === 'v-1' || k === 'v-2' || k === 'v-3');
+
+      if (isDemoSampleSeed || hasMutated) {
+        const fresh = getDefaultWordProgressMap();
+        saveWordProgressMap(fresh);
+        localStorage.setItem(migrationKey, 'true');
+        return fresh;
+      }
+      localStorage.setItem(migrationKey, 'true');
+    }
+
+    // 3. Ensure any vocabulary items missing from parsed get a clean default entry
     MOCK_VOCABULARY.forEach((item) => {
       if (!parsed[item.id]) {
         parsed[item.id] = {
           wordId: item.id,
           mastery: 'new',
+          totalAttempts: 0,
+          totalExactCorrect: 0,
+          totalAcceptedTypo: 0,
+          totalIncorrect: 0,
+          totalRevealed: 0,
+          currentStreak: 0,
           timesReviewed: 0,
           timesCorrect: 0,
           consecutiveCorrect: 0,
           nextDueAt: new Date().toISOString(),
         };
+        hasMutated = true;
       }
     });
+
+    if (hasMutated) {
+      saveWordProgressMap(parsed);
+    }
+
     return parsed;
   } catch (e) {
     console.error('Failed to load progress from localStorage', e);
@@ -234,6 +292,20 @@ export function loadUserStats(): UserStats {
       return defaultStats;
     }
     const parsed = JSON.parse(saved);
+    const validWordIds = new Set(MOCK_VOCABULARY.map((item) => item.id));
+
+    // If stats were the old hardcoded demo seed (10 reviews, 8 correct), reset to default clean stats
+    if (parsed.totalReviewed === 10 && parsed.totalCorrect === 8) {
+      saveUserStats(defaultStats);
+      return defaultStats;
+    }
+
+    const filteredHistory = Array.isArray(parsed.recentHistory)
+      ? parsed.recentHistory.filter(
+          (entry: any) => entry && !OBSOLETE_DEMO_WORD_IDS.has(entry.wordId) && validWordIds.has(entry.wordId)
+        )
+      : [];
+
     return {
       totalReviewed: typeof parsed.totalReviewed === 'number' ? parsed.totalReviewed : defaultStats.totalReviewed,
       totalCorrect: typeof parsed.totalCorrect === 'number' ? parsed.totalCorrect : defaultStats.totalCorrect,
@@ -249,7 +321,7 @@ export function loadUserStats(): UserStats {
         good: parsed.ratingDistribution?.good ?? 0,
         easy: parsed.ratingDistribution?.easy ?? 0,
       },
-      recentHistory: Array.isArray(parsed.recentHistory) ? parsed.recentHistory : [],
+      recentHistory: filteredHistory,
     };
   } catch (e) {
     console.error('Failed to load stats from localStorage', e);
@@ -277,7 +349,8 @@ export function recordReviewResult(
   currentProgressMap: Record<string, WordProgress>,
   currentStats: UserStats,
   settings: UserSettings,
-  isExact: boolean = false
+  isExact: boolean = false,
+  direction: RecallDirection = 'en_to_fr'
 ): { updatedProgress: Record<string, WordProgress>; updatedStats: UserStats } {
   const existing = currentProgressMap[wordId] || {
     wordId,
@@ -315,6 +388,12 @@ export function recordReviewResult(
     (recallQuality === 'incorrect' ? 1 : 0);
   const totalRevealed = (existing.totalRevealed ?? 0) + 
     (recallQuality === 'revealed' ? 1 : 0);
+
+  // Directional performance tracking
+  const attemptsEnFr = (existing.attemptsEnFr ?? 0) + (direction === 'en_to_fr' ? 1 : 0);
+  const correctEnFr = (existing.correctEnFr ?? 0) + (direction === 'en_to_fr' && isCorrect ? 1 : 0);
+  const attemptsFrEn = (existing.attemptsFrEn ?? 0) + (direction === 'fr_to_en' ? 1 : 0);
+  const correctFrEn = (existing.correctFrEn ?? 0) + (direction === 'fr_to_en' && isCorrect ? 1 : 0);
 
   // Consecutive successful recall streak calculation:
   // Only genuine exact correct answers contribute towards the mastery streak.
@@ -367,6 +446,11 @@ export function recordReviewResult(
     lastRating: rating,
     lastReviewedAt: now.toISOString(),
     nextDueAt: nextDue.toISOString(),
+    // Directional recall statistics
+    attemptsEnFr,
+    correctEnFr,
+    attemptsFrEn,
+    correctFrEn,
     // Compatibility aliases
     timesReviewed: totalAttempts,
     timesCorrect: totalExactCorrect + totalAcceptedTypo,
@@ -390,6 +474,7 @@ export function recordReviewResult(
     rating,
     reviewedAt: now.toISOString(),
     nextDueAt: nextDue.toISOString(),
+    direction,
   };
 
   // Update overall user stats
@@ -437,6 +522,12 @@ export function recordReviewResult(
 }
 
 export function resetAllProgress(): { progress: Record<string, WordProgress>; stats: UserStats } {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem(PROGRESS_STORAGE_KEY);
+    localStorage.removeItem(STATS_STORAGE_KEY);
+    localStorage.setItem('le_socle_demo_cleanup_v2', 'true');
+  }
+
   const initialProgress: Record<string, WordProgress> = {};
   MOCK_VOCABULARY.forEach((item) => {
     initialProgress[item.id] = {
@@ -516,7 +607,8 @@ export function getBandProgressSummary(
 
 export function getDueWords(
   progressMap: Record<string, WordProgress>,
-  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD
+  masteryThreshold: number = DEFAULT_MASTERY_STREAK_THRESHOLD,
+  previewLockedLevels: boolean = false
 ) {
-  return getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
+  return getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLockedLevels);
 }

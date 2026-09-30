@@ -21,7 +21,8 @@ import {
   Sliders,
   Lock,
   Unlock,
-  AlertTriangle
+  AlertTriangle,
+  ArrowRightLeft
 } from 'lucide-react';
 
 interface StatsViewProps {
@@ -40,10 +41,11 @@ export const StatsView: React.FC<StatsViewProps> = ({
   onSeedDemoProgress,
 }) => {
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
-  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold);
-  const weakWords = getWeakWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold);
+  const previewLocked = Boolean(settings.previewLockedLevels);
+  const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
+  const weakWords = getWeakWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLocked);
   const totalWords = MOCK_VOCABULARY.length;
-  const dueWords = getDueWords(progressMap, masteryThreshold);
+  const dueWords = getDueWords(progressMap, masteryThreshold, previewLocked);
 
   let wordsMastered = 0;
   let wordsReviewing = 0;
@@ -57,7 +59,18 @@ export const StatsView: React.FC<StatsViewProps> = ({
   let totalIncorrectQuality = 0;
   let totalRevealedQuality = 0;
 
-  Object.values(progressMap).forEach((p) => {
+  // Directional Recall Totals
+  let totalAttemptsEnFr = 0;
+  let totalCorrectEnFr = 0;
+  let totalAttemptsFrEn = 0;
+  let totalCorrectFrEn = 0;
+
+  MOCK_VOCABULARY.forEach((item) => {
+    const p = progressMap[item.id];
+    if (!p) {
+      wordsNew++;
+      return;
+    }
     if (p.timesReviewed > 0) {
       wordsEncountered++;
     }
@@ -70,6 +83,11 @@ export const StatsView: React.FC<StatsViewProps> = ({
     totalAcceptedTypo += p.totalAcceptedTypo || 0;
     totalIncorrectQuality += p.totalIncorrect || 0;
     totalRevealedQuality += p.totalRevealed || 0;
+
+    totalAttemptsEnFr += p.attemptsEnFr || 0;
+    totalCorrectEnFr += p.correctEnFr || 0;
+    totalAttemptsFrEn += p.attemptsFrEn || 0;
+    totalCorrectFrEn += p.correctFrEn || 0;
   });
 
   const totalAttempts = userStats.totalReviewed || 0;
@@ -96,29 +114,20 @@ export const StatsView: React.FC<StatsViewProps> = ({
           </p>
         </div>
 
-        {/* PM / Testing controls */}
+        {/* Clean Controls */}
         <div className="flex items-center gap-2">
-          <button
-            id="seed-demo-progress-btn"
-            onClick={onSeedDemoProgress}
-            className="flex items-center gap-1.5 rounded-lg border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 shadow-2xs hover:bg-stone-50 transition-colors"
-            title="Reset to initial test distribution"
-          >
-            <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-            <span>Load Sample State</span>
-          </button>
           <button
             id="reset-progress-btn"
             onClick={() => {
-              if (confirm('Are you sure you want to reset all vocabulary progress and review stats?')) {
+              if (confirm('Are you sure you want to reset your learning progress? This resets mastery, streaks, and review history to 0 while preserving the imported 2,500-word vocabulary dataset.')) {
                 onResetProgress();
               }
             }}
-            className="flex items-center gap-1.5 rounded-lg border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-500 shadow-2xs hover:text-rose-600 hover:border-rose-200 transition-colors"
-            title="Clear all progress to zero"
+            className="flex items-center gap-1.5 rounded-lg border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 shadow-2xs hover:text-rose-600 hover:border-rose-200 transition-colors"
+            title="Reset learning progress to 0 / 100"
           >
             <RotateCcw className="h-3.5 w-3.5" />
-            <span>Clear Progress</span>
+            <span>Reset Learning Progress</span>
           </button>
         </div>
       </div>
@@ -241,6 +250,67 @@ export const StatsView: React.FC<StatsViewProps> = ({
             <span className="text-[11px] text-stone-500">
               Revealed without attempt
             </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Directional Recall Performance */}
+      <div className="mb-8 rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
+        <div className="mb-4">
+          <div className="flex items-center gap-2">
+            <ArrowRightLeft className="h-4 w-4 text-stone-600" />
+            <h2 className="font-serif text-lg font-bold text-stone-900">
+              Directional Recall Performance
+            </h2>
+          </div>
+          <p className="text-xs text-stone-500 mt-1">
+            Dynamic bidirectional evaluation tracking French production (EN → FR) and French comprehension (FR → EN).
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {/* English to French */}
+          <div className="rounded-xl border border-stone-200 bg-stone-50/50 p-4">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                English → French (Production)
+              </span>
+              <span className="text-xs font-bold font-mono text-stone-900">
+                {totalAttemptsEnFr > 0 ? Math.round((totalCorrectEnFr / totalAttemptsEnFr) * 100) : 0}%
+              </span>
+            </div>
+            <div className="mt-2 flex items-baseline gap-2">
+              <span className="text-2xl font-bold text-stone-900">{totalCorrectEnFr}</span>
+              <span className="text-xs text-stone-500">/ {totalAttemptsEnFr} successful recall attempts</span>
+            </div>
+            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-stone-200">
+              <div
+                className="h-full bg-stone-900"
+                style={{ width: `${totalAttemptsEnFr > 0 ? Math.round((totalCorrectEnFr / totalAttemptsEnFr) * 100) : 0}%` }}
+              />
+            </div>
+          </div>
+
+          {/* French to English */}
+          <div className="rounded-xl border border-stone-200 bg-stone-50/50 p-4">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-stone-700">
+                French → English (Comprehension)
+              </span>
+              <span className="text-xs font-bold font-mono text-stone-900">
+                {totalAttemptsFrEn > 0 ? Math.round((totalCorrectFrEn / totalAttemptsFrEn) * 100) : 0}%
+              </span>
+            </div>
+            <div className="mt-2 flex items-baseline gap-2">
+              <span className="text-2xl font-bold text-stone-900">{totalCorrectFrEn}</span>
+              <span className="text-xs text-stone-500">/ {totalAttemptsFrEn} successful recall attempts</span>
+            </div>
+            <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-stone-200">
+              <div
+                className="h-full bg-stone-900"
+                style={{ width: `${totalAttemptsFrEn > 0 ? Math.round((totalCorrectFrEn / totalAttemptsFrEn) * 100) : 0}%` }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -396,7 +466,7 @@ export const StatsView: React.FC<StatsViewProps> = ({
 
                   <div className="flex items-center gap-4 text-xs">
                     <span className="text-stone-500">
-                      {lvl.masteredCount} mastered • {lvl.unmasteredCount} in weak pool
+                      {lvl.masteredCount} / {lvl.totalWordsInLevel} mastered
                     </span>
                     <span className="font-bold text-stone-900 min-w-8 text-right">
                       {lvl.masteryPercentage}%
@@ -415,6 +485,42 @@ export const StatsView: React.FC<StatsViewProps> = ({
             );
           })}
         </div>
+      </div>
+
+      {/* Explicit Developer Mode Tools (Collapsed by default, strictly isolated from normal user flow) */}
+      <div className="mt-8 pt-4 border-t border-stone-200/60">
+        <details className="group rounded-xl border border-stone-200 bg-stone-50/60 p-4 text-xs text-stone-600">
+          <summary className="cursor-pointer font-semibold text-stone-700 hover:text-stone-900 list-none flex items-center justify-between">
+            <span className="flex items-center gap-2">
+              <span className="font-mono text-[11px] rounded bg-stone-200 px-1.5 py-0.5 text-stone-700">DEV MODE</span>
+              <span>Developer Simulation & Testing Tools</span>
+            </span>
+            <span className="text-stone-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div className="mt-4 pt-3 border-t border-stone-200/60 space-y-3">
+            <p className="text-[11px] text-stone-500 leading-relaxed">
+              These developer actions are strictly for sandbox verification and testing. They are isolated from normal application initialization and will not run for standard learners.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                id="dev-seed-demo-btn"
+                onClick={onSeedDemoProgress}
+                className="flex items-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-900 shadow-2xs hover:bg-amber-100 transition-colors"
+              >
+                <Sparkles className="h-3.5 w-3.5 text-amber-600" />
+                <span>Simulate Demo Progress State</span>
+              </button>
+              <button
+                id="dev-reset-btn"
+                onClick={onResetProgress}
+                className="flex items-center gap-1.5 rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 shadow-2xs hover:bg-stone-100 transition-colors"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span>Reset to Clean 0/100 Production State</span>
+              </button>
+            </div>
+          </div>
+        </details>
       </div>
 
     </div>

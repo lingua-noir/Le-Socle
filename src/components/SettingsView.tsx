@@ -20,11 +20,13 @@ import {
 interface SettingsViewProps {
   settings: UserSettings;
   onUpdateSettings: (newSettings: UserSettings) => void;
+  onResetProgress?: () => void;
 }
 
 export const SettingsView: React.FC<SettingsViewProps> = ({
   settings,
   onUpdateSettings,
+  onResetProgress,
 }) => {
   const [localSettings, setLocalSettings] = useState<UserSettings>(settings);
   const [saveToast, setSaveToast] = useState(false);
@@ -444,6 +446,91 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             * Default is 7. Words meeting or exceeding this threshold graduate to Mastered and automatically exit the Weak Words pool.
           </p>
         </div>
+
+        {/* SECTION 5: DEVELOPER TESTING BYPASS */}
+        <div className="rounded-2xl border border-amber-300 bg-amber-50/40 p-6 shadow-2xs sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[11px] rounded bg-amber-200 px-2 py-0.5 font-bold text-amber-900">
+                  DEVELOPER MODE
+                </span>
+                <h2 className="font-serif text-lg font-bold text-stone-900">
+                  Preview Locked Levels
+                </h2>
+              </div>
+              <p className="mt-2 text-xs text-stone-600 max-w-xl leading-relaxed">
+                Temporarily unlocks Level 2 (FOUNDATION, ranks 501–1,000) for testing and inspection without requiring 400 mastered Level 1 words.
+              </p>
+              <ul className="mt-2 space-y-1 text-[11px] text-stone-500 list-disc list-inside">
+                <li>Inspect, learn, search, and test ranks 501–1,000 directly.</li>
+                <li>Does <strong>NOT</strong> alter actual mastery counts or streak statistics.</li>
+                <li>Does <strong>NOT</strong> modify the production 80% unlock requirement when disabled.</li>
+              </ul>
+            </div>
+            <button
+              id="dev-preview-locked-toggle"
+              type="button"
+              role="switch"
+              aria-checked={Boolean(localSettings.previewLockedLevels)}
+              onClick={() => {
+                handleUpdate({
+                  ...localSettings,
+                  previewLockedLevels: !localSettings.previewLockedLevels,
+                });
+              }}
+              className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                localSettings.previewLockedLevels ? 'bg-amber-600' : 'bg-stone-300'
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
+                  localSettings.previewLockedLevels ? 'translate-x-5' : 'translate-x-0'
+                }`}
+              />
+            </button>
+          </div>
+          {localSettings.previewLockedLevels && (
+            <div className="mt-4 rounded-xl border border-amber-300 bg-amber-100/60 p-3 text-xs text-amber-900 font-medium flex items-center justify-between">
+              <span>Preview Mode is <strong>ACTIVE</strong>: Level 2 (ranks 501–1,000) is accessible across the app.</span>
+              <span className="font-mono text-[10px] bg-amber-200 px-2 py-0.5 rounded text-amber-800">TESTING ONLY</span>
+            </div>
+          )}
+        </div>
+
+        {/* SECTION 6: DATA MANAGEMENT & RESET */}
+        {onResetProgress && (
+          <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <RotateCcw className="h-4.5 w-4.5 text-rose-600" />
+                  <h2 className="font-serif text-lg font-bold text-stone-900">
+                    Reset Learning Progress
+                  </h2>
+                </div>
+                <p className="mt-1 text-xs text-stone-500 max-w-xl">
+                  Resets your learning mastery, streaks, spaced repetition schedule, and session history back to 0. The imported 2,500-word vocabulary dataset remains completely intact.
+                </p>
+              </div>
+
+              <button
+                id="settings-reset-progress-btn"
+                onClick={() => {
+                  if (confirm('Are you sure you want to reset your learning progress? All mastery levels and history will return to clean 0/100 state while keeping the vocabulary database intact.')) {
+                    onResetProgress();
+                    alert('Learning progress has been successfully reset.');
+                  }
+                }}
+                className="flex items-center gap-1.5 rounded-lg border border-rose-200 bg-rose-50 px-3.5 py-2 text-xs font-semibold text-rose-700 hover:bg-rose-100 transition-colors shrink-0"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span>Reset Learning Progress</span>
+              </button>
+            </div>
+          </div>
+        )}
 
       </div>
 

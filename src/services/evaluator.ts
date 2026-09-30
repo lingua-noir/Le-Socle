@@ -193,3 +193,158 @@ export function evaluateFrenchAnswer(
     feedbackMessage: 'Incorrect',
   };
 }
+
+/**
+ * Extract acceptable English target variants from the vocabulary item's English field.
+ * Handles:
+ * - Parenthetical usage notes e.g. "the (masc.); him/it (object pronoun)" -> ["the", "him", "it", "him/it"]
+ * - Semicolon and comma separation e.g. "large / tall / great" or "of; from"
+ * - Optional leading "to " for verbs e.g. "to be" -> ["to be", "be"]
+ */
+export function extractEnglishTargets(rawEnglish: string): string[] {
+  if (!rawEnglish) return [];
+  const targets = new Set<string>();
+
+  const normalizedWhole = rawEnglish.toLowerCase().trim().replace(/[.,!?;:]+$/, '');
+  if (normalizedWhole) targets.add(normalizedWhole);
+
+  // Strip parenthetical notes like (masc.), (formal or plural), (with ne)
+  const strippedParens = rawEnglish.replace(/\([^)]*\)/g, ' ').toLowerCase().trim();
+  if (strippedParens) targets.add(strippedParens);
+
+  // Split on semicolons, commas, slashes, or pipes
+  const clauses = strippedParens.split(/[,;/|]+/).map((s) => s.trim().replace(/[.,!?;:]+$/, '')).filter(Boolean);
+  for (const clause of clauses) {
+    targets.add(clause);
+    // If verb clause starts with "to ", also allow without "to "
+    if (clause.startsWith('to ')) {
+      const withoutTo = clause.slice(3).trim();
+      if (withoutTo) targets.add(withoutTo);
+    }
+  }
+
+  // Also extract clauses from the unstripped version in case parentheses were key
+  const rawClauses = rawEnglish.toLowerCase().split(/[,;/|]+/).map((s) => s.trim().replace(/[.,!?;:]+$/, '')).filter(Boolean);
+  for (const clause of rawClauses) {
+    targets.add(clause);
+    if (clause.startsWith('to ')) {
+      const withoutTo = clause.slice(3).trim();
+      if (withoutTo) targets.add(withoutTo);
+    }
+  }
+
+  return Array.from(targets).filter((t) => t.length > 0);
+}
+
+/**
+ * Evaluates a user-provided English answer against a target English gloss (for French -> English recall).
+ */
+export function evaluateEnglishAnswer(
+  userAnswer: string,
+  targetEnglish: string,
+  typoTolerance: number = 80
+): EvaluationResult {
+  const cleanUser = userAnswer.toLowerCase().trim().replace(/^[.,!?;:"'«]+|[.,!?;:"'»]+$/g, '');
+
+  if (!cleanUser) {
+    return {
+      isCorrect: false,
+      isExact: false,
+      hasAccentDifference: false,
+      hasMinorTypo: false,
+      similarity: 0,
+      feedbackMessage: 'No answer entered',
+    };
+  }
+
+  const validTargets = extractEnglishTargets(targetEnglish);
+
+  // 1. Check for exact match against any valid target
+  for (const target of validTargets) {
+    const cleanTarget = target.trim();
+    if (cleanUser === cleanTarget) {
+      return {
+        isCorrect: true,
+        isExact: true,
+        hasAccentDifference: false,
+        hasMinorTypo: false,
+        similarity: 100,
+        feedbackMessage: 'Exact match!',
+      };
+    }
+    // Also check stripped "to " (e.g. user answered "be" for "to be")
+    if (cleanTarget.startsWith('to ') && cleanUser === cleanTarget.slice(3).trim()) {
+      return {
+        isCorrect: true,
+        isExact: true,
+        hasAccentDifference: false,
+        hasMinorTypo: false,
+        similarity: 100,
+        feedbackMessage: 'Exact match!',
+      };
+    }
+    if (cleanUser.startsWith('to ') && cleanUser.slice(3).trim() === cleanTarget) {
+      return {
+        isCorrect: true,
+        isExact: true,
+        hasAccentDifference: false,
+        hasMinorTypo: false,
+        similarity: 100,
+        feedbackMessage: 'Exact match!',
+      };
+    }
+    // Check stripped articles
+    const strippedUser = cleanUser.replace(/^(the\s+|a\s+|an\s+)/, '');
+    const strippedTarget = cleanTarget.replace(/^(the\s+|a\s+|an\s+)/, '');
+    if (strippedUser === strippedTarget && strippedUser.length > 0) {
+      return {
+        isCorrect: true,
+        isExact: true,
+        hasAccentDifference: false,
+        hasMinorTypo: false,
+        similarity: 98,
+        feedbackMessage: 'Correct!',
+      };
+    }
+  }
+
+  // 2. Fuzzy match against the best matching valid target
+  let bestSimilarity = 0;
+  let bestTarget = validTargets[0] || targetEnglish;
+  let bestDist = Infinity;
+
+  for (const target of validTargets) {
+    const cleanTarget = target.trim();
+    const dist = damerauLevenshteinDistance(cleanUser, cleanTarget);
+    const maxLen = Math.max(cleanUser.length, cleanTarget.length);
+    const sim = Math.max(0, Math.round((1 - dist / maxLen) * 100));
+
+    if (sim > bestSimilarity) {
+      bestSimilarity = sim;
+      bestTarget = cleanTarget;
+      bestDist = dist;
+    }
+  }
+
+  const isAccepted = bestSimilarity >= typoTolerance;
+
+  if (isAccepted) {
+    return {
+      isCorrect: true,
+      isExact: false,
+      hasAccentDifference: false,
+      hasMinorTypo: true,
+      similarity: bestSimilarity,
+      feedbackMessage: `Accepted with minor typo (${bestSimilarity}% similarity). Target: "${bestTarget}"`,
+    };
+  }
+
+  return {
+    isCorrect: false,
+    isExact: false,
+    hasAccentDifference: false,
+    hasMinorTypo: bestDist <= 2,
+    similarity: bestSimilarity,
+    feedbackMessage: 'Incorrect',
+  };
+}
