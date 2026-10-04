@@ -2199,7 +2199,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Peut-être qu\'il viendra demain.',
     exampleTranslation: 'Maybe he will come tomorrow.',
     relatedWords: [
-      { french: 'peut-être que', english: '', relationship: 'Related Expression' },
+      { french: 'peut-être que', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -2419,7 +2419,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'Everyone is here.',
     relatedWords: [
       { french: 'mondial', english: '', relationship: 'Related Term' },
-      { french: 'tout le monde', english: '', relationship: 'Related Expression' },
+      { french: 'tout le monde', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'tout le monde', english: 'everyone' },
@@ -2452,7 +2452,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Je le fais même.',
     exampleTranslation: 'I do it same.',
     relatedWords: [
-      { french: 'même si', english: 'even if', relationship: 'Related Expression' },
+      { french: 'même si', english: 'even if', relationship: 'Related Term' },
       { french: 'pareil', english: 'same/similar', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -2906,7 +2906,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Merci beaucoup.',
     exampleTranslation: 'Thank you very much.',
     relatedWords: [
-      { french: 'beaucoup de', english: '', relationship: 'Related Expression' },
+      { french: 'beaucoup de', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'beaucoup de', english: 'a lot of' },
@@ -3024,7 +3024,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'L\'enfant joue dehors.',
     exampleTranslation: 'The child is playing outside.',
     relatedWords: [
-      { french: 'enfance', english: '', relationship: 'Related Noun' },
+      { french: 'enfance', english: '', relationship: 'Related Term' },
       { french: 'enfantin', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -3149,8 +3149,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Nous avons un problème.',
     exampleTranslation: 'We have a problem.',
     relatedWords: [
-      { french: 'problématique', english: '', relationship: 'Related Adjective' },
-      { french: 'problématique', english: '', relationship: 'Related Adjective' },
+      { french: 'problématique', english: '', relationship: 'Related Term' },
+      { french: 'problématique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'pas de problème', english: 'no problem' },
@@ -3488,7 +3488,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'There is a good reason.',
     relatedWords: [
       { french: 'raisonner', english: '', relationship: 'Related Term' },
-      { french: 'raisonnable', english: '', relationship: 'Related Adjective' },
+      { french: 'raisonnable', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -3653,8 +3653,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Je travaille ici depuis lundi.',
     exampleTranslation: 'I have worked here since Monday.',
     relatedWords: [
-      { french: 'depuis que', english: '', relationship: 'Related Expression' },
-      { french: 'depuis longtemps', english: '', relationship: 'Related Expression' },
+      { french: 'depuis que', english: '', relationship: 'Related Term' },
+      { french: 'depuis longtemps', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'depuis longtemps', english: 'for a long time' },
@@ -3847,7 +3847,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Il y en a moins aujourd\'hui.',
     exampleTranslation: 'There are fewer today.',
     relatedWords: [
-      { french: 'moins de', english: '', relationship: 'Related Expression' },
+      { french: 'moins de', english: '', relationship: 'Related Term' },
       { french: 'moindre', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -4372,7 +4372,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Je le fais assez.',
     exampleTranslation: 'I do it enough.',
     relatedWords: [
-      { french: 'assez de', english: '', relationship: 'Related Expression' },
+      { french: 'assez de', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -4675,7 +4675,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Viens vite !',
     exampleTranslation: 'Come quickly!',
     relatedWords: [
-      { french: 'vitesse', english: '', relationship: 'Related Noun' },
+      { french: 'vitesse', english: '', relationship: 'Related Term' },
       { french: 'rapide', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -4896,7 +4896,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'J\'aime cette histoire.',
     exampleTranslation: 'I like this story.',
     relatedWords: [
-      { french: 'historique', english: '', relationship: 'Related Adjective' },
+      { french: 'historique', english: '', relationship: 'Related Term' },
       { french: 'historien', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -5879,9 +5879,9 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'continuent',
     },
     relatedWords: [
-      { french: 'continuation', english: '', relationship: 'Related Noun' },
+      { french: 'continuation', english: '', relationship: 'Related Term' },
       { french: 'continu', english: '', relationship: 'Related Term' },
-      { french: 'continuité', english: '', relationship: 'Related Noun' },
+      { french: 'continuité', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'continuer à + infinitif', english: 'continue to' },
@@ -6259,7 +6259,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Je le fais tellement.',
     exampleTranslation: 'I do it so much.',
     relatedWords: [
-      { french: 'tellement de', english: '', relationship: 'Related Expression' },
+      { french: 'tellement de', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -6306,7 +6306,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'It is the book I am talking about.',
     relatedWords: [
       { french: 'duquel', english: '', relationship: 'Related Term' },
-      { french: 'de laquelle', english: '', relationship: 'Related Expression' },
+      { french: 'de laquelle', english: '', relationship: 'Related Term' },
       { french: 'desquels', english: '', relationship: 'Related Term' },
       { french: 'desquelles', english: '', relationship: 'Related Term' },
     ],
@@ -6418,7 +6418,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'quittent',
     },
     relatedWords: [
-      { french: 'quittance', english: '', relationship: 'Related Noun' },
+      { french: 'quittance', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -6602,8 +6602,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'adorent',
     },
     relatedWords: [
-      { french: 'adoration', english: '', relationship: 'Related Noun' },
-      { french: 'adorable', english: '', relationship: 'Related Adjective' },
+      { french: 'adoration', english: '', relationship: 'Related Term' },
+      { french: 'adorable', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -6840,7 +6840,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     relatedWords: [
       { french: 'lecture', english: '', relationship: 'Related Term' },
       { french: 'lecteur', english: '', relationship: 'Related Term' },
-      { french: 'lisible', english: '', relationship: 'Related Adjective' },
+      { french: 'lisible', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'lire un livre', english: '' },
@@ -7098,7 +7098,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'pose', english: '', relationship: 'Related Term' },
-      { french: 'position', english: '', relationship: 'Related Noun' },
+      { french: 'position', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'poser une question', english: 'ask a question' },
@@ -7168,7 +7168,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'The children go to school.',
     relatedWords: [
       { french: 'scolaire', english: '', relationship: 'Related Term' },
-      { french: 'scolarité', english: '', relationship: 'Related Noun' },
+      { french: 'scolarité', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'à l’école', english: '' },
@@ -7338,7 +7338,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'Tell me the truth.',
     relatedWords: [
       { french: 'vrai', english: '', relationship: 'Related Term' },
-      { french: 'véritable', english: '', relationship: 'Related Adjective' },
+      { french: 'véritable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'dire la vérité', english: '' },
@@ -7406,7 +7406,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'imaginent',
     },
     relatedWords: [
-      { french: 'imagination', english: '', relationship: 'Related Noun' },
+      { french: 'imagination', english: '', relationship: 'Related Term' },
       { french: 'imaginaire', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -7511,7 +7511,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'agissent',
     },
     relatedWords: [
-      { french: 'action', english: '', relationship: 'Related Noun' },
+      { french: 'action', english: '', relationship: 'Related Term' },
       { french: 'acteur', english: '', relationship: 'Related Term' },
       { french: 'actif', english: '', relationship: 'Related Term' },
     ],
@@ -7559,7 +7559,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'My phone is ringing.',
     relatedWords: [
       { french: 'téléphoner', english: '', relationship: 'Related Term' },
-      { french: 'téléphonique', english: '', relationship: 'Related Adjective' },
+      { french: 'téléphonique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'au téléphone', english: 'on the phone' },
@@ -7607,7 +7607,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'We are watching a movie.',
     relatedWords: [
       { french: 'filmer', english: '', relationship: 'Related Term' },
-      { french: 'cinématographique', english: '', relationship: 'Related Adjective' },
+      { french: 'cinématographique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'faire un film', english: '' },
@@ -7690,8 +7690,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Nous avons un plan.',
     exampleTranslation: 'We have a plan.',
     relatedWords: [
-      { french: 'planifier', english: '', relationship: 'Related Verb' },
-      { french: 'planification', english: '', relationship: 'Related Noun' },
+      { french: 'planifier', english: '', relationship: 'Related Term' },
+      { french: 'planification', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'plan de travail', english: '' },
@@ -7719,7 +7719,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'décident',
     },
     relatedWords: [
-      { french: 'décision', english: '', relationship: 'Related Noun' },
+      { french: 'décision', english: '', relationship: 'Related Term' },
       { french: 'décisif', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -7847,7 +7847,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'The officer asks a question.',
     relatedWords: [
       { french: 'agir', english: '', relationship: 'Related Term' },
-      { french: 'agence', english: '', relationship: 'Related Noun' },
+      { french: 'agence', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -7921,7 +7921,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'expliquent',
     },
     relatedWords: [
-      { french: 'explication', english: '', relationship: 'Related Noun' },
+      { french: 'explication', english: '', relationship: 'Related Term' },
       { french: 'explicatif', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -7950,7 +7950,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'reçoivent',
     },
     relatedWords: [
-      { french: 'réception', english: '', relationship: 'Related Noun' },
+      { french: 'réception', english: '', relationship: 'Related Term' },
       { french: 'récepteur', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -7992,7 +7992,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'La sécurité est importante.',
     exampleTranslation: 'Safety is important.',
     relatedWords: [
-      { french: 'sécuriser', english: '', relationship: 'Related Verb' },
+      { french: 'sécuriser', english: '', relationship: 'Related Term' },
       { french: 'sécuritaire', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -8021,7 +8021,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'supposent',
     },
     relatedWords: [
-      { french: 'supposition', english: '', relationship: 'Related Noun' },
+      { french: 'supposition', english: '', relationship: 'Related Term' },
       { french: 'supposé', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -8046,7 +8046,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'promettent',
     },
     relatedWords: [
-      { french: 'promesse', english: '', relationship: 'Related Noun' },
+      { french: 'promesse', english: '', relationship: 'Related Term' },
       { french: 'prometteur', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -8184,7 +8184,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'préparent',
     },
     relatedWords: [
-      { french: 'préparation', english: '', relationship: 'Related Noun' },
+      { french: 'préparation', english: '', relationship: 'Related Term' },
       { french: 'préparatif', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -8377,8 +8377,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'acceptent',
     },
     relatedWords: [
-      { french: 'acceptation', english: '', relationship: 'Related Noun' },
-      { french: 'acceptable', english: '', relationship: 'Related Adjective' },
+      { french: 'acceptation', english: '', relationship: 'Related Term' },
+      { french: 'acceptable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'accepter de + infinitif', english: 'agree to' },
@@ -8449,7 +8449,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'The war changed the country.',
     relatedWords: [
       { french: 'guerrier', english: '', relationship: 'Related Term' },
-      { french: 'faire la guerre', english: '', relationship: 'Related Expression' },
+      { french: 'faire la guerre', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'faire la guerre', english: '' },
@@ -8477,7 +8477,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'ressemblent',
     },
     relatedWords: [
-      { french: 'ressemblance', english: '', relationship: 'Related Noun' },
+      { french: 'ressemblance', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -8644,7 +8644,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'protègent',
     },
     relatedWords: [
-      { french: 'protection', english: '', relationship: 'Related Noun' },
+      { french: 'protection', english: '', relationship: 'Related Term' },
       { french: 'protecteur', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -8874,7 +8874,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I feel like going out.',
     relatedWords: [
       { french: 'envier', english: '', relationship: 'Related Term' },
-      { french: 'enviable', english: '', relationship: 'Related Adjective' },
+      { french: 'enviable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'avoir envie de', english: '' },
@@ -8954,7 +8954,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'It is not worth it.',
     relatedWords: [
       { french: 'peiner', english: '', relationship: 'Related Term' },
-      { french: 'pénible', english: '', relationship: 'Related Adjective' },
+      { french: 'pénible', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'à peine', english: '' },
@@ -8982,7 +8982,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'détestent',
     },
     relatedWords: [
-      { french: 'détestable', english: '', relationship: 'Related Adjective' },
+      { french: 'détestable', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -9006,7 +9006,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'disparaissent',
     },
     relatedWords: [
-      { french: 'disparition', english: '', relationship: 'Related Noun' },
+      { french: 'disparition', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -9030,7 +9030,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'ignorent',
     },
     relatedWords: [
-      { french: 'ignorance', english: '', relationship: 'Related Noun' },
+      { french: 'ignorance', english: '', relationship: 'Related Term' },
       { french: 'ignorant', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -9264,7 +9264,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'présentent',
     },
     relatedWords: [
-      { french: 'présentation', english: '', relationship: 'Related Noun' },
+      { french: 'présentation', english: '', relationship: 'Related Term' },
       { french: 'présentateur', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -9369,7 +9369,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I am paying the bill.',
     relatedWords: [
       { french: 'compter', english: '', relationship: 'Related Term' },
-      { french: 'comptable', english: '', relationship: 'Related Adjective' },
+      { french: 'comptable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'compte bancaire', english: '' },
@@ -9554,7 +9554,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'vérifient',
     },
     relatedWords: [
-      { french: 'vérification', english: '', relationship: 'Related Noun' },
+      { french: 'vérification', english: '', relationship: 'Related Term' },
       { french: 'vérifié', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -9746,7 +9746,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Il est dans un mauvais état.',
     exampleTranslation: 'It is in bad condition.',
     relatedWords: [
-      { french: 'étatique', english: '', relationship: 'Related Adjective' },
+      { french: 'étatique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'en bon état', english: '' },
@@ -9878,7 +9878,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'permettent',
     },
     relatedWords: [
-      { french: 'permission', english: '', relationship: 'Related Noun' },
+      { french: 'permission', english: '', relationship: 'Related Term' },
       { french: 'permis', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -9968,8 +9968,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'préfèrent',
     },
     relatedWords: [
-      { french: 'préférence', english: '', relationship: 'Related Noun' },
-      { french: 'préférable', english: '', relationship: 'Related Adjective' },
+      { french: 'préférence', english: '', relationship: 'Related Term' },
+      { french: 'préférable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'préférer à', english: 'prefer to' },
@@ -9992,7 +9992,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I made a mistake.',
     relatedWords: [
       { french: 'erroné', english: '', relationship: 'Related Term' },
-      { french: 'se tromper', english: '', relationship: 'Related Verb' },
+      { french: 'se tromper', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'faire une erreur', english: '' },
@@ -10093,7 +10093,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I received your message.',
     relatedWords: [
       { french: 'messager', english: '', relationship: 'Related Term' },
-      { french: 'messagerie', english: '', relationship: 'Related Noun' },
+      { french: 'messagerie', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'laisser un message', english: '' },
@@ -10188,7 +10188,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'assurent',
     },
     relatedWords: [
-      { french: 'assurance', english: '', relationship: 'Related Noun' },
+      { french: 'assurance', english: '', relationship: 'Related Term' },
       { french: 'assuré', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -10353,7 +10353,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'obtiennent',
     },
     relatedWords: [
-      { french: 'obtention', english: '', relationship: 'Related Noun' },
+      { french: 'obtention', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -10466,7 +10466,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'fausseté', english: '', relationship: 'Related Term' },
-      { french: 'falsifier', english: '', relationship: 'Related Verb' },
+      { french: 'falsifier', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'faire fausse route', english: 'to be mistaken' },
@@ -10494,7 +10494,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'détruisent',
     },
     relatedWords: [
-      { french: 'destruction', english: '', relationship: 'Related Noun' },
+      { french: 'destruction', english: '', relationship: 'Related Term' },
       { french: 'destructeur', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -10543,7 +10543,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Dès demain, je commence mon nouveau travail.',
     exampleTranslation: 'Starting tomorrow, I begin my new job.',
     relatedWords: [
-      { french: 'dès que', english: 'as soon as', relationship: 'Related Expression' },
+      { french: 'dès que', english: 'as soon as', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'dès le début', english: 'right from the start' },
@@ -10592,7 +10592,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'présider', english: '', relationship: 'Related Term' },
-      { french: 'présidence', english: '', relationship: 'Related Noun' },
+      { french: 'présidence', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'président-directeur général', english: 'CEO' },
@@ -10671,7 +10671,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'He is at the hospital.',
     relatedWords: [
       { french: 'hospitalier', english: '', relationship: 'Related Term' },
-      { french: 'hospitaliser', english: '', relationship: 'Related Verb' },
+      { french: 'hospitaliser', english: '', relationship: 'Related Term' },
     ],
     notes: 'Irregular plural: hôpital → hôpitaux.',
     flag: 'Irregular plural: hôpital → hôpitaux.',
@@ -10958,7 +10958,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'It\'s very simple.',
     relatedWords: [
       { french: 'simplement', english: '', relationship: 'Related Term' },
-      { french: 'simplifier', english: '', relationship: 'Related Verb' },
+      { french: 'simplifier', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'tout simplement', english: 'quite simply' },
@@ -11024,7 +11024,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'À mon avis, c\'est une bonne idée.',
     exampleTranslation: 'In my opinion, it\'s a good idea.',
     relatedWords: [
-      { french: 'aviser', english: '', relationship: 'Related Verb' },
+      { french: 'aviser', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'à mon avis', english: 'in my opinion' },
@@ -11289,7 +11289,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'maintiennent',
     },
     relatedWords: [
-      { french: 'maintenance', english: '', relationship: 'Related Noun' },
+      { french: 'maintenance', english: '', relationship: 'Related Term' },
       { french: 'maintien', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -11573,7 +11573,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'apprécient',
     },
     relatedWords: [
-      { french: 'appréciation', english: '', relationship: 'Related Noun' },
+      { french: 'appréciation', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -11597,7 +11597,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'trompent',
     },
     relatedWords: [
-      { french: 'tromperie', english: '', relationship: 'Related Noun' },
+      { french: 'tromperie', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'se tromper', english: 'to be mistaken' },
@@ -11787,7 +11787,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'It\'s an honor to meet you.',
     relatedWords: [
       { french: 'honorer', english: '', relationship: 'Related Term' },
-      { french: 'honorable', english: '', relationship: 'Related Adjective' },
+      { french: 'honorable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'en l\'honneur de', english: 'in honor of' },
@@ -11932,7 +11932,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'C\'est une erreur grave.',
     exampleTranslation: 'It\'s a serious mistake.',
     relatedWords: [
-      { french: 'gravité', english: '', relationship: 'Related Noun' },
+      { french: 'gravité', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'ce n\'est pas grave', english: 'it\'s not a big deal' },
@@ -12167,7 +12167,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'récupèrent',
     },
     relatedWords: [
-      { french: 'récupération', english: '', relationship: 'Related Noun' },
+      { french: 'récupération', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12204,7 +12204,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'existent',
     },
     relatedWords: [
-      { french: 'existence', english: '', relationship: 'Related Noun' },
+      { french: 'existence', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12228,7 +12228,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'invitent',
     },
     relatedWords: [
-      { french: 'invitation', english: '', relationship: 'Related Noun' },
+      { french: 'invitation', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12318,7 +12318,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'maîtresse',
     },
     relatedWords: [
-      { french: 'maîtriser', english: '', relationship: 'Related Verb' },
+      { french: 'maîtriser', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'maître d\'hôtel', english: 'headwaiter' },
@@ -12386,7 +12386,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Le CA de l\'entreprise a augmenté.',
     exampleTranslation: 'The company\'s revenue has increased.',
     relatedWords: [
-      { french: 'chiffre d\'affaires', english: '', relationship: 'Related Expression' },
+      { french: 'chiffre d\'affaires', english: '', relationship: 'Related Term' },
     ],
     notes: 'VERIFY BEFORE IMPORT: this is the business abbreviation \'CA\' (chiffre d\'affaires), a distinct lemma from the demonstrative pronoun \'ça\' (already correctly ranked #19). Source data listed it in lowercase (\'ca\'); rendered here as \'CA\' to prevent confusion — confirm this rendering with the app maintainer before import.',
     flag: 'VERIFY BEFORE IMPORT: this is the business abbreviation \'CA\' (chiffre d\'affaires), a distinct lemma from the demonstrative pronoun \'ça\' (already correctly ranked #19). Source data listed it in lowercase (\'ca\'); rendered here as \'CA\' to prevent confusion — confirm this rendering with the app maintainer before import.',
@@ -12453,7 +12453,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'normalement', english: '', relationship: 'Related Term' },
-      { french: 'normaliser', english: '', relationship: 'Related Verb' },
+      { french: 'normaliser', english: '', relationship: 'Related Term' },
     ],
     notes: 'Irregular masculine plural: normaux (not \'normals\').',
     flag: 'Irregular masculine plural: normaux (not \'normals\').',
@@ -12471,7 +12471,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Il va probablement pleuvoir.',
     exampleTranslation: 'It\'s probably going to rain.',
     relatedWords: [
-      { french: 'probable', english: '', relationship: 'Related Adjective' },
+      { french: 'probable', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12696,7 +12696,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Le système ne fonctionne pas.',
     exampleTranslation: 'The system isn\'t working.',
     relatedWords: [
-      { french: 'systématique', english: '', relationship: 'Related Adjective' },
+      { french: 'systématique', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12736,7 +12736,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'L\'avion décolle à midi.',
     exampleTranslation: 'The plane takes off at noon.',
     relatedWords: [
-      { french: 'aviation', english: '', relationship: 'Related Noun' },
+      { french: 'aviation', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12775,7 +12775,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'C\'est impossible!',
     exampleTranslation: 'It\'s impossible!',
     relatedWords: [
-      { french: 'possible', english: '', relationship: 'Related Adjective' },
+      { french: 'possible', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -12869,7 +12869,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'créent',
     },
     relatedWords: [
-      { french: 'création', english: '', relationship: 'Related Noun' },
+      { french: 'création', english: '', relationship: 'Related Term' },
       { french: 'créateur', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -13030,7 +13030,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'connaître', english: '', relationship: 'Related Term' },
-      { french: 'reconnaissance', english: '', relationship: 'Related Noun' },
+      { french: 'reconnaissance', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -13170,7 +13170,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'humaine',
     },
     relatedWords: [
-      { french: 'humanité', english: '', relationship: 'Related Noun' },
+      { french: 'humanité', english: '', relationship: 'Related Term' },
     ],
     notes: 'Also functions as a noun meaning \'a human being\'.',
     flag: 'Also functions as a noun meaning \'a human being\'.',
@@ -13196,7 +13196,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'préviennent',
     },
     relatedWords: [
-      { french: 'prévention', english: '', relationship: 'Related Noun' },
+      { french: 'prévention', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -13331,8 +13331,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'réalisent',
     },
     relatedWords: [
-      { french: 'réalité', english: '', relationship: 'Related Noun' },
-      { french: 'réalisation', english: '', relationship: 'Related Noun' },
+      { french: 'réalité', english: '', relationship: 'Related Term' },
+      { french: 'réalisation', english: '', relationship: 'Related Term' },
     ],
     notes: 'Dual meaning: to \'achieve/carry out\' (most common in French) or to \'realize/become aware\' (less common than in English).',
     flag: 'Dual meaning: to \'achieve/carry out\' (most common in French) or to \'realize/become aware\' (less common than in English).',
@@ -13357,7 +13357,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'spécialement', english: '', relationship: 'Related Term' },
-      { french: 'spécialité', english: '', relationship: 'Related Noun' },
+      { french: 'spécialité', english: '', relationship: 'Related Term' },
     ],
     notes: 'Irregular masculine plural: spéciaux.',
     flag: 'Irregular masculine plural: spéciaux.',
@@ -13478,7 +13478,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'It\'s against the law.',
     relatedWords: [
       { french: 'légal', english: '', relationship: 'Related Term' },
-      { french: 'législation', english: '', relationship: 'Related Noun' },
+      { french: 'législation', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -13494,7 +13494,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'C\'était une idée stupide.',
     exampleTranslation: 'It was a stupid idea.',
     relatedWords: [
-      { french: 'stupidité', english: '', relationship: 'Related Noun' },
+      { french: 'stupidité', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -13868,7 +13868,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Elle est vraiment sympa.',
     exampleTranslation: 'She\'s really nice.',
     relatedWords: [
-      { french: 'sympathique', english: '', relationship: 'Related Adjective' },
+      { french: 'sympathique', english: '', relationship: 'Related Term' },
     ],
     notes: 'Informal shortened form of \'sympathique\'; invariant.',
     flag: 'Informal shortened form of \'sympathique\'; invariant.',
@@ -13987,7 +13987,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'discutent',
     },
     relatedWords: [
-      { french: 'discussion', english: '', relationship: 'Related Noun' },
+      { french: 'discussion', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -14124,7 +14124,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'inspecter', english: '', relationship: 'Related Term' },
-      { french: 'inspection', english: '', relationship: 'Related Noun' },
+      { french: 'inspection', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -14335,7 +14335,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Je lis le journal chaque matin.',
     exampleTranslation: 'I read the newspaper every morning.',
     relatedWords: [
-      { french: 'journaliste', english: '', relationship: 'Related Noun' },
+      { french: 'journaliste', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'journal intime', english: 'personal diary' },
@@ -14364,8 +14364,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'prévoient',
     },
     relatedWords: [
-      { french: 'prévision', english: '', relationship: 'Related Noun' },
-      { french: 'prévisible', english: '', relationship: 'Related Adjective' },
+      { french: 'prévision', english: '', relationship: 'Related Term' },
+      { french: 'prévisible', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -14494,7 +14494,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'surveillent',
     },
     relatedWords: [
-      { french: 'surveillance', english: '', relationship: 'Related Noun' },
+      { french: 'surveillance', english: '', relationship: 'Related Term' },
       { french: 'surveillant', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -14584,7 +14584,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'signifient',
     },
     relatedWords: [
-      { french: 'signification', english: '', relationship: 'Related Noun' },
+      { french: 'signification', english: '', relationship: 'Related Term' },
       { french: 'signe', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -14625,7 +14625,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Ils vivent en paix.',
     exampleTranslation: 'They live in peace.',
     relatedWords: [
-      { french: 'pacifique', english: '', relationship: 'Related Adjective' },
+      { french: 'pacifique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'fiche-moi la paix!', english: 'leave me alone!, informal' },
@@ -14843,7 +14843,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'La table est en bois.',
     exampleTranslation: 'The table is made of wood.',
     relatedWords: [
-      { french: 'boiser', english: '', relationship: 'Related Verb' },
+      { french: 'boiser', english: '', relationship: 'Related Term' },
     ],
     notes: 'Dual meaning: \'wood\' (material) or \'a wood/forest\'. Invariant plural.',
     flag: 'Dual meaning: \'wood\' (material) or \'a wood/forest\'. Invariant plural.',
@@ -14889,7 +14889,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'apparaître', english: '', relationship: 'Related Term' },
-      { french: 'apparence', english: '', relationship: 'Related Noun' },
+      { french: 'apparence', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'il paraît que', english: 'it seems that' },
@@ -15012,7 +15012,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I need more information.',
     relatedWords: [
       { french: 'informer', english: '', relationship: 'Related Term' },
-      { french: 'informatique', english: '', relationship: 'Related Adjective' },
+      { french: 'informatique', english: '', relationship: 'Related Term' },
     ],
     notes: 'Plural \'les informations\' commonly means \'the news\' (TV/radio).',
     flag: 'Plural \'les informations\' commonly means \'the news\' (TV/radio).',
@@ -15120,7 +15120,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'tentative', english: '', relationship: 'Related Term' },
-      { french: 'tentation', english: '', relationship: 'Related Noun' },
+      { french: 'tentation', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'tenter sa chance', english: 'to try one\'s luck' },
@@ -15209,7 +15209,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'This place is quiet.',
     relatedWords: [
       { french: 'tranquillement', english: '', relationship: 'Related Term' },
-      { french: 'tranquilliser', english: '', relationship: 'Related Verb' },
+      { french: 'tranquilliser', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'laisse-moi tranquille', english: 'leave me alone' },
@@ -15272,7 +15272,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'patiente',
     },
     relatedWords: [
-      { french: 'patience', english: '', relationship: 'Related Noun' },
+      { french: 'patience', english: '', relationship: 'Related Term' },
       { french: 'patienter', english: '', relationship: 'Related Term' },
     ],
     notes: 'Also functions as an adjective meaning \'patient\' (personality trait).',
@@ -15300,7 +15300,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'directeur', english: '', relationship: 'Related Term' },
-      { french: 'direction', english: '', relationship: 'Related Noun' },
+      { french: 'direction', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -15561,7 +15561,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'avancent',
     },
     relatedWords: [
-      { french: 'avance', english: '', relationship: 'Related Noun' },
+      { french: 'avance', english: '', relationship: 'Related Term' },
       { french: 'avancement', english: '', relationship: 'Related Term' },
     ],
     notes: 'Spelling note: \'nous avançons\' (cedilla to preserve soft \'c\').',
@@ -15799,7 +15799,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'souffrent',
     },
     relatedWords: [
-      { french: 'souffrance', english: '', relationship: 'Related Noun' },
+      { french: 'souffrance', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -15818,7 +15818,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I have no feelings for him.',
     relatedWords: [
       { french: 'sentir', english: '', relationship: 'Related Term' },
-      { french: 'sensible', english: '', relationship: 'Related Adjective' },
+      { french: 'sensible', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -15855,7 +15855,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'Drugs are illegal.',
     relatedWords: [
       { french: 'drogué', english: '', relationship: 'Related Term' },
-      { french: 'se droguer', english: '', relationship: 'Related Verb' },
+      { french: 'se droguer', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -15937,7 +15937,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'This box has a round shape.',
     relatedWords: [
       { french: 'former', english: '', relationship: 'Related Term' },
-      { french: 'formation', english: '', relationship: 'Related Noun' },
+      { french: 'formation', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'être en forme', english: 'to be fit/feeling good' },
@@ -15984,7 +15984,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'générale',
     },
     relatedWords: [
-      { french: 'généraliser', english: '', relationship: 'Related Verb' },
+      { french: 'généraliser', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'en général', english: 'generally' },
@@ -16022,7 +16022,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Il est capable de réussir.',
     exampleTranslation: 'He is capable of succeeding.',
     relatedWords: [
-      { french: 'capacité', english: '', relationship: 'Related Noun' },
+      { french: 'capacité', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -16061,7 +16061,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'obligent',
     },
     relatedWords: [
-      { french: 'obligation', english: '', relationship: 'Related Noun' },
+      { french: 'obligation', english: '', relationship: 'Related Term' },
       { french: 'obligatoire', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -16238,7 +16238,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'remarque', english: '', relationship: 'Related Term' },
-      { french: 'remarquable', english: '', relationship: 'Related Adjective' },
+      { french: 'remarquable', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'faire remarquer', english: 'to point out' },
@@ -16257,7 +16257,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Elle est triste aujourd\'hui.',
     exampleTranslation: 'She is sad today.',
     relatedWords: [
-      { french: 'tristesse', english: '', relationship: 'Related Noun' },
+      { french: 'tristesse', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -16457,7 +16457,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'appartiennent',
     },
     relatedWords: [
-      { french: 'appartenance', english: '', relationship: 'Related Noun' },
+      { french: 'appartenance', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -16481,7 +16481,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'répètent',
     },
     relatedWords: [
-      { french: 'répétition', english: '', relationship: 'Related Noun' },
+      { french: 'répétition', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -16587,7 +16587,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'I\'m going to class.',
     relatedWords: [
       { french: 'classer', english: '', relationship: 'Related Term' },
-      { french: 'classique', english: '', relationship: 'Related Adjective' },
+      { french: 'classique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'classe moyenne', english: 'middle class' },
@@ -16764,7 +16764,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'plaisantent',
     },
     relatedWords: [
-      { french: 'plaisanterie', english: '', relationship: 'Related Noun' },
+      { french: 'plaisanterie', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -16839,7 +16839,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'He makes a hand gesture.',
     relatedWords: [
       { french: 'signer', english: '', relationship: 'Related Term' },
-      { french: 'signifier', english: '', relationship: 'Related Verb' },
+      { french: 'signifier', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'signe de tête', english: 'nod' },
@@ -17151,7 +17151,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'L\'école est proche de chez moi.',
     exampleTranslation: 'The school is close to my house.',
     relatedWords: [
-      { french: 'proximité', english: '', relationship: 'Related Noun' },
+      { french: 'proximité', english: '', relationship: 'Related Term' },
       { french: 'approcher', english: '', relationship: 'Related Term' },
     ],
     notes: 'Also functions as a noun meaning \'a close relative/friend\' (un proche).',
@@ -17259,7 +17259,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'respirent',
     },
     relatedWords: [
-      { french: 'respiration', english: '', relationship: 'Related Noun' },
+      { french: 'respiration', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -17283,7 +17283,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'naissent',
     },
     relatedWords: [
-      { french: 'naissance', english: '', relationship: 'Related Noun' },
+      { french: 'naissance', english: '', relationship: 'Related Term' },
     ],
     notes: 'Conjugates with \'être\' in compound tenses (il est né).',
     flag: 'Conjugates with \'être\' in compound tenses (il est né).',
@@ -17397,7 +17397,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'intelligente',
     },
     relatedWords: [
-      { french: 'intelligence', english: '', relationship: 'Related Noun' },
+      { french: 'intelligence', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -17415,7 +17415,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'On regarde la télé ce soir.',
     exampleTranslation: 'We\'re watching TV tonight.',
     relatedWords: [
-      { french: 'télévision', english: '', relationship: 'Related Noun' },
+      { french: 'télévision', english: '', relationship: 'Related Term' },
     ],
     notes: 'Informal shortened form of \'télévision\'.',
     flag: 'Informal shortened form of \'télévision\'.',
@@ -17500,7 +17500,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'fonctionnent',
     },
     relatedWords: [
-      { french: 'fonction', english: '', relationship: 'Related Noun' },
+      { french: 'fonction', english: '', relationship: 'Related Term' },
       { french: 'fonctionnaire', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -17604,7 +17604,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'excellente',
     },
     relatedWords: [
-      { french: 'excellence', english: '', relationship: 'Related Noun' },
+      { french: 'excellence', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -17825,7 +17825,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'It\'s the basis of his reasoning.',
     relatedWords: [
       { french: 'baser', english: '', relationship: 'Related Term' },
-      { french: 'basique', english: '', relationship: 'Related Adjective' },
+      { french: 'basique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'de base', english: 'basic' },
@@ -17929,7 +17929,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'habitant', english: '', relationship: 'Related Term' },
-      { french: 'habitation', english: '', relationship: 'Related Noun' },
+      { french: 'habitation', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -17996,7 +17996,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'retiennent',
     },
     relatedWords: [
-      { french: 'rétention', english: '', relationship: 'Related Noun' },
+      { french: 'rétention', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'retenir son souffle', english: 'to hold one\'s breath' },
@@ -18199,7 +18199,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'construisent',
     },
     relatedWords: [
-      { french: 'construction', english: '', relationship: 'Related Noun' },
+      { french: 'construction', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -18311,7 +18311,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'He works for an international company.',
     relatedWords: [
       { french: 'social', english: '', relationship: 'Related Term' },
-      { french: 'sociable', english: '', relationship: 'Related Adjective' },
+      { french: 'sociable', english: '', relationship: 'Related Term' },
     ],
     notes: 'Dual meaning: \'society\' (community) or \'company/firm\'.',
     flag: 'Dual meaning: \'society\' (community) or \'company/firm\'.',
@@ -18355,7 +18355,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'proposent',
     },
     relatedWords: [
-      { french: 'proposition', english: '', relationship: 'Related Noun' },
+      { french: 'proposition', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -18420,7 +18420,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       feminine: 'américaine',
     },
     relatedWords: [
-      { french: 'Amérique', english: '', relationship: 'Related Adjective' },
+      { french: 'Amérique', english: '', relationship: 'Related Term' },
     ],
     notes: 'Capitalized when used as a noun for a person (un Américain).',
     flag: 'Capitalized when used as a noun for a person (un Américain).',
@@ -18495,7 +18495,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'gèrent',
     },
     relatedWords: [
-      { french: 'gestion', english: '', relationship: 'Related Noun' },
+      { french: 'gestion', english: '', relationship: 'Related Term' },
       { french: 'gérant', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -18541,7 +18541,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'parfaire', english: '', relationship: 'Related Term' },
-      { french: 'perfection', english: '', relationship: 'Related Noun' },
+      { french: 'perfection', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -18620,7 +18620,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'She gives flowers.',
     relatedWords: [
       { french: 'fleurir', english: '', relationship: 'Related Term' },
-      { french: 'fleuriste', english: '', relationship: 'Related Noun' },
+      { french: 'fleuriste', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -18732,7 +18732,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Que le diable l\'emporte!',
     exampleTranslation: 'To hell with him!',
     relatedWords: [
-      { french: 'diabolique', english: '', relationship: 'Related Adjective' },
+      { french: 'diabolique', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'tirer le diable par la queue', english: 'to struggle financially' },
@@ -18771,7 +18771,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Cette machine est en panne.',
     exampleTranslation: 'This machine is broken.',
     relatedWords: [
-      { french: 'mécanique', english: '', relationship: 'Related Adjective' },
+      { french: 'mécanique', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -18911,7 +18911,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'The people revolt.',
     relatedWords: [
       { french: 'populaire', english: '', relationship: 'Related Term' },
-      { french: 'population', english: '', relationship: 'Related Noun' },
+      { french: 'population', english: '', relationship: 'Related Term' },
     ],
     notes: 'Refers to a nation/populace, distinct from \'gens\' (people in general).',
     flag: 'Refers to a nation/populace, distinct from \'gens\' (people in general).',
@@ -18977,7 +18977,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'impliquent',
     },
     relatedWords: [
-      { french: 'implication', english: '', relationship: 'Related Noun' },
+      { french: 'implication', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -19466,7 +19466,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'convainquent',
     },
     relatedWords: [
-      { french: 'conviction', english: '', relationship: 'Related Noun' },
+      { french: 'conviction', english: '', relationship: 'Related Term' },
       { french: 'convaincant', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -19589,7 +19589,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'réparent',
     },
     relatedWords: [
-      { french: 'réparation', english: '', relationship: 'Related Noun' },
+      { french: 'réparation', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -19719,7 +19719,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'séparent',
     },
     relatedWords: [
-      { french: 'séparation', english: '', relationship: 'Related Noun' },
+      { french: 'séparation', english: '', relationship: 'Related Term' },
       { french: 'séparé', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -19905,7 +19905,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'admettent',
     },
     relatedWords: [
-      { french: 'admission', english: '', relationship: 'Related Noun' },
+      { french: 'admission', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -20127,7 +20127,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'sonnent',
     },
     relatedWords: [
-      { french: 'sonnerie', english: '', relationship: 'Related Noun' },
+      { french: 'sonnerie', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -20301,7 +20301,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'attirent',
     },
     relatedWords: [
-      { french: 'attirance', english: '', relationship: 'Related Noun' },
+      { french: 'attirance', english: '', relationship: 'Related Term' },
       { french: 'attractif', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -20320,7 +20320,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'J\'ai mal aux dents.',
     exampleTranslation: 'My teeth hurt.',
     relatedWords: [
-      { french: 'dentiste', english: '', relationship: 'Related Noun' },
+      { french: 'dentiste', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'avoir la dent dure', english: 'to be harsh in one\'s criticism' },
@@ -20341,8 +20341,8 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Il aime l\'art moderne.',
     exampleTranslation: 'He likes modern art.',
     relatedWords: [
-      { french: 'artiste', english: '', relationship: 'Related Noun' },
-      { french: 'artistique', english: '', relationship: 'Related Adjective' },
+      { french: 'artiste', english: '', relationship: 'Related Term' },
+      { french: 'artistique', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -20441,7 +20441,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'explosent',
     },
     relatedWords: [
-      { french: 'explosion', english: '', relationship: 'Related Noun' },
+      { french: 'explosion', english: '', relationship: 'Related Term' },
       { french: 'explosif', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
@@ -20629,7 +20629,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
       ils_elles: 'installent',
     },
     relatedWords: [
-      { french: 'installation', english: '', relationship: 'Related Noun' },
+      { french: 'installation', english: '', relationship: 'Related Term' },
     ],
     notes: 'Often reflexive: s\'installer (to settle in/move in).',
     flag: 'Often reflexive: s\'installer (to settle in/move in).',
@@ -20656,7 +20656,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'durée', english: '', relationship: 'Related Term' },
-      { french: 'durable', english: '', relationship: 'Related Adjective' },
+      { french: 'durable', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -20717,7 +20717,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Cette famille est riche.',
     exampleTranslation: 'This family is rich.',
     relatedWords: [
-      { french: 'richesse', english: '', relationship: 'Related Noun' },
+      { french: 'richesse', english: '', relationship: 'Related Term' },
     ],
     enrichmentStatus: 'ENRICHED',
   },
@@ -20831,7 +20831,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'Help!',
     relatedWords: [
       { french: 'secourir', english: '', relationship: 'Related Term' },
-      { french: 'secouriste', english: '', relationship: 'Related Noun' },
+      { french: 'secouriste', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
       { french: 'premiers secours', english: 'first aid' },
@@ -20914,7 +20914,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleTranslation: 'This object is useless.',
     relatedWords: [
       { french: 'utile', english: '', relationship: 'Related Term' },
-      { french: 'utilité', english: '', relationship: 'Related Noun' },
+      { french: 'utilité', english: '', relationship: 'Related Term' },
     ],
     notes: 'NEW: promoted into Level 2 (Foundation) by the rank-4 resequencing; never previously enriched under any batch.',
     flag: 'NEW: promoted into Level 2 (Foundation) by the rank-4 resequencing; never previously enriched under any batch.',
@@ -20996,7 +20996,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Puisque tu es là, aide-moi.',
     exampleTranslation: 'Since you\'re here, help me.',
     relatedWords: [
-      { french: 'parce que', english: '', relationship: 'Related Expression' },
+      { french: 'parce que', english: '', relationship: 'Related Term' },
     ],
     notes: 'NEW: promoted into Level 2 (Foundation) by the rank-4 resequencing; never previously enriched under any batch.',
     flag: 'NEW: promoted into Level 2 (Foundation) by the rank-4 resequencing; never previously enriched under any batch.',
@@ -21014,7 +21014,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Elle est enceinte de six mois.',
     exampleTranslation: 'She is six months pregnant.',
     relatedWords: [
-      { french: 'grossesse', english: '', relationship: 'Related Noun' },
+      { french: 'grossesse', english: '', relationship: 'Related Term' },
     ],
     notes: 'NEW: Feminine-only adjective (no masculine form exists — describes a state exclusive to female referents). Also functions as a noun meaning \'enclosure/perimeter wall\' (une enceinte), a distinct, unrelated meaning. Promoted into Level 2 by the rank-4 resequencing; never previously enriched.',
     flag: 'NEW: Feminine-only adjective (no masculine form exists — describes a state exclusive to female referents). Also functions as a noun meaning \'enclosure/perimeter wall\' (une enceinte), a distinct, unrelated meaning. Promoted into Level 2 by the rank-4 resequencing; never previously enriched.',
@@ -21032,7 +21032,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Cette voiture est très rapide.',
     exampleTranslation: 'This car is very fast.',
     relatedWords: [
-      { french: 'rapidité', english: '', relationship: 'Related Noun' },
+      { french: 'rapidité', english: '', relationship: 'Related Term' },
       { french: 'rapidement', english: '', relationship: 'Related Term' },
     ],
     notes: 'NEW: promoted into Level 2 (Foundation) by the rank-4 resequencing; never previously enriched under any batch.',
@@ -21215,7 +21215,7 @@ const VOCABULARY_LEVEL1_2: VocabularyItem[] = [
     exampleSentence: 'Ne t\'inquiète pas, ce n\'est pas un souci.',
     exampleTranslation: 'Don\'t worry, it\'s not a problem.',
     relatedWords: [
-      { french: 'se soucier', english: '', relationship: 'Related Verb' },
+      { french: 'se soucier', english: '', relationship: 'Related Term' },
       { french: 'soucieux', english: '', relationship: 'Related Term' },
     ],
     commonExpressions: [
@@ -21285,7 +21285,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'We ate fish at the restaurant.',
     relatedWords: [
       { french: 'poissonnier', english: '', relationship: 'Related Term' }, 
-      { french: 'poissonnerie', english: '', relationship: 'Related Noun' }, 
+      { french: 'poissonnerie', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'pêcher un poisson', english: '' }, 
@@ -21329,8 +21329,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Il a eu pitié du pauvre chien.',
     exampleTranslation: 'He felt sorry for the poor dog.',
     relatedWords: [
-      { french: 'pitoyable', english: '', relationship: 'Related Adjective' }, 
-      { french: 'apitoyer', english: '', relationship: 'Related Verb' }, 
+      { french: 'pitoyable', english: '', relationship: 'Related Term' }, 
+      { french: 'apitoyer', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'avoir pitié de', english: '' }, 
@@ -21353,7 +21353,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'I got a good grade on the exam.',
     relatedWords: [
       { french: 'noter', english: '', relationship: 'Related Term' }, 
-      { french: 'notation', english: '', relationship: 'Related Noun' }, 
+      { french: 'notation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'prendre des notes', english: '' }, 
@@ -21471,7 +21471,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Cette situation est vraiment ridicule.',
     exampleTranslation: 'This situation is really ridiculous.',
     relatedWords: [
-      { french: 'ridiculiser', english: '', relationship: 'Related Verb' }, 
+      { french: 'ridiculiser', english: '', relationship: 'Related Term' }, 
       { french: 'ridiculement', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21500,7 +21500,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'moquent',
     },
     relatedWords: [
-      { french: 'moquerie', english: '', relationship: 'Related Noun' }, 
+      { french: 'moquerie', english: '', relationship: 'Related Term' }, 
       { french: 'moqueur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21524,7 +21524,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'It\'s a shame that you can\'t come.',
     relatedWords: [
       { french: 'endommager', english: '', relationship: 'Related Term' }, 
-      { french: 'dommageable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'dommageable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'quel dommage !', english: '' }, 
@@ -21575,7 +21575,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'accusent',
     },
     relatedWords: [
-      { french: 'accusation', english: '', relationship: 'Related Noun' }, 
+      { french: 'accusation', english: '', relationship: 'Related Term' }, 
       { french: 'accusé', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21602,7 +21602,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       feminine: 'directrice',
     },
     relatedWords: [
-      { french: 'direction', english: '', relationship: 'Related Noun' }, 
+      { french: 'direction', english: '', relationship: 'Related Term' }, 
       { french: 'directrice', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21632,7 +21632,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'aveu', english: '', relationship: 'Related Term' }, 
-      { french: 'avouable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'avouable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'avouer la vérité', english: '' }, 
@@ -21660,7 +21660,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'concentrent',
     },
     relatedWords: [
-      { french: 'concentration', english: '', relationship: 'Related Noun' }, 
+      { french: 'concentration', english: '', relationship: 'Related Term' }, 
       { french: 'concentré', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21736,7 +21736,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'We need to find a solution quickly.',
     relatedWords: [
       { french: 'résoudre', english: '', relationship: 'Related Term' }, 
-      { french: 'résolution', english: '', relationship: 'Related Noun' }, 
+      { french: 'résolution', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'trouver une solution', english: '' }, 
@@ -21815,7 +21815,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'organisent',
     },
     relatedWords: [
-      { french: 'organisation', english: '', relationship: 'Related Noun' }, 
+      { french: 'organisation', english: '', relationship: 'Related Term' }, 
       { french: 'organisateur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21908,7 +21908,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       femininePlural: 'réelles',
     },
     relatedWords: [
-      { french: 'réalité', english: '', relationship: 'Related Noun' }, 
+      { french: 'réalité', english: '', relationship: 'Related Term' }, 
       { french: 'réellement', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -21955,7 +21955,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'She gave me a nice gift.',
     relatedWords: [
       { french: 'présenter', english: '', relationship: 'Related Term' }, 
-      { french: 'présentation', english: '', relationship: 'Related Noun' }, 
+      { french: 'présentation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'faire acte de présence', english: '' }, 
@@ -21978,7 +21978,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'You have to show respect to others.',
     relatedWords: [
       { french: 'respecter', english: '', relationship: 'Related Term' }, 
-      { french: 'respectable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'respectable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'avoir du respect pour', english: '' }, 
@@ -22075,8 +22075,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'considèrent',
     },
     relatedWords: [
-      { french: 'considération', english: '', relationship: 'Related Noun' }, 
-      { french: 'considérable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'considération', english: '', relationship: 'Related Term' }, 
+      { french: 'considérable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'considérer comme', english: '' }, 
@@ -22157,7 +22157,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Tu as une info sur le train ?',
     exampleTranslation: 'Do you have any information about the train?',
     relatedWords: [
-      { french: 'information', english: '', relationship: 'Related Noun' }, 
+      { french: 'information', english: '', relationship: 'Related Term' }, 
       { french: 'informer', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -22180,8 +22180,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'J\'ai besoin d\'un couteau pour couper le pain.',
     exampleTranslation: 'I need a knife to cut the bread.',
     relatedWords: [
-      { french: 'coutellerie', english: '', relationship: 'Related Noun' }, 
-      { french: 'couteau suisse', english: '', relationship: 'Related Expression' }, 
+      { french: 'coutellerie', english: '', relationship: 'Related Term' }, 
+      { french: 'couteau suisse', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'couteau de cuisine', english: '' }, 
@@ -22204,7 +22204,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'Reality is sometimes different from our expectations.',
     relatedWords: [
       { french: 'réel', english: '', relationship: 'Related Term' }, 
-      { french: 'réaliser', english: '', relationship: 'Related Verb' }, 
+      { french: 'réaliser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'en réalité', english: '' }, 
@@ -22269,8 +22269,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Le tribunal l\'a déclaré coupable.',
     exampleTranslation: 'The court found him guilty.',
     relatedWords: [
-      { french: 'culpabilité', english: '', relationship: 'Related Noun' }, 
-      { french: 'culpabiliser', english: '', relationship: 'Related Verb' }, 
+      { french: 'culpabilité', english: '', relationship: 'Related Term' }, 
+      { french: 'culpabiliser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'être reconnu coupable', english: '' }, 
@@ -22344,7 +22344,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'annulent',
     },
     relatedWords: [
-      { french: 'annulation', english: '', relationship: 'Related Noun' }, 
+      { french: 'annulation', english: '', relationship: 'Related Term' }, 
       { french: 'annulé', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -22365,8 +22365,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Elle est responsable de ce projet.',
     exampleTranslation: 'She is responsible for this project.',
     relatedWords: [
-      { french: 'responsabilité', english: '', relationship: 'Related Noun' }, 
-      { french: 'irresponsable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'responsabilité', english: '', relationship: 'Related Term' }, 
+      { french: 'irresponsable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'être responsable de', english: '' }, 
@@ -22630,7 +22630,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'produisent',
     },
     relatedWords: [
-      { french: 'production', english: '', relationship: 'Related Noun' }, 
+      { french: 'production', english: '', relationship: 'Related Term' }, 
       { french: 'producteur', english: '', relationship: 'Related Term' }, 
       { french: 'produit', english: '', relationship: 'Related Term' }, 
     ],
@@ -22660,7 +22660,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'éteignent',
     },
     relatedWords: [
-      { french: 'extinction', english: '', relationship: 'Related Noun' }, 
+      { french: 'extinction', english: '', relationship: 'Related Term' }, 
       { french: 'éteint', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -22759,7 +22759,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Il est nécessaire de vérifier les informations.',
     exampleTranslation: 'It is necessary to check the information.',
     relatedWords: [
-      { french: 'nécessité', english: '', relationship: 'Related Noun' }, 
+      { french: 'nécessité', english: '', relationship: 'Related Term' }, 
       { french: 'nécessairement', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -22784,7 +22784,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       feminine: 'intersexuelle',
     },
     relatedWords: [
-      { french: 'intersexualité', english: '', relationship: 'Related Noun' }, 
+      { french: 'intersexualité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'personne intersexuée', english: '' }, 
@@ -22807,7 +22807,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       feminine: 'sexuelle',
     },
     relatedWords: [
-      { french: 'sexualité', english: '', relationship: 'Related Noun' }, 
+      { french: 'sexualité', english: '', relationship: 'Related Term' }, 
       { french: 'sexuellement', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -22832,7 +22832,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       feminine: 'poly-sexuelle',
     },
     relatedWords: [
-      { french: 'polysexualité', english: '', relationship: 'Related Noun' }, 
+      { french: 'polysexualité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'orientation polysexuelle', english: '' }, 
@@ -22853,7 +22853,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Tournez à gauche après le pont.',
     exampleTranslation: 'Turn left after the bridge.',
     relatedWords: [
-      { french: 'gauchiste', english: '', relationship: 'Related Noun' }, 
+      { french: 'gauchiste', english: '', relationship: 'Related Term' }, 
       { french: 'gauchement', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -22877,7 +22877,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'He is asking for justice after this case.',
     relatedWords: [
       { french: 'juste', english: '', relationship: 'Related Term' }, 
-      { french: 'justifier', english: '', relationship: 'Related Verb' }, 
+      { french: 'justifier', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'rendre justice', english: '' }, 
@@ -22922,8 +22922,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'J\'ai besoin d\'énergie pour travailler.',
     exampleTranslation: 'I need energy to work.',
     relatedWords: [
-      { french: 'énergique', english: '', relationship: 'Related Adjective' }, 
-      { french: 'énergiser', english: '', relationship: 'Related Verb' }, 
+      { french: 'énergique', english: '', relationship: 'Related Term' }, 
+      { french: 'énergiser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'énergie solaire', english: '' }, 
@@ -22945,7 +22945,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Elle croit avoir vu un fantôme.',
     exampleTranslation: 'She thinks she saw a ghost.',
     relatedWords: [
-      { french: 'fantomatique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'fantomatique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'maison hantée par un fantôme', english: '' }, 
@@ -23108,7 +23108,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Elle trouve cette tenue très sexy.',
     exampleTranslation: 'She finds this outfit very sexy.',
     relatedWords: [
-      { french: 'sexualité', english: '', relationship: 'Related Noun' }, 
+      { french: 'sexualité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'avoir un look sexy', english: '' }, 
@@ -23210,7 +23210,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'représentent',
     },
     relatedWords: [
-      { french: 'représentation', english: '', relationship: 'Related Noun' }, 
+      { french: 'représentation', english: '', relationship: 'Related Term' }, 
       { french: 'représentant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -23381,7 +23381,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'In the end, we decided to stay.',
     relatedWords: [
       { french: 'final', english: '', relationship: 'Related Term' }, 
-      { french: 'finaliser', english: '', relationship: 'Related Verb' }, 
+      { french: 'finaliser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'finalement décidé', english: '' }, 
@@ -23460,7 +23460,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'dépendent',
     },
     relatedWords: [
-      { french: 'dépendance', english: '', relationship: 'Related Noun' }, 
+      { french: 'dépendance', english: '', relationship: 'Related Term' }, 
       { french: 'dépendant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -23484,7 +23484,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The country is going through an economic crisis.',
     relatedWords: [
       { french: 'criser', english: '', relationship: 'Related Term' }, 
-      { french: 'critique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'critique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'en pleine crise', english: '' }, 
@@ -23578,7 +23578,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'transforment',
     },
     relatedWords: [
-      { french: 'transformation', english: '', relationship: 'Related Noun' }, 
+      { french: 'transformation', english: '', relationship: 'Related Term' }, 
       { french: 'transformateur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -23651,7 +23651,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'sacrer', english: '', relationship: 'Related Term' }, 
-      { french: 'sacraliser', english: '', relationship: 'Related Verb' }, 
+      { french: 'sacraliser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'un lieu sacré', english: '' }, 
@@ -23755,7 +23755,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'L\'église est au centre du village.',
     exampleTranslation: 'The church is in the center of the village.',
     relatedWords: [
-      { french: 'ecclésiastique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'ecclésiastique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'aller à l\'église', english: '' }, 
@@ -23834,7 +23834,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'I made a chocolate cake.',
     relatedWords: [
       { french: 'gâter', english: '', relationship: 'Related Term' }, 
-      { french: 'pâtisserie', english: '', relationship: 'Related Noun' }, 
+      { french: 'pâtisserie', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'gâteau au chocolat', english: '' }, 
@@ -23885,8 +23885,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'J\'ai une bonne mémoire.',
     exampleTranslation: 'I have a good memory.',
     relatedWords: [
-      { french: 'mémoriser', english: '', relationship: 'Related Verb' }, 
-      { french: 'mémorable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'mémoriser', english: '', relationship: 'Related Term' }, 
+      { french: 'mémorable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'avoir de la mémoire', english: '' }, 
@@ -23914,7 +23914,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'cessent',
     },
     relatedWords: [
-      { french: 'cessation', english: '', relationship: 'Related Noun' }, 
+      { french: 'cessation', english: '', relationship: 'Related Term' }, 
       { french: 'incessant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -24051,7 +24051,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'We had dinner at a small restaurant.',
     relatedWords: [
       { french: 'restaurer', english: '', relationship: 'Related Term' }, 
-      { french: 'restauration', english: '', relationship: 'Related Noun' }, 
+      { french: 'restauration', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'aller au restaurant', english: '' }, 
@@ -24143,7 +24143,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Cette chanteuse est une grande star.',
     exampleTranslation: 'This singer is a big star.',
     relatedWords: [
-      { french: 'starifier', english: '', relationship: 'Related Verb' }, 
+      { french: 'starifier', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'star de cinéma', english: '' }, 
@@ -24351,7 +24351,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Elle veut faire carrière dans la médecine.',
     exampleTranslation: 'She wants to pursue a career in medicine.',
     relatedWords: [
-      { french: 'carriériste', english: '', relationship: 'Related Noun' }, 
+      { french: 'carriériste', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'faire carrière', english: '' }, 
@@ -24374,7 +24374,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'French is an important language in her work.',
     relatedWords: [
       { french: 'langagier', english: '', relationship: 'Related Term' }, 
-      { french: 'linguistique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'linguistique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'langue maternelle', english: '' }, 
@@ -24430,7 +24430,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'nerf', english: '', relationship: 'Related Term' }, 
-      { french: 'nervosité', english: '', relationship: 'Related Noun' }, 
+      { french: 'nervosité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'être nerveux', english: '' }, 
@@ -24458,7 +24458,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'voir', english: '', relationship: 'Related Term' }, 
-      { french: 'vision', english: '', relationship: 'Related Noun' }, 
+      { french: 'vision', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'vu que', english: '' }, 
@@ -24530,8 +24530,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       femininePlural: 'privées',
     },
     relatedWords: [
-      { french: 'privatiser', english: '', relationship: 'Related Verb' }, 
-      { french: 'privatisation', english: '', relationship: 'Related Noun' }, 
+      { french: 'privatiser', english: '', relationship: 'Related Term' }, 
+      { french: 'privatisation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'vie privée', english: '' }, 
@@ -24560,7 +24560,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'lavage', english: '', relationship: 'Related Term' }, 
-      { french: 'lavable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'lavable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'se laver', english: '' }, 
@@ -24821,7 +24821,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'résolvent',
     },
     relatedWords: [
-      { french: 'résolution', english: '', relationship: 'Related Noun' }, 
+      { french: 'résolution', english: '', relationship: 'Related Term' }, 
       { french: 'résolu', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -24845,7 +24845,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'This act had important consequences.',
     relatedWords: [
       { french: 'actif', english: '', relationship: 'Related Term' }, 
-      { french: 'action', english: '', relationship: 'Related Noun' }, 
+      { french: 'action', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'acte de naissance', english: '' }, 
@@ -24868,7 +24868,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The red light is an important signal.',
     relatedWords: [
       { french: 'signaler', english: '', relationship: 'Related Term' }, 
-      { french: 'signalisation', english: '', relationship: 'Related Noun' }, 
+      { french: 'signalisation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'donner un signal', english: '' }, 
@@ -24920,7 +24920,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'joint', english: '', relationship: 'Related Term' }, 
-      { french: 'jonction', english: '', relationship: 'Related Noun' }, 
+      { french: 'jonction', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'joindre quelqu\'un', english: '' }, 
@@ -24972,7 +24972,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'élevage', english: '', relationship: 'Related Term' }, 
-      { french: 'élévation', english: '', relationship: 'Related Noun' }, 
+      { french: 'élévation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'élever un enfant', english: '' }, 
@@ -25028,8 +25028,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'identifient',
     },
     relatedWords: [
-      { french: 'identité', english: '', relationship: 'Related Noun' }, 
-      { french: 'identification', english: '', relationship: 'Related Noun' }, 
+      { french: 'identité', english: '', relationship: 'Related Term' }, 
+      { french: 'identification', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'identifier quelqu\'un', english: '' }, 
@@ -25197,7 +25197,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'soutien', english: '', relationship: 'Related Term' }, 
-      { french: 'soutenable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'soutenable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'soutenir quelqu\'un', english: '' }, 
@@ -25294,7 +25294,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'publier', english: '', relationship: 'Related Term' }, 
-      { french: 'publicité', english: '', relationship: 'Related Noun' }, 
+      { french: 'publicité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'en public', english: '' }, 
@@ -25413,7 +25413,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Elle dessine un petit ange.',
     exampleTranslation: 'She is drawing a little angel.',
     relatedWords: [
-      { french: 'angélique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'angélique', english: '', relationship: 'Related Term' }, 
       { french: 'angélisme', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -25716,7 +25716,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'L\'accès à la salle est gratuit.',
     exampleTranslation: 'Access to the room is free.',
     relatedWords: [
-      { french: 'accessible', english: '', relationship: 'Related Adjective' }, 
+      { french: 'accessible', english: '', relationship: 'Related Term' }, 
       { french: 'accéder', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -25745,7 +25745,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'interrogent',
     },
     relatedWords: [
-      { french: 'interrogation', english: '', relationship: 'Related Noun' }, 
+      { french: 'interrogation', english: '', relationship: 'Related Term' }, 
       { french: 'interrogatoire', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -25768,7 +25768,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Lille se trouve dans le nord de la France.',
     exampleTranslation: 'Lille is in the north of France.',
     relatedWords: [
-      { french: 'nordique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'nordique', english: '', relationship: 'Related Term' }, 
       { french: 'septentrional', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -25820,7 +25820,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'possèdent',
     },
     relatedWords: [
-      { french: 'possession', english: '', relationship: 'Related Noun' }, 
+      { french: 'possession', english: '', relationship: 'Related Term' }, 
       { french: 'possesseur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -25842,7 +25842,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'I completely agree.',
     relatedWords: [
       { french: 'total', english: '', relationship: 'Related Term' }, 
-      { french: 'totalité', english: '', relationship: 'Related Noun' }, 
+      { french: 'totalité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'totalement différent', english: '' }, 
@@ -25884,8 +25884,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Cette maison a beaucoup de valeur.',
     exampleTranslation: 'This house is very valuable.',
     relatedWords: [
-      { french: 'valable', english: '', relationship: 'Related Adjective' }, 
-      { french: 'valoriser', english: '', relationship: 'Related Verb' }, 
+      { french: 'valable', english: '', relationship: 'Related Term' }, 
+      { french: 'valoriser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'avoir de la valeur', english: '' }, 
@@ -26064,7 +26064,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The press is talking a lot about this case.',
     relatedWords: [
       { french: 'presser', english: '', relationship: 'Related Term' }, 
-      { french: 'pression', english: '', relationship: 'Related Noun' }, 
+      { french: 'pression', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'presse écrite', english: '' }, 
@@ -26120,7 +26120,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       femininePlural: 'puissantes',
     },
     relatedWords: [
-      { french: 'puissance', english: '', relationship: 'Related Noun' }, 
+      { french: 'puissance', english: '', relationship: 'Related Term' }, 
       { french: 'puissamment', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -26162,7 +26162,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'inventent',
     },
     relatedWords: [
-      { french: 'invention', english: '', relationship: 'Related Noun' }, 
+      { french: 'invention', english: '', relationship: 'Related Term' }, 
       { french: 'inventeur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -26263,8 +26263,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Il ne boit pas d\'alcool.',
     exampleTranslation: 'He does not drink alcohol.',
     relatedWords: [
-      { french: 'alcoolique', english: '', relationship: 'Related Adjective' }, 
-      { french: 'alcooliser', english: '', relationship: 'Related Verb' }, 
+      { french: 'alcoolique', english: '', relationship: 'Related Term' }, 
+      { french: 'alcooliser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'boire de l\'alcool', english: '' }, 
@@ -26285,8 +26285,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Cette information est très utile.',
     exampleTranslation: 'This information is very useful.',
     relatedWords: [
-      { french: 'utilité', english: '', relationship: 'Related Noun' }, 
-      { french: 'utiliser', english: '', relationship: 'Related Verb' }, 
+      { french: 'utilité', english: '', relationship: 'Related Term' }, 
+      { french: 'utiliser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'utile pour', english: '' }, 
@@ -26397,7 +26397,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'He worked throughout the whole day.',
     relatedWords: [
       { french: 'durée', english: '', relationship: 'Related Term' }, 
-      { french: 'durable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'durable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'durant la journée', english: '' }, 
@@ -26452,7 +26452,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'confirment',
     },
     relatedWords: [
-      { french: 'confirmation', english: '', relationship: 'Related Noun' }, 
+      { french: 'confirmation', english: '', relationship: 'Related Term' }, 
       { french: 'confirmé', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -26917,7 +26917,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'Read page ten of the book.',
     relatedWords: [
       { french: 'paginer', english: '', relationship: 'Related Term' }, 
-      { french: 'pagination', english: '', relationship: 'Related Noun' }, 
+      { french: 'pagination', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'tourner la page', english: '' }, 
@@ -26945,7 +26945,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'interdisent',
     },
     relatedWords: [
-      { french: 'interdiction', english: '', relationship: 'Related Noun' }, 
+      { french: 'interdiction', english: '', relationship: 'Related Term' }, 
       { french: 'interdit', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -26974,7 +26974,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'commettent',
     },
     relatedWords: [
-      { french: 'commission', english: '', relationship: 'Related Noun' }, 
+      { french: 'commission', english: '', relationship: 'Related Term' }, 
       { french: 'commis', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -27052,8 +27052,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Peux-tu me faire une faveur ?',
     exampleTranslation: 'Can you do me a favor?',
     relatedWords: [
-      { french: 'favoriser', english: '', relationship: 'Related Verb' }, 
-      { french: 'favorable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'favoriser', english: '', relationship: 'Related Term' }, 
+      { french: 'favorable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'faire une faveur', english: '' }, 
@@ -27102,7 +27102,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Le signal est trop faible.',
     exampleTranslation: 'The signal is too weak.',
     relatedWords: [
-      { french: 'faiblesse', english: '', relationship: 'Related Noun' }, 
+      { french: 'faiblesse', english: '', relationship: 'Related Term' }, 
       { french: 'faiblir', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -27179,7 +27179,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'prétendent',
     },
     relatedWords: [
-      { french: 'prétention', english: '', relationship: 'Related Noun' }, 
+      { french: 'prétention', english: '', relationship: 'Related Term' }, 
       { french: 'prétendu', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -27225,7 +27225,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Il doit prouver son identité.',
     exampleTranslation: 'He has to prove his identity.',
     relatedWords: [
-      { french: 'identifier', english: '', relationship: 'Related Verb' }, 
+      { french: 'identifier', english: '', relationship: 'Related Term' }, 
       { french: 'identitaire', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -27254,7 +27254,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'supplient',
     },
     relatedWords: [
-      { french: 'supplication', english: '', relationship: 'Related Noun' }, 
+      { french: 'supplication', english: '', relationship: 'Related Term' }, 
       { french: 'suppliant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -27327,7 +27327,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'In the story, the hero fights a demon.',
     relatedWords: [
       { french: 'démoniaque', english: '', relationship: 'Related Term' }, 
-      { french: 'démoniser', english: '', relationship: 'Related Verb' }, 
+      { french: 'démoniser', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'chasser un démon', english: '' }, 
@@ -27379,7 +27379,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'haine', english: '', relationship: 'Related Term' }, 
-      { french: 'haïssable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'haïssable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'haïr quelqu\'un', english: '' }, 
@@ -27435,7 +27435,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'inviter', english: '', relationship: 'Related Term' }, 
-      { french: 'invitation', english: '', relationship: 'Related Noun' }, 
+      { french: 'invitation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'invité d\'honneur', english: '' }, 
@@ -30093,7 +30093,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'L\'employé accueille les clients.',
     exampleTranslation: 'The employee welcomes the customers.',
     relatedWords: [
-      { french: 'employer', english: '', relationship: 'Related Verb' }, 
+      { french: 'employer', english: '', relationship: 'Related Term' }, 
       { french: 'emploi', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -30120,7 +30120,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'préférer', english: '', relationship: 'Related Term' }, 
-      { french: 'préférence', english: '', relationship: 'Related Noun' }, 
+      { french: 'préférence', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'mon préféré', english: '' }, 
@@ -30191,7 +30191,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Cette mode est très populaire.',
     exampleTranslation: 'This fashion is very popular.',
     relatedWords: [
-      { french: 'à la mode', english: '', relationship: 'Related Expression' }, 
+      { french: 'à la mode', english: '', relationship: 'Related Term' }, 
       { french: 'moderne', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -30213,7 +30213,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Le sorcier lance un sort.',
     exampleTranslation: 'The wizard casts a spell.',
     relatedWords: [
-      { french: 'sorcellerie', english: '', relationship: 'Related Noun' }, 
+      { french: 'sorcellerie', english: '', relationship: 'Related Term' }, 
       { french: 'sorcière', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -30262,7 +30262,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The patient receives treatment.',
     relatedWords: [
       { french: 'traiter', english: '', relationship: 'Related Term' }, 
-      { french: 'thérapeutique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'thérapeutique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'traitement médical', english: '' }, 
@@ -30364,7 +30364,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'correspondent',
     },
     relatedWords: [
-      { french: 'correspondance', english: '', relationship: 'Related Noun' }, 
+      { french: 'correspondance', english: '', relationship: 'Related Term' }, 
       { french: 'correspondant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -30393,7 +30393,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'examen', english: '', relationship: 'Related Term' }, 
-      { french: 'examinable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'examinable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'examiner attentivement', english: '' }, 
@@ -30443,7 +30443,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'We are walking along the coast.',
     relatedWords: [
       { french: 'côtier', english: '', relationship: 'Related Term' }, 
-      { french: 'côte à côte', english: '', relationship: 'Related Expression' }, 
+      { french: 'côte à côte', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'sur la côte', english: '' }, 
@@ -30557,7 +30557,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'This work is famous.',
     relatedWords: [
       { french: 'œuvrer', english: '', relationship: 'Related Term' }, 
-      { french: 'œuvre d\'art', english: '', relationship: 'Related Expression' }, 
+      { french: 'œuvre d\'art', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'œuvre d\'art', english: '' }, 
@@ -30611,7 +30611,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'gay-friendly', english: '', relationship: 'Related Term' }, 
-      { french: 'homosexualité', english: '', relationship: 'Related Noun' }, 
+      { french: 'homosexualité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'mariage gay', english: '' }, 
@@ -30631,7 +30631,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'Go directly to the station.',
     relatedWords: [
       { french: 'direct', english: '', relationship: 'Related Term' }, 
-      { french: 'direction', english: '', relationship: 'Related Noun' }, 
+      { french: 'direction', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'directement après', english: '' }, 
@@ -30659,7 +30659,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'réunion', english: '', relationship: 'Related Term' }, 
-      { french: 'réunification', english: '', relationship: 'Related Noun' }, 
+      { french: 'réunification', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'réunir les conditions', english: '' }, 
@@ -30745,7 +30745,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The official website is easy to find.',
     relatedWords: [
       { french: 'situer', english: '', relationship: 'Related Term' }, 
-      { french: 'situation', english: '', relationship: 'Related Noun' }, 
+      { french: 'situation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'site internet', english: '' }, 
@@ -30850,7 +30850,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'insistent',
     },
     relatedWords: [
-      { french: 'insistance', english: '', relationship: 'Related Noun' }, 
+      { french: 'insistance', english: '', relationship: 'Related Term' }, 
       { french: 'insistant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -30899,7 +30899,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'révèlent',
     },
     relatedWords: [
-      { french: 'révélation', english: '', relationship: 'Related Noun' }, 
+      { french: 'révélation', english: '', relationship: 'Related Term' }, 
       { french: 'révélateur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -31165,7 +31165,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'forment',
     },
     relatedWords: [
-      { french: 'formation', english: '', relationship: 'Related Noun' }, 
+      { french: 'formation', english: '', relationship: 'Related Term' }, 
       { french: 'formateur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -31215,7 +31215,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'louent',
     },
     relatedWords: [
-      { french: 'location', english: '', relationship: 'Related Noun' }, 
+      { french: 'location', english: '', relationship: 'Related Term' }, 
       { french: 'loueur', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -31380,7 +31380,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The city is ten km away.',
     relatedWords: [
       { french: 'kilomètre', english: '', relationship: 'Related Term' }, 
-      { french: 'distance', english: '', relationship: 'Related Noun' }, 
+      { french: 'distance', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'km/h', english: '' }, 
@@ -31402,7 +31402,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'We made an exchange.',
     relatedWords: [
       { french: 'échanger', english: '', relationship: 'Related Term' }, 
-      { french: 'échangeable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'échangeable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'échange de services', english: '' }, 
@@ -31464,7 +31464,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: '“Uh” indicates hesitation.',
     relatedWords: [
       { french: 'euh', english: '', relationship: 'Related Term' }, 
-      { french: 'hésitation', english: '', relationship: 'Related Noun' }, 
+      { french: 'hésitation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'heu...', english: '' }, 
@@ -31512,7 +31512,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'saisie', english: '', relationship: 'Related Term' }, 
-      { french: 'saisissable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'saisissable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'saisir l\'occasion', english: '' }, 
@@ -31533,7 +31533,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Il cherche un emploi.',
     exampleTranslation: 'He is looking for a job.',
     relatedWords: [
-      { french: 'employer', english: '', relationship: 'Related Verb' }, 
+      { french: 'employer', english: '', relationship: 'Related Term' }, 
       { french: 'employé', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -31562,7 +31562,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'effacement', english: '', relationship: 'Related Term' }, 
-      { french: 'effaçable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'effaçable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'effacer de la mémoire', english: '' }, 
@@ -31589,7 +31589,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'éliminent',
     },
     relatedWords: [
-      { french: 'élimination', english: '', relationship: 'Related Noun' }, 
+      { french: 'élimination', english: '', relationship: 'Related Term' }, 
       { french: 'éliminatoire', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -31680,7 +31680,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Sa vision de l\'avenir est optimiste.',
     exampleTranslation: 'His vision of the future is optimistic.',
     relatedWords: [
-      { french: 'visible', english: '', relationship: 'Related Adjective' }, 
+      { french: 'visible', english: '', relationship: 'Related Term' }, 
       { french: 'visionnaire', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -31912,7 +31912,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'participant', english: '', relationship: 'Related Term' }, 
-      { french: 'participation', english: '', relationship: 'Related Noun' }, 
+      { french: 'participation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'participer à', english: '' }, 
@@ -32065,7 +32065,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Le film raconte l\'histoire d\'un vampire.',
     exampleTranslation: 'The film tells the story of a vampire.',
     relatedWords: [
-      { french: 'vampirique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'vampirique', english: '', relationship: 'Related Term' }, 
       { french: 'vampirisme', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -32109,7 +32109,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'La police a découvert un cadavre.',
     exampleTranslation: 'The police discovered a corpse.',
     relatedWords: [
-      { french: 'cadavérique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'cadavérique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'cadavre humain', english: '' }, 
@@ -32153,7 +32153,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'He is retiring this year.',
     relatedWords: [
       { french: 'retirer', english: '', relationship: 'Related Term' }, 
-      { french: 'retraité', english: '', relationship: 'Related Noun' }, 
+      { french: 'retraité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'prendre sa retraite', english: '' }, 
@@ -32206,7 +32206,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'déçoivent',
     },
     relatedWords: [
-      { french: 'déception', english: '', relationship: 'Related Noun' }, 
+      { french: 'déception', english: '', relationship: 'Related Term' }, 
       { french: 'décevant', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -32234,8 +32234,8 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'punissent',
     },
     relatedWords: [
-      { french: 'punition', english: '', relationship: 'Related Noun' }, 
-      { french: 'punissable', english: '', relationship: 'Related Adjective' }, 
+      { french: 'punition', english: '', relationship: 'Related Term' }, 
+      { french: 'punissable', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'punir de', english: '' }, 
@@ -32282,7 +32282,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       masculinePlural: 'sociaux',
     },
     relatedWords: [
-      { french: 'socialiser', english: '', relationship: 'Related Verb' }, 
+      { french: 'socialiser', english: '', relationship: 'Related Term' }, 
       { french: 'société', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -32305,7 +32305,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'He is looking for a free seat.',
     relatedWords: [
       { french: 'siéger', english: '', relationship: 'Related Term' }, 
-      { french: 'siège social', english: '', relationship: 'Related Expression' }, 
+      { french: 'siège social', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'siège social', english: '' }, 
@@ -32326,7 +32326,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'Ne sois pas imbécile.',
     exampleTranslation: 'Don\'t be an idiot.',
     relatedWords: [
-      { french: 'imbécillité', english: '', relationship: 'Related Noun' }, 
+      { french: 'imbécillité', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'pauvre imbécile', english: '' }, 
@@ -32348,7 +32348,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The universe is immense.',
     relatedWords: [
       { french: 'universel', english: '', relationship: 'Related Term' }, 
-      { french: 'université', english: '', relationship: 'Related Noun' }, 
+      { french: 'université', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'univers parallèle', english: '' }, 
@@ -32416,7 +32416,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The student listens to the teacher.',
     relatedWords: [
       { french: 'élever', english: '', relationship: 'Related Term' }, 
-      { french: 'éducation', english: '', relationship: 'Related Noun' }, 
+      { french: 'éducation', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'élève de lycée', english: '' }, 
@@ -32612,7 +32612,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'We watch television in the living room.',
     relatedWords: [
       { french: 'salonner', english: '', relationship: 'Related Term' }, 
-      { french: 'salon de coiffure', english: '', relationship: 'Related Expression' }, 
+      { french: 'salon de coiffure', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'salon de thé', english: '' }, 
@@ -32655,7 +32655,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'J\'ai regardé le dernier épisode.',
     exampleTranslation: 'I watched the latest episode.',
     relatedWords: [
-      { french: 'épisodique', english: '', relationship: 'Related Adjective' }, 
+      { french: 'épisodique', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'dernier épisode', english: '' }, 
@@ -32677,7 +32677,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleTranslation: 'The creature appears at night.',
     relatedWords: [
       { french: 'créateur', english: '', relationship: 'Related Term' }, 
-      { french: 'création', english: '', relationship: 'Related Noun' }, 
+      { french: 'création', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'créature fantastique', english: '' }, 
@@ -32769,7 +32769,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
       ils_elles: 'augmentent',
     },
     relatedWords: [
-      { french: 'augmentation', english: '', relationship: 'Related Noun' }, 
+      { french: 'augmentation', english: '', relationship: 'Related Term' }, 
       { french: 'augmenté', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
@@ -32796,7 +32796,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     },
     relatedWords: [
       { french: 'évidemment', english: '', relationship: 'Related Term' }, 
-      { french: 'évidence', english: '', relationship: 'Related Noun' }, 
+      { french: 'évidence', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
       { french: 'il est évident que', english: '' }, 
@@ -32817,7 +32817,7 @@ const VOCABULARY_LEVEL3: VocabularyItem[] = [
     exampleSentence: 'J\'ai acheté une nouvelle chemise.',
     exampleTranslation: 'I bought a new shirt.',
     relatedWords: [
-      { french: 'chemiser', english: '', relationship: 'Related Verb' }, 
+      { french: 'chemiser', english: '', relationship: 'Related Term' }, 
       { french: 'chemisier', english: '', relationship: 'Related Term' }, 
     ],
     commonExpressions: [
