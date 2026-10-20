@@ -50814,4 +50814,18765 @@ const VOCABULARY_LEVEL4: VocabularyItem[] = [
   },
 ];
 
-export const MOCK_VOCABULARY: VocabularyItem[] = VOCABULARY_LEVEL1_2.concat(VOCABULARY_LEVEL3).concat(VOCABULARY_LEVEL4);
+const VOCABULARY_LEVEL5: VocabularyItem[] = [
+  {
+    "id": "v-2001",
+    "rank": 2001,
+    "french": "transporter",
+    "english": "to transport; carry",
+    "lemma": "transporter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/tʁɑ̃s.pɔʁ.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le camion transporte des meubles.",
+    "exampleTranslation": "The truck transports furniture.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "transporte",
+      "tu": "transportes",
+      "il_elle": "transporte",
+      "nous": "transportons",
+      "vous": "transportez",
+      "ils_elles": "transportent"
+    },
+    "relatedWords": [
+      {
+        "french": "acheminer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "déplacer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "véhiculer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "transporter des marchandises",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2002",
+    "rank": 2002,
+    "french": "lourd",
+    "english": "heavy; difficult; serious",
+    "lemma": "lourd",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/luʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce sac est trop lourd pour moi.",
+    "exampleTranslation": "This bag is too heavy for me.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "lourds",
+    "genderForms": {
+      "masculine": "lourd",
+      "feminine": "lourde",
+      "masculinePlural": "lourds",
+      "femininePlural": "lourdes"
+    },
+    "relatedWords": [
+      {
+        "french": "pesant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "massif",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "difficile",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un lourd secret",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2003",
+    "rank": 2003,
+    "french": "alarme",
+    "english": "alarm; warning",
+    "lemma": "alarme",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.laʁm/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'alarme sonne à six heures.",
+    "exampleTranslation": "The alarm rings at six o'clock.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "alarmes",
+    "relatedWords": [
+      {
+        "french": "alerte",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "avertissement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "signal",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "déclencher une alarme",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2004",
+    "rank": 2004,
+    "french": "estomac",
+    "english": "stomach",
+    "lemma": "estomac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛs.to.ma/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai mal à l'estomac.",
+    "exampleTranslation": "I have a stomachache.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "estomacs",
+    "relatedWords": [
+      {
+        "french": "ventre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "digestion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intestin",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir l'estomac vide",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2005",
+    "rank": 2005,
+    "french": "récompense",
+    "english": "reward; prize",
+    "lemma": "récompense",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁe.kɔ̃.pɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a reçu une récompense pour son travail.",
+    "exampleTranslation": "She received a reward for her work.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "récompenses",
+    "relatedWords": [
+      {
+        "french": "prix",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mérite",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "récompenser quelqu'un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2006",
+    "rank": 2006,
+    "french": "sacrifier",
+    "english": "to sacrifice",
+    "lemma": "sacrifier",
+    "partOfSpeech": "verb",
+    "pronunciation": "/sa.kʁi.fje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a sacrifié son temps pour aider son ami.",
+    "exampleTranslation": "He sacrificed his time to help his friend.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "sacrifie",
+      "tu": "sacrifies",
+      "il_elle": "sacrifie",
+      "nous": "sacrifions",
+      "vous": "sacrifiez",
+      "ils_elles": "sacrifient"
+    },
+    "relatedWords": [
+      {
+        "french": "renoncer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "abandonner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "offrir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sacrifier quelque chose",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2007",
+    "rank": 2007,
+    "french": "nier",
+    "english": "to deny",
+    "lemma": "nier",
+    "partOfSpeech": "verb",
+    "pronunciation": "/nje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle nie avoir vu l'accident.",
+    "exampleTranslation": "She denies having seen the accident.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "nie",
+      "tu": "nies",
+      "il_elle": "nie",
+      "nous": "nions",
+      "vous": "niez",
+      "ils_elles": "nient"
+    },
+    "relatedWords": [
+      {
+        "french": "contester",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "démentir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réfuter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "nier les faits",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2008",
+    "rank": 2008,
+    "french": "mince",
+    "english": "thin; slim; wow (interjection)",
+    "lemma": "mince",
+    "partOfSpeech": "expression",
+    "pronunciation": "/mɛ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Mince, j'ai oublié mes clés !",
+    "exampleTranslation": "Darn, I forgot my keys!",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "fin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "maigre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étroit",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "mince alors !",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2009",
+    "rank": 2009,
+    "french": "écarter",
+    "english": "to move aside; remove; rule out",
+    "lemma": "écarter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.kaʁ.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il faut écarter cette possibilité.",
+    "exampleTranslation": "We must rule out this possibility.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "écarte",
+      "tu": "écartes",
+      "il_elle": "écarte",
+      "nous": "écartons",
+      "vous": "écartez",
+      "ils_elles": "écartent"
+    },
+    "relatedWords": [
+      {
+        "french": "éloigner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "exclure",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "repousser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "écarter un danger",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2010",
+    "rank": 2010,
+    "french": "cage",
+    "english": "cage",
+    "lemma": "cage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kaʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'oiseau est dans sa cage.",
+    "exampleTranslation": "The bird is in its cage.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "cages",
+    "relatedWords": [
+      {
+        "french": "enclos",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "grille",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "volière",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "cage à oiseaux",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2011",
+    "rank": 2011,
+    "french": "placard",
+    "english": "cupboard; closet",
+    "lemma": "placard",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pla.kaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les assiettes sont dans le placard.",
+    "exampleTranslation": "The plates are in the cupboard.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "placards",
+    "relatedWords": [
+      {
+        "french": "armoire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rangement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "meuble",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "placard de cuisine",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2012",
+    "rank": 2012,
+    "french": "affecter",
+    "english": "to affect; assign; allocate",
+    "lemma": "affecter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.fɛk.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette décision affecte toute l'équipe.",
+    "exampleTranslation": "This decision affects the whole team.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "affecte",
+      "tu": "affectes",
+      "il_elle": "affecte",
+      "nous": "affectons",
+      "vous": "affectez",
+      "ils_elles": "affectent"
+    },
+    "relatedWords": [
+      {
+        "french": "toucher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "attribuer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "assigner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "affecter un budget",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2013",
+    "rank": 2013,
+    "french": "cassette",
+    "english": "cassette; tape",
+    "lemma": "cassette",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ka.sɛt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Mon père garde encore ses vieilles cassettes.",
+    "exampleTranslation": "My father still keeps his old tapes.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "cassettes",
+    "relatedWords": [
+      {
+        "french": "bande",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enregistrement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "magnétophone",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "cassette audio",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2014",
+    "rank": 2014,
+    "french": "communication",
+    "english": "communication",
+    "lemma": "communication",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.my.ni.ka.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Une bonne communication évite les malentendus.",
+    "exampleTranslation": "Good communication prevents misunderstandings.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "communications",
+    "relatedWords": [
+      {
+        "french": "échange",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dialogue",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "information",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "moyen de communication",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2015",
+    "rank": 2015,
+    "french": "absence",
+    "english": "absence",
+    "lemma": "absence",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ap.sɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Son absence a inquiété ses collègues.",
+    "exampleTranslation": "His absence worried his colleagues.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "absences",
+    "relatedWords": [
+      {
+        "french": "manque",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "indisponibilité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "éloignement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "en l'absence de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2016",
+    "rank": 2016,
+    "french": "armé",
+    "english": "armed; in arms",
+    "lemma": "armé",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/aʁ.me/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un homme armé est entré dans le bâtiment.",
+    "exampleTranslation": "An armed man entered the building.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "armés",
+    "genderForms": {
+      "masculine": "armé",
+      "feminine": "armée",
+      "masculinePlural": "armés",
+      "femininePlural": "armées"
+    },
+    "relatedWords": [
+      {
+        "french": "militaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "équipé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "forces armées",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2017",
+    "rank": 2017,
+    "french": "okay",
+    "english": "okay; all right",
+    "lemma": "okay",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/ɔ.kɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Okay, nous pouvons commencer.",
+    "exampleTranslation": "Okay, we can start.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "d'accord",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bien",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "entendu",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "dire okay",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2018",
+    "rank": 2018,
+    "french": "mortel",
+    "english": "deadly; mortal; fatal",
+    "lemma": "mortel",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/mɔʁ.tɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette maladie peut être mortelle.",
+    "exampleTranslation": "This disease can be fatal.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "mortels",
+    "genderForms": {
+      "masculine": "mortel",
+      "feminine": "mortelle",
+      "masculinePlural": "mortels",
+      "femininePlural": "mortelles"
+    },
+    "relatedWords": [
+      {
+        "french": "fatal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dangereux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "létal",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un danger mortel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2019",
+    "rank": 2019,
+    "french": "miroir",
+    "english": "mirror",
+    "lemma": "miroir",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mi.ʁwaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle se regarde dans le miroir.",
+    "exampleTranslation": "She looks at herself in the mirror.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "miroirs",
+    "relatedWords": [
+      {
+        "french": "glace",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "reflet",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "miroir de poche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2020",
+    "rank": 2020,
+    "french": "fichier",
+    "english": "file; document; computer file",
+    "lemma": "fichier",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fi.ʃje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai enregistré le fichier sur mon ordinateur.",
+    "exampleTranslation": "I saved the file on my computer.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "fichiers",
+    "relatedWords": [
+      {
+        "french": "document",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dossier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "archive",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "fichier numérique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2021",
+    "rank": 2021,
+    "french": "rythme",
+    "english": "rhythm; pace",
+    "lemma": "rythme",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁitm/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le musicien suit le rythme.",
+    "exampleTranslation": "The musician follows the rhythm.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "rythmes",
+    "relatedWords": [
+      {
+        "french": "cadence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tempo",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mesure",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "au rythme de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2022",
+    "rank": 2022,
+    "french": "amante",
+    "english": "female lover; girlfriend",
+    "lemma": "amante",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.mɑ̃t/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Dans le roman, elle est son amante.",
+    "exampleTranslation": "In the novel, she is his lover.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "amantes",
+    "relatedWords": [
+      {
+        "french": "amour",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "partenaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "maîtresse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "devenir l'amante de quelqu'un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2023",
+    "rank": 2023,
+    "french": "amant",
+    "english": "male lover; boyfriend",
+    "lemma": "amant",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les deux amants se retrouvent au café.",
+    "exampleTranslation": "The two lovers meet again at the café.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "amants",
+    "relatedWords": [
+      {
+        "french": "amour",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "partenaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "amoureux",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "les deux amants",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2024",
+    "rank": 2024,
+    "french": "souffrance",
+    "english": "suffering; pain",
+    "lemma": "souffrance",
+    "partOfSpeech": "noun",
+    "pronunciation": "/su.fʁɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a parlé de sa souffrance avec courage.",
+    "exampleTranslation": "He spoke about his suffering courageously.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "souffrances",
+    "relatedWords": [
+      {
+        "french": "douleur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "peine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "détresse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "souffrance physique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2025",
+    "rank": 2025,
+    "french": "tempête",
+    "english": "storm; tempest",
+    "lemma": "tempête",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɑ̃.pɛt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La tempête a endommagé plusieurs maisons.",
+    "exampleTranslation": "The storm damaged several houses.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tempêtes",
+    "relatedWords": [
+      {
+        "french": "orage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bourrasque",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intempérie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une violente tempête",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2026",
+    "rank": 2026,
+    "french": "prière",
+    "english": "prayer",
+    "lemma": "prière",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁi.jɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle fait une prière avant de dormir.",
+    "exampleTranslation": "She says a prayer before sleeping.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "prières",
+    "relatedWords": [
+      {
+        "french": "foi",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "supplication",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire une prière",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2027",
+    "rank": 2027,
+    "french": "soi",
+    "english": "oneself; oneself (stressed/reflexive)",
+    "lemma": "soi",
+    "partOfSpeech": "pronoun",
+    "pronunciation": "/swa/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il faut apprendre à penser par soi-même.",
+    "exampleTranslation": "One must learn to think for oneself.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "même",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "personnellement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "individu",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "soi-même",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2028",
+    "rank": 2028,
+    "french": "exercice",
+    "english": "exercise; practice",
+    "lemma": "exercice",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛɡ.zɛʁ.sis/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous faisons un exercice de grammaire.",
+    "exampleTranslation": "We are doing a grammar exercise.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "exercices",
+    "relatedWords": [
+      {
+        "french": "activité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "entraînement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pratique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire de l'exercice",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2029",
+    "rank": 2029,
+    "french": "robot",
+    "english": "robot",
+    "lemma": "robot",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁɔ.bo/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le robot aide les employés dans l'usine.",
+    "exampleTranslation": "The robot helps the workers in the factory.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "robots",
+    "relatedWords": [
+      {
+        "french": "automate",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "machine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intelligence artificielle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "robot industriel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2030",
+    "rank": 2030,
+    "french": "vaincre",
+    "english": "to defeat; overcome",
+    "lemma": "vaincre",
+    "partOfSpeech": "verb",
+    "pronunciation": "/vɛ̃kʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle veut vaincre sa peur.",
+    "exampleTranslation": "She wants to overcome her fear.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "vaincs",
+      "tu": "vaincs",
+      "il_elle": "vainc",
+      "nous": "vainquons",
+      "vous": "vainquez",
+      "ils_elles": "vainquent"
+    },
+    "relatedWords": [
+      {
+        "french": "battre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "surmonter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "triompher",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "vaincre un adversaire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2031",
+    "rank": 2031,
+    "french": "degré",
+    "english": "degree; level; extent",
+    "lemma": "degré",
+    "partOfSpeech": "noun",
+    "pronunciation": "/də.ɡʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La température atteint trente degrés.",
+    "exampleTranslation": "The temperature reaches thirty degrees.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "degrés",
+    "relatedWords": [
+      {
+        "french": "niveau",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mesure",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intensité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "à un degré",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2032",
+    "rank": 2032,
+    "french": "connait",
+    "english": "form of connaître: knows; is familiar with",
+    "lemma": "connait",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ.nɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle connaît bien cette ville.",
+    "exampleTranslation": "She knows this city.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "connais",
+      "tu": "connais",
+      "il_elle": "connaît",
+      "nous": "connaissons",
+      "vous": "connaissez",
+      "ils_elles": "connaissent"
+    },
+    "relatedWords": [
+      {
+        "french": "savoir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "reconnaître",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "découvrir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "connaître quelqu'un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2033",
+    "rank": 2033,
+    "french": "serviette",
+    "english": "towel; napkin",
+    "lemma": "serviette",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛʁ.vjɛt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Prends une serviette propre.",
+    "exampleTranslation": "Take a clean towel.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "serviettes",
+    "relatedWords": [
+      {
+        "french": "linge",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "drap",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "torchon",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "serviette de bain",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2034",
+    "rank": 2034,
+    "french": "renfort",
+    "english": "reinforcement; support",
+    "lemma": "renfort",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁɑ̃.fɔʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Des renforts arrivent sur les lieux.",
+    "exampleTranslation": "Reinforcements are arriving at the scene.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "renforts",
+    "relatedWords": [
+      {
+        "french": "aide",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soutien",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "secours",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "appeler des renforts",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2035",
+    "rank": 2035,
+    "french": "médecine",
+    "english": "medicine; medical field",
+    "lemma": "médecine",
+    "partOfSpeech": "noun",
+    "pronunciation": "/med.sin/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle étudie la médecine à Paris.",
+    "exampleTranslation": "She studies medicine in Paris.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "médecines",
+    "relatedWords": [
+      {
+        "french": "santé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "thérapeutique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "étudier la médecine",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2036",
+    "rank": 2036,
+    "french": "royaume",
+    "english": "kingdom; realm",
+    "lemma": "royaume",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁwa.jom/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le royaume était dirigé par une reine.",
+    "exampleTranslation": "The kingdom was ruled by a queen.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "royaumes",
+    "relatedWords": [
+      {
+        "french": "empire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monarchie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "territoire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "royaume de France",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2037",
+    "rank": 2037,
+    "french": "fonds",
+    "english": "funds; money; bottom (of a matter)",
+    "lemma": "fonds",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le projet manque de fonds.",
+    "exampleTranslation": "The project lacks funds.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "fonds",
+    "relatedWords": [
+      {
+        "french": "capital",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "budget",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "financement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "fonds publics",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2038",
+    "rank": 2038,
+    "french": "champagne",
+    "english": "champagne",
+    "lemma": "champagne",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃɑ̃.paɲ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils ont ouvert une bouteille de champagne.",
+    "exampleTranslation": "They opened a bottle of champagne.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "champagnes",
+    "relatedWords": [
+      {
+        "french": "vin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bouteille",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "célébration",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une coupe de champagne",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2039",
+    "rank": 2039,
+    "french": "boss",
+    "english": "boss; chief (informal)",
+    "lemma": "boss",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bɔs/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Mon boss organise une réunion demain.",
+    "exampleTranslation": "My boss is organising a meeting tomorrow.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "boss",
+    "relatedWords": [
+      {
+        "french": "chef",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "patron",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "responsable",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "le boss de l'équipe",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2040",
+    "rank": 2040,
+    "french": "tasse",
+    "english": "cup; mug",
+    "lemma": "tasse",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tas/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je bois une tasse de thé.",
+    "exampleTranslation": "I drink a cup of tea.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tasses",
+    "relatedWords": [
+      {
+        "french": "mug",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "récipient",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soucoupe",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une tasse de café",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2041",
+    "rank": 2041,
+    "french": "tenue",
+    "english": "outfit; clothing; conduct",
+    "lemma": "tenue",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tə.ny/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle porte une tenue élégante.",
+    "exampleTranslation": "She is wearing an elegant outfit.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tenues",
+    "relatedWords": [
+      {
+        "french": "vêtement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "habit",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "apparence",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tenue de soirée",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2042",
+    "rank": 2042,
+    "french": "crème",
+    "english": "cream",
+    "lemma": "crème",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kʁɛm/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ajoute un peu de crème à la soupe.",
+    "exampleTranslation": "Add a little cream to the soup.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "crèmes",
+    "relatedWords": [
+      {
+        "french": "lait",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "lotion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "émulsion",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "crème fraîche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2043",
+    "rank": 2043,
+    "french": "passion",
+    "english": "passion",
+    "lemma": "passion",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pa.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La musique est sa grande passion.",
+    "exampleTranslation": "Music is her great passion.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "passions",
+    "relatedWords": [
+      {
+        "french": "enthousiasme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "amour",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intérêt",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avec passion",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2044",
+    "rank": 2044,
+    "french": "équipage",
+    "english": "crew; crew complement",
+    "lemma": "équipage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.ki.paʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'équipage prépare le bateau au départ.",
+    "exampleTranslation": "The crew is preparing the boat for departure.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "équipages",
+    "relatedWords": [
+      {
+        "french": "équipe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "personnel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "marins",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "membre d'équipage",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2045",
+    "rank": 2045,
+    "french": "cracher",
+    "english": "to spit",
+    "lemma": "cracher",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kʁa.ʃe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il ne faut pas cracher dans la rue.",
+    "exampleTranslation": "You must not spit in the street.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "crache",
+      "tu": "craches",
+      "il_elle": "crache",
+      "nous": "crachons",
+      "vous": "crachez",
+      "ils_elles": "crachent"
+    },
+    "relatedWords": [
+      {
+        "french": "expectorer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rejeter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "postillonner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "cracher par terre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2046",
+    "rank": 2046,
+    "french": "dit",
+    "english": "said; aforementioned (past participle of dire; source POS anomaly: ADJ)",
+    "lemma": "dit",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/di/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La personne dite responsable a répondu.",
+    "exampleTranslation": "The person said to be responsible replied.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "dits",
+    "genderForms": {
+      "masculine": "dit",
+      "feminine": "dite",
+      "masculinePlural": "dits",
+      "femininePlural": "dites"
+    },
+    "relatedWords": [
+      {
+        "french": "prétendu",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "nommé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mentionné",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "le jour dit",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2047",
+    "rank": 2047,
+    "french": "ticket",
+    "english": "ticket; receipt; pass",
+    "lemma": "ticket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ti.kɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai acheté un ticket de métro.",
+    "exampleTranslation": "I bought a metro ticket.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tickets",
+    "relatedWords": [
+      {
+        "french": "billet",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "reçu",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "titre de transport",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ticket de caisse",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2048",
+    "rank": 2048,
+    "french": "légende",
+    "english": "legend; story",
+    "lemma": "légende",
+    "partOfSpeech": "noun",
+    "pronunciation": "/le.ʒɑ̃d/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette légende est connue dans toute la région.",
+    "exampleTranslation": "This legend is known throughout the region.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "légendes",
+    "relatedWords": [
+      {
+        "french": "mythe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "récit",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tradition",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une légende urbaine",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2049",
+    "rank": 2049,
+    "french": "tireur",
+    "english": "shooter; marksman; gunman",
+    "lemma": "tireur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ti.ʁœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le tireur a atteint la cible.",
+    "exampleTranslation": "The marksman hit the target.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tireurs",
+    "relatedWords": [
+      {
+        "french": "fusilier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "artilleur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tireuse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tireur d'élite",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2050",
+    "rank": 2050,
+    "french": "exposer",
+    "english": "to expose; display; reveal",
+    "lemma": "exposer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛk.po.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il va exposer ses photos au musée.",
+    "exampleTranslation": "He is going to exhibit his photos at the museum.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "expose",
+      "tu": "exposes",
+      "il_elle": "expose",
+      "nous": "exposons",
+      "vous": "exposez",
+      "ils_elles": "exposent"
+    },
+    "relatedWords": [
+      {
+        "french": "présenter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "montrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "révéler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "exposer une idée",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2051",
+    "rank": 2051,
+    "french": "tension",
+    "english": "tension; strain",
+    "lemma": "tension",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɑ̃.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La tension monte pendant la réunion.",
+    "exampleTranslation": "Tension rises during the meeting.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tensions",
+    "relatedWords": [
+      {
+        "french": "stress",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pression",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "conflit",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tension artérielle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2052",
+    "rank": 2052,
+    "french": "défoncer",
+    "english": "to smash; wreck (informal)",
+    "lemma": "défoncer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/de.fɔ̃.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a défoncé la vieille porte.",
+    "exampleTranslation": "He smashed the old door.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "défonce",
+      "tu": "défonces",
+      "il_elle": "défonce",
+      "nous": "défonçons",
+      "vous": "défoncez",
+      "ils_elles": "défoncent"
+    },
+    "relatedWords": [
+      {
+        "french": "enfoncer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fracasser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "détruire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "défoncer une porte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2053",
+    "rank": 2053,
+    "french": "jeudi",
+    "english": "Thursday",
+    "lemma": "jeudi",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʒø.di/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous partons jeudi matin.",
+    "exampleTranslation": "We are leaving Thursday morning.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "jeudis",
+    "relatedWords": [
+      {
+        "french": "jour",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "semaine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vendredi",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "jeudi prochain",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2054",
+    "rank": 2054,
+    "french": "navrer",
+    "english": "to distress; grieve",
+    "lemma": "navrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/na.vʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette nouvelle va le navrer.",
+    "exampleTranslation": "This news will distress him.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "navre",
+      "tu": "navres",
+      "il_elle": "navre",
+      "nous": "navrons",
+      "vous": "navrez",
+      "ils_elles": "navrent"
+    },
+    "relatedWords": [
+      {
+        "french": "attrister",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "affliger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "peiner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être navré",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2055",
+    "rank": 2055,
+    "french": "collier",
+    "english": "necklace; collar",
+    "lemma": "collier",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.lje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle porte un collier en argent.",
+    "exampleTranslation": "She is wearing a silver necklace.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "colliers",
+    "relatedWords": [
+      {
+        "french": "bijou",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chaîne",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pendentif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "collier de perles",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2056",
+    "rank": 2056,
+    "french": "inscrire",
+    "english": "to register; enrol; write down",
+    "lemma": "inscrire",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛ̃s.kʁiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je dois inscrire mon nom sur la liste.",
+    "exampleTranslation": "I must write my name on the list.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "inscris",
+      "tu": "inscris",
+      "il_elle": "inscrit",
+      "nous": "inscrivons",
+      "vous": "inscrivez",
+      "ils_elles": "inscrivent"
+    },
+    "relatedWords": [
+      {
+        "french": "enregistrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "noter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enroler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "inscrire son nom",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2057",
+    "rank": 2057,
+    "french": "canapé",
+    "english": "sofa; couch",
+    "lemma": "canapé",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ka.na.pe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous avons acheté un nouveau canapé.",
+    "exampleTranslation": "We bought a new sofa.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "canapés",
+    "relatedWords": [
+      {
+        "french": "divan",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fauteuil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "salon",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "canapé-lit",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2058",
+    "rank": 2058,
+    "french": "team",
+    "english": "team; squad (English loanword)",
+    "lemma": "team",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tim/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Notre team travaille sur le projet.",
+    "exampleTranslation": "Our team is working on the project.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "teams",
+    "relatedWords": [
+      {
+        "french": "équipe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "groupe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "collectif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "team de football",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2059",
+    "rank": 2059,
+    "french": "entourer",
+    "english": "to surround; encircle",
+    "lemma": "entourer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.tu.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Des arbres entourent la maison.",
+    "exampleTranslation": "Trees surround the house.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "entoure",
+      "tu": "entoures",
+      "il_elle": "entoure",
+      "nous": "entourons",
+      "vous": "entourez",
+      "ils_elles": "entourent"
+    },
+    "relatedWords": [
+      {
+        "french": "encercler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "entourer de soins",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2060",
+    "rank": 2060,
+    "french": "publier",
+    "english": "to publish",
+    "lemma": "publier",
+    "partOfSpeech": "verb",
+    "pronunciation": "/py.bli.je/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le journal publie un article important.",
+    "exampleTranslation": "The newspaper publishes an important article.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "publie",
+      "tu": "publies",
+      "il_elle": "publie",
+      "nous": "publions",
+      "vous": "publiez",
+      "ils_elles": "publient"
+    },
+    "relatedWords": [
+      {
+        "french": "éditer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "diffuser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "faire paraître",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "publier un livre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2061",
+    "rank": 2061,
+    "french": "permis",
+    "english": "driving licence; permit",
+    "lemma": "permis",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɛʁ.mi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a obtenu son permis de conduire.",
+    "exampleTranslation": "He obtained his driving licence.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "permis",
+    "relatedWords": [
+      {
+        "french": "autorisation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "licence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "brevet",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "permis de conduire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2062",
+    "rank": 2062,
+    "french": "facture",
+    "english": "bill; invoice",
+    "lemma": "facture",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fak.tyʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai payé la facture d'électricité.",
+    "exampleTranslation": "I paid the electricity bill.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "factures",
+    "relatedWords": [
+      {
+        "french": "note",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "addition",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "relevé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "facture d'électricité",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2063",
+    "rank": 2063,
+    "french": "pleuvoir",
+    "english": "to rain (impersonal verb)",
+    "lemma": "pleuvoir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/plø.vwaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il va pleuvoir cet après-midi.",
+    "exampleTranslation": "It is going to rain this afternoon.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "N/A",
+      "tu": "N/A",
+      "il_elle": "pleut",
+      "nous": "N/A",
+      "vous": "N/A",
+      "ils_elles": "N/A"
+    },
+    "relatedWords": [
+      {
+        "french": "précipiter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tomber",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bruiner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "pleuvoir à verse",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2064",
+    "rank": 2064,
+    "french": "humanité",
+    "english": "humanity; humankind",
+    "lemma": "humanité",
+    "partOfSpeech": "noun",
+    "pronunciation": "/y.ma.ni.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'humanité doit protéger la planète.",
+    "exampleTranslation": "Humanity must protect the planet.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "humanités",
+    "relatedWords": [
+      {
+        "french": "population",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "humanisme",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "l'avenir de l'humanité",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2065",
+    "rank": 2065,
+    "french": "tuyau",
+    "english": "pipe; hose",
+    "lemma": "tuyau",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɥi.jo/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le plombier répare un tuyau.",
+    "exampleTranslation": "The plumber is repairing a pipe.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tuyaux",
+    "relatedWords": [
+      {
+        "french": "conduit",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "canalisation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tube",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tuyau d'arrosage",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2066",
+    "rank": 2066,
+    "french": "inconnu",
+    "english": "stranger; unknown person",
+    "lemma": "inconnu",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛ̃.kɔ.ny/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un inconnu a frappé à la porte.",
+    "exampleTranslation": "A stranger knocked at the door.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "inconnus",
+    "genderForms": {
+      "masculine": "inconnu",
+      "feminine": "inconnue",
+      "masculinePlural": "inconnus",
+      "femininePlural": "inconnues"
+    },
+    "relatedWords": [
+      {
+        "french": "étranger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "anonyme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mystérieux",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un parfait inconnu",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2067",
+    "rank": 2067,
+    "french": "port",
+    "english": "port; harbour; door (computer)",
+    "lemma": "port",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɔʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le bateau entre dans le port.",
+    "exampleTranslation": "The boat enters the harbour.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "ports",
+    "relatedWords": [
+      {
+        "french": "havre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "quai",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "marina",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "port de commerce",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2068",
+    "rank": 2068,
+    "french": "whisky",
+    "english": "whisky",
+    "lemma": "whisky",
+    "partOfSpeech": "noun",
+    "pronunciation": "/wis.ki/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a commandé un whisky sans glace.",
+    "exampleTranslation": "He ordered a whisky without ice.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "whiskys",
+    "relatedWords": [
+      {
+        "french": "alcool",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "spiritueux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "boisson",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un verre de whisky",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2069",
+    "rank": 2069,
+    "french": "légal",
+    "english": "legal; lawful",
+    "lemma": "légal",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/le.ɡal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette pratique est légale dans le pays.",
+    "exampleTranslation": "This practice is legal in the country.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "légaux",
+    "genderForms": {
+      "masculine": "légal",
+      "feminine": "légale",
+      "masculinePlural": "légaux",
+      "femininePlural": "légales"
+    },
+    "relatedWords": [
+      {
+        "french": "juridique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "licite",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réglementaire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "âge légal",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2070",
+    "rank": 2070,
+    "french": "réserve",
+    "english": "reserve; reservation; stock",
+    "lemma": "réserve",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁe.zɛʁv/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous avons une réserve d'eau pour l'été.",
+    "exampleTranslation": "We have a reserve of water for the summer.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "réserves",
+    "relatedWords": [
+      {
+        "french": "stock",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "provision",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réserve naturelle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "mettre de côté en réserve",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2071",
+    "rank": 2071,
+    "french": "pile",
+    "english": "battery; pile; stack",
+    "lemma": "pile",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pil/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La télécommande n'a plus de pile.",
+    "exampleTranslation": "The remote control has no battery left.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "piles",
+    "relatedWords": [
+      {
+        "french": "batterie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tas",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "empilement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "pile électrique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2072",
+    "rank": 2072,
+    "french": "guider",
+    "english": "to guide; lead",
+    "lemma": "guider",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɡi.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle va guider les visiteurs dans le musée.",
+    "exampleTranslation": "She will guide the visitors through the museum.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "guide",
+      "tu": "guides",
+      "il_elle": "guide",
+      "nous": "guidons",
+      "vous": "guidez",
+      "ils_elles": "guident"
+    },
+    "relatedWords": [
+      {
+        "french": "conduire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "orienter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accompagner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "guider quelqu'un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2073",
+    "rank": 2073,
+    "french": "foirer",
+    "english": "to mess up; fail (informal)",
+    "lemma": "foirer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/fwa.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai foiré mon examen de conduite.",
+    "exampleTranslation": "I messed up my driving test.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "foire",
+      "tu": "foires",
+      "il_elle": "foire",
+      "nous": "foirons",
+      "vous": "foirez",
+      "ils_elles": "foirent"
+    },
+    "relatedWords": [
+      {
+        "french": "rater",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "échouer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "manquer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "foirer un examen",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2074",
+    "rank": 2074,
+    "french": "jaloux",
+    "english": "jealous",
+    "lemma": "jaloux",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʒa.lu/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est jaloux de son frère.",
+    "exampleTranslation": "He is jealous of his brother.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "jaloux",
+    "genderForms": {
+      "masculine": "jaloux",
+      "feminine": "jalouse",
+      "masculinePlural": "jaloux",
+      "femininePlural": "jalouses"
+    },
+    "relatedWords": [
+      {
+        "french": "envieux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "possessif",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "jalousie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être jaloux de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2075",
+    "rank": 2075,
+    "french": "milliard",
+    "english": "billion (French: thousand million)",
+    "lemma": "milliard",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mi.ljaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'entreprise vaut un milliard d'euros.",
+    "exampleTranslation": "The company is worth one billion euros.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "milliards",
+    "relatedWords": [
+      {
+        "french": "million",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "somme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fortune",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un milliard d'euros",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2076",
+    "rank": 2076,
+    "french": "électrique",
+    "english": "electric; electrical",
+    "lemma": "électrique",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/e.lɛk.tʁik/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le train est entièrement électrique.",
+    "exampleTranslation": "The train is entirely electric.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "électriques",
+    "genderForms": {
+      "masculine": "électrique",
+      "feminine": "électrique",
+      "masculinePlural": "électriques",
+      "femininePlural": "électriques"
+    },
+    "relatedWords": [
+      {
+        "french": "énergétique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "électronique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "courant électrique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2077",
+    "rank": 2077,
+    "french": "congé",
+    "english": "leave; holiday; day off",
+    "lemma": "congé",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ̃.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je prends trois jours de congé en août.",
+    "exampleTranslation": "I'm taking three days off in August.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "congés",
+    "relatedWords": [
+      {
+        "french": "vacances",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "repos",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "absence",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être en congé",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2078",
+    "rank": 2078,
+    "french": "ménage",
+    "english": "household; housework; couple",
+    "lemma": "ménage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/me.naʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils font le ménage chaque samedi.",
+    "exampleTranslation": "They do the housework every Saturday.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "ménages",
+    "relatedWords": [
+      {
+        "french": "foyer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "nettoyage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "entretien",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire le ménage",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2079",
+    "rank": 2079,
+    "french": "moto",
+    "english": "motorcycle; motorbike",
+    "lemma": "moto",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mɔ.to/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il va au travail à moto.",
+    "exampleTranslation": "He goes to work by motorbike.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "motos",
+    "relatedWords": [
+      {
+        "french": "scooter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "véhicule",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire de la moto",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2080",
+    "rank": 2080,
+    "french": "dénoncer",
+    "english": "to denounce; report",
+    "lemma": "dénoncer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/de.nɔ̃.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a dénoncé les abus aux autorités.",
+    "exampleTranslation": "She reported the abuses to the authorities.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "dénonce",
+      "tu": "dénonces",
+      "il_elle": "dénonce",
+      "nous": "dénonçons",
+      "vous": "dénoncez",
+      "ils_elles": "dénoncent"
+    },
+    "relatedWords": [
+      {
+        "french": "signaler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accuser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "révéler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "dénoncer une injustice",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2081",
+    "rank": 2081,
+    "french": "juif",
+    "english": "Jewish person; Jew (noun; use context respectfully)",
+    "lemma": "juif",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʒɥif/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le musée présente l'histoire d'un écrivain juif.",
+    "exampleTranslation": "The museum presents the history of a Jewish writer.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "juifs",
+    "genderForms": {
+      "masculine": "juif",
+      "feminine": "juive",
+      "masculinePlural": "juifs",
+      "femininePlural": "juives"
+    },
+    "relatedWords": [
+      {
+        "french": "judaïsme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "communauté juive",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "histoire juive",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2082",
+    "rank": 2082,
+    "french": "fonction",
+    "english": "function; role",
+    "lemma": "fonction",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fɔ̃k.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette touche a une fonction spéciale.",
+    "exampleTranslation": "This key has a special function.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "fonctions",
+    "relatedWords": [
+      {
+        "french": "rôle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tâche",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "utilité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "en fonction de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2083",
+    "rank": 2083,
+    "french": "lutter",
+    "english": "to fight; struggle",
+    "lemma": "lutter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ly.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils luttent contre la pauvreté.",
+    "exampleTranslation": "They are fighting poverty.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "lutte",
+      "tu": "luttes",
+      "il_elle": "lutte",
+      "nous": "luttons",
+      "vous": "luttez",
+      "ils_elles": "luttent"
+    },
+    "relatedWords": [
+      {
+        "french": "combattre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "résister",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "se battre",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "lutter contre l'injustice",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2084",
+    "rank": 2084,
+    "french": "haine",
+    "english": "hatred; hate",
+    "lemma": "haine",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛn/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La haine ne résout aucun problème.",
+    "exampleTranslation": "Hatred solves no problem.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "haines",
+    "relatedWords": [
+      {
+        "french": "hostilité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "aversion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rancune",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "haine profonde",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2085",
+    "rank": 2085,
+    "french": "paire",
+    "english": "pair",
+    "lemma": "paire",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai acheté une paire de chaussures.",
+    "exampleTranslation": "I bought a pair of shoes.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "paires",
+    "relatedWords": [
+      {
+        "french": "couple",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "duo",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ensemble",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une paire de lunettes",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2086",
+    "rank": 2086,
+    "french": "emballer",
+    "english": "to pack; wrap; excite (informal)",
+    "lemma": "emballer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.ba.le/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle emballe le cadeau avec du papier bleu.",
+    "exampleTranslation": "She wraps the gift in blue paper.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "emballe",
+      "tu": "emballes",
+      "il_elle": "emballe",
+      "nous": "emballons",
+      "vous": "emballez",
+      "ils_elles": "emballent"
+    },
+    "relatedWords": [
+      {
+        "french": "envelopper",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "empaqueter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "emballage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "emballer un cadeau",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2087",
+    "rank": 2087,
+    "french": "fini",
+    "english": "finished; done; over",
+    "lemma": "fini",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fi.ni/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le travail est fini pour aujourd'hui.",
+    "exampleTranslation": "The work is finished for today.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "finis",
+    "genderForms": {
+      "masculine": "fini",
+      "feminine": "finie",
+      "masculinePlural": "finis",
+      "femininePlural": "finies"
+    },
+    "relatedWords": [
+      {
+        "french": "terminé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "achevé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "complet",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "c'est fini",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2088",
+    "rank": 2088,
+    "french": "comité",
+    "english": "committee",
+    "lemma": "comité",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.mi.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le comité se réunit lundi.",
+    "exampleTranslation": "The committee meets on Monday.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "comités",
+    "relatedWords": [
+      {
+        "french": "commission",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "conseil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "groupe",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "comité de direction",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2089",
+    "rank": 2089,
+    "french": "honorer",
+    "english": "to honour; pay tribute to",
+    "lemma": "honorer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɔ.nɔ.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous voulons honorer sa mémoire.",
+    "exampleTranslation": "We want to honour his memory.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "honore",
+      "tu": "honores",
+      "il_elle": "honore",
+      "nous": "honorons",
+      "vous": "honorez",
+      "ils_elles": "honorent"
+    },
+    "relatedWords": [
+      {
+        "french": "respecter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "célébrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rendre hommage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "honorer un engagement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2090",
+    "rank": 2090,
+    "french": "ralentir",
+    "english": "to slow down; reduce speed",
+    "lemma": "ralentir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁa.lɑ̃.tiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le conducteur ralentit près de l'école.",
+    "exampleTranslation": "The driver slows down near the school.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "ralentis",
+      "tu": "ralentis",
+      "il_elle": "ralentit",
+      "nous": "ralentissons",
+      "vous": "ralentissez",
+      "ils_elles": "ralentissent"
+    },
+    "relatedWords": [
+      {
+        "french": "freiner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réduire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "décélérer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ralentir la vitesse",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2091",
+    "rank": 2091,
+    "french": "physique",
+    "english": "physical; physics-related",
+    "lemma": "physique",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fi.zik/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il fait une activité physique chaque jour.",
+    "exampleTranslation": "He does physical activity every day.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "physiques",
+    "genderForms": {
+      "masculine": "physique",
+      "feminine": "physique",
+      "masculinePlural": "physiques",
+      "femininePlural": "physiques"
+    },
+    "relatedWords": [
+      {
+        "french": "corporel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "matériel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "scientifique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "activité physique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2092",
+    "rank": 2092,
+    "french": "vengeance",
+    "english": "revenge; vengeance",
+    "lemma": "vengeance",
+    "partOfSpeech": "noun",
+    "pronunciation": "/vɑ̃.ʒɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il cherche à se venger de cette humiliation.",
+    "exampleTranslation": "He seeks revenge for this humiliation.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "vengeances",
+    "relatedWords": [
+      {
+        "french": "revanche",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "représailles",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rancune",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "par vengeance",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2093",
+    "rank": 2093,
+    "french": "bagage",
+    "english": "luggage; baggage",
+    "lemma": "bagage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ba.ɡaʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nos bagages sont dans le coffre.",
+    "exampleTranslation": "Our luggage is in the boot.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "bagages",
+    "relatedWords": [
+      {
+        "french": "valise",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sac",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "effets personnels",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire ses bagages",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2094",
+    "rank": 2094,
+    "french": "secteur",
+    "english": "sector; area; field",
+    "lemma": "secteur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛk.tœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle travaille dans le secteur public.",
+    "exampleTranslation": "She works in the public sector.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "secteurs",
+    "relatedWords": [
+      {
+        "french": "domaine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "branche",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "industrie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "secteur privé",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2095",
+    "rank": 2095,
+    "french": "business",
+    "english": "business; trade (English loanword, informal)",
+    "lemma": "business",
+    "partOfSpeech": "noun",
+    "pronunciation": "/biz.nɛs/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il travaille dans le business de la musique.",
+    "exampleTranslation": "He works in the music business.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "business",
+    "relatedWords": [
+      {
+        "french": "commerce",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "affaires",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "entreprise",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire du business",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2096",
+    "rank": 2096,
+    "french": "proposition",
+    "english": "proposal; suggestion",
+    "lemma": "proposition",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɔ.po.zi.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'accepte votre proposition.",
+    "exampleTranslation": "I accept your proposal.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "propositions",
+    "relatedWords": [
+      {
+        "french": "suggestion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "offre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "idée",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire une proposition",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2097",
+    "rank": 2097,
+    "french": "dater",
+    "english": "to date; date from",
+    "lemma": "dater",
+    "partOfSpeech": "verb",
+    "pronunciation": "/da.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce document date de 1998.",
+    "exampleTranslation": "This document dates from 1998.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "date",
+      "tu": "dates",
+      "il_elle": "date",
+      "nous": "datons",
+      "vous": "datez",
+      "ils_elles": "datent"
+    },
+    "relatedWords": [
+      {
+        "french": "remonter à",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "indiquer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "dater de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2098",
+    "rank": 2098,
+    "french": "connecter",
+    "english": "to connect; link",
+    "lemma": "connecter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ.nɛk.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je vais connecter mon téléphone au réseau.",
+    "exampleTranslation": "I'm going to connect my phone to the network.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "connecte",
+      "tu": "connectes",
+      "il_elle": "connecte",
+      "nous": "connectons",
+      "vous": "connectez",
+      "ils_elles": "connectent"
+    },
+    "relatedWords": [
+      {
+        "french": "relier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "brancher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "associer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "connecter un appareil",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2099",
+    "rank": 2099,
+    "french": "intervenir",
+    "english": "to intervene; step in",
+    "lemma": "intervenir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛ̃.tɛʁ.və.niʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La police est intervenue rapidement.",
+    "exampleTranslation": "The police intervened quickly.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "interviens",
+      "tu": "interviens",
+      "il_elle": "intervient",
+      "nous": "intervenons",
+      "vous": "intervenez",
+      "ils_elles": "interviennent"
+    },
+    "relatedWords": [
+      {
+        "french": "agir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "s'interposer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "participer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "intervenir dans un débat",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2100",
+    "rank": 2100,
+    "french": "effrayant",
+    "english": "frightening; terrifying",
+    "lemma": "effrayant",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/e.fʁɛ.jɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le bruit était effrayant.",
+    "exampleTranslation": "The noise was frightening.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "effrayants",
+    "genderForms": {
+      "masculine": "effrayant",
+      "feminine": "effrayante",
+      "masculinePlural": "effrayants",
+      "femininePlural": "effrayantes"
+    },
+    "relatedWords": [
+      {
+        "french": "terrifiant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "inquiétant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "alarmant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un film effrayant",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2101",
+    "rank": 2101,
+    "french": "feuille",
+    "english": "leaf; sheet",
+    "lemma": "feuille",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fœj/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Une feuille est tombée de l'arbre.",
+    "exampleTranslation": "A leaf fell from the tree.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "feuilles",
+    "relatedWords": [
+      {
+        "french": "page",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "papier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "feuillage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "feuille de papier",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2102",
+    "rank": 2102,
+    "french": "jugement",
+    "english": "judgment; verdict",
+    "lemma": "jugement",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʒyʒ.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le juge a rendu son jugement.",
+    "exampleTranslation": "The judge delivered his judgment.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "jugements",
+    "relatedWords": [
+      {
+        "french": "décision",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "verdict",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "opinion",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "porter un jugement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2103",
+    "rank": 2103,
+    "french": "matériel",
+    "english": "equipment; material; supplies",
+    "lemma": "matériel",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ma.te.ʁjɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le matériel est prêt pour le cours.",
+    "exampleTranslation": "The equipment is ready for class.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "matériels",
+    "relatedWords": [
+      {
+        "french": "équipement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "outil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fourniture",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "matériel informatique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2104",
+    "rank": 2104,
+    "french": "déterminer",
+    "english": "to determine; establish",
+    "lemma": "déterminer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/de.tɛʁ.mi.ne/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons déterminer la cause du problème.",
+    "exampleTranslation": "We must determine the cause of the problem.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "détermine",
+      "tu": "détermines",
+      "il_elle": "détermine",
+      "nous": "déterminons",
+      "vous": "déterminez",
+      "ils_elles": "déterminent"
+    },
+    "relatedWords": [
+      {
+        "french": "établir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "définir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "décider",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "déterminer un objectif",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2105",
+    "rank": 2105,
+    "french": "domaine",
+    "english": "domain; field; estate",
+    "lemma": "domaine",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dɔ.mɛn/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La biologie est son domaine de recherche.",
+    "exampleTranslation": "Biology is her field of research.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "domaines",
+    "relatedWords": [
+      {
+        "french": "secteur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "champ",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "propriété",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "dans ce domaine",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2106",
+    "rank": 2106,
+    "french": "empereur",
+    "english": "emperor",
+    "lemma": "empereur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɑ̃.pʁœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'empereur gouvernait un vaste territoire.",
+    "exampleTranslation": "The emperor ruled a vast territory.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "empereurs",
+    "genderForms": {
+      "masculine": "empereur",
+      "feminine": "impératrice",
+      "masculinePlural": "empereurs",
+      "femininePlural": "impératrices"
+    },
+    "relatedWords": [
+      {
+        "french": "souverain",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monarque",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "roi",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "l'empereur romain",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2107",
+    "rank": 2107,
+    "french": "impératrice",
+    "english": "empress",
+    "lemma": "impératrice",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛ̃.pe.ʁa.tʁis/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'impératrice accueillit les ambassadeurs.",
+    "exampleTranslation": "The empress welcomed the ambassadors.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "impératrices",
+    "relatedWords": [
+      {
+        "french": "souveraine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "reine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monarque",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "l'impératrice de Russie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2108",
+    "rank": 2108,
+    "french": "sou",
+    "english": "sou (old French coin; tiny amount)",
+    "lemma": "sou",
+    "partOfSpeech": "noun",
+    "pronunciation": "/su/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il n'a pas un sou en poche.",
+    "exampleTranslation": "He doesn't have a penny in his pocket.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "sous",
+    "relatedWords": [
+      {
+        "french": "pièce",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monnaie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "argent",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ne pas avoir un sou",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2109",
+    "rank": 2109,
+    "french": "puer",
+    "english": "to stink; smell bad",
+    "lemma": "puer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pɥe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les égouts puent après la pluie.",
+    "exampleTranslation": "The sewers stink after the rain.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "pue",
+      "tu": "pues",
+      "il_elle": "pue",
+      "nous": "puons",
+      "vous": "puez",
+      "ils_elles": "puent"
+    },
+    "relatedWords": [
+      {
+        "french": "sentir mauvais",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "empester",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ça pue",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2110",
+    "rank": 2110,
+    "french": "pis",
+    "english": "worse; the worse (adverb/noun)",
+    "lemma": "pis",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/pi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le pire, c'est qu'il le savait.",
+    "exampleTranslation": "The worst part is that he knew.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "pire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mauvais",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tant pis",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2111",
+    "rank": 2111,
+    "french": "baser",
+    "english": "to base; rely on",
+    "lemma": "baser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ba.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette théorie se base sur des faits.",
+    "exampleTranslation": "This theory is based on facts.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "base",
+      "tu": "bases",
+      "il_elle": "base",
+      "nous": "basons",
+      "vous": "basez",
+      "ils_elles": "basent"
+    },
+    "relatedWords": [
+      {
+        "french": "fonder",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "appuyer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "établir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se baser sur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2112",
+    "rank": 2112,
+    "french": "positif",
+    "english": "positive; optimistic",
+    "lemma": "positif",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/pɔ.zi.tif/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle garde une attitude positive.",
+    "exampleTranslation": "She maintains a positive attitude.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "positifs",
+    "genderForms": {
+      "masculine": "positif",
+      "feminine": "positive",
+      "masculinePlural": "positifs",
+      "femininePlural": "positives"
+    },
+    "relatedWords": [
+      {
+        "french": "optimiste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "favorable",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "constructif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "résultat positif",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2113",
+    "rank": 2113,
+    "french": "tunnel",
+    "english": "tunnel",
+    "lemma": "tunnel",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ty.nɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le train traverse un long tunnel.",
+    "exampleTranslation": "The train passes through a long tunnel.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tunnels",
+    "relatedWords": [
+      {
+        "french": "passage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "galerie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "souterrain",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tunnel sous-marin",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2114",
+    "rank": 2114,
+    "french": "poignarder",
+    "english": "to stab",
+    "lemma": "poignarder",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pwa.ɲaʁ.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'enquête cherche à comprendre pourquoi il a poignardé la victime.",
+    "exampleTranslation": "The investigation seeks to understand why he stabbed the victim.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "poignarde",
+      "tu": "poignardes",
+      "il_elle": "poignarde",
+      "nous": "poignardons",
+      "vous": "poignardez",
+      "ils_elles": "poignardent"
+    },
+    "relatedWords": [
+      {
+        "french": "blesser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "frapper",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "attaquer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "poignarder quelqu'un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2115",
+    "rank": 2115,
+    "french": "rose",
+    "english": "pink; rose",
+    "lemma": "rose",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʁoz/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle porte une robe rose.",
+    "exampleTranslation": "She is wearing a pink dress.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "roses",
+    "genderForms": {
+      "masculine": "rose",
+      "feminine": "rose",
+      "masculinePlural": "roses",
+      "femininePlural": "roses"
+    },
+    "relatedWords": [
+      {
+        "french": "rosé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "coloré",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rouge pâle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "rose pâle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2116",
+    "rank": 2116,
+    "french": "repousser",
+    "english": "to push back; repel; postpone",
+    "lemma": "repousser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.pu.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils ont repoussé la date de la réunion.",
+    "exampleTranslation": "They postponed the meeting date.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "repousse",
+      "tu": "repousses",
+      "il_elle": "repousse",
+      "nous": "repoussons",
+      "vous": "repoussez",
+      "ils_elles": "repoussent"
+    },
+    "relatedWords": [
+      {
+        "french": "écarter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rejeter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "différer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "repousser une échéance",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2117",
+    "rank": 2117,
+    "french": "extraordinaire",
+    "english": "extraordinary; remarkable",
+    "lemma": "extraordinaire",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɛks.tʁa.ɔʁ.di.nɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a fait un travail extraordinaire.",
+    "exampleTranslation": "She did extraordinary work.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "extraordinaires",
+    "genderForms": {
+      "masculine": "extraordinaire",
+      "feminine": "extraordinaire",
+      "masculinePlural": "extraordinaires",
+      "femininePlural": "extraordinaires"
+    },
+    "relatedWords": [
+      {
+        "french": "exceptionnel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "remarquable",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étonnant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une occasion extraordinaire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2118",
+    "rank": 2118,
+    "french": "sel",
+    "english": "salt",
+    "lemma": "sel",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ajoute un peu de sel à l'eau.",
+    "exampleTranslation": "Add a little salt to the water.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "sels",
+    "relatedWords": [
+      {
+        "french": "assaisonnement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sodium",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "condiment",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sel de mer",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2119",
+    "rank": 2119,
+    "french": "terroriste",
+    "english": "terrorist",
+    "lemma": "terroriste",
+    "partOfSpeech": "noun",
+    "pronunciation": "/te.ʁɔ.ʁist/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La police a arrêté un suspect terroriste.",
+    "exampleTranslation": "The police arrested a suspected terrorist.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "terroristes",
+    "genderForms": {
+      "masculine": "terroriste",
+      "feminine": "terroriste",
+      "masculinePlural": "terroristes",
+      "femininePlural": "terroristes"
+    },
+    "relatedWords": [
+      {
+        "french": "extrémiste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "militant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "violence politique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "acte terroriste",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2120",
+    "rank": 2120,
+    "french": "concernant",
+    "english": "concerning; regarding",
+    "lemma": "concernant",
+    "partOfSpeech": "preposition",
+    "pronunciation": "/kɔ̃.sɛʁ.nɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Concernant ce dossier, je vous répondrai demain.",
+    "exampleTranslation": "Regarding this file, I will reply tomorrow.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "au sujet de",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "à propos de",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "relatif à",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "concernant votre demande",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2121",
+    "rank": 2121,
+    "french": "principe",
+    "english": "principle; rule",
+    "lemma": "principe",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɛ̃.sip/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le respect est un principe important.",
+    "exampleTranslation": "Respect is an important principle.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "principes",
+    "relatedWords": [
+      {
+        "french": "règle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "valeur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fondement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "en principe",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2122",
+    "rank": 2122,
+    "french": "cruel",
+    "english": "cruel",
+    "lemma": "cruel",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/kʁy.ɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a été cruel avec les animaux.",
+    "exampleTranslation": "He was cruel to the animals.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "cruels",
+    "genderForms": {
+      "masculine": "cruel",
+      "feminine": "cruelle",
+      "masculinePlural": "cruels",
+      "femininePlural": "cruelles"
+    },
+    "relatedWords": [
+      {
+        "french": "dur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "brutal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "impitoyable",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un acte cruel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2123",
+    "rank": 2123,
+    "french": "garantir",
+    "english": "to guarantee; ensure",
+    "lemma": "garantir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɡa.ʁɑ̃.tiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce contrat garantit votre sécurité.",
+    "exampleTranslation": "This contract guarantees your safety.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "garantis",
+      "tu": "garantis",
+      "il_elle": "garantit",
+      "nous": "garantissons",
+      "vous": "garantissez",
+      "ils_elles": "garantissent"
+    },
+    "relatedWords": [
+      {
+        "french": "assurer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "certifier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "promettre",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "garantir un résultat",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2124",
+    "rank": 2124,
+    "french": "envisager",
+    "english": "to consider; envisage",
+    "lemma": "envisager",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.vi.za.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous envisageons plusieurs solutions.",
+    "exampleTranslation": "We are considering several solutions.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "envisage",
+      "tu": "envisages",
+      "il_elle": "envisage",
+      "nous": "envisageons",
+      "vous": "envisagez",
+      "ils_elles": "envisagent"
+    },
+    "relatedWords": [
+      {
+        "french": "considérer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "prévoir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "projeter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "envisager une possibilité",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2125",
+    "rank": 2125,
+    "french": "lady",
+    "english": "lady; woman (English loanword)",
+    "lemma": "lady",
+    "partOfSpeech": "noun",
+    "pronunciation": "/le.di/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La lady est arrivée avec ses invités.",
+    "exampleTranslation": "The lady arrived with her guests.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "ladies",
+    "relatedWords": [
+      {
+        "french": "dame",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "femme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "élégante",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une lady anglaise",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2126",
+    "rank": 2126,
+    "french": "buter",
+    "english": "to stumble; run up against",
+    "lemma": "buter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/by.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a buté contre une pierre.",
+    "exampleTranslation": "He stumbled over a stone.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "bute",
+      "tu": "butes",
+      "il_elle": "bute",
+      "nous": "butons",
+      "vous": "butez",
+      "ils_elles": "butent"
+    },
+    "relatedWords": [
+      {
+        "french": "heurter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "trébucher",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2127",
+    "rank": 2127,
+    "french": "torturer",
+    "english": "to torture; torment",
+    "lemma": "torturer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/tɔʁ.ty.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le criminel a torturé ses victimes.",
+    "exampleTranslation": "The criminal tortured his victims.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "torture",
+      "tu": "tortures",
+      "il_elle": "torture",
+      "nous": "torturons",
+      "vous": "torturez",
+      "ils_elles": "torturent"
+    },
+    "relatedWords": [
+      {
+        "french": "tourmenter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "supplice",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2128",
+    "rank": 2128,
+    "french": "ennuyeux",
+    "english": "boring; annoying",
+    "lemma": "ennuyeux",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɑ̃.nɥi.jø/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce film est long et ennuyeux.",
+    "exampleTranslation": "This film is long and boring.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "ennuyeux",
+      "feminine": "ennuyeuse",
+      "masculinePlural": "ennuyeux",
+      "femininePlural": "ennuyeuses"
+    },
+    "relatedWords": [
+      {
+        "french": "ennui",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ennuyeusement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2129",
+    "rank": 2129,
+    "french": "fraîche",
+    "english": "fresh; cool",
+    "lemma": "frais",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fʁɛʃ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La soupe est encore fraîche.",
+    "exampleTranslation": "The soup is still cool.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "fraîches",
+    "genderForms": {
+      "masculine": "frais",
+      "feminine": "fraîche",
+      "masculinePlural": "frais",
+      "femininePlural": "fraîches"
+    },
+    "relatedWords": [
+      {
+        "french": "frais",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fraîcheur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2130",
+    "rank": 2130,
+    "french": "normalement",
+    "english": "normally; usually",
+    "lemma": "normalement",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/nɔʁ.mal.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il répond normalement.",
+    "exampleTranslation": "He responds normally; usually.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "normal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "norme",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "normalement prévu",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2131",
+    "rank": 2131,
+    "french": "ben",
+    "english": "well; yeah (colloquial)",
+    "lemma": "ben",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/bɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ben, je ne sais pas quoi répondre.",
+    "exampleTranslation": "Well, I don't know what to answer.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2132",
+    "rank": 2132,
+    "french": "génération",
+    "english": "generation",
+    "lemma": "génération",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʒe.ne.ʁa.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La génération est important dans ce contexte.",
+    "exampleTranslation": "Generation is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "générations",
+    "relatedWords": [
+      {
+        "french": "générer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "générationnel",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "nouvelle génération",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2133",
+    "rank": 2133,
+    "french": "section",
+    "english": "section; department",
+    "lemma": "section",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛk.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La section est important dans ce contexte.",
+    "exampleTranslation": "Section; department is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "sections",
+    "relatedWords": [
+      {
+        "french": "sectionner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "segment",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2134",
+    "rank": 2134,
+    "french": "cochon",
+    "english": "pig",
+    "lemma": "cochon",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.ʃɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le cochon est important dans ce contexte.",
+    "exampleTranslation": "Pig is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "cochons",
+    "relatedWords": [
+      {
+        "french": "porc",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "porcin",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sale comme un cochon",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2135",
+    "rank": 2135,
+    "french": "âgé",
+    "english": "aged; elderly",
+    "lemma": "âgé",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/a.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est âgé.",
+    "exampleTranslation": "This solution is aged; elderly.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "âgé",
+      "feminine": "âgée",
+      "masculinePlural": "âgés",
+      "femininePlural": "âgées"
+    },
+    "relatedWords": [
+      {
+        "french": "vieillesse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2136",
+    "rank": 2136,
+    "french": "original",
+    "english": "original; unusual",
+    "lemma": "original",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɔ.ʁi.ʒi.nal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est original.",
+    "exampleTranslation": "This solution is original; unusual.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "original",
+      "feminine": "originale",
+      "masculinePlural": "originaux",
+      "femininePlural": "originales"
+    },
+    "relatedWords": [
+      {
+        "french": "originalité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "origine",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2137",
+    "rank": 2137,
+    "french": "satisfaire",
+    "english": "to satisfy; fulfil",
+    "lemma": "satisfaire",
+    "partOfSpeech": "verb",
+    "pronunciation": "/sa.tis.fɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous voulons satisfaire nos clients.",
+    "exampleTranslation": "We want to satisfy our customers.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "satisfais",
+      "tu": "satisfais",
+      "il_elle": "satisfait",
+      "nous": "satisfaisons",
+      "vous": "satisfaites",
+      "ils_elles": "satisfont"
+    },
+    "relatedWords": [
+      {
+        "french": "satisfaction",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "satisfaisant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2138",
+    "rank": 2138,
+    "french": "organisation",
+    "english": "organization; arrangement",
+    "lemma": "organisation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɔʁ.ɡa.ni.za.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L'organisation de l'événement demande du temps.",
+    "exampleTranslation": "Organizing the event takes time.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "organisations",
+    "relatedWords": [
+      {
+        "french": "organiser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "organisé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2139",
+    "rank": 2139,
+    "french": "tapis",
+    "english": "carpet; rug",
+    "lemma": "tapis",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ta.pi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le tapis est important dans ce contexte.",
+    "exampleTranslation": "Carpet; rug is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tapis",
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2140",
+    "rank": 2140,
+    "french": "désert",
+    "english": "desert",
+    "lemma": "désert",
+    "partOfSpeech": "noun",
+    "pronunciation": "/de.zɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le désert est important dans ce contexte.",
+    "exampleTranslation": "Desert is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "déserts",
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2141",
+    "rank": 2141,
+    "french": "verser",
+    "english": "to pour; pay",
+    "lemma": "verser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/vɛʁ.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Versez un peu d'eau dans le verre.",
+    "exampleTranslation": "Pour a little water into the glass.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "verse",
+      "tu": "verses",
+      "il_elle": "verse",
+      "nous": "versons",
+      "vous": "versez",
+      "ils_elles": "versent"
+    },
+    "relatedWords": [
+      {
+        "french": "versement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "déverser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "verser un verre d’eau",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2142",
+    "rank": 2142,
+    "french": "botte",
+    "english": "boot",
+    "lemma": "botte",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bɔt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La botte est important dans ce contexte.",
+    "exampleTranslation": "Boot is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "bottes",
+    "relatedWords": [
+      {
+        "french": "bottine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bottier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2143",
+    "rank": 2143,
+    "french": "cercle",
+    "english": "circle; group",
+    "lemma": "cercle",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛʁkl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le cercle est important dans ce contexte.",
+    "exampleTranslation": "Circle; group is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "cercles",
+    "relatedWords": [
+      {
+        "french": "circulaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "encercler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2144",
+    "rank": 2144,
+    "french": "bibliothèque",
+    "english": "library; bookcase",
+    "lemma": "bibliothèque",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bi.bli.jɔ.tɛk/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je révise à la bibliothèque après les cours.",
+    "exampleTranslation": "I study at the library after classes.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "bibliothèques",
+    "relatedWords": [
+      {
+        "french": "bibliothécaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "livre",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "bibliothèque municipale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2145",
+    "rank": 2145,
+    "french": "gloire",
+    "english": "glory; fame",
+    "lemma": "gloire",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡlwaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La gloire est important dans ce contexte.",
+    "exampleTranslation": "Glory; fame is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "gloires",
+    "relatedWords": [
+      {
+        "french": "glorieux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "glorifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2146",
+    "rank": 2146,
+    "french": "couche",
+    "english": "layer; bed; diaper",
+    "lemma": "couche",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kuʃ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La couche est important dans ce contexte.",
+    "exampleTranslation": "Layer; bed; diaper is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "couches",
+    "relatedWords": [
+      {
+        "french": "coucher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "couchette",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2147",
+    "rank": 2147,
+    "french": "étouffer",
+    "english": "to suffocate; stifle",
+    "lemma": "étouffer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.tu.fe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ouvre la fenêtre, j'étouffe ici.",
+    "exampleTranslation": "Open the window; I feel suffocated in here.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "étouffe",
+      "tu": "étouffes",
+      "il_elle": "étouffe",
+      "nous": "étouffons",
+      "vous": "étouffez",
+      "ils_elles": "étouffent"
+    },
+    "relatedWords": [
+      {
+        "french": "étouffement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étouffant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2148",
+    "rank": 2148,
+    "french": "esclave",
+    "english": "slave",
+    "lemma": "esclave",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛs.klav/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’esclave est important dans ce contexte.",
+    "exampleTranslation": "Slave is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "both",
+    "plural": "esclaves",
+    "genderForms": {
+      "masculine": "esclave",
+      "feminine": "esclave"
+    },
+    "relatedWords": [
+      {
+        "french": "esclavage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "asservir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2149",
+    "rank": 2149,
+    "french": "empoisonner",
+    "english": "to poison",
+    "lemma": "empoisonner",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.pwa.zɔ.ne/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il ne faut jamais empoisonner les animaux.",
+    "exampleTranslation": "You must never poison animals.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "empoisonne",
+      "tu": "empoisonnes",
+      "il_elle": "empoisonne",
+      "nous": "empoisonnons",
+      "vous": "empoisonnez",
+      "ils_elles": "empoisonnent"
+    },
+    "relatedWords": [
+      {
+        "french": "poison",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "empoisonnement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2150",
+    "rank": 2150,
+    "french": "renseignement",
+    "english": "information; enquiry",
+    "lemma": "renseignement",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁɑ̃.sɛɲ.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Pour tout renseignement, contactez l'accueil.",
+    "exampleTranslation": "For information, contact reception.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "renseignements",
+    "relatedWords": [
+      {
+        "french": "renseigner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "information",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "demander un renseignement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2151",
+    "rank": 2151,
+    "french": "joue",
+    "english": "cheek",
+    "lemma": "joue",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʒu/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La joue est important dans ce contexte.",
+    "exampleTranslation": "Cheek is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "joues",
+    "relatedWords": [
+      {
+        "french": "joufflu",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pommette",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2152",
+    "rank": 2152,
+    "french": "personnellement",
+    "english": "personally",
+    "lemma": "personnellement",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/pɛʁ.sɔ.nɛl.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il répond personnellement.",
+    "exampleTranslation": "He responds personally.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "personnel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "personne",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2153",
+    "rank": 2153,
+    "french": "signature",
+    "english": "signature",
+    "lemma": "signature",
+    "partOfSpeech": "noun",
+    "pronunciation": "/si.ɲa.tyʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La signature est important dans ce contexte.",
+    "exampleTranslation": "Signature is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "signatures",
+    "relatedWords": [
+      {
+        "french": "signer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "signataire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "signature électronique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2154",
+    "rank": 2154,
+    "french": "étonnant",
+    "english": "astonishing; surprising",
+    "lemma": "étonnant",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/e.tɔ.nɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est étonnant.",
+    "exampleTranslation": "This solution is astonishing; surprising.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "étonnant",
+      "feminine": "étonnante",
+      "masculinePlural": "étonnants",
+      "femininePlural": "étonnantes"
+    },
+    "relatedWords": [
+      {
+        "french": "étonner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étonnement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2155",
+    "rank": 2155,
+    "french": "emménager",
+    "english": "to move in",
+    "lemma": "emménager",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.me.na.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous allons emménager dans un nouvel appartement.",
+    "exampleTranslation": "We're going to move into a new apartment.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "emménage",
+      "tu": "emménages",
+      "il_elle": "emménage",
+      "nous": "emménageons",
+      "vous": "emménagez",
+      "ils_elles": "emménagent"
+    },
+    "relatedWords": [
+      {
+        "french": "emménagement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "déménager",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "emménager dans un appartement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2156",
+    "rank": 2156,
+    "french": "rang",
+    "english": "rank; row",
+    "lemma": "rang",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le rang est important dans ce contexte.",
+    "exampleTranslation": "Rank; row is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "rangs",
+    "relatedWords": [
+      {
+        "french": "ranger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rangement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2157",
+    "rank": 2157,
+    "french": "entièrement",
+    "english": "entirely; completely",
+    "lemma": "entièrement",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/ɑ̃.tjɛʁ.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il répond entièrement.",
+    "exampleTranslation": "He responds entirely; completely.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "entier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2158",
+    "rank": 2158,
+    "french": "promis",
+    "english": "promised (past participle)",
+    "lemma": "promis",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/pʁɔ.mi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il m'a promis de revenir demain.",
+    "exampleTranslation": "He promised me he would come back tomorrow.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "promis",
+    "relatedWords": [
+      {
+        "french": "promettre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "promesse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2159",
+    "rank": 2159,
+    "french": "rassurer",
+    "english": "to reassure",
+    "lemma": "rassurer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁa.sy.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons rassurer avec soin.",
+    "exampleTranslation": "We must to reassure carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "rassure",
+      "tu": "rassures",
+      "il_elle": "rassure",
+      "nous": "rassurons",
+      "vous": "rassurez",
+      "ils_elles": "rassurent"
+    },
+    "relatedWords": [
+      {
+        "french": "rassurant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rassurance",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "rassurer quelqu’un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2160",
+    "rank": 2160,
+    "french": "préoccuper",
+    "english": "to concern; worry",
+    "lemma": "préoccuper",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pʁe.ɔ.ky.pe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons préoccuper avec soin.",
+    "exampleTranslation": "We must to concern; worry carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "préoccupe",
+      "tu": "préoccupes",
+      "il_elle": "préoccupe",
+      "nous": "préoccupons",
+      "vous": "préoccupez",
+      "ils_elles": "préoccupent"
+    },
+    "relatedWords": [
+      {
+        "french": "préoccupation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "préoccupé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être préoccupé par",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2161",
+    "rank": 2161,
+    "french": "sauvage",
+    "english": "wild; savage",
+    "lemma": "sauvage",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/so.vaʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est sauvage.",
+    "exampleTranslation": "This solution is wild; savage.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "sauvage",
+      "feminine": "sauvage",
+      "masculinePlural": "sauvages",
+      "femininePlural": "sauvages"
+    },
+    "relatedWords": [
+      {
+        "french": "sauvagerie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sauvagement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2162",
+    "rank": 2162,
+    "french": "final",
+    "english": "final; last",
+    "lemma": "final",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fi.nal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est final.",
+    "exampleTranslation": "This solution is final; last.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "final",
+      "feminine": "finale",
+      "masculinePlural": "finals",
+      "femininePlural": "finales"
+    },
+    "relatedWords": [
+      {
+        "french": "finalement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "finalité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2163",
+    "rank": 2163,
+    "french": "neveu",
+    "english": "nephew",
+    "lemma": "neveu",
+    "partOfSpeech": "noun",
+    "pronunciation": "/nə.vø/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le neveu est important dans ce contexte.",
+    "exampleTranslation": "Nephew is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "neveus",
+    "relatedWords": [
+      {
+        "french": "nièce",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "neveux",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2164",
+    "rank": 2164,
+    "french": "apercevoir",
+    "english": "to notice; catch sight of",
+    "lemma": "apercevoir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.pɛʁ.sə.vwaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai aperçu la tour au loin.",
+    "exampleTranslation": "I caught sight of the tower in the distance.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "aperçois",
+      "tu": "aperçois",
+      "il_elle": "aperçoit",
+      "nous": "apercevons",
+      "vous": "apercevez",
+      "ils_elles": "aperçoivent"
+    },
+    "relatedWords": [
+      {
+        "french": "percevoir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "aperçu",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2165",
+    "rank": 2165,
+    "french": "allemand",
+    "english": "German",
+    "lemma": "allemand",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/al.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est allemand.",
+    "exampleTranslation": "This solution is German.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "allemand",
+      "feminine": "allemande",
+      "masculinePlural": "allemands",
+      "femininePlural": "allemandes"
+    },
+    "relatedWords": [
+      {
+        "french": "Allemagne",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "allemand(e)",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2166",
+    "rank": 2166,
+    "french": "quoique",
+    "english": "although; even though",
+    "lemma": "quoique",
+    "partOfSpeech": "conjunction",
+    "pronunciation": "/kwa.kə/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Quoique fatiguée, elle a continué à travailler.",
+    "exampleTranslation": "Although tired, she continued working.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2167",
+    "rank": 2167,
+    "french": "elle-même",
+    "english": "herself",
+    "lemma": "elle-même",
+    "partOfSpeech": "pronoun",
+    "pronunciation": "/ɛl.mɛm/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a préparé le repas elle-même.",
+    "exampleTranslation": "She prepared the meal herself.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "elle-même",
+      "feminine": "elle-même",
+      "masculinePlural": "elles-mêmes",
+      "femininePlural": "elles-mêmes"
+    },
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2168",
+    "rank": 2168,
+    "french": "tentative",
+    "english": "attempt",
+    "lemma": "tentative",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɑ̃.ta.tiv/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La tentative est important dans ce contexte.",
+    "exampleTranslation": "Attempt is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tentatives",
+    "relatedWords": [
+      {
+        "french": "tenter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2169",
+    "rank": 2169,
+    "french": "tribu",
+    "english": "tribe",
+    "lemma": "tribu",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʁi.by/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La tribu est important dans ce contexte.",
+    "exampleTranslation": "Tribe is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tribus",
+    "relatedWords": [
+      {
+        "french": "tribal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tribalisme",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2170",
+    "rank": 2170,
+    "french": "profil",
+    "english": "profile",
+    "lemma": "profil",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɔ.fil/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le profil est important dans ce contexte.",
+    "exampleTranslation": "Profile is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "profils",
+    "relatedWords": [
+      {
+        "french": "profiler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "profilé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2171",
+    "rank": 2171,
+    "french": "gare",
+    "english": "station; train station",
+    "lemma": "gare",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous nous retrouvons devant la gare.",
+    "exampleTranslation": "We'll meet in front of the station.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "gares",
+    "relatedWords": [
+      {
+        "french": "gare ferroviaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "garer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "gare ferroviaire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2172",
+    "rank": 2172,
+    "french": "familial",
+    "english": "family; familial",
+    "lemma": "familial",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fa.mi.ljal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est familial.",
+    "exampleTranslation": "This solution is family; familial.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "familial",
+      "feminine": "familiale",
+      "masculinePlural": "familiaux",
+      "femininePlural": "familiales"
+    },
+    "relatedWords": [
+      {
+        "french": "famille",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "familialement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2173",
+    "rank": 2173,
+    "french": "audience",
+    "english": "audience; hearing",
+    "lemma": "audience",
+    "partOfSpeech": "noun",
+    "pronunciation": "/o.djɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’audience est important dans ce contexte.",
+    "exampleTranslation": "Audience; hearing is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "audiences",
+    "relatedWords": [
+      {
+        "french": "auditeur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "audible",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2174",
+    "rank": 2174,
+    "french": "soulager",
+    "english": "to relieve; ease",
+    "lemma": "soulager",
+    "partOfSpeech": "verb",
+    "pronunciation": "/su.la.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce traitement peut soulager la douleur.",
+    "exampleTranslation": "This treatment can relieve the pain.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "soulage",
+      "tu": "soulages",
+      "il_elle": "soulage",
+      "nous": "soulageons",
+      "vous": "soulagez",
+      "ils_elles": "soulagent"
+    },
+    "relatedWords": [
+      {
+        "french": "soulagement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soulageant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "soulager la douleur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2175",
+    "rank": 2175,
+    "french": "invitation",
+    "english": "invitation",
+    "lemma": "invitation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛ̃.vi.ta.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’invitation est important dans ce contexte.",
+    "exampleTranslation": "Invitation is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "invitations",
+    "relatedWords": [
+      {
+        "french": "inviter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "invité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "envoyer une invitation",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2176",
+    "rank": 2176,
+    "french": "barrer",
+    "english": "to cross out; block",
+    "lemma": "barrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ba.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons barrer avec soin.",
+    "exampleTranslation": "We must to cross out; block carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "barre",
+      "tu": "barres",
+      "il_elle": "barre",
+      "nous": "barrons",
+      "vous": "barrez",
+      "ils_elles": "barrent"
+    },
+    "relatedWords": [
+      {
+        "french": "barre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "barré",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2177",
+    "rank": 2177,
+    "french": "raisonnable",
+    "english": "reasonable; sensible",
+    "lemma": "raisonnable",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʁɛ.zɔ.na.bl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est raisonnable.",
+    "exampleTranslation": "This solution is reasonable; sensible.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "raisonnable",
+      "feminine": "raisonnable",
+      "masculinePlural": "raisonnables",
+      "femininePlural": "raisonnables"
+    },
+    "relatedWords": [
+      {
+        "french": "raison",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "raisonnablement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "prix raisonnable",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2178",
+    "rank": 2178,
+    "french": "cassé",
+    "english": "broken",
+    "lemma": "cassé",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ka.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est cassé.",
+    "exampleTranslation": "This solution is broken.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "cassé",
+      "feminine": "cassée",
+      "masculinePlural": "cassés",
+      "femininePlural": "cassées"
+    },
+    "relatedWords": [
+      {
+        "french": "casser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "cassure",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2179",
+    "rank": 2179,
+    "french": "culture",
+    "english": "culture; cultivation",
+    "lemma": "culture",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kyl.tyʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La culture est important dans ce contexte.",
+    "exampleTranslation": "Culture; cultivation is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "cultures",
+    "relatedWords": [
+      {
+        "french": "cultiver",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "culturel",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2180",
+    "rank": 2180,
+    "french": "continue",
+    "english": "continuous; ongoing",
+    "lemma": "continu",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/kɔ̃.ti.ny/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est continue.",
+    "exampleTranslation": "This solution is continuous; ongoing.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "continue",
+      "feminine": "continue",
+      "masculinePlural": "continus",
+      "femininePlural": "continues"
+    },
+    "relatedWords": [
+      {
+        "french": "continuer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "continuité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2181",
+    "rank": 2181,
+    "french": "concevoir",
+    "english": "to conceive; design",
+    "lemma": "concevoir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ̃.sə.vwaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils veulent concevoir une nouvelle application.",
+    "exampleTranslation": "They want to design a new app.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "conçois",
+      "tu": "conçois",
+      "il_elle": "conçoit",
+      "nous": "concevons",
+      "vous": "concevez",
+      "ils_elles": "conçoivent"
+    },
+    "relatedWords": [
+      {
+        "french": "conception",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "concepteur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2182",
+    "rank": 2182,
+    "french": "digne",
+    "english": "worthy; dignified",
+    "lemma": "digne",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/diɲ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est digne.",
+    "exampleTranslation": "This solution is worthy; dignified.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "digne",
+      "feminine": "digne",
+      "masculinePlural": "dignes",
+      "femininePlural": "dignes"
+    },
+    "relatedWords": [
+      {
+        "french": "dignité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dignement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2183",
+    "rank": 2183,
+    "french": "matière",
+    "english": "matter; subject; material",
+    "lemma": "matière",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ma.tjɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La matière est important dans ce contexte.",
+    "exampleTranslation": "Matter; subject; material is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "matières",
+    "relatedWords": [
+      {
+        "french": "matériel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "matériellement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "matière première",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2184",
+    "rank": 2184,
+    "french": "courrier",
+    "english": "mail; post; correspondence",
+    "lemma": "courrier",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ku.ʁje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le courrier est important dans ce contexte.",
+    "exampleTranslation": "Mail; post; correspondence is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "courriers",
+    "relatedWords": [
+      {
+        "french": "courir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "courriel",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "courrier électronique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2185",
+    "rank": 2185,
+    "french": "sacrifice",
+    "english": "sacrifice",
+    "lemma": "sacrifice",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sa.kʁi.fis/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le sacrifice est important dans ce contexte.",
+    "exampleTranslation": "Sacrifice is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "sacrifices",
+    "relatedWords": [
+      {
+        "french": "sacrifier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sacrifié",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2186",
+    "rank": 2186,
+    "french": "pêche",
+    "english": "fishing; peach",
+    "lemma": "pêche",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɛʃ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La pêche est interdite dans cette zone.",
+    "exampleTranslation": "Fishing is prohibited in this area.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "pêches",
+    "relatedWords": [
+      {
+        "french": "pêcher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pêcheur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "aller à la pêche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2187",
+    "rank": 2187,
+    "french": "prononcer",
+    "english": "to pronounce; utter",
+    "lemma": "prononcer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pʁɔ.nɔ̃.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Pouvez-vous prononcer ce mot lentement ?",
+    "exampleTranslation": "Can you pronounce this word slowly?",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "prononce",
+      "tu": "prononces",
+      "il_elle": "prononce",
+      "nous": "prononçons",
+      "vous": "prononcez",
+      "ils_elles": "prononcent"
+    },
+    "relatedWords": [
+      {
+        "french": "prononciation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "prononcé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "prononcer un discours",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2188",
+    "rank": 2188,
+    "french": "reçu",
+    "english": "receipt; received",
+    "lemma": "reçu",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁə.sy/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'ai bien reçu votre message.",
+    "exampleTranslation": "I received your message.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "genderForms": {
+      "masculine": "reçu",
+      "feminine": "reçue",
+      "masculinePlural": "reçus",
+      "femininePlural": "reçues"
+    },
+    "relatedWords": [
+      {
+        "french": "recevoir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réception",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2189",
+    "rank": 2189,
+    "french": "annonce",
+    "english": "announcement; advertisement",
+    "lemma": "annonce",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.nɔ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’annonce est important dans ce contexte.",
+    "exampleTranslation": "Announcement; advertisement is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "annonces",
+    "relatedWords": [
+      {
+        "french": "annoncer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "annonceur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "passer une annonce",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2190",
+    "rank": 2190,
+    "french": "relier",
+    "english": "to connect; bind",
+    "lemma": "relier",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.lje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons relier avec soin.",
+    "exampleTranslation": "We must to connect; bind carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "relie",
+      "tu": "relies",
+      "il_elle": "relie",
+      "nous": "relions",
+      "vous": "reliez",
+      "ils_elles": "relient"
+    },
+    "relatedWords": [
+      {
+        "french": "lien",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "liaison",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2191",
+    "rank": 2191,
+    "french": "raser",
+    "english": "to shave; raze",
+    "lemma": "raser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁa.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il se rase avant de partir au travail.",
+    "exampleTranslation": "He shaves before leaving for work.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "rase",
+      "tu": "rases",
+      "il_elle": "rase",
+      "nous": "rasons",
+      "vous": "rasez",
+      "ils_elles": "rasent"
+    },
+    "relatedWords": [
+      {
+        "french": "rasage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rasoir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se raser la barbe",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2192",
+    "rank": 2192,
+    "french": "bagarre",
+    "english": "fight; brawl",
+    "lemma": "bagarre",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ba.ɡaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La bagarre est important dans ce contexte.",
+    "exampleTranslation": "Fight; brawl is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "bagarres",
+    "relatedWords": [
+      {
+        "french": "se bagarrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bagarreur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2193",
+    "rank": 2193,
+    "french": "assis",
+    "english": "seated; sitting",
+    "lemma": "assis",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/a.si/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est assis près de la fenêtre.",
+    "exampleTranslation": "He is sitting near the window.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "assis",
+      "feminine": "assise",
+      "masculinePlural": "assis",
+      "femininePlural": "assises"
+    },
+    "relatedWords": [
+      {
+        "french": "asseoir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "assise",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2194",
+    "rank": 2194,
+    "french": "soif",
+    "english": "thirst",
+    "lemma": "soif",
+    "partOfSpeech": "noun",
+    "pronunciation": "/swaf/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Après la marche, j'ai très soif.",
+    "exampleTranslation": "After the walk, I'm very thirsty.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "soifs",
+    "relatedWords": [
+      {
+        "french": "assoiffé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "désaltérer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2195",
+    "rank": 2195,
+    "french": "objection",
+    "english": "objection",
+    "lemma": "objection",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɔb.ʒɛk.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’objection est important dans ce contexte.",
+    "exampleTranslation": "Objection is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "objections",
+    "relatedWords": [
+      {
+        "french": "objecter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "objectif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2196",
+    "rank": 2196,
+    "french": "généreux",
+    "english": "generous",
+    "lemma": "généreux",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʒe.ne.ʁø/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est généreux.",
+    "exampleTranslation": "This solution is generous.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "généreux",
+      "feminine": "généreuse",
+      "masculinePlural": "généreux",
+      "femininePlural": "généreuses"
+    },
+    "relatedWords": [
+      {
+        "french": "générosité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "généreusement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2197",
+    "rank": 2197,
+    "french": "briller",
+    "english": "to shine; sparkle",
+    "lemma": "briller",
+    "partOfSpeech": "verb",
+    "pronunciation": "/bʁi.je/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les étoiles brillent dans le ciel.",
+    "exampleTranslation": "The stars shine in the sky.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "brille",
+      "tu": "brilles",
+      "il_elle": "brille",
+      "nous": "brillons",
+      "vous": "brillez",
+      "ils_elles": "brillent"
+    },
+    "relatedWords": [
+      {
+        "french": "brillant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "brillance",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "briller par son absence",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2198",
+    "rank": 2198,
+    "french": "chirurgie",
+    "english": "surgery",
+    "lemma": "chirurgie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃi.ʁyʁ.ʒi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La chirurgie est important dans ce contexte.",
+    "exampleTranslation": "Surgery is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "chirurgies",
+    "relatedWords": [
+      {
+        "french": "chirurgical",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chirurgien",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2199",
+    "rank": 2199,
+    "french": "man",
+    "english": "man; guy (informal/English borrowing)",
+    "lemma": "man",
+    "partOfSpeech": "noun",
+    "pronunciation": "/man/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le mot « man » apparaît dans ce titre anglais.",
+    "exampleTranslation": "The word “man” appears in this English title.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "mans",
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2200",
+    "rank": 2200,
+    "french": "nuage",
+    "english": "cloud",
+    "lemma": "nuage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/nɥaʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le nuage est important dans ce contexte.",
+    "exampleTranslation": "Cloud is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "nuages",
+    "relatedWords": [
+      {
+        "french": "nuageux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "nuageuse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2201",
+    "rank": 2201,
+    "french": "lentement",
+    "english": "slowly",
+    "lemma": "lentement",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/lɑ̃t.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il répond lentement.",
+    "exampleTranslation": "He responds slowly.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "lent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "lenteur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2202",
+    "rank": 2202,
+    "french": "existence",
+    "english": "existence",
+    "lemma": "existence",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛɡ.zis.tɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’existence est important dans ce contexte.",
+    "exampleTranslation": "Existence is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "existences",
+    "relatedWords": [
+      {
+        "french": "exister",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "existentiel",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2203",
+    "rank": 2203,
+    "french": "souffle",
+    "english": "breath; puff",
+    "lemma": "souffle",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sufl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le souffle est important dans ce contexte.",
+    "exampleTranslation": "Breath; puff is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "souffles",
+    "relatedWords": [
+      {
+        "french": "souffler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "essoufflé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2204",
+    "rank": 2204,
+    "french": "solide",
+    "english": "solid; sturdy",
+    "lemma": "solide",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/sɔ.lid/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est solide.",
+    "exampleTranslation": "This solution is solid; sturdy.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "solide",
+      "feminine": "solide",
+      "masculinePlural": "solides",
+      "femininePlural": "solides"
+    },
+    "relatedWords": [
+      {
+        "french": "solidité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "solidement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2205",
+    "rank": 2205,
+    "french": "populaire",
+    "english": "popular",
+    "lemma": "populaire",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/pɔ.py.lɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est populaire.",
+    "exampleTranslation": "This solution is popular.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "populaire",
+      "feminine": "populaire",
+      "masculinePlural": "populaires",
+      "femininePlural": "populaires"
+    },
+    "relatedWords": [
+      {
+        "french": "popularité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "populariser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2206",
+    "rank": 2206,
+    "french": "angle",
+    "english": "angle; corner",
+    "lemma": "angle",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɑ̃ɡl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’angle est important dans ce contexte.",
+    "exampleTranslation": "Angle; corner is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "angles",
+    "relatedWords": [
+      {
+        "french": "angulaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "angler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2207",
+    "rank": 2207,
+    "french": "coïncidence",
+    "english": "coincidence",
+    "lemma": "coïncidence",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.ĩ.si.dɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Quelle coïncidence de se rencontrer ici !",
+    "exampleTranslation": "What a coincidence to meet here!",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "coïncidences",
+    "relatedWords": [
+      {
+        "french": "coïncider",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "coïncident",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2208",
+    "rank": 2208,
+    "french": "cogner",
+    "english": "to hit; knock",
+    "lemma": "cogner",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ.ɲe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons cogner avec soin.",
+    "exampleTranslation": "We must to hit; knock carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "cogne",
+      "tu": "cognes",
+      "il_elle": "cogne",
+      "nous": "cognons",
+      "vous": "cognez",
+      "ils_elles": "cognent"
+    },
+    "relatedWords": [
+      {
+        "french": "coup",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "cognement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2209",
+    "rank": 2209,
+    "french": "nerf",
+    "english": "nerve",
+    "lemma": "nerf",
+    "partOfSpeech": "noun",
+    "pronunciation": "/nɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le nerf est important dans ce contexte.",
+    "exampleTranslation": "Nerve is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "nerfs",
+    "relatedWords": [
+      {
+        "french": "nerveux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "nerveusement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2210",
+    "rank": 2210,
+    "french": "disparition",
+    "english": "disappearance",
+    "lemma": "disparition",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dis.pa.ʁi.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La disparition est important dans ce contexte.",
+    "exampleTranslation": "Disappearance is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "disparitions",
+    "relatedWords": [
+      {
+        "french": "disparaître",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "disparu",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2211",
+    "rank": 2211,
+    "french": "monnaie",
+    "english": "change; currency",
+    "lemma": "monnaie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mɔ.nɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Avez-vous de la monnaie pour le bus ?",
+    "exampleTranslation": "Do you have change for the bus?",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "monnaies",
+    "relatedWords": [
+      {
+        "french": "monétaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monnayeur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "rendre la monnaie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2212",
+    "rank": 2212,
+    "french": "adopter",
+    "english": "to adopt",
+    "lemma": "adopter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.dɔp.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons adopter avec soin.",
+    "exampleTranslation": "We must to adopt carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "adopte",
+      "tu": "adoptes",
+      "il_elle": "adopte",
+      "nous": "adoptons",
+      "vous": "adoptez",
+      "ils_elles": "adoptent"
+    },
+    "relatedWords": [
+      {
+        "french": "adoption",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "adoptif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2213",
+    "rank": 2213,
+    "french": "territoire",
+    "english": "territory",
+    "lemma": "territoire",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɛ.ʁi.twaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le territoire est important dans ce contexte.",
+    "exampleTranslation": "Territory is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "territoires",
+    "relatedWords": [
+      {
+        "french": "territorial",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "territorialité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sur le territoire national",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2214",
+    "rank": 2214,
+    "french": "sucer",
+    "english": "to suck",
+    "lemma": "sucer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/sy.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons sucer avec soin.",
+    "exampleTranslation": "We must to suck carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "suce",
+      "tu": "suces",
+      "il_elle": "suce",
+      "nous": "suçons",
+      "vous": "sucez",
+      "ils_elles": "sucent"
+    },
+    "relatedWords": [
+      {
+        "french": "succion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "suceur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2215",
+    "rank": 2215,
+    "french": "dispute",
+    "english": "argument; quarrel",
+    "lemma": "dispute",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dis.pyt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La dispute est important dans ce contexte.",
+    "exampleTranslation": "Argument; quarrel is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "disputes",
+    "relatedWords": [
+      {
+        "french": "disputer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir une dispute",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2216",
+    "rank": 2216,
+    "french": "poison",
+    "english": "poison",
+    "lemma": "poison",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pwa.zɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le poison est important dans ce contexte.",
+    "exampleTranslation": "Poison is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "poisons",
+    "relatedWords": [
+      {
+        "french": "empoisonner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "toxique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "poison mortel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2217",
+    "rank": 2217,
+    "french": "liquide",
+    "english": "liquid; fluid",
+    "lemma": "liquide",
+    "partOfSpeech": "noun",
+    "pronunciation": "/li.kid/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le liquide est important dans ce contexte.",
+    "exampleTranslation": "Liquid; fluid is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "liquides",
+    "relatedWords": [
+      {
+        "french": "liquidité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "liquéfier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2218",
+    "rank": 2218,
+    "french": "sauter",
+    "english": "to jump; to leap; to skip",
+    "lemma": "sauter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/so.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le chat saute sur la table",
+    "exampleTranslation": "The cat jumps onto the table.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "saute",
+      "tu": "sautes",
+      "il_elle": "saute",
+      "nous": "sautons",
+      "vous": "sautez",
+      "ils_elles": "sautent"
+    },
+    "relatedWords": [
+      {
+        "french": "saut",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sauteur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sursauter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sauter de joie",
+        "english": ""
+      },
+      {
+        "french": "sauter aux yeux",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2219",
+    "rank": 2219,
+    "french": "sénateur",
+    "english": "senator",
+    "lemma": "sénateur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/se.na.tœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le sénateur est important dans ce contexte.",
+    "exampleTranslation": "Senator is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "sénateurs",
+    "relatedWords": [
+      {
+        "french": "sénat",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sénatorial",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2220",
+    "rank": 2220,
+    "french": "diplôme",
+    "english": "diploma; degree",
+    "lemma": "diplôme",
+    "partOfSpeech": "noun",
+    "pronunciation": "/di.plom/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le diplôme est important dans ce contexte.",
+    "exampleTranslation": "Diploma; degree is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "diplômes",
+    "relatedWords": [
+      {
+        "french": "diplomation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "obtenir un diplôme",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2221",
+    "rank": 2221,
+    "french": "auteur",
+    "english": "author",
+    "lemma": "auteur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/o.tœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’auteur est important dans ce contexte.",
+    "exampleTranslation": "Author is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "auteurs",
+    "relatedWords": [
+      {
+        "french": "autrice",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "autorité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2222",
+    "rank": 2222,
+    "french": "sable",
+    "english": "sand",
+    "lemma": "sable",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sabl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le sable est important dans ce contexte.",
+    "exampleTranslation": "Sand is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "sables",
+    "relatedWords": [
+      {
+        "french": "sablonneux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sabler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "château de sable",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2223",
+    "rank": 2223,
+    "french": "venu",
+    "english": "come; arrived (past participle of venir)",
+    "lemma": "venu",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/və.ny/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est venu nous voir dimanche.",
+    "exampleTranslation": "He came to see us on Sunday.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "venu",
+      "feminine": "venue",
+      "masculinePlural": "venus",
+      "femininePlural": "venues"
+    },
+    "relatedWords": [
+      {
+        "french": "venir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "venue",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "flag": "Source tags this as ADJ; likely past participle/adjective from venir. Verify intended lemma/POS.",
+    "notes": "Source tags this as ADJ; likely past participle/adjective from venir. Verify intended lemma/POS."
+  },
+  {
+    "id": "v-2224",
+    "rank": 2224,
+    "french": "idéal",
+    "english": "ideal",
+    "lemma": "idéal",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/i.de.al/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette solution est idéal.",
+    "exampleTranslation": "This solution is ideal.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "idéal",
+      "feminine": "idéale",
+      "masculinePlural": "idéaux",
+      "femininePlural": "idéales"
+    },
+    "relatedWords": [
+      {
+        "french": "idéalement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "idéaliser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2225",
+    "rank": 2225,
+    "french": "témoignage",
+    "english": "testimony; account",
+    "lemma": "témoignage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/te.mwa.ɲaʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le témoignage est important dans ce contexte.",
+    "exampleTranslation": "Testimony; account is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "témoignages",
+    "relatedWords": [
+      {
+        "french": "témoigner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "témoin",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2226",
+    "rank": 2226,
+    "french": "objectif",
+    "english": "objective; goal; lens",
+    "lemma": "objectif",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɔb.ʒɛk.tif/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’objectif est important dans ce contexte.",
+    "exampleTranslation": "Objective; goal; lens is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "objectifs",
+    "relatedWords": [
+      {
+        "french": "objectivement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "objectivité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "atteindre un objectif",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2227",
+    "rank": 2227,
+    "french": "musée",
+    "english": "museum",
+    "lemma": "musée",
+    "partOfSpeech": "noun",
+    "pronunciation": "/my.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le musée est important dans ce contexte.",
+    "exampleTranslation": "Museum is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "musées",
+    "relatedWords": [
+      {
+        "french": "muséal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "muséographie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "musée d’art",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2228",
+    "rank": 2228,
+    "french": "davantage",
+    "english": "more; further",
+    "lemma": "davantage",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/da.vɑ̃.taʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il faut davantage de temps pour terminer.",
+    "exampleTranslation": "More time is needed to finish.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "plus",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "davantage de temps",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2229",
+    "rank": 2229,
+    "french": "traquer",
+    "english": "to track down; hunt",
+    "lemma": "traquer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/tʁa.ke/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons traquer avec soin.",
+    "exampleTranslation": "We must to track down; hunt carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "traque",
+      "tu": "traques",
+      "il_elle": "traque",
+      "nous": "traquons",
+      "vous": "traquez",
+      "ils_elles": "traquent"
+    },
+    "relatedWords": [
+      {
+        "french": "traque",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "traqueur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2230",
+    "rank": 2230,
+    "french": "parfum",
+    "english": "perfume; scent",
+    "lemma": "parfum",
+    "partOfSpeech": "noun",
+    "pronunciation": "/paʁ.fœ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le parfum est important dans ce contexte.",
+    "exampleTranslation": "Perfume; scent is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "parfums",
+    "relatedWords": [
+      {
+        "french": "parfumer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "parfumé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "porter un parfum",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2231",
+    "rank": 2231,
+    "french": "kidnapper",
+    "english": "to kidnap",
+    "lemma": "kidnapper",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kid.na.pe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons kidnapper avec soin.",
+    "exampleTranslation": "We must to kidnap carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "kidnappe",
+      "tu": "kidnappes",
+      "il_elle": "kidnappe",
+      "nous": "kidnappons",
+      "vous": "kidnappez",
+      "ils_elles": "kidnappent"
+    },
+    "relatedWords": [
+      {
+        "french": "enlèvement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ravisseur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2232",
+    "rank": 2232,
+    "french": "instinct",
+    "english": "instinct",
+    "lemma": "instinct",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛ̃s.tɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’instinct est important dans ce contexte.",
+    "exampleTranslation": "Instinct is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "instincts",
+    "relatedWords": [
+      {
+        "french": "instinctif",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "instinctivement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2233",
+    "rank": 2233,
+    "french": "souffler",
+    "english": "to blow; whisper; catch one's breath",
+    "lemma": "souffler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/su.fle/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons souffler avec soin.",
+    "exampleTranslation": "We must to blow; whisper; catch one's breath carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "souffle",
+      "tu": "souffles",
+      "il_elle": "souffle",
+      "nous": "soufflons",
+      "vous": "soufflez",
+      "ils_elles": "soufflent"
+    },
+    "relatedWords": [
+      {
+        "french": "souffle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soufflerie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "souffler un mot",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2234",
+    "rank": 2234,
+    "french": "soulever",
+    "english": "to lift; raise",
+    "lemma": "soulever",
+    "partOfSpeech": "verb",
+    "pronunciation": "/su.lə.ve/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons soulever avec soin.",
+    "exampleTranslation": "We must to lift; raise carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "soulève",
+      "tu": "soulèves",
+      "il_elle": "soulève",
+      "nous": "soulevons",
+      "vous": "soulevez",
+      "ils_elles": "soulèvent"
+    },
+    "relatedWords": [
+      {
+        "french": "soulèvement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soulevé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "soulever une question",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2235",
+    "rank": 2235,
+    "french": "scénario",
+    "english": "scenario; screenplay",
+    "lemma": "scénario",
+    "partOfSpeech": "noun",
+    "pronunciation": "/se.na.ʁjo/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le scénario est important dans ce contexte.",
+    "exampleTranslation": "Scenario; screenplay is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "scénarios",
+    "relatedWords": [
+      {
+        "french": "scénariste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "scénaristique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "scénario possible",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2236",
+    "rank": 2236,
+    "french": "élection",
+    "english": "election",
+    "lemma": "élection",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.lɛk.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’élection est important dans ce contexte.",
+    "exampleTranslation": "Election is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "élections",
+    "relatedWords": [
+      {
+        "french": "élire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "électoral",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "campagne électorale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2237",
+    "rank": 2237,
+    "french": "phrase",
+    "english": "sentence; phrase",
+    "lemma": "phrase",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fʁaz/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La phrase est important dans ce contexte.",
+    "exampleTranslation": "Sentence; phrase is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "phrases",
+    "relatedWords": [
+      {
+        "french": "phraser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire une phrase",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2238",
+    "rank": 2238,
+    "french": "sécuriser",
+    "english": "to secure; make safe",
+    "lemma": "sécuriser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/se.ky.ʁi.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons sécuriser avec soin.",
+    "exampleTranslation": "We must to secure; make safe carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "sécurise",
+      "tu": "sécurises",
+      "il_elle": "sécurise",
+      "nous": "sécurisons",
+      "vous": "sécurisez",
+      "ils_elles": "sécurisent"
+    },
+    "relatedWords": [
+      {
+        "french": "sécurité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sécurisation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sécuriser un accès",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2239",
+    "rank": 2239,
+    "french": "sauce",
+    "english": "sauce",
+    "lemma": "sauce",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sos/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La sauce est important dans ce contexte.",
+    "exampleTranslation": "Sauce is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "sauces",
+    "relatedWords": [
+      {
+        "french": "saucier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "saucer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2240",
+    "rank": 2240,
+    "french": "poussière",
+    "english": "dust",
+    "lemma": "poussière",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pu.sjɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La poussière est important dans ce contexte.",
+    "exampleTranslation": "Dust is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "poussières",
+    "relatedWords": [
+      {
+        "french": "poussiéreux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dépoussiérer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "couche de poussière",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2241",
+    "rank": 2241,
+    "french": "encourager",
+    "english": "to encourage",
+    "lemma": "encourager",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.ku.ʁa.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons encourager avec soin.",
+    "exampleTranslation": "We must to encourage carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "encourage",
+      "tu": "encourages",
+      "il_elle": "encourage",
+      "nous": "encourageons",
+      "vous": "encouragez",
+      "ils_elles": "encouragent"
+    },
+    "relatedWords": [
+      {
+        "french": "encouragement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "encourageant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "encourager les efforts",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2242",
+    "rank": 2242,
+    "french": "insulter",
+    "english": "to insult",
+    "lemma": "insulter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛ̃.syl.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons insulter avec soin.",
+    "exampleTranslation": "We must to insult carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "insulte",
+      "tu": "insultes",
+      "il_elle": "insulte",
+      "nous": "insultons",
+      "vous": "insultez",
+      "ils_elles": "insultent"
+    },
+    "relatedWords": [
+      {
+        "french": "insulte",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "insultant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "insulter quelqu’un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2243",
+    "rank": 2243,
+    "french": "empire",
+    "english": "empire",
+    "lemma": "empire",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɑ̃.piʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’empire est important dans ce contexte.",
+    "exampleTranslation": "Empire is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "empires",
+    "relatedWords": [
+      {
+        "french": "impérial",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "impératrice",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2244",
+    "rank": 2244,
+    "french": "localiser",
+    "english": "to locate",
+    "lemma": "localiser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/lɔ.ka.li.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons localiser avec soin.",
+    "exampleTranslation": "We must to locate carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "localise",
+      "tu": "localises",
+      "il_elle": "localise",
+      "nous": "localisons",
+      "vous": "localisez",
+      "ils_elles": "localisent"
+    },
+    "relatedWords": [
+      {
+        "french": "localisation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "local",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "localiser un appareil",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2245",
+    "rank": 2245,
+    "french": "roue",
+    "english": "wheel",
+    "lemma": "roue",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁu/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La roue est important dans ce contexte.",
+    "exampleTranslation": "Wheel is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "roues",
+    "relatedWords": [
+      {
+        "french": "rouler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "roulette",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2246",
+    "rank": 2246,
+    "french": "c'est-à-dire",
+    "english": "that is to say; namely",
+    "lemma": "c'est-à-dire",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/sɛ.ta.diʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il habite à Lyon, c'est-à-dire dans le sud-est de la France.",
+    "exampleTranslation": "He lives in Lyon, that is, in south-eastern France.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "à vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2247",
+    "rank": 2247,
+    "french": "secouer",
+    "english": "to shake",
+    "lemma": "secouer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/sə.ku.e/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons secouer avec soin.",
+    "exampleTranslation": "We must to shake carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "secoue",
+      "tu": "secoues",
+      "il_elle": "secoue",
+      "nous": "secouons",
+      "vous": "secouez",
+      "ils_elles": "secouent"
+    },
+    "relatedWords": [
+      {
+        "french": "secousse",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "secouement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "secouer la tête",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2248",
+    "rank": 2248,
+    "french": "miel",
+    "english": "honey",
+    "lemma": "miel",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mjɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le miel est important dans ce contexte.",
+    "exampleTranslation": "Honey is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "miels",
+    "relatedWords": [
+      {
+        "french": "mielleux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "miellé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "miel naturel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2249",
+    "rank": 2249,
+    "french": "autorisation",
+    "english": "authorization; permission",
+    "lemma": "autorisation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/o.to.ʁi.za.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’autorisation est important dans ce contexte.",
+    "exampleTranslation": "Authorization; permission is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "autorisations",
+    "relatedWords": [
+      {
+        "french": "autoriser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "autorisé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "demander une autorisation",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2250",
+    "rank": 2250,
+    "french": "fumée",
+    "english": "smoke",
+    "lemma": "fumée",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fy.me/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La fumée est important dans ce contexte.",
+    "exampleTranslation": "Smoke is important in this context.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "fumées",
+    "relatedWords": [
+      {
+        "french": "fumer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enfumé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "fumée noire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2251",
+    "rank": 2251,
+    "french": "auparavant",
+    "english": "previously; beforehand",
+    "lemma": "auparavant",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/a.pa.ʁa.vɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il avait auparavant travaillé à Lyon.",
+    "exampleTranslation": "He had previously worked in Lyon.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "avant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "jadis",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "précédemment",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "auparavant, je pensais que",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2252",
+    "rank": 2252,
+    "french": "royal",
+    "english": "royal; royal",
+    "lemma": "royal",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʁwa.jal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le palais royal se trouve au centre de la ville.",
+    "exampleTranslation": "The royal palace is in the city centre.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "royal",
+      "feminine": "royale",
+      "masculinePlural": "royaux",
+      "femininePlural": "royales"
+    },
+    "relatedWords": [
+      {
+        "french": "roi",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "royaume",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "royauté",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "famille royale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2253",
+    "rank": 2253,
+    "french": "attitude",
+    "english": "attitude",
+    "lemma": "attitude",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.ti.tyd/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Son attitude a changé après la discussion.",
+    "exampleTranslation": "Her attitude changed after the discussion.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "attitudes",
+    "relatedWords": [
+      {
+        "french": "comportement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "posture",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réaction",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "changer d’attitude",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2254",
+    "rank": 2254,
+    "french": "disponible",
+    "english": "available",
+    "lemma": "disponible",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/dis.pɔ.nibl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le médecin est disponible cet après-midi.",
+    "exampleTranslation": "The doctor is available this afternoon.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "disponible",
+      "feminine": "disponible",
+      "masculinePlural": "disponibles",
+      "femininePlural": "disponibles"
+    },
+    "relatedWords": [
+      {
+        "french": "libre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accessible",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "disponibilité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être disponible",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2255",
+    "rank": 2255,
+    "french": "télévision",
+    "english": "television",
+    "lemma": "télévision",
+    "partOfSpeech": "noun",
+    "pronunciation": "/te.le.vi.zjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous regardons les informations à la télévision.",
+    "exampleTranslation": "We watch the news on television.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "télévisions",
+    "relatedWords": [
+      {
+        "french": "télé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "écran",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "émission",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "regarder la télévision",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2256",
+    "rank": 2256,
+    "french": "dessous",
+    "english": "underside; below",
+    "lemma": "dessous",
+    "partOfSpeech": "noun",
+    "pronunciation": "/də.su/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le chat se cache juste en dessous.",
+    "exampleTranslation": "The cat is hiding just underneath.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "dessous",
+    "relatedWords": [
+      {
+        "french": "sous",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "envers",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "en dessous de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2257",
+    "rank": 2257,
+    "french": "brave",
+    "english": "brave",
+    "lemma": "brave",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/bʁav/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a été très brave pendant l’épreuve.",
+    "exampleTranslation": "She was very brave during the ordeal.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "brave",
+      "feminine": "brave",
+      "masculinePlural": "braves",
+      "femininePlural": "braves"
+    },
+    "relatedWords": [
+      {
+        "french": "courageux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "courage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bravoure",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être brave",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2258",
+    "rank": 2258,
+    "french": "salade",
+    "english": "salad",
+    "lemma": "salade",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sa.lad/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je prépare une salade pour le déjeuner.",
+    "exampleTranslation": "I am making a salad for lunch.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "salades",
+    "relatedWords": [
+      {
+        "french": "laitue",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "crudités",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vinaigrette",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "salade verte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2259",
+    "rank": 2259,
+    "french": "incapable",
+    "english": "unable; incapable",
+    "lemma": "incapable",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɛ̃.ka.pabl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est incapable de mentir à ses amis.",
+    "exampleTranslation": "He is incapable of lying to his friends.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "incapable",
+      "feminine": "incapable",
+      "masculinePlural": "incapables",
+      "femininePlural": "incapables"
+    },
+    "relatedWords": [
+      {
+        "french": "incapacité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "inapte",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pouvoir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être incapable de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2260",
+    "rank": 2260,
+    "french": "agression",
+    "english": "aggression",
+    "lemma": "agression",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.ɡʁe.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La police enquête sur cette agression.",
+    "exampleTranslation": "The police are investigating this assault.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "agressions",
+    "relatedWords": [
+      {
+        "french": "agresser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "violence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "attaque",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "agression physique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2261",
+    "rank": 2261,
+    "french": "tatouage",
+    "english": "tattoo",
+    "lemma": "tatouage",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ta.twaʒ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il s’est fait faire un tatouage au bras.",
+    "exampleTranslation": "He got a tattoo on his arm.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tatouages",
+    "relatedWords": [
+      {
+        "french": "tatouer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tatoueur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "encre",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se faire tatouer",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2262",
+    "rank": 2262,
+    "french": "kilo",
+    "english": "kilo; kilogram",
+    "lemma": "kilo",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ki.lo/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il me faut un kilo de pommes.",
+    "exampleTranslation": "I need a kilo of apples.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "kilos",
+    "relatedWords": [
+      {
+        "french": "kilogramme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "poids",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "gramme",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un kilo de pommes",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2263",
+    "rank": 2263,
+    "french": "parvenir",
+    "english": "to reach; manage to",
+    "lemma": "parvenir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/paʁ.və.niʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle est parvenue à terminer le projet à temps.",
+    "exampleTranslation": "She managed to finish the project on time.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "parviens",
+      "tu": "parviens",
+      "il_elle": "parvient",
+      "nous": "parvenons",
+      "vous": "parvenez",
+      "ils_elles": "parviennent"
+    },
+    "relatedWords": [
+      {
+        "french": "atteindre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réussir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "arriver",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "parvenir à faire quelque chose",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2264",
+    "rank": 2264,
+    "french": "canon",
+    "english": "cannon; canon",
+    "lemma": "canon",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ka.nɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le musée expose un ancien canon.",
+    "exampleTranslation": "The museum displays an old cannon.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "canons",
+    "relatedWords": [
+      {
+        "french": "artillerie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "arme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tube",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un coup de canon",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2265",
+    "rank": 2265,
+    "french": "approuver",
+    "english": "to approve; endorse",
+    "lemma": "approuver",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.pʁu.ve/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le directeur a approuvé notre proposition.",
+    "exampleTranslation": "The director approved our proposal.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "approuve",
+      "tu": "approuves",
+      "il_elle": "approuve",
+      "nous": "approuvons",
+      "vous": "approuvez",
+      "ils_elles": "approuvent"
+    },
+    "relatedWords": [
+      {
+        "french": "valider",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accepter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "approbation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "approuver une décision",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2266",
+    "rank": 2266,
+    "french": "van",
+    "english": "van",
+    "lemma": "van",
+    "partOfSpeech": "noun",
+    "pronunciation": "/van/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous avons loué un van pour le voyage.",
+    "exampleTranslation": "We rented a van for the trip.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "vans",
+    "relatedWords": [
+      {
+        "french": "fourgon",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "véhicule",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "camionnette",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "louer un van",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2267",
+    "rank": 2267,
+    "french": "vanne",
+    "english": "valve; joke; tap",
+    "lemma": "vanne",
+    "partOfSpeech": "noun",
+    "pronunciation": "/van/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a ouvert la vanne pour laisser passer l’eau.",
+    "exampleTranslation": "He opened the valve to let the water through.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "vannes",
+    "relatedWords": [
+      {
+        "french": "robinet",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soupape",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "plaisanterie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ouvrir une vanne",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2268",
+    "rank": 2268,
+    "french": "tarte",
+    "english": "tart",
+    "lemma": "tarte",
+    "partOfSpeech": "noun",
+    "pronunciation": "/taʁt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a préparé une tarte aux pommes.",
+    "exampleTranslation": "She made an apple tart.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tartes",
+    "relatedWords": [
+      {
+        "french": "pâtisserie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pâte",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dessert",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tarte aux pommes",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2269",
+    "rank": 2269,
+    "french": "délicat",
+    "english": "delicate; sensitive",
+    "lemma": "délicat",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/de.li.ka/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "C’est une situation délicate à gérer.",
+    "exampleTranslation": "It is a delicate situation to handle.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "délicat",
+      "feminine": "délicate",
+      "masculinePlural": "délicats",
+      "femininePlural": "délicates"
+    },
+    "relatedWords": [
+      {
+        "french": "fragile",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sensible",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "subtil",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "situation délicate",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2270",
+    "rank": 2270,
+    "french": "outil",
+    "english": "tool",
+    "lemma": "outil",
+    "partOfSpeech": "noun",
+    "pronunciation": "/u.ti/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cet outil facilite le travail.",
+    "exampleTranslation": "This tool makes the work easier.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "outils",
+    "relatedWords": [
+      {
+        "french": "instrument",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "matériel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "équipement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "outil de travail",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2271",
+    "rank": 2271,
+    "french": "nucléaire",
+    "english": "nuclear",
+    "lemma": "nucléaire",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ny.kle.ɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le débat porte sur l’énergie nucléaire.",
+    "exampleTranslation": "The debate concerns nuclear energy.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "nucléaire",
+      "feminine": "nucléaire",
+      "masculinePlural": "nucléaires",
+      "femininePlural": "nucléaires"
+    },
+    "relatedWords": [
+      {
+        "french": "atome",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "radioactivité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "énergie nucléaire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2272",
+    "rank": 2272,
+    "french": "grimper",
+    "english": "to climb; rise",
+    "lemma": "grimper",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɡʁɛ̃.pe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les enfants aiment grimper aux arbres.",
+    "exampleTranslation": "The children like climbing trees.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "grimpe",
+      "tu": "grimpes",
+      "il_elle": "grimpe",
+      "nous": "grimpons",
+      "vous": "grimpez",
+      "ils_elles": "grimpent"
+    },
+    "relatedWords": [
+      {
+        "french": "monter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "escalader",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ascension",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "grimper sur une échelle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2273",
+    "rank": 2273,
+    "french": "sommet",
+    "english": "summit; top",
+    "lemma": "sommet",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɔ.mɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous sommes arrivés au sommet de la montagne.",
+    "exampleTranslation": "We reached the summit of the mountain.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "sommets",
+    "relatedWords": [
+      {
+        "french": "cime",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pic",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "au sommet de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2274",
+    "rank": 2274,
+    "french": "évacuer",
+    "english": "to evacuate",
+    "lemma": "évacuer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.va.kɥe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les habitants doivent évacuer le bâtiment.",
+    "exampleTranslation": "The residents must evacuate the building.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "évacue",
+      "tu": "évacues",
+      "il_elle": "évacue",
+      "nous": "évacuons",
+      "vous": "évacuez",
+      "ils_elles": "évacuent"
+    },
+    "relatedWords": [
+      {
+        "french": "sortir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vider",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "évacuation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "évacuer un bâtiment",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2275",
+    "rank": 2275,
+    "french": "psy",
+    "english": "shrink; psychiatrist (informal)",
+    "lemma": "psy",
+    "partOfSpeech": "noun",
+    "pronunciation": "/psi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle consulte un psy une fois par mois.",
+    "exampleTranslation": "She sees a therapist once a month.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "both",
+    "plural": "psys",
+    "relatedWords": [
+      {
+        "french": "psychologue",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "psychiatre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "psychologie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "aller chez le psy",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2276",
+    "rank": 2276,
+    "french": "moche",
+    "english": "ugly; unattractive (informal)",
+    "lemma": "moche",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/mɔʃ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce pull est un peu moche, mais il est confortable.",
+    "exampleTranslation": "This sweater is a bit ugly, but it is comfortable.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "moche",
+      "feminine": "moche",
+      "masculinePlural": "moches",
+      "femininePlural": "moches"
+    },
+    "relatedWords": [
+      {
+        "french": "laid",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "disgracieux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "beauté",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "c’est moche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2277",
+    "rank": 2277,
+    "french": "suffisamment",
+    "english": "sufficiently; enough",
+    "lemma": "suffisamment",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/sy.fi.za.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Tu as suffisamment de temps pour te préparer.",
+    "exampleTranslation": "You have enough time to get ready.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "assez",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "assez de",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "suffisant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "suffisamment de temps",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2278",
+    "rank": 2278,
+    "french": "célébrer",
+    "english": "to celebrate",
+    "lemma": "célébrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/se.le.bʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous allons célébrer son anniversaire samedi.",
+    "exampleTranslation": "We are going to celebrate her birthday on Saturday.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "célèbre",
+      "tu": "célèbres",
+      "il_elle": "célèbre",
+      "nous": "célébrons",
+      "vous": "célébrez",
+      "ils_elles": "célèbrent"
+    },
+    "relatedWords": [
+      {
+        "french": "fêter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "célébration",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fête",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "célébrer un événement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2279",
+    "rank": 2279,
+    "french": "tradition",
+    "english": "tradition",
+    "lemma": "tradition",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʁa.di.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette tradition se transmet depuis des générations.",
+    "exampleTranslation": "This tradition has been passed down for generations.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "traditions",
+    "relatedWords": [
+      {
+        "french": "coutume",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "héritage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "traditionnel",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "respecter une tradition",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2280",
+    "rank": 2280,
+    "french": "hôtesse",
+    "english": "hostess; flight attendant",
+    "lemma": "hôtesse",
+    "partOfSpeech": "noun",
+    "pronunciation": "/o.tɛs/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’hôtesse nous a indiqué nos places.",
+    "exampleTranslation": "The hostess showed us our seats.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "hôtesses",
+    "relatedWords": [
+      {
+        "french": "hôte",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accueil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réception",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "hôtesse de l’air",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2281",
+    "rank": 2281,
+    "french": "hôte",
+    "english": "host; guest",
+    "lemma": "hôte",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ot/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Notre hôte nous a accueillis chaleureusement.",
+    "exampleTranslation": "Our host welcomed us warmly.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "both",
+    "plural": "hôtes",
+    "relatedWords": [
+      {
+        "french": "invité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accueil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "hôtesse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "recevoir un hôte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2282",
+    "rank": 2282,
+    "french": "carrément",
+    "english": "straight out; completely; frankly",
+    "lemma": "carrément",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/ka.ʁe.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a carrément refusé de répondre.",
+    "exampleTranslation": "He flat-out refused to answer.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "franchement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "totalement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "directement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "carrément impossible",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2283",
+    "rank": 2283,
+    "french": "thérapie",
+    "english": "therapy",
+    "lemma": "thérapie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/te.ʁa.pi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La thérapie l’aide à mieux dormir.",
+    "exampleTranslation": "Therapy helps her sleep better.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "thérapies",
+    "relatedWords": [
+      {
+        "french": "thérapeute",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "thérapeutique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soin",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "suivre une thérapie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2284",
+    "rank": 2284,
+    "french": "football",
+    "english": "football; soccer",
+    "lemma": "football",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fut.bɔl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils jouent au football tous les dimanches.",
+    "exampleTranslation": "They play football every Sunday.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "footballs",
+    "relatedWords": [
+      {
+        "french": "foot",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ballon",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "équipe",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "jouer au football",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2285",
+    "rank": 2285,
+    "french": "logique",
+    "english": "logical; logic",
+    "lemma": "logique",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/lɔ.ʒik/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ta conclusion me semble logique.",
+    "exampleTranslation": "Your conclusion seems logical to me.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "logique",
+      "feminine": "logique",
+      "masculinePlural": "logiques",
+      "femininePlural": "logiques"
+    },
+    "relatedWords": [
+      {
+        "french": "cohérent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "raisonnement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "c’est logique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2286",
+    "rank": 2286,
+    "french": "estimer",
+    "english": "to estimate; consider",
+    "lemma": "estimer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛs.ti.me/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les experts estiment le coût à mille euros.",
+    "exampleTranslation": "The experts estimate the cost at one thousand euros.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "estime",
+      "tu": "estimes",
+      "il_elle": "estime",
+      "nous": "estimons",
+      "vous": "estimez",
+      "ils_elles": "estiment"
+    },
+    "relatedWords": [
+      {
+        "french": "évaluer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "calculer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "estimation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "estimer le coût",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2287",
+    "rank": 2287,
+    "french": "profondément",
+    "english": "deeply",
+    "lemma": "profondément",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/pʁɔ.fɔ̃.de.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette nouvelle l’a profondément touchée.",
+    "exampleTranslation": "This news deeply moved her.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "profond",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intense",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "entièrement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être profondément touché",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2288",
+    "rank": 2288,
+    "french": "piano",
+    "english": "piano",
+    "lemma": "piano",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pja.no/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il apprend le piano depuis trois ans.",
+    "exampleTranslation": "He has been learning piano for three years.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "pianos",
+    "relatedWords": [
+      {
+        "french": "pianiste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "clavier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "musique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "jouer du piano",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2289",
+    "rank": 2289,
+    "french": "foot",
+    "english": "football; soccer (informal)",
+    "lemma": "foot",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fut/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "On regarde le foot après le dîner.",
+    "exampleTranslation": "We watch football after dinner.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "foots",
+    "relatedWords": [
+      {
+        "french": "football",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ballon",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "match",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "jouer au foot",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2290",
+    "rank": 2290,
+    "french": "reparler",
+    "english": "to talk about again",
+    "lemma": "reparler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.paʁ.le/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous pourrons en reparler demain.",
+    "exampleTranslation": "We can talk about it again tomorrow.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "reparle",
+      "tu": "reparles",
+      "il_elle": "reparle",
+      "nous": "reparlons",
+      "vous": "reparlez",
+      "ils_elles": "reparlent"
+    },
+    "relatedWords": [
+      {
+        "french": "discuter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "évoquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "parler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "reparler de quelque chose",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2291",
+    "rank": 2291,
+    "french": "célibataire",
+    "english": "single; unmarried",
+    "lemma": "célibataire",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/se.li.ba.tɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle est célibataire depuis deux ans.",
+    "exampleTranslation": "She has been single for two years.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "célibataire",
+      "feminine": "célibataire",
+      "masculinePlural": "célibataires",
+      "femininePlural": "célibataires"
+    },
+    "relatedWords": [
+      {
+        "french": "seul",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "célibat",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "couple",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être célibataire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2292",
+    "rank": 2292,
+    "french": "chirurgien",
+    "english": "surgeon",
+    "lemma": "chirurgien",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃi.ʁyʁ.ʒjɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le chirurgien explique l’opération au patient.",
+    "exampleTranslation": "The surgeon explains the operation to the patient.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "chirurgiens",
+    "relatedWords": [
+      {
+        "french": "chirurgie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "opérer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "médecin",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "chirurgien spécialisé",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2293",
+    "rank": 2293,
+    "french": "envoler",
+    "english": "to fly away; take off",
+    "lemma": "envoler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.vɔ.le/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’oiseau s’est envolé au bruit.",
+    "exampleTranslation": "The bird flew away at the noise.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "m’envole",
+      "tu": "t’envoles",
+      "il_elle": "s’envole",
+      "nous": "nous envolons",
+      "vous": "vous envolez",
+      "ils_elles": "s’envolent"
+    },
+    "relatedWords": [
+      {
+        "french": "voler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "s’envoler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "envol",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "s’envoler dans le ciel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2294",
+    "rank": 2294,
+    "french": "boucler",
+    "english": "to close; wrap up; buckle",
+    "lemma": "boucler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/bu.kle/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle doit boucler sa valise avant midi.",
+    "exampleTranslation": "She must finish packing her suitcase before noon.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "boucle",
+      "tu": "boucles",
+      "il_elle": "boucle",
+      "nous": "bouclons",
+      "vous": "bouclez",
+      "ils_elles": "bouclent"
+    },
+    "relatedWords": [
+      {
+        "french": "fermer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "terminer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "boucle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "boucler une valise",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2295",
+    "rank": 2295,
+    "french": "redevenir",
+    "english": "to become again",
+    "lemma": "redevenir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.də.və.niʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est redevenu calme après quelques minutes.",
+    "exampleTranslation": "He became calm again after a few minutes.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "redeviens",
+      "tu": "redeviens",
+      "il_elle": "redevient",
+      "nous": "redevenons",
+      "vous": "redevenez",
+      "ils_elles": "redeviennent"
+    },
+    "relatedWords": [
+      {
+        "french": "devenir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "retrouver",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "redevenir soi-même",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2296",
+    "rank": 2296,
+    "french": "communiquer",
+    "english": "to communicate",
+    "lemma": "communiquer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ.my.ni.ke/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est important de communiquer clairement.",
+    "exampleTranslation": "It is important to communicate clearly.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "communique",
+      "tu": "communiques",
+      "il_elle": "communique",
+      "nous": "communiquons",
+      "vous": "communiquez",
+      "ils_elles": "communiquent"
+    },
+    "relatedWords": [
+      {
+        "french": "communication",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "échanger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "transmettre",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "communiquer avec quelqu’un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2297",
+    "rank": 2297,
+    "french": "appart",
+    "english": "flat; apartment (informal)",
+    "lemma": "appart",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.paʁt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils cherchent un appart près du métro.",
+    "exampleTranslation": "They are looking for a flat near the metro.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "apparts",
+    "relatedWords": [
+      {
+        "french": "appartement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "logement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "studio",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "chercher un appart",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2298",
+    "rank": 2298,
+    "french": "scientifique",
+    "english": "scientist",
+    "lemma": "scientifique",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sjɑ̃.ti.fik/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La scientifique présente ses résultats.",
+    "exampleTranslation": "The scientist presents her results.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "both",
+    "plural": "scientifiques",
+    "relatedWords": [
+      {
+        "french": "science",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chercheur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "recherche",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "chercheur scientifique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2299",
+    "rank": 2299,
+    "french": "fermé",
+    "english": "closed; shut",
+    "lemma": "fermé",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fɛʁ.me/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le magasin est fermé le lundi.",
+    "exampleTranslation": "The shop is closed on Mondays.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "fermé",
+      "feminine": "fermée",
+      "masculinePlural": "fermés",
+      "femininePlural": "fermées"
+    },
+    "relatedWords": [
+      {
+        "french": "fermer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fermeture",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "clos",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "porte fermée",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2300",
+    "rank": 2300,
+    "french": "race",
+    "english": "race; breed",
+    "lemma": "race",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁas/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette race de chien est très ancienne.",
+    "exampleTranslation": "This breed of dog is very old.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "races",
+    "relatedWords": [
+      {
+        "french": "espèce",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "origine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "racial",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "race de chien",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2301",
+    "rank": 2301,
+    "french": "vendeur",
+    "english": "seller; salesman",
+    "lemma": "vendeur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/vɑ̃.dœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le vendeur nous a conseillé ce modèle.",
+    "exampleTranslation": "The salesperson recommended this model to us.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "vendeurs",
+    "relatedWords": [
+      {
+        "french": "vendre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vente",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vendeuse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "vendeur de voitures",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2302",
+    "rank": 2302,
+    "french": "ordinaire",
+    "english": "ordinary; usual",
+    "lemma": "ordinaire",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɔʁ.di.nɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "C’était une journée tout à fait ordinaire.",
+    "exampleTranslation": "It was a completely ordinary day.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "ordinaire",
+      "feminine": "ordinaire",
+      "masculinePlural": "ordinaires",
+      "femininePlural": "ordinaires"
+    },
+    "relatedWords": [
+      {
+        "french": "habituel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "banal",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une personne ordinaire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2303",
+    "rank": 2303,
+    "french": "central",
+    "english": "central",
+    "lemma": "central",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/sɑ̃.tʁal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La gare centrale est facile à trouver.",
+    "exampleTranslation": "The central station is easy to find.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "central",
+      "feminine": "centrale",
+      "masculinePlural": "centraux",
+      "femininePlural": "centrales"
+    },
+    "relatedWords": [
+      {
+        "french": "centre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "centraliser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "centralité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "gare centrale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2304",
+    "rank": 2304,
+    "french": "expression",
+    "english": "expression; phrase",
+    "lemma": "expression",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛks.pʁe.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette expression est courante en français.",
+    "exampleTranslation": "This expression is common in French.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "expressions",
+    "relatedWords": [
+      {
+        "french": "exprimer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "formule",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tournure",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "expression idiomatique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2305",
+    "rank": 2305,
+    "french": "major",
+    "english": "major; chief (rank/title)",
+    "lemma": "major",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ma.ʒɔʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le major a donné ses instructions.",
+    "exampleTranslation": "The major gave his instructions.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "majors",
+    "relatedWords": [
+      {
+        "french": "grade",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "officier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "armée",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "major de promotion",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2306",
+    "rank": 2306,
+    "french": "viol",
+    "english": "rape",
+    "lemma": "viol",
+    "partOfSpeech": "noun",
+    "pronunciation": "/vi.ɔl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La victime a porté plainte pour viol.",
+    "exampleTranslation": "The victim filed a rape complaint.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "viols",
+    "relatedWords": [
+      {
+        "french": "agression sexuelle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "violence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "consentement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "victime de viol",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2307",
+    "rank": 2307,
+    "french": "enfoncer",
+    "english": "to push in; drive in; sink",
+    "lemma": "enfoncer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.fɔ̃.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a enfoncé le clou dans le mur.",
+    "exampleTranslation": "He drove the nail into the wall.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "enfonce",
+      "tu": "enfonces",
+      "il_elle": "enfonce",
+      "nous": "enfonçons",
+      "vous": "enfoncez",
+      "ils_elles": "enfoncent"
+    },
+    "relatedWords": [
+      {
+        "french": "pousser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pénétrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enfoncement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "enfoncer une porte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2308",
+    "rank": 2308,
+    "french": "alibi",
+    "english": "alibi",
+    "lemma": "alibi",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.li.bi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il avait un alibi pour l’heure du crime.",
+    "exampleTranslation": "He had an alibi for the time of the crime.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "alibis",
+    "relatedWords": [
+      {
+        "french": "preuve",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "témoin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "justification",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir un alibi",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2309",
+    "rank": 2309,
+    "french": "patience",
+    "english": "patience",
+    "lemma": "patience",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pa.sjɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il faut de la patience pour apprendre une langue.",
+    "exampleTranslation": "It takes patience to learn a language.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "patiences",
+    "relatedWords": [
+      {
+        "french": "patient",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "attendre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "persévérance",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "prendre son mal en patience",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2310",
+    "rank": 2310,
+    "french": "câble",
+    "english": "cable",
+    "lemma": "câble",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kabl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le câble est trop court pour atteindre la prise.",
+    "exampleTranslation": "The cable is too short to reach the socket.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "câbles",
+    "relatedWords": [
+      {
+        "french": "fil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "connexion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "câble électrique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "câble électrique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2311",
+    "rank": 2311,
+    "french": "clown",
+    "english": "clown",
+    "lemma": "clown",
+    "partOfSpeech": "noun",
+    "pronunciation": "/klun/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le clown a fait rire les enfants.",
+    "exampleTranslation": "The clown made the children laugh.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "clowns",
+    "relatedWords": [
+      {
+        "french": "cirque",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "comique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "plaisanter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire le clown",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2312",
+    "rank": 2312,
+    "french": "lutte",
+    "english": "struggle; fight",
+    "lemma": "lutte",
+    "partOfSpeech": "noun",
+    "pronunciation": "/lyt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La lutte contre la pauvreté continue.",
+    "exampleTranslation": "The fight against poverty continues.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "luttes",
+    "relatedWords": [
+      {
+        "french": "combattre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "combat",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "lutte contre la pauvreté",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2313",
+    "rank": 2313,
+    "french": "huile",
+    "english": "oil",
+    "lemma": "huile",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɥil/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ajoute un peu d’huile dans la poêle.",
+    "exampleTranslation": "Add a little oil to the pan.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "huiles",
+    "relatedWords": [
+      {
+        "french": "huileux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "graisse",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "olive",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "huile d’olive",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2314",
+    "rank": 2314,
+    "french": "traître",
+    "english": "traitor",
+    "lemma": "traître",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʁɛ.tʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a été considéré comme un traître.",
+    "exampleTranslation": "He was considered a traitor.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "traîtres",
+    "relatedWords": [
+      {
+        "french": "trahir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "trahison",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fidèle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "traître à son pays",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2315",
+    "rank": 2315,
+    "french": "lâche",
+    "english": "cowardly; loose",
+    "lemma": "lâche",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/lɑʃ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a trouvé une excuse lâche pour partir.",
+    "exampleTranslation": "He found a cowardly excuse to leave.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "lâche",
+      "feminine": "lâche",
+      "masculinePlural": "lâches",
+      "femininePlural": "lâches"
+    },
+    "relatedWords": [
+      {
+        "french": "peureux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "courageux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "lâcheté",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un acte lâche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2316",
+    "rank": 2316,
+    "french": "excitant",
+    "english": "exciting; stimulating",
+    "lemma": "excitant",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɛk.si.tɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "C’est un projet excitant pour toute l’équipe.",
+    "exampleTranslation": "It is an exciting project for the whole team.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "excitant",
+      "feminine": "excitante",
+      "masculinePlural": "excitants",
+      "femininePlural": "excitantes"
+    },
+    "relatedWords": [
+      {
+        "french": "exciter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enthousiasme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "stimulant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une idée excitante",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2317",
+    "rank": 2317,
+    "french": "commercial",
+    "english": "commercial",
+    "lemma": "commercial",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/kɔ.mɛʁ.sjal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle travaille dans le secteur commercial.",
+    "exampleTranslation": "She works in the commercial sector.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "commercial",
+      "feminine": "commerciale",
+      "masculinePlural": "commerciaux",
+      "femininePlural": "commerciales"
+    },
+    "relatedWords": [
+      {
+        "french": "commerce",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "commerçant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vente",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "agent commercial",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2318",
+    "rank": 2318,
+    "french": "analyser",
+    "english": "to analyse",
+    "lemma": "analyser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.na.li.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons analyser les résultats avant de décider.",
+    "exampleTranslation": "We must analyse the results before deciding.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "analyse",
+      "tu": "analyses",
+      "il_elle": "analyse",
+      "nous": "analysons",
+      "vous": "analysez",
+      "ils_elles": "analysent"
+    },
+    "relatedWords": [
+      {
+        "french": "analyse",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "examiner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étudier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "analyser une situation",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2319",
+    "rank": 2319,
+    "french": "passeport",
+    "english": "passport",
+    "lemma": "passeport",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pas.pɔʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "N’oublie pas ton passeport à l’aéroport.",
+    "exampleTranslation": "Don’t forget your passport at the airport.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "passeports",
+    "relatedWords": [
+      {
+        "french": "identité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "visa",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "voyage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "passeport valide",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2320",
+    "rank": 2320,
+    "french": "choper",
+    "english": "to grab; catch (informal)",
+    "lemma": "choper",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʃɔ.pe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a chopé le dernier bus de justesse.",
+    "exampleTranslation": "He just managed to catch the last bus.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "chope",
+      "tu": "chopes",
+      "il_elle": "chope",
+      "nous": "chopons",
+      "vous": "chopez",
+      "ils_elles": "chopent"
+    },
+    "relatedWords": [
+      {
+        "french": "attraper",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "prendre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "saisir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "choper un rhume",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2321",
+    "rank": 2321,
+    "french": "lance",
+    "english": "spear; lance",
+    "lemma": "lance",
+    "partOfSpeech": "noun",
+    "pronunciation": "/lɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le chevalier tenait une lance à la main.",
+    "exampleTranslation": "The knight held a lance in his hand.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "lances",
+    "relatedWords": [
+      {
+        "french": "arme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "javelot",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "lancer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "lance en bois",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2322",
+    "rank": 2322,
+    "french": "cabine",
+    "english": "cabin; booth",
+    "lemma": "cabine",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ka.bin/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous attendons dans la cabine téléphonique.",
+    "exampleTranslation": "We are waiting in the phone booth.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "cabines",
+    "relatedWords": [
+      {
+        "french": "compartiment",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "box",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "cabine d’essayage",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2323",
+    "rank": 2323,
+    "french": "au-delà",
+    "english": "beyond; on the other side",
+    "lemma": "au-delà",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/o də.la/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Au-delà du pont, il y a un petit village.",
+    "exampleTranslation": "Beyond the bridge, there is a small village.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "plus loin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "outre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "limite",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "au-delà de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2324",
+    "rank": 2324,
+    "french": "portefeuille",
+    "english": "wallet",
+    "lemma": "portefeuille",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɔʁ.tə.fœj/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J’ai oublié mon portefeuille à la maison.",
+    "exampleTranslation": "I forgot my wallet at home.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "portefeuilles",
+    "relatedWords": [
+      {
+        "french": "porte-monnaie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "argent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "carte",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sortir son portefeuille",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2325",
+    "rank": 2325,
+    "french": "larguer",
+    "english": "to drop; dump; jettison",
+    "lemma": "larguer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/laʁ.ɡe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a largué les amarres avant le départ.",
+    "exampleTranslation": "He cast off the moorings before departure.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "largue",
+      "tu": "largues",
+      "il_elle": "largue",
+      "nous": "larguons",
+      "vous": "larguez",
+      "ils_elles": "larguent"
+    },
+    "relatedWords": [
+      {
+        "french": "abandonner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "jeter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "détacher",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "larguer les amarres",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2326",
+    "rank": 2326,
+    "french": "livraison",
+    "english": "delivery",
+    "lemma": "livraison",
+    "partOfSpeech": "noun",
+    "pronunciation": "/li.vʁɛ.zɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La livraison est prévue pour demain matin.",
+    "exampleTranslation": "The delivery is scheduled for tomorrow morning.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "livraisons",
+    "relatedWords": [
+      {
+        "french": "livrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "livreur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "expédition",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "frais de livraison",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2327",
+    "rank": 2327,
+    "french": "fièvre",
+    "english": "fever",
+    "lemma": "fièvre",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fjɛvʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a de la fièvre depuis hier soir.",
+    "exampleTranslation": "She has had a fever since last night.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "fièvres",
+    "relatedWords": [
+      {
+        "french": "fiévreux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "température",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "malade",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir de la fièvre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2328",
+    "rank": 2328,
+    "french": "géant",
+    "english": "giant; huge",
+    "lemma": "géant",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʒe.ɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un arbre géant dominait la vallée.",
+    "exampleTranslation": "A giant tree towered over the valley.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "géant",
+      "feminine": "géante",
+      "masculinePlural": "géants",
+      "femininePlural": "géantes"
+    },
+    "relatedWords": [
+      {
+        "french": "immense",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "gigantesque",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un géant de l’industrie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2329",
+    "rank": 2329,
+    "french": "flamme",
+    "english": "flame",
+    "lemma": "flamme",
+    "partOfSpeech": "noun",
+    "pronunciation": "/flam/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Une flamme éclairait la pièce.",
+    "exampleTranslation": "A flame lit up the room.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "flammes",
+    "relatedWords": [
+      {
+        "french": "feu",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "brûler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "flambée",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "flamme de bougie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2330",
+    "rank": 2330,
+    "french": "bourrer",
+    "english": "to stuff; cram; fill",
+    "lemma": "bourrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/bu.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a bourré son sac de vêtements.",
+    "exampleTranslation": "He stuffed his bag with clothes.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "bourre",
+      "tu": "bourres",
+      "il_elle": "bourre",
+      "nous": "bourrons",
+      "vous": "bourrez",
+      "ils_elles": "bourrent"
+    },
+    "relatedWords": [
+      {
+        "french": "remplir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "entasser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bourrage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "bourrer un sac",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2331",
+    "rank": 2331,
+    "french": "pourrir",
+    "english": "to rot; spoil",
+    "lemma": "pourrir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pu.ʁiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les fruits vont pourrir s’ils restent au soleil.",
+    "exampleTranslation": "The fruit will rot if left in the sun.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "pourris",
+      "tu": "pourris",
+      "il_elle": "pourrit",
+      "nous": "pourrissons",
+      "vous": "pourrissez",
+      "ils_elles": "pourrissent"
+    },
+    "relatedWords": [
+      {
+        "french": "pourri",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "se décomposer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "gâter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "laisser pourrir",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2332",
+    "rank": 2332,
+    "french": "température",
+    "english": "temperature",
+    "lemma": "température",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɑ̃.pe.ʁa.tyʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La température a baissé pendant la nuit.",
+    "exampleTranslation": "The temperature dropped during the night.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "températures",
+    "relatedWords": [
+      {
+        "french": "thermomètre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chaud",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "froid",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "température ambiante",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2333",
+    "rank": 2333,
+    "french": "pro",
+    "english": "professional; pro",
+    "lemma": "pro",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁo/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle est devenue pro après plusieurs années d’entraînement.",
+    "exampleTranslation": "She turned professional after several years of training.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "both",
+    "plural": "pros",
+    "relatedWords": [
+      {
+        "french": "professionnel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "amateur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "métier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un joueur pro",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2334",
+    "rank": 2334,
+    "french": "bourse",
+    "english": "scholarship; stock exchange; purse",
+    "lemma": "bourse",
+    "partOfSpeech": "noun",
+    "pronunciation": "/buʁs/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a obtenu une bourse pour étudier à Paris.",
+    "exampleTranslation": "She received a scholarship to study in Paris.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "bourses",
+    "relatedWords": [
+      {
+        "french": "financement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "marché",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "bourse d’études",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2335",
+    "rank": 2335,
+    "french": "embaucher",
+    "english": "to hire; recruit",
+    "lemma": "embaucher",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.bo.ʃe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’entreprise souhaite embaucher deux ingénieurs.",
+    "exampleTranslation": "The company wants to hire two engineers.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "embauche",
+      "tu": "embauches",
+      "il_elle": "embauche",
+      "nous": "embauchons",
+      "vous": "embauchez",
+      "ils_elles": "embauchent"
+    },
+    "relatedWords": [
+      {
+        "french": "recruter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "emploi",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "embauche",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "embaucher du personnel",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2336",
+    "rank": 2336,
+    "french": "actuel",
+    "english": "current; present-day",
+    "lemma": "actuel",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ak.ty.ɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La situation actuelle exige une réponse rapide.",
+    "exampleTranslation": "The current situation requires a quick response.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "actuel",
+      "feminine": "actuelle",
+      "masculinePlural": "actuels",
+      "femininePlural": "actuelles"
+    },
+    "relatedWords": [
+      {
+        "french": "actuellement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "présent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "contemporain",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "la situation actuelle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2337",
+    "rank": 2337,
+    "french": "étendre",
+    "english": "to extend; spread",
+    "lemma": "étendre",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.tɑ̃dʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils vont étendre le réseau dans toute la région.",
+    "exampleTranslation": "They will extend the network throughout the region.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "étends",
+      "tu": "étends",
+      "il_elle": "étend",
+      "nous": "étendons",
+      "vous": "étendez",
+      "ils_elles": "étendent"
+    },
+    "relatedWords": [
+      {
+        "french": "allonger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "agrandir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "extension",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "étendre une couverture",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2338",
+    "rank": 2338,
+    "french": "souris",
+    "english": "mouse",
+    "lemma": "souris",
+    "partOfSpeech": "noun",
+    "pronunciation": "/su.ʁi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Une souris est passée sous le meuble.",
+    "exampleTranslation": "A mouse ran under the furniture.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "souriss",
+    "relatedWords": [
+      {
+        "french": "rongeur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mulot",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "souris d’ordinateur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "souris d’ordinateur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2339",
+    "rank": 2339,
+    "french": "poumon",
+    "english": "lung",
+    "lemma": "poumon",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pul.mɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le tabac peut endommager les poumons.",
+    "exampleTranslation": "Smoking can damage the lungs.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "poumons",
+    "relatedWords": [
+      {
+        "french": "respirer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pulmonaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "respiration",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "cancer du poumon",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2340",
+    "rank": 2340,
+    "french": "chouette",
+    "english": "great; nice; lovely (informal)",
+    "lemma": "chouette",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʃwɛt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "C’est chouette de te revoir !",
+    "exampleTranslation": "It’s great to see you again!",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "chouette",
+      "feminine": "chouette",
+      "masculinePlural": "chouettes",
+      "femininePlural": "chouettes"
+    },
+    "relatedWords": [
+      {
+        "french": "sympa",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "agréable",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "super",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "c’est chouette",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2341",
+    "rank": 2341,
+    "french": "heur",
+    "english": "hour; good fortune (literary)",
+    "lemma": "heur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/œʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a eu l’heur de rencontrer la bonne personne.",
+    "exampleTranslation": "He had the good fortune to meet the right person.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "heurs",
+    "relatedWords": [
+      {
+        "french": "fortune",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chance",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "moment",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir l’heur de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2342",
+    "rank": 2342,
+    "french": "éducation",
+    "english": "education",
+    "lemma": "éducation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.dy.ka.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’éducation joue un rôle essentiel dans la société.",
+    "exampleTranslation": "Education plays an essential role in society.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "éducations",
+    "relatedWords": [
+      {
+        "french": "éduquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "éducatif",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enseignement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "éducation nationale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2343",
+    "rank": 2343,
+    "french": "ouverture",
+    "english": "opening; opening hours",
+    "lemma": "ouverture",
+    "partOfSpeech": "noun",
+    "pronunciation": "/u.vɛʁ.tyʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’ouverture du magasin est prévue à neuf heures.",
+    "exampleTranslation": "The shop opening is scheduled for nine o’clock.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "ouvertures",
+    "relatedWords": [
+      {
+        "french": "ouvrir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ouvert",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "inauguration",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "cérémonie d’ouverture",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2344",
+    "rank": 2344,
+    "french": "ivre",
+    "english": "drunk",
+    "lemma": "ivre",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ivʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il était ivre et parlait très fort.",
+    "exampleTranslation": "He was drunk and speaking very loudly.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "ivre",
+      "feminine": "ivre",
+      "masculinePlural": "ivres",
+      "femininePlural": "ivres"
+    },
+    "relatedWords": [
+      {
+        "french": "ivresse",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "alcool",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sobre",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être ivre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2345",
+    "rank": 2345,
+    "french": "évanouir",
+    "english": "to faint",
+    "lemma": "évanouir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.va.nwiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a failli s’évanouir à cause de la chaleur.",
+    "exampleTranslation": "She nearly fainted because of the heat.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "m’évanouis",
+      "tu": "t’évanouis",
+      "il_elle": "s’évanouit",
+      "nous": "nous évanouissons",
+      "vous": "vous évanouissez",
+      "ils_elles": "s’évanouissent"
+    },
+    "relatedWords": [
+      {
+        "french": "perdre connaissance",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "malaise",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "évanouissement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "s’évanouir de peur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2346",
+    "rank": 2346,
+    "french": "effondrer",
+    "english": "to collapse; crumble",
+    "lemma": "effondrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.fɔ̃.dʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le vieux mur s’est effondré pendant la tempête.",
+    "exampleTranslation": "The old wall collapsed during the storm.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "m’effondre",
+      "tu": "t’effondres",
+      "il_elle": "s’effondre",
+      "nous": "nous effondrons",
+      "vous": "vous effondrez",
+      "ils_elles": "s’effondrent"
+    },
+    "relatedWords": [
+      {
+        "french": "s’écrouler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ruine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "effondrement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "s’effondrer sous le poids",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2347",
+    "rank": 2347,
+    "french": "loyer",
+    "english": "rent",
+    "lemma": "loyer",
+    "partOfSpeech": "noun",
+    "pronunciation": "/lwa.je/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le loyer augmente chaque année.",
+    "exampleTranslation": "The rent increases every year.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "loyers",
+    "relatedWords": [
+      {
+        "french": "louer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "locataire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "propriétaire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "payer le loyer",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2348",
+    "rank": 2348,
+    "french": "lampe",
+    "english": "lamp",
+    "lemma": "lampe",
+    "partOfSpeech": "noun",
+    "pronunciation": "/lɑ̃p/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Allume la lampe près du canapé.",
+    "exampleTranslation": "Turn on the lamp near the sofa.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "lampes",
+    "relatedWords": [
+      {
+        "french": "éclairage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "lumière",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "abat-jour",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "lampe de chevet",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2349",
+    "rank": 2349,
+    "french": "aube",
+    "english": "dawn",
+    "lemma": "aube",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ob/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous sommes partis à l’aube.",
+    "exampleTranslation": "We left at dawn.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "aubes",
+    "relatedWords": [
+      {
+        "french": "aurore",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "matin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "lever du soleil",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "à l’aube",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2350",
+    "rank": 2350,
+    "french": "investir",
+    "english": "to invest",
+    "lemma": "investir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛ̃.vɛs.tiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle veut investir dans une petite entreprise.",
+    "exampleTranslation": "She wants to invest in a small business.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "investis",
+      "tu": "investis",
+      "il_elle": "investit",
+      "nous": "investissons",
+      "vous": "investissez",
+      "ils_elles": "investissent"
+    },
+    "relatedWords": [
+      {
+        "french": "investissement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "investisseur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "placement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "investir de l’argent",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2351",
+    "rank": 2351,
+    "french": "tarder",
+    "english": "to take time; be late",
+    "lemma": "tarder",
+    "partOfSpeech": "verb",
+    "pronunciation": "/taʁ.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ne tarde pas à répondre au message.",
+    "exampleTranslation": "Don’t take too long to reply to the message.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "tarde",
+      "tu": "tardes",
+      "il_elle": "tarde",
+      "nous": "tardons",
+      "vous": "tardez",
+      "ils_elles": "tardent"
+    },
+    "relatedWords": [
+      {
+        "french": "retarder",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "délai",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tard",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tarder à venir",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2352",
+    "rank": 2352,
+    "french": "surpris",
+    "english": "surprised",
+    "lemma": "surpris",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/syʁ.pʁi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je suis surpris par sa réaction.",
+    "exampleTranslation": "I am surprised by his reaction.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "surpris",
+      "feminine": "surprise",
+      "masculinePlural": "surpris",
+      "femininePlural": "surprises"
+    },
+    "relatedWords": [
+      {
+        "french": "surprendre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "surprise",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étonné",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être surpris de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2353",
+    "rank": 2353,
+    "french": "mystérieux",
+    "english": "mysterious",
+    "lemma": "mystérieux",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/mis.te.ʁjø/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un homme mystérieux attendait devant la porte.",
+    "exampleTranslation": "A mysterious man was waiting outside the door.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "mystérieux",
+      "feminine": "mystérieuse",
+      "masculinePlural": "mystérieux",
+      "femininePlural": "mystérieuses"
+    },
+    "relatedWords": [
+      {
+        "french": "mystère",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "secret",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "énigmatique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un personnage mystérieux",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2354",
+    "rank": 2354,
+    "french": "manipuler",
+    "english": "to manipulate; handle",
+    "lemma": "manipuler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ma.ni.py.le/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il sait manipuler les outils avec précision.",
+    "exampleTranslation": "He knows how to handle tools precisely.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "manipule",
+      "tu": "manipules",
+      "il_elle": "manipule",
+      "nous": "manipulons",
+      "vous": "manipulez",
+      "ils_elles": "manipulent"
+    },
+    "relatedWords": [
+      {
+        "french": "manipulation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "manier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "influencer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "manipuler les chiffres",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2355",
+    "rank": 2355,
+    "french": "franchir",
+    "english": "to cross; overcome",
+    "lemma": "franchir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/fʁɑ̃.ʃiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons franchir cette étape ensemble.",
+    "exampleTranslation": "We must overcome this stage together.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "franchis",
+      "tu": "franchis",
+      "il_elle": "franchit",
+      "nous": "franchissons",
+      "vous": "franchissez",
+      "ils_elles": "franchissent"
+    },
+    "relatedWords": [
+      {
+        "french": "traverser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dépasser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "passage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "franchir une frontière",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2356",
+    "rank": 2356,
+    "french": "plateau",
+    "english": "tray; plateau",
+    "lemma": "plateau",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pla.to/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a posé les verres sur un plateau.",
+    "exampleTranslation": "She placed the glasses on a tray.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "plateaus",
+    "relatedWords": [
+      {
+        "french": "plateau-repas",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "surface",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "table",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "plateau de fromages",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2357",
+    "rank": 2357,
+    "french": "fréquenter",
+    "english": "to frequent; attend; date",
+    "lemma": "fréquenter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/fʁe.kɑ̃.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il fréquente cette bibliothèque depuis longtemps.",
+    "exampleTranslation": "He has been going to this library for a long time.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "fréquente",
+      "tu": "fréquentes",
+      "il_elle": "fréquente",
+      "nous": "fréquentons",
+      "vous": "fréquentez",
+      "ils_elles": "fréquentent"
+    },
+    "relatedWords": [
+      {
+        "french": "fréquent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fréquentation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "visiter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "fréquenter une école",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2358",
+    "rank": 2358,
+    "french": "cuire",
+    "english": "to cook; bake",
+    "lemma": "cuire",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɥiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Laisse cuire les légumes pendant dix minutes.",
+    "exampleTranslation": "Let the vegetables cook for ten minutes.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "cuis",
+      "tu": "cuis",
+      "il_elle": "cuit",
+      "nous": "cuisons",
+      "vous": "cuisez",
+      "ils_elles": "cuisent"
+    },
+    "relatedWords": [
+      {
+        "french": "cuisson",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "cuit",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "cuisine",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire cuire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2359",
+    "rank": 2359,
+    "french": "sacrer",
+    "english": "to crown; consecrate (also informal intensifier)",
+    "lemma": "sacrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/sa.kʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le jury a sacré cette équipe championne.",
+    "exampleTranslation": "The jury crowned this team champion.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "sacre",
+      "tu": "sacres",
+      "il_elle": "sacre",
+      "nous": "sacrons",
+      "vous": "sacrez",
+      "ils_elles": "sacrent"
+    },
+    "relatedWords": [
+      {
+        "french": "couronner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "consacrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sacré",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sacrer champion",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2360",
+    "rank": 2360,
+    "french": "céder",
+    "english": "to yield; give way; surrender",
+    "lemma": "céder",
+    "partOfSpeech": "verb",
+    "pronunciation": "/se.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a fini par céder à la pression.",
+    "exampleTranslation": "He eventually gave in to the pressure.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "cède",
+      "tu": "cèdes",
+      "il_elle": "cède",
+      "nous": "cédons",
+      "vous": "cédez",
+      "ils_elles": "cèdent"
+    },
+    "relatedWords": [
+      {
+        "french": "abandonner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "concession",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "céder sa place",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2361",
+    "rank": 2361,
+    "french": "bijou",
+    "english": "jewel; piece of jewellery",
+    "lemma": "bijou",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bi.ʒu/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle porte un bijou offert par sa grand-mère.",
+    "exampleTranslation": "She wears a piece of jewellery given by her grandmother.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "bijoux",
+    "relatedWords": [
+      {
+        "french": "bijouterie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "joaillier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "précieux",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un bijou ancien",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2362",
+    "rank": 2362,
+    "french": "stade",
+    "english": "stage; stadium",
+    "lemma": "stade",
+    "partOfSpeech": "noun",
+    "pronunciation": "/stad/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le stade accueille un match international ce soir.",
+    "exampleTranslation": "The stadium is hosting an international match tonight.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "stades",
+    "relatedWords": [
+      {
+        "french": "terrain",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sport",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "stade de football",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2363",
+    "rank": 2363,
+    "french": "efficace",
+    "english": "effective; efficient",
+    "lemma": "efficace",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/e.fi.kas/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette méthode est simple et efficace.",
+    "exampleTranslation": "This method is simple and effective.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "efficace",
+      "feminine": "efficace",
+      "masculinePlural": "efficaces",
+      "femininePlural": "efficaces"
+    },
+    "relatedWords": [
+      {
+        "french": "efficacité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "performant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "utile",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une solution efficace",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2364",
+    "rank": 2364,
+    "french": "repasser",
+    "english": "to iron; go over again",
+    "lemma": "repasser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.pa.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je dois repasser ma chemise avant de sortir.",
+    "exampleTranslation": "I need to iron my shirt before going out.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "repasse",
+      "tu": "repasses",
+      "il_elle": "repasse",
+      "nous": "repassons",
+      "vous": "repassez",
+      "ils_elles": "repassent"
+    },
+    "relatedWords": [
+      {
+        "french": "fer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "repassage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "revoir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "repasser le linge",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2365",
+    "rank": 2365,
+    "french": "blessé",
+    "english": "injured; wounded",
+    "lemma": "blessé",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ble.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le joueur blessé a quitté le terrain.",
+    "exampleTranslation": "The injured player left the field.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "blessé",
+      "feminine": "blessée",
+      "masculinePlural": "blessés",
+      "femininePlural": "blessées"
+    },
+    "relatedWords": [
+      {
+        "french": "blesser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "blessure",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "soigner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être blessé",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2366",
+    "rank": 2366,
+    "french": "plante",
+    "english": "plant",
+    "lemma": "plante",
+    "partOfSpeech": "noun",
+    "pronunciation": "/plɑ̃t/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette plante a besoin de beaucoup de lumière.",
+    "exampleTranslation": "This plant needs a lot of light.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "plantes",
+    "relatedWords": [
+      {
+        "french": "végétal",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "planter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "plantation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "plante verte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2367",
+    "rank": 2367,
+    "french": "disposer",
+    "english": "to arrange; have at one's disposal",
+    "lemma": "disposer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/dis.po.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous disposons de deux heures pour finir.",
+    "exampleTranslation": "We have two hours to finish.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "dispose",
+      "tu": "disposes",
+      "il_elle": "dispose",
+      "nous": "disposons",
+      "vous": "disposez",
+      "ils_elles": "disposent"
+    },
+    "relatedWords": [
+      {
+        "french": "organiser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "posséder",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "disposition",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "disposer de temps",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2368",
+    "rank": 2368,
+    "french": "golf",
+    "english": "golf",
+    "lemma": "golf",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡɔlf/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils jouent au golf le samedi matin.",
+    "exampleTranslation": "They play golf on Saturday mornings.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "golfs",
+    "relatedWords": [
+      {
+        "french": "golfeur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "club",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "parcours",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "jouer au golf",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2369",
+    "rank": 2369,
+    "french": "interne",
+    "english": "internal; inside",
+    "lemma": "interne",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɛ̃.tɛʁn/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’hôpital a lancé une enquête interne.",
+    "exampleTranslation": "The hospital launched an internal investigation.",
+    "enrichmentStatus": "ENRICHED",
+    "genderForms": {
+      "masculine": "interne",
+      "feminine": "interne",
+      "masculinePlural": "internes",
+      "femininePlural": "internes"
+    },
+    "relatedWords": [
+      {
+        "french": "intérieur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "externe",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "service interne",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2370",
+    "rank": 2370,
+    "french": "épuiser",
+    "english": "to exhaust; use up",
+    "lemma": "épuiser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/e.pɥi.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette longue marche m’a épuisé.",
+    "exampleTranslation": "This long walk exhausted me.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "épuise",
+      "tu": "épuises",
+      "il_elle": "épuise",
+      "nous": "épuisons",
+      "vous": "épuisez",
+      "ils_elles": "épuisent"
+    },
+    "relatedWords": [
+      {
+        "french": "épuisé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "épuisement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fatigue",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "épuiser ses réserves",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2371",
+    "rank": 2371,
+    "french": "extrêmement",
+    "english": "extremely",
+    "lemma": "extrêmement",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/ɛk.stʁɛm.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il faisait extrêmement froid ce matin.",
+    "exampleTranslation": "It was extremely cold this morning.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "extrême",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "très",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "excessivement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "extrêmement important",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2372",
+    "rank": 2372,
+    "french": "comédie",
+    "english": "comedy",
+    "lemma": "comédie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.me.di/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous avons regardé une comédie française.",
+    "exampleTranslation": "We watched a French comedy.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "comédies",
+    "relatedWords": [
+      {
+        "french": "comique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "humour",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "drôle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "comédie romantique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2373",
+    "rank": 2373,
+    "french": "compétition",
+    "english": "competition",
+    "lemma": "compétition",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ̃.pe.ti.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La compétition commence la semaine prochaine.",
+    "exampleTranslation": "The competition starts next week.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "compétitions",
+    "relatedWords": [
+      {
+        "french": "concourir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "concurrent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "concours",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "entrer en compétition",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2374",
+    "rank": 2374,
+    "french": "instruction",
+    "english": "instruction; education",
+    "lemma": "instruction",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɛ̃s.tʁyk.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le manuel contient des instructions détaillées.",
+    "exampleTranslation": "The manual contains detailed instructions.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "instructions",
+    "relatedWords": [
+      {
+        "french": "instruire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "consigne",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enseignement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "suivre les instructions",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2375",
+    "rank": 2375,
+    "french": "figure",
+    "english": "figure; face; character",
+    "lemma": "figure",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fi.ɡyʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a reconnu sa figure sur la photo.",
+    "exampleTranslation": "He recognized his face in the photo.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "figures",
+    "relatedWords": [
+      {
+        "french": "visage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "silhouette",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "personnage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "figure humaine",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2376",
+    "rank": 2376,
+    "french": "clinique",
+    "english": "clinic; clinical facility",
+    "lemma": "clinique",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kli.nik/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La clinique ouvre à huit heures.",
+    "exampleTranslation": "The clinic opens at eight o’clock.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "cliniques",
+    "relatedWords": [
+      {
+        "french": "hôpital",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "établissement de santé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "médical",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "clinique privée",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2377",
+    "rank": 2377,
+    "french": "réclamer",
+    "english": "to demand; to claim",
+    "lemma": "réclamer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁe.kla.me/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle réclame une réponse claire.",
+    "exampleTranslation": "She demands a clear answer.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "réclame",
+      "tu": "réclames",
+      "il_elle": "réclame",
+      "nous": "réclamons",
+      "vous": "réclamez",
+      "ils_elles": "réclament"
+    },
+    "relatedWords": [
+      {
+        "french": "demander",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "exiger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "revendiquer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "réclamer son dû",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2378",
+    "rank": 2378,
+    "french": "imagination",
+    "english": "imagination",
+    "lemma": "imagination",
+    "partOfSpeech": "noun",
+    "pronunciation": "/i.ma.ʒi.na.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Son imagination lui permet d’inventer des histoires.",
+    "exampleTranslation": "His imagination allows him to invent stories.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "imaginations",
+    "relatedWords": [
+      {
+        "french": "créativité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fantaisie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "invention",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire appel à son imagination",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2379",
+    "rank": 2379,
+    "french": "album",
+    "english": "album",
+    "lemma": "album",
+    "partOfSpeech": "noun",
+    "pronunciation": "/al.bɔm/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a acheté un album de photos.",
+    "exampleTranslation": "She bought a photo album.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "albums",
+    "relatedWords": [
+      {
+        "french": "recueil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "disque",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "collection",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "album photo",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2380",
+    "rank": 2380,
+    "french": "connu",
+    "english": "known; famous",
+    "lemma": "connu",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/kɔ.ny/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "C’est un acteur très connu en France.",
+    "exampleTranslation": "He is a very well-known actor in France.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "connus",
+    "genderForms": {
+      "masculine": "connu",
+      "feminine": "connue",
+      "masculinePlural": "connus",
+      "femininePlural": "connues"
+    },
+    "relatedWords": [
+      {
+        "french": "célèbre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réputé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "familier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être bien connu",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2381",
+    "rank": 2381,
+    "french": "apparence",
+    "english": "appearance; outward appearance",
+    "lemma": "apparence",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.pa.ʁɑ̃s/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il ne faut pas juger les gens sur leur apparence.",
+    "exampleTranslation": "You should not judge people by their appearance.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "apparences",
+    "relatedWords": [
+      {
+        "french": "aspect",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "allure",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "extérieur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "en apparence",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2382",
+    "rank": 2382,
+    "french": "laboratoire",
+    "english": "laboratory",
+    "lemma": "laboratoire",
+    "partOfSpeech": "noun",
+    "pronunciation": "/la.bɔ.ʁa.twaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les chercheurs travaillent dans un laboratoire moderne.",
+    "exampleTranslation": "The researchers work in a modern laboratory.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "laboratoires",
+    "relatedWords": [
+      {
+        "french": "recherche",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "expérience",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "scientifique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "laboratoire de recherche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2383",
+    "rank": 2383,
+    "french": "taux",
+    "english": "rate; level; percentage",
+    "lemma": "taux",
+    "partOfSpeech": "noun",
+    "pronunciation": "/to/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le taux de chômage a diminué cette année.",
+    "exampleTranslation": "The unemployment rate fell this year.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "taux",
+    "relatedWords": [
+      {
+        "french": "pourcentage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "proportion",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "niveau",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "taux de chômage",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2384",
+    "rank": 2384,
+    "french": "conscient",
+    "english": "aware; conscious",
+    "lemma": "conscient",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/kɔ̃.sjɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle est consciente des difficultés.",
+    "exampleTranslation": "She is aware of the difficulties.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "consciente",
+    "genderForms": {
+      "masculine": "conscient",
+      "feminine": "consciente",
+      "masculinePlural": "conscients",
+      "femininePlural": "conscientes"
+    },
+    "relatedWords": [
+      {
+        "french": "lucide",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "informé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "attentif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être conscient de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2385",
+    "rank": 2385,
+    "french": "priorité",
+    "english": "priority",
+    "lemma": "priorité",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁi.jɔ.ʁi.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La sécurité reste notre priorité.",
+    "exampleTranslation": "Safety remains our priority.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "priorités",
+    "relatedWords": [
+      {
+        "french": "urgence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "préférence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "objectif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "donner la priorité à",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2386",
+    "rank": 2386,
+    "french": "saint",
+    "english": "saint; holy",
+    "lemma": "saint",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le village célèbre son saint patron.",
+    "exampleTranslation": "The village celebrates its patron saint.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "sainte",
+    "relatedWords": [
+      {
+        "french": "sacré",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "religieux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "béni",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "saint patron",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2387",
+    "rank": 2387,
+    "french": "comte",
+    "english": "count (noble title)",
+    "lemma": "comte",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ̃t/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le comte vivait dans un château.",
+    "exampleTranslation": "The count lived in a castle.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "comtes",
+    "relatedWords": [
+      {
+        "french": "noble",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "comtesse",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "aristocrate",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "comte et comtesse",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2388",
+    "rank": 2388,
+    "french": "trembler",
+    "english": "to tremble; to shake",
+    "lemma": "trembler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/tʁɑ̃.ble/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Mes mains tremblent à cause du froid.",
+    "exampleTranslation": "My hands are trembling because of the cold.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "tremble",
+      "tu": "trembles",
+      "il_elle": "tremble",
+      "nous": "tremblons",
+      "vous": "tremblez",
+      "ils_elles": "tremblent"
+    },
+    "relatedWords": [
+      {
+        "french": "frissonner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vibrer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tremblement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "trembler de peur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2389",
+    "rank": 2389,
+    "french": "tonne",
+    "english": "tonne (metric unit)",
+    "lemma": "tonne",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɔn/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le camion transporte dix tonnes de sable.",
+    "exampleTranslation": "The truck carries ten tonnes of sand.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "tonnes",
+    "relatedWords": [
+      {
+        "french": "poids",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "masse",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "kilogramme",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une tonne de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2390",
+    "rank": 2390,
+    "french": "commission",
+    "english": "commission; committee; fee",
+    "lemma": "commission",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.mi.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La commission se réunit demain matin.",
+    "exampleTranslation": "The committee meets tomorrow morning.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "commissions",
+    "relatedWords": [
+      {
+        "french": "comité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "groupe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mandat",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "commission d’enquête",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2391",
+    "rank": 2391,
+    "french": "cirque",
+    "english": "circus",
+    "lemma": "cirque",
+    "partOfSpeech": "noun",
+    "pronunciation": "/siʁk/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le cirque installe son chapiteau près du parc.",
+    "exampleTranslation": "The circus sets up its tent near the park.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "cirques",
+    "relatedWords": [
+      {
+        "french": "spectacle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "acrobate",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chapiteau",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "aller au cirque",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2392",
+    "rank": 2392,
+    "french": "exagérer",
+    "english": "to exaggerate; to overdo",
+    "lemma": "exagérer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛɡ.za.ʒe.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Tu exagères un peu la situation.",
+    "exampleTranslation": "You are exaggerating the situation a little.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "exagère",
+      "tu": "exagères",
+      "il_elle": "exagère",
+      "nous": "exagérons",
+      "vous": "exagérez",
+      "ils_elles": "exagèrent"
+    },
+    "relatedWords": [
+      {
+        "french": "amplifier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "grossir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dramatiser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ne pas exagérer",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2393",
+    "rank": 2393,
+    "french": "micro",
+    "english": "microphone; mic",
+    "lemma": "micro",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mi.kʁo/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il prend le micro pour annoncer les résultats.",
+    "exampleTranslation": "He takes the microphone to announce the results.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "micros",
+    "relatedWords": [
+      {
+        "french": "microphone",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "son",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "voix",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "prendre le micro",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2394",
+    "rank": 2394,
+    "french": "ressortir",
+    "english": "to come out again; to stand out; to take back out",
+    "lemma": "ressortir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.sɔʁ.tiʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette couleur fait ressortir ses yeux.",
+    "exampleTranslation": "This colour makes her eyes stand out.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "ressors",
+      "tu": "ressors",
+      "il_elle": "ressort",
+      "nous": "ressortons",
+      "vous": "ressortez",
+      "ils_elles": "ressortent"
+    },
+    "relatedWords": [
+      {
+        "french": "réapparaître",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "émerger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sortir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire ressortir",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2395",
+    "rank": 2395,
+    "french": "clan",
+    "english": "clan; close-knit group",
+    "lemma": "clan",
+    "partOfSpeech": "noun",
+    "pronunciation": "/klɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Chaque clan défend ses propres intérêts.",
+    "exampleTranslation": "Each clan defends its own interests.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "clans",
+    "relatedWords": [
+      {
+        "french": "groupe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "famille",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "faction",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "clan familial",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2396",
+    "rank": 2396,
+    "french": "droguer",
+    "english": "to drug; to give drugs to",
+    "lemma": "droguer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/dʁɔ.ɡe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La police soupçonne quelqu’un d’avoir drogué la victime.",
+    "exampleTranslation": "The police suspect someone of drugging the victim.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "drogue",
+      "tu": "drogues",
+      "il_elle": "drogue",
+      "nous": "droguons",
+      "vous": "droguez",
+      "ils_elles": "droguent"
+    },
+    "relatedWords": [
+      {
+        "french": "intoxiquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "substance",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "stupéfiant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "droguer quelqu’un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2397",
+    "rank": 2397,
+    "french": "poing",
+    "english": "fist",
+    "lemma": "poing",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pwɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il serre le poing pour montrer sa colère.",
+    "exampleTranslation": "He clenches his fist to show his anger.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "poings",
+    "relatedWords": [
+      {
+        "french": "main",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "doigt",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "geste",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "serrer les poings",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2398",
+    "rank": 2398,
+    "french": "requin",
+    "english": "shark",
+    "lemma": "requin",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁə.kɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un requin nage près du récif.",
+    "exampleTranslation": "A shark is swimming near the reef.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "requins",
+    "relatedWords": [
+      {
+        "french": "poisson",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "prédateur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "océan",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "requin blanc",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2399",
+    "rank": 2399,
+    "french": "économie",
+    "english": "economy; economics; saving",
+    "lemma": "économie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.kɔ.nɔ.mi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’économie du pays dépend aussi du commerce.",
+    "exampleTranslation": "The country’s economy also depends on trade.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "économies",
+    "relatedWords": [
+      {
+        "french": "finance",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "commerce",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "gestion",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire des économies",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2400",
+    "rank": 2400,
+    "french": "tissu",
+    "english": "fabric; tissue",
+    "lemma": "tissu",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ti.sy/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce tissu est doux et léger.",
+    "exampleTranslation": "This fabric is soft and light.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "tissus",
+    "relatedWords": [
+      {
+        "french": "textile",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étoffe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "matière",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tissu de coton",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2401",
+    "rank": 2401,
+    "french": "jaune",
+    "english": "yellow",
+    "lemma": "jaune",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʒon/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle porte une veste jaune.",
+    "exampleTranslation": "She is wearing a yellow jacket.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "jaune",
+    "genderForms": {
+      "masculine": "jaune",
+      "feminine": "jaune",
+      "masculinePlural": "jaunes",
+      "femininePlural": "jaunes"
+    },
+    "relatedWords": [
+      {
+        "french": "couleur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "doré",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "citron",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "jaune vif",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2402",
+    "rank": 2402,
+    "french": "producteur",
+    "english": "producer",
+    "lemma": "producteur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɔ.dyk.tœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le producteur présente son nouveau film.",
+    "exampleTranslation": "The producer presents his new film.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "producteurs",
+    "relatedWords": [
+      {
+        "french": "fabricant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "créateur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réalisateur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "producteur de cinéma",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2403",
+    "rank": 2403,
+    "french": "cap",
+    "english": "cape; headland; direction; milestone",
+    "lemma": "cap",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kap/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le bateau contourne le cap avant la nuit.",
+    "exampleTranslation": "The boat rounds the headland before nightfall.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "caps",
+    "relatedWords": [
+      {
+        "french": "direction",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "promontoire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étape",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "mettre le cap sur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2404",
+    "rank": 2404,
+    "french": "bah",
+    "english": "well; oh well (interjection)",
+    "lemma": "bah",
+    "partOfSpeech": "expression",
+    "pronunciation": "/ba/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Bah, nous trouverons une autre solution.",
+    "exampleTranslation": "Oh well, we’ll find another solution.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "eh bien",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "bon",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "interjection",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2405",
+    "rank": 2405,
+    "french": "franc",
+    "english": "frank; candid; Swiss franc",
+    "lemma": "franc",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fʁɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Soyons francs : le résultat est décevant.",
+    "exampleTranslation": "Let’s be frank: the result is disappointing.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "franche",
+    "genderForms": {
+      "masculine": "franc",
+      "feminine": "franche",
+      "masculinePlural": "francs",
+      "femininePlural": "franches"
+    },
+    "relatedWords": [
+      {
+        "french": "honnête",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "direct",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sincère",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être franc avec quelqu’un",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2406",
+    "rank": 2406,
+    "french": "trafic",
+    "english": "traffic; trafficking",
+    "lemma": "trafic",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʁa.fik/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le trafic est dense à cette heure-ci.",
+    "exampleTranslation": "Traffic is heavy at this time of day.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "trafics",
+    "relatedWords": [
+      {
+        "french": "circulation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "échange",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "contrebande",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "trafic routier",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2407",
+    "rank": 2407,
+    "french": "compagnon",
+    "english": "companion; partner",
+    "lemma": "compagnon",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ̃.pa.ɲɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Son compagnon l’attend devant la gare.",
+    "exampleTranslation": "Her partner is waiting for her outside the station.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "compagnons",
+    "relatedWords": [
+      {
+        "french": "partenaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "ami",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "camarade",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "compagnon de route",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2408",
+    "rank": 2408,
+    "french": "compagne",
+    "english": "female companion; partner",
+    "lemma": "compagne",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ̃.paɲ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Sa compagne travaille dans un musée.",
+    "exampleTranslation": "His partner works in a museum.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "compagnes",
+    "relatedWords": [
+      {
+        "french": "partenaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "amie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "épouse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "compagne de vie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2409",
+    "rank": 2409,
+    "french": "botter",
+    "english": "to kick; to appeal (in “botter les fesses”; “ça me botte”)",
+    "lemma": "botter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/bɔ.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette idée me botte vraiment.",
+    "exampleTranslation": "I really like that idea.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "botte",
+      "tu": "bottes",
+      "il_elle": "botte",
+      "nous": "bottons",
+      "vous": "bottez",
+      "ils_elles": "bottent"
+    },
+    "relatedWords": [
+      {
+        "french": "plaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "séduire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "donner envie",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "ça me botte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2410",
+    "rank": 2410,
+    "french": "blâmer",
+    "english": "to blame; to reproach",
+    "lemma": "blâmer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/bla.me/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il ne faut pas blâmer toute l’équipe.",
+    "exampleTranslation": "We should not blame the whole team.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "blâme",
+      "tu": "blâmes",
+      "il_elle": "blâme",
+      "nous": "blâmons",
+      "vous": "blâmez",
+      "ils_elles": "blâment"
+    },
+    "relatedWords": [
+      {
+        "french": "reprocher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "critiquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "accuser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "blâmer quelqu’un pour",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2411",
+    "rank": 2411,
+    "french": "mamie",
+    "english": "granny; grandma",
+    "lemma": "mamie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ma.mi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ma mamie prépare une tarte aux pommes.",
+    "exampleTranslation": "My grandma is making an apple tart.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "mamies",
+    "relatedWords": [
+      {
+        "french": "grand-mère",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "aïeule",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "famille",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "chez mamie",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2412",
+    "rank": 2412,
+    "french": "appliquer",
+    "english": "to apply; to implement",
+    "lemma": "appliquer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.pli.ke/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il faut appliquer les règles avec soin.",
+    "exampleTranslation": "The rules must be applied carefully.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "applique",
+      "tu": "appliques",
+      "il_elle": "applique",
+      "nous": "appliquons",
+      "vous": "appliquez",
+      "ils_elles": "appliquent"
+    },
+    "relatedWords": [
+      {
+        "french": "mettre en œuvre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "utiliser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "exécuter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "appliquer une règle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2413",
+    "rank": 2413,
+    "french": "provenir",
+    "english": "to come from; to originate",
+    "lemma": "provenir",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pʁɔ.və.niʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ces informations proviennent d’une source fiable.",
+    "exampleTranslation": "This information comes from a reliable source.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "proviens",
+      "tu": "proviens",
+      "il_elle": "provient",
+      "nous": "provenons",
+      "vous": "provenez",
+      "ils_elles": "proviennent"
+    },
+    "relatedWords": [
+      {
+        "french": "venir de",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "découler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "émaner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "provenir de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2414",
+    "rank": 2414,
+    "french": "personnalité",
+    "english": "personality; public figure",
+    "lemma": "personnalité",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɛʁ.sɔ.na.li.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Sa personnalité attire facilement les gens.",
+    "exampleTranslation": "His personality easily attracts people.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "personnalités",
+    "relatedWords": [
+      {
+        "french": "caractère",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tempérament",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "figure publique",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "personnalité publique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2415",
+    "rank": 2415,
+    "french": "négatif",
+    "english": "negative",
+    "lemma": "négatif",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ne.ɡa.tif/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le test est négatif.",
+    "exampleTranslation": "The test is negative.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "négative",
+    "genderForms": {
+      "masculine": "négatif",
+      "feminine": "négative",
+      "masculinePlural": "négatifs",
+      "femininePlural": "négatives"
+    },
+    "relatedWords": [
+      {
+        "french": "défavorable",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pessimiste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "contraire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "résultat négatif",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2416",
+    "rank": 2416,
+    "french": "batterie",
+    "english": "battery; drums",
+    "lemma": "batterie",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ba.tʁi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La batterie de mon téléphone est presque vide.",
+    "exampleTranslation": "My phone battery is almost empty.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "batteries",
+    "relatedWords": [
+      {
+        "french": "pile",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "énergie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "percussion",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "batterie rechargeable",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2417",
+    "rank": 2417,
+    "french": "civil",
+    "english": "civil; civilian",
+    "lemma": "civil",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/si.vil/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les habitants ont été évacués par les autorités civiles.",
+    "exampleTranslation": "The residents were evacuated by the civilian authorities.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "civile",
+    "genderForms": {
+      "masculine": "civil",
+      "feminine": "civile",
+      "masculinePlural": "civils",
+      "femininePlural": "civiles"
+    },
+    "relatedWords": [
+      {
+        "french": "citoyen",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "laïc",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "public",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "état civil",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2418",
+    "rank": 2418,
+    "french": "raccompagner",
+    "english": "to accompany someone back; to walk/see someone home",
+    "lemma": "raccompagner",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁa.kɔ̃.pa.ɲe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je vais te raccompagner jusqu’à la porte.",
+    "exampleTranslation": "I’ll walk you back to the door.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "raccompagne",
+      "tu": "raccompagnes",
+      "il_elle": "raccompagne",
+      "nous": "raccompagnons",
+      "vous": "raccompagnez",
+      "ils_elles": "raccompagnent"
+    },
+    "relatedWords": [
+      {
+        "french": "accompagner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "reconduire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "escorter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "raccompagner quelqu’un chez lui",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2419",
+    "rank": 2419,
+    "french": "éternel",
+    "english": "eternal; everlasting",
+    "lemma": "éternel",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/e.tɛʁ.nɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ils parlent de leur éternel problème de stationnement.",
+    "exampleTranslation": "They talk about their never-ending parking problem.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "éternelle",
+    "genderForms": {
+      "masculine": "éternel",
+      "feminine": "éternelle",
+      "masculinePlural": "éternels",
+      "femininePlural": "éternelles"
+    },
+    "relatedWords": [
+      {
+        "french": "perpétuel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "infini",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "permanent",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "éternel recommencement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2420",
+    "rank": 2420,
+    "french": "production",
+    "english": "production; output",
+    "lemma": "production",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɔ.dyk.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La production a augmenté cette année.",
+    "exampleTranslation": "Production increased this year.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "productions",
+    "relatedWords": [
+      {
+        "french": "fabrication",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "création",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rendement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "production industrielle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2421",
+    "rank": 2421,
+    "french": "t-shirt",
+    "english": "T-shirt",
+    "lemma": "t-shirt",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ti.ʃœʁt/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il porte un t-shirt blanc.",
+    "exampleTranslation": "He is wearing a white T-shirt.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "t-shirts",
+    "relatedWords": [
+      {
+        "french": "vêtement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "haut",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tee-shirt",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "t-shirt en coton",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2422",
+    "rank": 2422,
+    "french": "quiconque",
+    "english": "anyone who; whoever",
+    "lemma": "quiconque",
+    "partOfSpeech": "pronoun",
+    "pronunciation": "/ki.kɔ̃k/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Quiconque souhaite participer doit s’inscrire.",
+    "exampleTranslation": "Anyone who wishes to participate must register.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "n’importe qui",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "toute personne",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chacun",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "quiconque souhaite",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2423",
+    "rank": 2423,
+    "french": "entrepôt",
+    "english": "warehouse",
+    "lemma": "entrepôt",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɑ̃.tʁə.po/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les marchandises sont stockées dans un entrepôt.",
+    "exampleTranslation": "The goods are stored in a warehouse.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "entrepôts",
+    "relatedWords": [
+      {
+        "french": "dépôt",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "stockage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "magasin",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "entrepôt logistique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2424",
+    "rank": 2424,
+    "french": "opposer",
+    "english": "to oppose; to set against",
+    "lemma": "opposer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɔ.po.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle refuse d’opposer la tradition au progrès.",
+    "exampleTranslation": "She refuses to set tradition against progress.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "oppose",
+      "tu": "opposes",
+      "il_elle": "oppose",
+      "nous": "opposons",
+      "vous": "opposez",
+      "ils_elles": "opposent"
+    },
+    "relatedWords": [
+      {
+        "french": "contredire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "résister",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "confronter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "s’opposer à",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2425",
+    "rank": 2425,
+    "french": "hauteur",
+    "english": "height; level; altitude",
+    "lemma": "hauteur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/o.tœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La hauteur du mur dépasse deux mètres.",
+    "exampleTranslation": "The wall’s height exceeds two metres.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "hauteurs",
+    "relatedWords": [
+      {
+        "french": "altitude",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "taille",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "niveau",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "à la hauteur de",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2426",
+    "rank": 2426,
+    "french": "vingt",
+    "english": "twenty",
+    "lemma": "vingt",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/vɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a vingt minutes pour terminer.",
+    "exampleTranslation": "He has twenty minutes to finish.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "nombre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vingtaine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "numéral",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "vingt ans",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2427",
+    "rank": 2427,
+    "french": "bâton",
+    "english": "stick; rod",
+    "lemma": "bâton",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ba.tɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’enfant ramasse un bâton dans le jardin.",
+    "exampleTranslation": "The child picks up a stick in the garden.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "bâtons",
+    "relatedWords": [
+      {
+        "french": "branche",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "baguette",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tige",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "bâton de marche",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2428",
+    "rank": 2428,
+    "french": "recommander",
+    "english": "to recommend; to advise",
+    "lemma": "recommander",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁə.kɔ.mɑ̃.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je vous recommande ce livre.",
+    "exampleTranslation": "I recommend this book to you.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "recommande",
+      "tu": "recommandes",
+      "il_elle": "recommande",
+      "nous": "recommandons",
+      "vous": "recommandez",
+      "ils_elles": "recommandent"
+    },
+    "relatedWords": [
+      {
+        "french": "conseiller",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "suggérer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "préconiser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "recommander vivement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2429",
+    "rank": 2429,
+    "french": "mondial",
+    "english": "worldwide; global",
+    "lemma": "mondial",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/mɔ̃.djal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La compétition attire un public mondial.",
+    "exampleTranslation": "The competition attracts a worldwide audience.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "mondiale",
+    "genderForms": {
+      "masculine": "mondial",
+      "feminine": "mondiale",
+      "masculinePlural": "mondiaux",
+      "femininePlural": "mondiales"
+    },
+    "relatedWords": [
+      {
+        "french": "international",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "planétaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "global",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "à l’échelle mondiale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2430",
+    "rank": 2430,
+    "french": "geler",
+    "english": "to freeze; to freeze over",
+    "lemma": "geler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʒə.le/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’eau commence à geler pendant la nuit.",
+    "exampleTranslation": "The water starts to freeze during the night.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "gèle",
+      "tu": "gèles",
+      "il_elle": "gèle",
+      "nous": "gelons",
+      "vous": "gelez",
+      "ils_elles": "gèlent"
+    },
+    "relatedWords": [
+      {
+        "french": "congeler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "glacer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "refroidir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "geler sur place",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2431",
+    "rank": 2431,
+    "french": "citer",
+    "english": "to cite; to mention; to quote",
+    "lemma": "citer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/si.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle peut citer plusieurs exemples précis.",
+    "exampleTranslation": "She can cite several specific examples.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "cite",
+      "tu": "cites",
+      "il_elle": "cite",
+      "nous": "citons",
+      "vous": "citez",
+      "ils_elles": "citent"
+    },
+    "relatedWords": [
+      {
+        "french": "mentionner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "évoquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "référencer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "citer un exemple",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2432",
+    "rank": 2432,
+    "french": "printemps",
+    "english": "spring (season)",
+    "lemma": "printemps",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɛ̃.tɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les jardins fleurissent au printemps.",
+    "exampleTranslation": "The gardens bloom in spring.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "printemps",
+    "relatedWords": [
+      {
+        "french": "saison",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "floraison",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "renouveau",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "au printemps",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2433",
+    "rank": 2433,
+    "french": "colline",
+    "english": "hill",
+    "lemma": "colline",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɔ.lin/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le village est construit sur une colline.",
+    "exampleTranslation": "The village is built on a hill.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "collines",
+    "relatedWords": [
+      {
+        "french": "hauteur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pente",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monticule",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "au sommet de la colline",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2434",
+    "rank": 2434,
+    "french": "officiellement",
+    "english": "officially",
+    "lemma": "officiellement",
+    "partOfSpeech": "adverb",
+    "pronunciation": "/ɔ.fi.sjɛl.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le musée ouvrira officiellement lundi.",
+    "exampleTranslation": "The museum will officially open on Monday.",
+    "enrichmentStatus": "ENRICHED",
+    "relatedWords": [
+      {
+        "french": "formellement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "publiquement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "légalement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "annoncer officiellement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2435",
+    "rank": 2435,
+    "french": "disparu",
+    "english": "disappeared; missing; deceased",
+    "lemma": "disparu",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/dis.pa.ʁy/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le tableau a disparu pendant la nuit.",
+    "exampleTranslation": "The painting disappeared during the night.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "disparue",
+    "genderForms": {
+      "masculine": "disparu",
+      "feminine": "disparue",
+      "masculinePlural": "disparus",
+      "femininePlural": "disparues"
+    },
+    "relatedWords": [
+      {
+        "french": "absent",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "perdu",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "évanoui",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "personne disparue",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2436",
+    "rank": 2436,
+    "french": "merder",
+    "english": "to mess up; to screw up (vulgar/informal)",
+    "lemma": "merder",
+    "partOfSpeech": "verb",
+    "pronunciation": "/mɛʁ.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a merdé en oubliant le rendez-vous.",
+    "exampleTranslation": "He messed up by forgetting the appointment.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "merde",
+      "tu": "merdes",
+      "il_elle": "merde",
+      "nous": "merdons",
+      "vous": "merdez",
+      "ils_elles": "merdent"
+    },
+    "relatedWords": [
+      {
+        "french": "se tromper",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "échouer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "rater",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "merder complètement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2437",
+    "rank": 2437,
+    "french": "vague",
+    "english": "wave; vagueness",
+    "lemma": "vague",
+    "partOfSpeech": "noun",
+    "pronunciation": "/vaɡ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Une grande vague a frappé la digue.",
+    "exampleTranslation": "A large wave hit the sea wall.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "vagues",
+    "relatedWords": [
+      {
+        "french": "houle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "onde",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "flou",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "vague de chaleur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2438",
+    "rank": 2438,
+    "french": "imposer",
+    "english": "to impose; to establish",
+    "lemma": "imposer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɛ̃.po.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le règlement impose une limite de vitesse.",
+    "exampleTranslation": "The regulation imposes a speed limit.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "impose",
+      "tu": "imposes",
+      "il_elle": "impose",
+      "nous": "imposons",
+      "vous": "imposez",
+      "ils_elles": "imposent"
+    },
+    "relatedWords": [
+      {
+        "french": "contraindre",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "établir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "exiger",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "imposer une règle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2439",
+    "rank": 2439,
+    "french": "agresser",
+    "english": "to assault; to attack verbally or physically",
+    "lemma": "agresser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/a.ɡʁe.se/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il est interdit d’agresser les autres.",
+    "exampleTranslation": "It is forbidden to assault others.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "agresse",
+      "tu": "agresses",
+      "il_elle": "agresse",
+      "nous": "agressons",
+      "vous": "agressez",
+      "ils_elles": "agressent"
+    },
+    "relatedWords": [
+      {
+        "french": "attaquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "menacer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "violence",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "agresser verbalement",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2440",
+    "rank": 2440,
+    "french": "panne",
+    "english": "breakdown; failure",
+    "lemma": "panne",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pan/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Notre voiture est tombée en panne sur l’autoroute.",
+    "exampleTranslation": "Our car broke down on the motorway.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "pannes",
+    "relatedWords": [
+      {
+        "french": "défaillance",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "arrêt",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "incident",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "tomber en panne",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2441",
+    "rank": 2441,
+    "french": "décoller",
+    "english": "to take off; to peel off",
+    "lemma": "décoller",
+    "partOfSpeech": "verb",
+    "pronunciation": "/de.kɔ.le/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’avion doit décoller à midi.",
+    "exampleTranslation": "The plane is due to take off at noon.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "décolle",
+      "tu": "décolles",
+      "il_elle": "décolle",
+      "nous": "décollons",
+      "vous": "décollez",
+      "ils_elles": "décollent"
+    },
+    "relatedWords": [
+      {
+        "french": "s’envoler",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "se détacher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "partir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "décoller du sol",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2442",
+    "rank": 2442,
+    "french": "défi",
+    "english": "challenge",
+    "lemma": "défi",
+    "partOfSpeech": "noun",
+    "pronunciation": "/de.fi/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Apprendre cette langue est un beau défi.",
+    "exampleTranslation": "Learning this language is a great challenge.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "défis",
+    "relatedWords": [
+      {
+        "french": "épreuve",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "challenge",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "difficulté",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "relever un défi",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2443",
+    "rank": 2443,
+    "french": "récent",
+    "english": "recent",
+    "lemma": "récent",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ʁe.sɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un rapport récent confirme cette tendance.",
+    "exampleTranslation": "A recent report confirms this trend.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "récente",
+    "genderForms": {
+      "masculine": "récent",
+      "feminine": "récente",
+      "masculinePlural": "récents",
+      "femininePlural": "récentes"
+    },
+    "relatedWords": [
+      {
+        "french": "nouveau",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "actuel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dernier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "événement récent",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2444",
+    "rank": 2444,
+    "french": "injuste",
+    "english": "unfair; unjust",
+    "lemma": "injuste",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɛ̃.ʒyst/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette décision me semble injuste.",
+    "exampleTranslation": "This decision seems unfair to me.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "injuste",
+    "genderForms": {
+      "masculine": "injuste",
+      "feminine": "injuste",
+      "masculinePlural": "injustes",
+      "femininePlural": "injustes"
+    },
+    "relatedWords": [
+      {
+        "french": "inéquitable",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "partial",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "arbitraire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "traitement injuste",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2445",
+    "rank": 2445,
+    "french": "goutte",
+    "english": "drop",
+    "lemma": "goutte",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡut/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Une goutte d’eau tombe du robinet.",
+    "exampleTranslation": "A drop of water falls from the tap.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "gouttes",
+    "relatedWords": [
+      {
+        "french": "perle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "larme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "gouttelette",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "goutte à goutte",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2446",
+    "rank": 2446,
+    "french": "international",
+    "english": "international",
+    "lemma": "international",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/ɛ̃.tɛʁ.na.sjɔ.nal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’entreprise travaille sur le marché international.",
+    "exampleTranslation": "The company operates in the international market.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "internationale",
+    "genderForms": {
+      "masculine": "international",
+      "feminine": "internationale",
+      "masculinePlural": "internationaux",
+      "femininePlural": "internationales"
+    },
+    "relatedWords": [
+      {
+        "french": "mondial",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "étranger",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "transnational",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "commerce international",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2447",
+    "rank": 2447,
+    "french": "division",
+    "english": "division; department; split",
+    "lemma": "division",
+    "partOfSpeech": "noun",
+    "pronunciation": "/di.vi.zjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La division du travail améliore l’organisation.",
+    "exampleTranslation": "The division of labour improves organisation.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "divisions",
+    "relatedWords": [
+      {
+        "french": "séparation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "département",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fraction",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "division administrative",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2448",
+    "rank": 2448,
+    "french": "mercredi",
+    "english": "Wednesday",
+    "lemma": "mercredi",
+    "partOfSpeech": "noun",
+    "pronunciation": "/mɛʁ.kʁə.di/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous avons un examen mercredi.",
+    "exampleTranslation": "We have an exam on Wednesday.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "mercredis",
+    "relatedWords": [
+      {
+        "french": "jour",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "semaine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "calendrier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "mercredi prochain",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2449",
+    "rank": 2449,
+    "french": "financier",
+    "english": "financial; financier",
+    "lemma": "financier",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fi.nɑ̃.sje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le directeur présente le bilan financier.",
+    "exampleTranslation": "The director presents the financial report.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "financière",
+    "genderForms": {
+      "masculine": "financier",
+      "feminine": "financière",
+      "masculinePlural": "financiers",
+      "femininePlural": "financières"
+    },
+    "relatedWords": [
+      {
+        "french": "économique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "budgétaire",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "monétaire",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "marché financier",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2450",
+    "rank": 2450,
+    "french": "boucle",
+    "english": "loop; curl; buckle",
+    "lemma": "boucle",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bukl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle attache ses cheveux en une boucle.",
+    "exampleTranslation": "She ties her hair into a curl.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "boucles",
+    "relatedWords": [
+      {
+        "french": "anneau",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "courbe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enroulement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "boucle d’oreille",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2451",
+    "rank": 2451,
+    "french": "clef",
+    "english": "key; clue",
+    "lemma": "clef",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kle/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J’ai oublié la clef à la maison.",
+    "exampleTranslation": "I forgot the key at home.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "clefs",
+    "relatedWords": [
+      {
+        "french": "clé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "serrure",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "solution",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "mot-clef",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2452",
+    "rank": 2452,
+    "french": "peser",
+    "english": "to weigh; to weigh on",
+    "lemma": "peser",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pə.ze/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce sac pèse dix kilos.",
+    "exampleTranslation": "This bag weighs ten kilos.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "pèse",
+      "tu": "pèses",
+      "il_elle": "pèse",
+      "nous": "pesons",
+      "vous": "pesez",
+      "ils_elles": "pèsent"
+    },
+    "relatedWords": [
+      {
+        "french": "mesurer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "balance",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "poids",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "peser le pour et le contre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2453",
+    "rank": 2453,
+    "french": "cesse",
+    "english": "cessation; end (usually in fixed expressions)",
+    "lemma": "cesse",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɛs/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il travaille sans cesse pour améliorer son français.",
+    "exampleTranslation": "He works constantly to improve his French.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "cesses",
+    "relatedWords": [
+      {
+        "french": "arrêt",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fin",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "interruption",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sans cesse",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2454",
+    "rank": 2454,
+    "french": "difficulté",
+    "english": "difficulty",
+    "lemma": "difficulté",
+    "partOfSpeech": "noun",
+    "pronunciation": "/di.fi.kyl.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a surmonté une grande difficulté.",
+    "exampleTranslation": "She overcame a major difficulty.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "difficultés",
+    "relatedWords": [
+      {
+        "french": "obstacle",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "problème",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "complication",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir des difficultés",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2455",
+    "rank": 2455,
+    "french": "adaptation",
+    "english": "adaptation",
+    "lemma": "adaptation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/a.dap.ta.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’adaptation du roman au cinéma a été réussie.",
+    "exampleTranslation": "The adaptation of the novel for cinema was successful.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "adaptations",
+    "relatedWords": [
+      {
+        "french": "ajustement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "transformation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "version",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "adaptation cinématographique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2456",
+    "rank": 2456,
+    "french": "fauteuil",
+    "english": "armchair; seat",
+    "lemma": "fauteuil",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fo.tœj/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il lit dans son fauteuil préféré.",
+    "exampleTranslation": "He reads in his favourite armchair.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "fauteuils",
+    "relatedWords": [
+      {
+        "french": "siège",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chaise",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "canapé",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "fauteuil roulant",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2457",
+    "rank": 2457,
+    "french": "prostitué",
+    "english": "prostitute; person engaged in prostitution",
+    "lemma": "prostitué",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɔs.ti.tɥe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le reportage donne la parole à un prostitué.",
+    "exampleTranslation": "The report gives a voice to a male sex worker.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "prostitués",
+    "relatedWords": [
+      {
+        "french": "travail du sexe",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "personne",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "métier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ]
+  },
+  {
+    "id": "v-2458",
+    "rank": 2458,
+    "french": "réception",
+    "english": "reception; receiving; front desk",
+    "lemma": "réception",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʁe.sɛp.sjɔ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La réception de l’hôtel est ouverte toute la nuit.",
+    "exampleTranslation": "The hotel reception is open all night.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "réceptions",
+    "relatedWords": [
+      {
+        "french": "accueil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "réceptionniste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "arrivée",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "bureau de réception",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2459",
+    "rank": 2459,
+    "french": "fée",
+    "english": "fairy",
+    "lemma": "fée",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Dans le conte, une fée aide la princesse.",
+    "exampleTranslation": "In the fairy tale, a fairy helps the princess.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "fées",
+    "relatedWords": [
+      {
+        "french": "magie",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "enchantement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "créature",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "conte de fées",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2460",
+    "rank": 2460,
+    "french": "drapeau",
+    "english": "flag",
+    "lemma": "drapeau",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dʁa.po/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le drapeau flotte au-dessus du bâtiment.",
+    "exampleTranslation": "The flag flies above the building.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "drapeaux",
+    "relatedWords": [
+      {
+        "french": "bannière",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "emblème",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "pavillon",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "drapeau national",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2461",
+    "rank": 2461,
+    "french": "pneu",
+    "english": "tyre",
+    "lemma": "pneu",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pnø/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le pneu arrière doit être remplacé.",
+    "exampleTranslation": "The rear tyre needs to be replaced.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "pneus",
+    "relatedWords": [
+      {
+        "french": "roue",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "caoutchouc",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "véhicule",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "changer un pneu",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2462",
+    "rank": 2462,
+    "french": "progrès",
+    "english": "progress",
+    "lemma": "progrès",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pʁɔ.ɡʁɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle fait des progrès rapides en français.",
+    "exampleTranslation": "She is making rapid progress in French.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "progrès",
+    "relatedWords": [
+      {
+        "french": "avancée",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "amélioration",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "développement",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "faire des progrès",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2463",
+    "rank": 2463,
+    "french": "renseigner",
+    "english": "to inform; to give information",
+    "lemma": "renseigner",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁɑ̃.sɛ.ɲe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Pouvez-vous me renseigner sur les horaires ?",
+    "exampleTranslation": "Can you give me information about the timetable?",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "renseigne",
+      "tu": "renseignes",
+      "il_elle": "renseigne",
+      "nous": "renseignons",
+      "vous": "renseignez",
+      "ils_elles": "renseignent"
+    },
+    "relatedWords": [
+      {
+        "french": "informer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "indiquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "orienter",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se renseigner sur",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2464",
+    "rank": 2464,
+    "french": "consulter",
+    "english": "to consult; to look up",
+    "lemma": "consulter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ̃.syl.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je vais consulter le dictionnaire.",
+    "exampleTranslation": "I am going to consult the dictionary.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "consulte",
+      "tu": "consultes",
+      "il_elle": "consulte",
+      "nous": "consultons",
+      "vous": "consultez",
+      "ils_elles": "consultent"
+    },
+    "relatedWords": [
+      {
+        "french": "examiner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "demander conseil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "vérifier",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "consulter un médecin",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2465",
+    "rank": 2465,
+    "french": "sécher",
+    "english": "to dry; to dry out; to skip (class)",
+    "lemma": "sécher",
+    "partOfSpeech": "verb",
+    "pronunciation": "/se.ʃe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le linge sèche au soleil.",
+    "exampleTranslation": "The laundry is drying in the sun.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "sèche",
+      "tu": "sèches",
+      "il_elle": "sèche",
+      "nous": "séchons",
+      "vous": "séchez",
+      "ils_elles": "sèchent"
+    },
+    "relatedWords": [
+      {
+        "french": "assécher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "déshydrater",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "sécheresse",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sécher les cours",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2466",
+    "rank": 2466,
+    "french": "mélanger",
+    "english": "to mix; to blend",
+    "lemma": "mélanger",
+    "partOfSpeech": "verb",
+    "pronunciation": "/me.lɑ̃.ʒe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Mélangez la farine et le lait.",
+    "exampleTranslation": "Mix the flour and the milk.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "mélange",
+      "tu": "mélanges",
+      "il_elle": "mélange",
+      "nous": "mélangeons",
+      "vous": "mélangez",
+      "ils_elles": "mélangent"
+    },
+    "relatedWords": [
+      {
+        "french": "remuer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "combiner",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "associer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "mélanger les ingrédients",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2467",
+    "rank": 2467,
+    "french": "brancher",
+    "english": "to plug in; to connect",
+    "lemma": "brancher",
+    "partOfSpeech": "verb",
+    "pronunciation": "/bʁɑ̃.ʃe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Branche le chargeur sur la prise.",
+    "exampleTranslation": "Plug the charger into the socket.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "branche",
+      "tu": "branches",
+      "il_elle": "branche",
+      "nous": "branchons",
+      "vous": "branchez",
+      "ils_elles": "branchent"
+    },
+    "relatedWords": [
+      {
+        "french": "connecter",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "raccorder",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "prise",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "brancher un appareil",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2468",
+    "rank": 2468,
+    "french": "mental",
+    "english": "mental; psychological",
+    "lemma": "mental",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/mɑ̃.tal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le repos est important pour la santé mentale.",
+    "exampleTranslation": "Rest is important for mental health.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "mentale",
+    "genderForms": {
+      "masculine": "mental",
+      "feminine": "mentale",
+      "masculinePlural": "mentaux",
+      "femininePlural": "mentales"
+    },
+    "relatedWords": [
+      {
+        "french": "psychologique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "intellectuel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "cognitif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "santé mentale",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2469",
+    "rank": 2469,
+    "french": "échelle",
+    "english": "ladder; scale",
+    "lemma": "échelle",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.ʃɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il monte sur une échelle pour peindre le mur.",
+    "exampleTranslation": "He climbs a ladder to paint the wall.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "échelles",
+    "relatedWords": [
+      {
+        "french": "barème",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "niveau",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "graduation",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "à grande échelle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2470",
+    "rank": 2470,
+    "french": "ongle",
+    "english": "nail (finger or toe)",
+    "lemma": "ongle",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɔ̃ɡl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle s’est cassé un ongle.",
+    "exampleTranslation": "She broke a nail.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "ongles",
+    "relatedWords": [
+      {
+        "french": "doigt",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "main",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "manucure",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "vernis à ongles",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2471",
+    "rank": 2471,
+    "french": "panneau",
+    "english": "sign; panel; board",
+    "lemma": "panneau",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pa.no/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Un panneau indique la direction du centre-ville.",
+    "exampleTranslation": "A sign points towards the city centre.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "panneaux",
+    "relatedWords": [
+      {
+        "french": "signalisation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "affiche",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "plaque",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "panneau de signalisation",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2472",
+    "rank": 2472,
+    "french": "chanteur",
+    "english": "singer",
+    "lemma": "chanteur",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃɑ̃.tœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le chanteur monte sur scène à vingt heures.",
+    "exampleTranslation": "The singer goes on stage at eight p.m.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "chanteurs",
+    "relatedWords": [
+      {
+        "french": "musicien",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "artiste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "interprète",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "chanteur célèbre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2473",
+    "rank": 2473,
+    "french": "dégât",
+    "english": "damage",
+    "lemma": "dégât",
+    "partOfSpeech": "noun",
+    "pronunciation": "/de.ɡa/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La tempête a causé beaucoup de dégâts.",
+    "exampleTranslation": "The storm caused a lot of damage.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "dégâts",
+    "relatedWords": [
+      {
+        "french": "dommage",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "destruction",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "perte",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "dégâts matériels",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2474",
+    "rank": 2474,
+    "french": "charme",
+    "english": "charm",
+    "lemma": "charme",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃaʁm/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Ce petit village a beaucoup de charme.",
+    "exampleTranslation": "This little village has a lot of charm.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "charmes",
+    "relatedWords": [
+      {
+        "french": "attrait",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "séduction",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "grâce",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir du charme",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2475",
+    "rank": 2475,
+    "french": "distraire",
+    "english": "to entertain; to distract",
+    "lemma": "distraire",
+    "partOfSpeech": "verb",
+    "pronunciation": "/dis.tʁɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette émission cherche à distraire les enfants.",
+    "exampleTranslation": "This programme aims to entertain children.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "distrais",
+      "tu": "distrais",
+      "il_elle": "distrait",
+      "nous": "distrayons",
+      "vous": "distrayez",
+      "ils_elles": "distrayent"
+    },
+    "relatedWords": [
+      {
+        "french": "amuser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "divertir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "détourner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se distraire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2476",
+    "rank": 2476,
+    "french": "pompe",
+    "english": "pump; pomp",
+    "lemma": "pompe",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɔ̃p/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La pompe envoie l’eau dans le réservoir.",
+    "exampleTranslation": "The pump sends water into the tank.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "pompes",
+    "relatedWords": [
+      {
+        "french": "mécanisme",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "appareil",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "moteur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "pompe à eau",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2477",
+    "rank": 2477,
+    "french": "empirer",
+    "english": "to worsen; to get worse",
+    "lemma": "empirer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ɑ̃.pi.ʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La situation risque d’empirer.",
+    "exampleTranslation": "The situation may get worse.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "empire",
+      "tu": "empires",
+      "il_elle": "empire",
+      "nous": "empirons",
+      "vous": "empirez",
+      "ils_elles": "empirent"
+    },
+    "relatedWords": [
+      {
+        "french": "aggraver",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "détériorer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "se dégrader",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "la situation empire",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2478",
+    "rank": 2478,
+    "french": "leader",
+    "english": "leader",
+    "lemma": "leader",
+    "partOfSpeech": "noun",
+    "pronunciation": "/li.dœʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle est devenue leader de son équipe.",
+    "exampleTranslation": "She became the leader of her team.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "leaders",
+    "relatedWords": [
+      {
+        "french": "dirigeant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "chef",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "meneur",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "leader du marché",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2479",
+    "rank": 2479,
+    "french": "décès",
+    "english": "death; passing",
+    "lemma": "décès",
+    "partOfSpeech": "noun",
+    "pronunciation": "/de.sɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La famille a annoncé son décès hier.",
+    "exampleTranslation": "The family announced his death yesterday.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "décès",
+    "relatedWords": [
+      {
+        "french": "mort",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "disparition",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "deuil",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "acte de décès",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2480",
+    "rank": 2480,
+    "french": "écrivain",
+    "english": "writer; author",
+    "lemma": "écrivain",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.kʁi.vɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cet écrivain publie un nouveau roman.",
+    "exampleTranslation": "This writer is publishing a new novel.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "écrivains",
+    "relatedWords": [
+      {
+        "french": "auteur",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "romancier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "plume",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "écrivain célèbre",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2481",
+    "rank": 2481,
+    "french": "équipement",
+    "english": "equipment",
+    "lemma": "équipement",
+    "partOfSpeech": "noun",
+    "pronunciation": "/e.kip.mɑ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’équipement sportif est rangé dans le local.",
+    "exampleTranslation": "The sports equipment is stored in the room.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "équipements",
+    "relatedWords": [
+      {
+        "french": "matériel",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "installation",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dispositif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "équipement informatique",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2482",
+    "rank": 2482,
+    "french": "palais",
+    "english": "palace; palate",
+    "lemma": "palais",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pa.lɛ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les visiteurs admirent le palais royal.",
+    "exampleTranslation": "Visitors admire the royal palace.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "palais",
+    "relatedWords": [
+      {
+        "french": "résidence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "château",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "demeure",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "palais royal",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2483",
+    "rank": 2483,
+    "french": "jeunesse",
+    "english": "youth; young people",
+    "lemma": "jeunesse",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʒœ.nɛs/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La jeunesse participe au débat.",
+    "exampleTranslation": "Young people are taking part in the debate.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "jeunesses",
+    "relatedWords": [
+      {
+        "french": "adolescence",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "jeune génération",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "âge adulte",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "maison de la jeunesse",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2484",
+    "rank": 2484,
+    "french": "toast",
+    "english": "toast; slice of toasted bread (borrowed word)",
+    "lemma": "toast",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tost/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il mange un toast avec du fromage.",
+    "exampleTranslation": "He eats a piece of toast with cheese.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "toasts",
+    "relatedWords": [
+      {
+        "french": "pain grillé",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tartine",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "apéritif",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "porter un toast",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2485",
+    "rank": 2485,
+    "french": "sincère",
+    "english": "sincere; genuine",
+    "lemma": "sincère",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/sɛ̃.sɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Je vous remercie pour votre aide sincère.",
+    "exampleTranslation": "I thank you for your genuine help.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "sincère",
+    "genderForms": {
+      "masculine": "sincère",
+      "feminine": "sincère",
+      "masculinePlural": "sincères",
+      "femininePlural": "sincères"
+    },
+    "relatedWords": [
+      {
+        "french": "honnête",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "authentique",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "franc",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "être sincère",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2486",
+    "rank": 2486,
+    "french": "doubler",
+    "english": "to double; to overtake; to dub",
+    "lemma": "doubler",
+    "partOfSpeech": "verb",
+    "pronunciation": "/du.ble/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "La production va doubler en deux ans.",
+    "exampleTranslation": "Production will double in two years.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "double",
+      "tu": "doubles",
+      "il_elle": "double",
+      "nous": "doublons",
+      "vous": "doublez",
+      "ils_elles": "doublent"
+    },
+    "relatedWords": [
+      {
+        "french": "multiplier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dépasser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "dédoubler",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "doubler la mise",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2487",
+    "rank": 2487,
+    "french": "vilain",
+    "english": "naughty; ugly; nasty",
+    "lemma": "vilain",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/vi.lɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le garçon a fait un vilain geste.",
+    "exampleTranslation": "The boy made an unkind gesture.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "vilaine",
+    "genderForms": {
+      "masculine": "vilain",
+      "feminine": "vilaine",
+      "masculinePlural": "vilains",
+      "femininePlural": "vilaines"
+    },
+    "relatedWords": [
+      {
+        "french": "méchant",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "laid",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mauvais",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "vilain défaut",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2488",
+    "rank": 2488,
+    "french": "divin",
+    "english": "divine; heavenly",
+    "lemma": "divin",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/di.vɛ̃/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le dessert avait un goût divin.",
+    "exampleTranslation": "The dessert tasted divine.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "divine",
+    "genderForms": {
+      "masculine": "divin",
+      "feminine": "divine",
+      "masculinePlural": "divins",
+      "femininePlural": "divines"
+    },
+    "relatedWords": [
+      {
+        "french": "céleste",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "merveilleux",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "exquis",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "parfum divin",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2489",
+    "rank": 2489,
+    "french": "caractère",
+    "english": "character; personality; typeface",
+    "lemma": "caractère",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ka.ʁak.tɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle a un caractère calme et patient.",
+    "exampleTranslation": "She has a calm and patient personality.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "caractères",
+    "relatedWords": [
+      {
+        "french": "personnalité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "tempérament",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "nature",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "avoir du caractère",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2490",
+    "rank": 2490,
+    "french": "planifier",
+    "english": "to plan; to schedule",
+    "lemma": "planifier",
+    "partOfSpeech": "verb",
+    "pronunciation": "/pla.ni.fje/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous devons planifier le projet à l’avance.",
+    "exampleTranslation": "We need to plan the project in advance.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "planifie",
+      "tu": "planifies",
+      "il_elle": "planifie",
+      "nous": "planifions",
+      "vous": "planifiez",
+      "ils_elles": "planifient"
+    },
+    "relatedWords": [
+      {
+        "french": "organiser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "programmer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "prévoir",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "planifier une réunion",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2491",
+    "rank": 2491,
+    "french": "racheter",
+    "english": "to buy back; to redeem; to make amends",
+    "lemma": "racheter",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʁaʃ.te/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Elle veut racheter son billet.",
+    "exampleTranslation": "She wants to buy back her ticket.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "rachète",
+      "tu": "rachètes",
+      "il_elle": "rachète",
+      "nous": "rachetons",
+      "vous": "rachetez",
+      "ils_elles": "rachètent"
+    },
+    "relatedWords": [
+      {
+        "french": "rembourser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "acquérir",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "compenser",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se racheter",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2492",
+    "rank": 2492,
+    "french": "transport",
+    "english": "transport; transportation",
+    "lemma": "transport",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʁɑ̃.spɔʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Les transports publics sont fréquents ici.",
+    "exampleTranslation": "Public transport is frequent here.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "transports",
+    "relatedWords": [
+      {
+        "french": "déplacement",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "mobilité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "véhicule",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "transport en commun",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2493",
+    "rank": 2493,
+    "french": "contrer",
+    "english": "to counter; to thwart",
+    "lemma": "contrer",
+    "partOfSpeech": "verb",
+    "pronunciation": "/kɔ̃.tʁe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "L’équipe cherche à contrer l’attaque adverse.",
+    "exampleTranslation": "The team is trying to counter the opposing attack.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "contre",
+      "tu": "contres",
+      "il_elle": "contre",
+      "nous": "controns",
+      "vous": "contrez",
+      "ils_elles": "contrent"
+    },
+    "relatedWords": [
+      {
+        "french": "bloquer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "neutraliser",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "s’opposer",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "contrer une attaque",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2494",
+    "rank": 2494,
+    "french": "métal",
+    "english": "metal",
+    "lemma": "métal",
+    "partOfSpeech": "noun",
+    "pronunciation": "/me.tal/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Cette sculpture est faite de métal recyclé.",
+    "exampleTranslation": "This sculpture is made of recycled metal.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "métaux",
+    "relatedWords": [
+      {
+        "french": "acier",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "fer",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "alliage",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "métal précieux",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2495",
+    "rank": 2495,
+    "french": "balader",
+    "english": "to take for a walk; to wander; to lead someone on",
+    "lemma": "balader",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ba.la.de/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Nous aimons nous balader au bord du fleuve.",
+    "exampleTranslation": "We like to stroll along the river.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "balade",
+      "tu": "balades",
+      "il_elle": "balade",
+      "nous": "baladons",
+      "vous": "baladez",
+      "ils_elles": "baladent"
+    },
+    "relatedWords": [
+      {
+        "french": "se promener",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "marcher",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "flâner",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "se balader en ville",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2496",
+    "rank": 2496,
+    "french": "trottoir",
+    "english": "sidewalk; pavement",
+    "lemma": "trottoir",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʁɔ.twaʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il marche sur le trottoir pour éviter les voitures.",
+    "exampleTranslation": "He walks on the sidewalk to avoid the cars.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "masculine",
+    "plural": "trottoirs",
+    "relatedWords": [
+      {
+        "french": "rue",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "route",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sur le trottoir",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2497",
+    "rank": 2497,
+    "french": "gêner",
+    "english": "to bother; to embarrass",
+    "lemma": "gêner",
+    "partOfSpeech": "verb",
+    "pronunciation": "/ʒɛ.ne/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "J'espère que ma question ne va pas te gêner.",
+    "exampleTranslation": "I hope my question is not going to bother you.",
+    "enrichmentStatus": "ENRICHED",
+    "conjugation": {
+      "je": "gêne",
+      "tu": "gênes",
+      "il_elle": "gêne",
+      "nous": "gênons",
+      "vous": "gênez",
+      "ils_elles": "gênent"
+    },
+    "relatedWords": [
+      {
+        "french": "gêne",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "gênant",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "sans se gêner",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2498",
+    "rank": 2498,
+    "french": "sévère",
+    "english": "severe; strict",
+    "lemma": "sévère",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/se.vɛʁ/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le nouveau professeur de mathématiques est très sévère.",
+    "exampleTranslation": "The new math teacher is very strict.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "sévères",
+    "genderForms": {
+      "masculine": "sévère",
+      "feminine": "sévère",
+      "masculinePlural": "sévères",
+      "femininePlural": "sévères"
+    },
+    "relatedWords": [
+      {
+        "french": "sévérité",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "un regard sévère",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2499",
+    "rank": 2499,
+    "french": "fidèle",
+    "english": "faithful; loyal",
+    "lemma": "fidèle",
+    "partOfSpeech": "adjective",
+    "pronunciation": "/fi.dɛl/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Le chien est considéré comme l'animal le plus fidèle.",
+    "exampleTranslation": "The dog is considered the most loyal animal.",
+    "enrichmentStatus": "ENRICHED",
+    "plural": "fidèles",
+    "genderForms": {
+      "masculine": "fidèle",
+      "feminine": "fidèle",
+      "masculinePlural": "fidèles",
+      "femininePlural": "fidèles"
+    },
+    "relatedWords": [
+      {
+        "french": "fidélité",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "infidèle",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "rester fidèle",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "v-2500",
+    "rank": 2500,
+    "french": "poignée",
+    "english": "handful; door handle",
+    "lemma": "poignée",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pwa.ɲe/",
+    "frequencyBand": "ADVANCED CORE",
+    "exampleSentence": "Il a ajouté une poignée de sel dans la soupe.",
+    "exampleTranslation": "He added a handful of salt to the soup.",
+    "enrichmentStatus": "ENRICHED",
+    "gender": "feminine",
+    "plural": "poignées",
+    "relatedWords": [
+      {
+        "french": "poing",
+        "english": "",
+        "relationship": "Related Term"
+      },
+      {
+        "french": "poignet",
+        "english": "",
+        "relationship": "Related Term"
+      }
+    ],
+    "commonExpressions": [
+      {
+        "french": "une poignée de main",
+        "english": ""
+      }
+    ]
+  },
+];
+
+export const MOCK_VOCABULARY: VocabularyItem[] = VOCABULARY_LEVEL1_2.concat(VOCABULARY_LEVEL3).concat(VOCABULARY_LEVEL4).concat(VOCABULARY_LEVEL5);
