@@ -380,6 +380,7 @@ export interface ReviewSessionQueueOptions {
   specificWord?: VocabularyItem | null;
   masteryThreshold?: number;
   newBatchSize?: number;
+  newIntakeSessionSize?: number;
   previewLockedLevels?: boolean;
 }
 
@@ -404,6 +405,7 @@ export function buildReviewSessionQueue(
     specificWord = null,
     masteryThreshold = DEFAULT_MASTERY_STREAK_THRESHOLD,
     newBatchSize = 5,
+    newIntakeSessionSize = 25,
     previewLockedLevels = false,
   } = options;
 
@@ -422,7 +424,10 @@ export function buildReviewSessionQueue(
   if (mode === 'new') {
     // Pure new intake: strict frequency-rank order (lowest rank first)
     const newWords = getNewWords(progressMap, vocabulary, bandArg, masteryThreshold, previewLockedLevels);
-    return newWords.slice(0, 15);
+    const sessionSize = typeof newIntakeSessionSize === 'number' && newIntakeSessionSize > 0
+      ? newIntakeSessionSize
+      : 25;
+    return newWords.slice(0, sessionSize);
   }
 
   if (mode === 'due') {

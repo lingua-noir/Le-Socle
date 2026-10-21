@@ -111,6 +111,7 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
   const previewLocked = Boolean(settings.previewLockedLevels);
+  const newIntakeSessionSize = settings.newIntakeSessionSize || 25;
 
   // Progression context
   const levelsProgression = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
@@ -118,9 +119,6 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
 
   // Maintain ref to latest progressMap so session answers don't trigger unwanted re-initialization
   const progressMapRef = useRef(progressMap);
-  useEffect(() => {
-    progressMapRef.current = progressMap;
-  }, [progressMap]);
 
   // Focus input helper
   const focusInput = useCallback(() => {
@@ -145,6 +143,7 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
       specificWord,
       masteryThreshold,
       newBatchSize: 5,
+      newIntakeSessionSize,
       previewLockedLevels: previewLocked,
     });
 
@@ -174,7 +173,27 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
     });
     setIsSessionComplete(false);
     focusInput();
-  }, [masteryThreshold, focusInput]);
+  }, [masteryThreshold, previewLocked, newIntakeSessionSize, focusInput]);
+
+  // Synchronize progressMap ref and immediately re-initialize queue if a progress reset occurs
+  useEffect(() => {
+    const prevHadProgress = Object.keys(progressMapRef.current).some(
+      (k) => (progressMapRef.current[k]?.totalAttempts ?? 0) > 0
+    );
+    const currHasProgress = Object.keys(progressMap).some(
+      (k) => (progressMap[k]?.totalAttempts ?? 0) > 0
+    );
+
+    progressMapRef.current = progressMap;
+
+    if (prevHadProgress && !currHasProgress) {
+      if (initialWord) {
+        initQueue('all', 'all', initialWord);
+      } else {
+        initQueue(selectedMode, selectedBandFilter);
+      }
+    }
+  }, [progressMap, initialWord, selectedMode, selectedBandFilter, initQueue]);
 
   useEffect(() => {
     if (initialWord) {

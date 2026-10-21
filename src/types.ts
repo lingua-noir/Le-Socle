@@ -97,6 +97,7 @@ export interface UserSettings {
   intervals: ReviewIntervals;
   masteryStreakThreshold: number; // Consecutive recalls required for Mastered (default 7)
   previewLockedLevels?: boolean; // Developer Mode → Preview Locked Levels
+  newIntakeSessionSize: number;  // Number of new words per New Intake session (default 25)
 }
 
 export type RecallDirection = 'en_to_fr' | 'fr_to_en';

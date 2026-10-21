@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UserSettings } from '../types';
-import { DEFAULT_USER_SETTINGS } from '../services/storage';
+import { DEFAULT_USER_SETTINGS, SUPPORTED_NEW_INTAKE_SESSION_SIZES } from '../services/storage';
 import { evaluateFrenchAnswer } from '../services/evaluator';
 import { speakFrench, setTtsSpeechRate } from '../services/tts';
 import { 
@@ -14,7 +14,8 @@ import {
   CheckCircle2,
   XCircle,
   AlertCircle,
-  Target
+  Target,
+  BookOpen
 } from 'lucide-react';
 
 interface SettingsViewProps {
@@ -30,6 +31,9 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 }) => {
   const [localSettings, setLocalSettings] = useState<UserSettings>(settings);
   const [saveToast, setSaveToast] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [resetSuccessMessage, setResetSuccessMessage] = useState(false);
+  const [showDefaultsConfirm, setShowDefaultsConfirm] = useState(false);
 
   // Mini-sandbox testing state
   const [testTarget, setTestTarget] = useState('décision');
@@ -58,8 +62,20 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   };
 
   const handleResetDefaults = () => {
-    if (confirm('Reset all settings to default values?')) {
-      handleUpdate(DEFAULT_USER_SETTINGS);
+    setShowDefaultsConfirm(true);
+  };
+
+  const handleConfirmResetDefaults = () => {
+    handleUpdate(DEFAULT_USER_SETTINGS);
+    setShowDefaultsConfirm(false);
+  };
+
+  const handleConfirmResetProgress = () => {
+    if (onResetProgress) {
+      onResetProgress();
+      setShowResetConfirm(false);
+      setResetSuccessMessage(true);
+      setTimeout(() => setResetSuccessMessage(false), 5000);
     }
   };
 
@@ -447,7 +463,61 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           </p>
         </div>
 
-        {/* SECTION 5: DEVELOPER TESTING BYPASS */}
+        {/* SECTION 5: NEW INTAKE SESSION LENGTH */}
+        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-4.5 w-4.5 text-stone-700" />
+                <h2 className="font-serif text-lg font-bold text-stone-900">
+                  New Intake Session Length
+                </h2>
+              </div>
+              <p className="mt-1 text-xs text-stone-500 max-w-xl">
+                Choose how many new vocabulary words are introduced in each New Intake session. New words are always presented in strict ascending frequency-rank order.
+              </p>
+            </div>
+
+            <span className="rounded-xl bg-stone-900 px-3.5 py-1.5 font-mono text-base font-bold text-stone-50 shrink-0">
+              {localSettings.newIntakeSessionSize ?? 25} words
+            </span>
+          </div>
+
+          <div className="mt-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+              {SUPPORTED_NEW_INTAKE_SESSION_SIZES.map((size) => {
+                const isSelected = (localSettings.newIntakeSessionSize ?? 25) === size;
+                const isDefault = size === 25;
+                return (
+                  <button
+                    key={size}
+                    id={`intake-size-btn-${size}`}
+                    type="button"
+                    onClick={() => handleUpdate({ ...localSettings, newIntakeSessionSize: size })}
+                    className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all cursor-pointer ${
+                      isSelected
+                        ? 'border-stone-900 bg-stone-900 text-white shadow-2xs ring-2 ring-stone-900/10'
+                        : 'border-stone-200 bg-stone-50/50 text-stone-700 hover:border-stone-300 hover:bg-stone-100/60'
+                    }`}
+                  >
+                    <span className="font-mono text-base font-bold">
+                      {size}
+                    </span>
+                    <span className={`text-[11px] font-medium ${isSelected ? 'text-stone-300' : 'text-stone-500'}`}>
+                      words {isDefault && '(default)'}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <p className="mt-4 text-[11px] text-stone-400">
+            * Default is 25 words. If fewer unstudied words remain in your unlocked levels, the session will cleanly include all remaining words.
+          </p>
+        </div>
+
+        {/* SECTION 6: DEVELOPER TESTING BYPASS */}
         <div className="rounded-2xl border border-amber-300 bg-amber-50/40 p-6 shadow-2xs sm:p-7">
           <div className="flex items-start justify-between gap-4">
             <div>
@@ -499,7 +569,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           )}
         </div>
 
-        {/* SECTION 6: DATA MANAGEMENT & RESET */}
+        {/* SECTION 7: DATA MANAGEMENT & RESET */}
         {onResetProgress && (
           <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
             <div className="flex items-start justify-between gap-4">
@@ -517,22 +587,118 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
               <button
                 id="settings-reset-progress-btn"
-                onClick={() => {
-                  if (confirm('Are you sure you want to reset your learning progress? All mastery levels and history will return to clean 0/100 state while keeping the vocabulary database intact.')) {
-                    onResetProgress();
-                    alert('Learning progress has been successfully reset.');
-                  }
-                }}
+                onClick={() => setShowResetConfirm(true)}
                 className="flex items-center gap-1.5 rounded-lg border border-rose-200 bg-rose-50 px-3.5 py-2 text-xs font-semibold text-rose-700 hover:bg-rose-100 transition-colors shrink-0"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 <span>Reset Learning Progress</span>
               </button>
             </div>
+
+            {/* In-app post-reset success feedback banner */}
+            {resetSuccessMessage && (
+              <div
+                id="reset-progress-success-alert"
+                className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-medium text-emerald-800 shadow-2xs animate-in fade-in duration-200"
+              >
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <span>Learning progress has been successfully reset. All mastery levels, streaks, and review queues are back to clean 0/100 state.</span>
+                </div>
+                <button
+                  onClick={() => setResetSuccessMessage(false)}
+                  className="text-emerald-700 hover:text-emerald-900 font-bold text-xs"
+                  aria-label="Dismiss message"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
           </div>
         )}
 
       </div>
+
+      {/* Accessible In-App Two-Step Reset Confirmation Modal */}
+      {showResetConfirm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="reset-progress-modal-title"
+          aria-describedby="reset-progress-modal-desc"
+        >
+          <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-stone-200 sm:p-7">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-600 border border-rose-200">
+                <AlertCircle className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <h3 id="reset-progress-modal-title" className="font-serif text-lg font-bold text-stone-900">
+                  Reset Learning Progress?
+                </h3>
+                <p id="reset-progress-modal-desc" className="mt-2 text-xs text-stone-600 leading-relaxed">
+                  This will reset all your mastery levels, streaks, spaced-repetition schedules, and review history back to 0.
+                </p>
+                <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 p-3 text-xs text-stone-700">
+                  <span className="font-semibold text-stone-900">Corpus Preservation Guarantee:</span> The complete 2,500-word vocabulary dataset remains fully intact across Levels 1–5.
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex items-center justify-end gap-3 border-t border-stone-100 pt-4">
+              <button
+                id="cancel-reset-progress-btn"
+                onClick={() => setShowResetConfirm(false)}
+                className="rounded-xl px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-100 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                id="confirm-reset-progress-btn"
+                onClick={handleConfirmResetProgress}
+                className="flex items-center gap-1.5 rounded-xl bg-rose-600 px-4 py-2 text-xs font-semibold text-white shadow-xs hover:bg-rose-700 transition-colors"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span>Confirm Reset</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* In-App Confirmation for Settings Defaults */}
+      {showDefaultsConfirm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="reset-defaults-modal-title"
+        >
+          <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-stone-200 sm:p-7">
+            <h3 id="reset-defaults-modal-title" className="font-serif text-lg font-bold text-stone-900">
+              Reset Settings to Defaults?
+            </h3>
+            <p className="mt-2 text-xs text-stone-600 leading-relaxed">
+              Reset all study configuration settings (typo tolerance, pronunciation rate, audio feedback, and SRS intervals) to their recommended defaults? Learning progress will not be affected.
+            </p>
+            <div className="mt-6 flex items-center justify-end gap-3 border-t border-stone-100 pt-4">
+              <button
+                onClick={() => setShowDefaultsConfirm(false)}
+                className="rounded-xl px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-100 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleConfirmResetDefaults}
+                className="rounded-xl bg-stone-900 px-4 py-2 text-xs font-semibold text-stone-50 hover:bg-stone-800 transition-colors"
+              >
+                Reset Defaults
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

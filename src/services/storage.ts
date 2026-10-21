@@ -20,11 +20,20 @@ const PROGRESS_STORAGE_KEY = 'le_socle_word_progress_v1';
 const STATS_STORAGE_KEY = 'le_socle_user_stats_v1';
 const SETTINGS_STORAGE_KEY = 'le_socle_user_settings_v1';
 
+export const SUPPORTED_NEW_INTAKE_SESSION_SIZES = [10, 15, 20, 25, 30, 50] as const;
+export type NewIntakeSessionSize = (typeof SUPPORTED_NEW_INTAKE_SESSION_SIZES)[number];
+export const DEFAULT_NEW_INTAKE_SESSION_SIZE: NewIntakeSessionSize = 25;
+
+export function isValidNewIntakeSessionSize(val: unknown): val is NewIntakeSessionSize {
+  return typeof val === 'number' && (SUPPORTED_NEW_INTAKE_SESSION_SIZES as readonly number[]).includes(val);
+}
+
 export const DEFAULT_USER_SETTINGS: UserSettings = {
   typoTolerance: 80,
   speechRate: 0.9,
   masteryStreakThreshold: DEFAULT_MASTERY_STREAK_THRESHOLD,
   previewLockedLevels: false,
+  newIntakeSessionSize: DEFAULT_NEW_INTAKE_SESSION_SIZE,
   intervals: {
     again: 1,
     hard: 2,
@@ -47,6 +56,9 @@ export function loadUserSettings(): UserSettings {
       speechRate: typeof parsed.speechRate === 'number' ? parsed.speechRate : DEFAULT_USER_SETTINGS.speechRate,
       masteryStreakThreshold: typeof parsed.masteryStreakThreshold === 'number' ? parsed.masteryStreakThreshold : DEFAULT_MASTERY_STREAK_THRESHOLD,
       previewLockedLevels: typeof parsed.previewLockedLevels === 'boolean' ? parsed.previewLockedLevels : false,
+      newIntakeSessionSize: isValidNewIntakeSessionSize(parsed.newIntakeSessionSize)
+        ? parsed.newIntakeSessionSize
+        : DEFAULT_NEW_INTAKE_SESSION_SIZE,
       intervals: {
         again: typeof parsed.intervals?.again === 'number' ? parsed.intervals.again : DEFAULT_USER_SETTINGS.intervals.again,
         hard: typeof parsed.intervals?.hard === 'number' ? parsed.intervals.hard : DEFAULT_USER_SETTINGS.intervals.hard,
@@ -525,26 +537,10 @@ export function resetAllProgress(): { progress: Record<string, WordProgress>; st
   if (typeof window !== 'undefined') {
     localStorage.removeItem(PROGRESS_STORAGE_KEY);
     localStorage.removeItem(STATS_STORAGE_KEY);
-    localStorage.setItem('le_socle_demo_cleanup_v2', 'true');
+    localStorage.setItem('le_socle_demo_cleanup_v3', 'true');
   }
 
-  const initialProgress: Record<string, WordProgress> = {};
-  MOCK_VOCABULARY.forEach((item) => {
-    initialProgress[item.id] = {
-      wordId: item.id,
-      mastery: 'new',
-      totalAttempts: 0,
-      totalExactCorrect: 0,
-      totalAcceptedTypo: 0,
-      totalIncorrect: 0,
-      totalRevealed: 0,
-      currentStreak: 0,
-      timesReviewed: 0,
-      timesCorrect: 0,
-      consecutiveCorrect: 0,
-      nextDueAt: new Date().toISOString(),
-    };
-  });
+  const initialProgress = getDefaultWordProgressMap();
 
   const initialStats: UserStats = {
     totalReviewed: 0,

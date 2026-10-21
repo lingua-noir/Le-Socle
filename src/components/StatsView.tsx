@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WordProgress, UserStats, UserSettings } from '../types';
 import { MOCK_VOCABULARY, FREQUENCY_BANDS } from '../data/vocabulary';
 import { getDueWords } from '../services/storage';
@@ -22,6 +22,7 @@ import {
   Lock,
   Unlock,
   AlertTriangle,
+  AlertCircle,
   ArrowRightLeft
 } from 'lucide-react';
 
@@ -40,6 +41,16 @@ export const StatsView: React.FC<StatsViewProps> = ({
   onResetProgress,
   onSeedDemoProgress,
 }) => {
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [resetSuccessMessage, setResetSuccessMessage] = useState(false);
+
+  const handleConfirmResetProgress = () => {
+    onResetProgress();
+    setShowResetConfirm(false);
+    setResetSuccessMessage(true);
+    setTimeout(() => setResetSuccessMessage(false), 5000);
+  };
+
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
   const previewLocked = Boolean(settings.previewLockedLevels);
   const levels = getCumulativeLevelsProgression(progressMap, MOCK_VOCABULARY, masteryThreshold, previewLocked);
@@ -118,11 +129,7 @@ export const StatsView: React.FC<StatsViewProps> = ({
         <div className="flex items-center gap-2">
           <button
             id="reset-progress-btn"
-            onClick={() => {
-              if (confirm('Are you sure you want to reset your learning progress? This resets mastery, streaks, and review history to 0 while preserving the imported 2,500-word vocabulary dataset.')) {
-                onResetProgress();
-              }
-            }}
+            onClick={() => setShowResetConfirm(true)}
             className="flex items-center gap-1.5 rounded-lg border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 shadow-2xs hover:text-rose-600 hover:border-rose-200 transition-colors"
             title="Reset learning progress to 0 / 100"
           >
@@ -131,6 +138,26 @@ export const StatsView: React.FC<StatsViewProps> = ({
           </button>
         </div>
       </div>
+
+      {/* Post-reset success feedback banner */}
+      {resetSuccessMessage && (
+        <div
+          id="stats-reset-success-alert"
+          className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-medium text-emerald-800 shadow-2xs animate-in fade-in duration-200"
+        >
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+            <span>Learning progress has been successfully reset. All mastery levels, streaks, and review queues are back to clean 0/100 state.</span>
+          </div>
+          <button
+            onClick={() => setResetSuccessMessage(false)}
+            className="text-emerald-700 hover:text-emerald-900 font-bold text-xs"
+            aria-label="Dismiss message"
+          >
+            ✕
+          </button>
+        </div>
+      )}
 
       {/* Row 1: High-Level Metric Tiles */}
       <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -522,6 +549,54 @@ export const StatsView: React.FC<StatsViewProps> = ({
           </div>
         </details>
       </div>
+
+      {/* Accessible In-App Two-Step Reset Confirmation Modal */}
+      {showResetConfirm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="stats-reset-modal-title"
+          aria-describedby="stats-reset-modal-desc"
+        >
+          <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-stone-200 sm:p-7">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-600 border border-rose-200">
+                <AlertCircle className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <h3 id="stats-reset-modal-title" className="font-serif text-lg font-bold text-stone-900">
+                  Reset Learning Progress?
+                </h3>
+                <p id="stats-reset-modal-desc" className="mt-2 text-xs text-stone-600 leading-relaxed">
+                  This will reset all your mastery levels, streaks, spaced-repetition schedules, and review history back to 0.
+                </p>
+                <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 p-3 text-xs text-stone-700">
+                  <span className="font-semibold text-stone-900">Corpus Preservation Guarantee:</span> The complete 2,500-word vocabulary dataset remains fully intact across Levels 1–5.
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex items-center justify-end gap-3 border-t border-stone-100 pt-4">
+              <button
+                id="stats-cancel-reset-progress-btn"
+                onClick={() => setShowResetConfirm(false)}
+                className="rounded-xl px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-100 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                id="stats-confirm-reset-progress-btn"
+                onClick={handleConfirmResetProgress}
+                className="flex items-center gap-1.5 rounded-xl bg-rose-600 px-4 py-2 text-xs font-semibold text-white shadow-xs hover:bg-rose-700 transition-colors"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span>Confirm Reset</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

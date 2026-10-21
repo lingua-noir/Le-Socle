@@ -105,6 +105,9 @@ export default function App() {
     const { progress, stats } = resetAllProgress();
     setProgressMap(progress);
     setUserStats(stats);
+    setPracticeWord(null);
+    setReviewMode('due');
+    setReviewBand(null);
   };
 
   const handleSeedDemoProgress = () => {
