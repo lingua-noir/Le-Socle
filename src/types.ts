@@ -91,6 +91,11 @@ export interface ReviewIntervals {
   easy: number;  // in days
 }
 
+export interface DailyGoalSettings {
+  newIntakeTarget: number;   // Daily target for distinct new vocabulary words introduced (default: 25)
+  weakWordsTarget: number;   // Daily target for distinct weak vocabulary words practiced (default: 10)
+}
+
 export interface UserSettings {
   typoTolerance: number; // 50 to 100 percentage (default 80)
   speechRate: number;    // 0.5 to 1.5 (default 0.9)
@@ -98,6 +103,32 @@ export interface UserSettings {
   masteryStreakThreshold: number; // Consecutive recalls required for Mastered (default 7)
   previewLockedLevels?: boolean; // Developer Mode → Preview Locked Levels
   newIntakeSessionSize: number;  // Number of new words per New Intake session (default 25)
+  dailyGoals: DailyGoalSettings; // Daily Goals target configuration
+}
+
+export interface DailyGoalRecord {
+  date: string;               // YYYY-MM-DD in user's local calendar day
+  newIntakeWordIds: string[];  // Distinct qualifying vocabulary IDs practiced in New Intake mode
+  weakWordsWordIds: string[];  // Distinct qualifying vocabulary IDs practiced in Weak Words mode
+  isCompleted: boolean;       // Whether both daily goals were achieved on this date
+  completedAt?: string;       // ISO timestamp when both goals were attained
+  streakCredited: boolean;    // Guard ensuring a completed day receives streak credit at most once
+  streakCreditedAt?: string;  // ISO timestamp when streak credit was granted
+}
+
+export type DailyGoalHistory = Record<string, DailyGoalRecord>;
+
+export type DailyGoalPracticeMode = 'new_intake' | 'weak_words';
+
+export interface DailyGoalCompletionStatus {
+  newIntakeCount: number;
+  newIntakeTarget: number;
+  isNewIntakeComplete: boolean;
+  weakWordsCount: number;
+  weakWordsTarget: number;
+  isWeakWordsComplete: boolean;
+  isFullyComplete: boolean;
+  streakCredited: boolean;
 }
 
 export type RecallDirection = 'en_to_fr' | 'fr_to_en';
@@ -180,4 +211,6 @@ export interface UserStats {
 }
 
 export type NavigationTab = 'home' | 'learn' | 'review' | 'stats' | 'search' | 'settings';
+
+export type ReviewModeFilter = 'due' | 'weak' | 'new' | 'all';
 

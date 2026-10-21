@@ -7,7 +7,8 @@ import {
   UserStats, 
   UserSettings, 
   SpacedRepetitionRating,
-  RecallDirection
+  RecallDirection,
+  DailyGoalRecord
 } from './types';
 import { Header } from './components/Header';
 import { HomeView } from './components/HomeView';
@@ -29,7 +30,9 @@ import {
   getSampleDemoProgressMap,
   saveWordProgressMap,
   saveUserStats,
-  getDueWords
+  getDueWords,
+  getOrCreateDailyGoalRecord,
+  syncDailyGoalOnSettingsChange
 } from './services/storage';
 import { setTtsSpeechRate } from './services/tts';
 
@@ -59,16 +62,19 @@ export default function App() {
   });
 
   const [settings, setSettings] = useState<UserSettings>(DEFAULT_USER_SETTINGS);
+  const [dailyGoalRecord, setDailyGoalRecord] = useState<DailyGoalRecord>(() => getOrCreateDailyGoalRecord());
 
   // Load state and settings on mount
   useEffect(() => {
     const loadedProg = loadWordProgressMap();
     const loadedStats = loadUserStats();
     const loadedSettings = loadUserSettings();
+    const loadedDailyRecord = getOrCreateDailyGoalRecord();
     
     setProgressMap(loadedProg);
     setUserStats(loadedStats);
     setSettings(loadedSettings);
+    setDailyGoalRecord(loadedDailyRecord);
     setTtsSpeechRate(loadedSettings.speechRate);
   }, []);
 
@@ -76,6 +82,9 @@ export default function App() {
     setSettings(newSettings);
     saveUserSettings(newSettings);
     setTtsSpeechRate(newSettings.speechRate);
+    const { updatedRecord, updatedStats } = syncDailyGoalOnSettingsChange(newSettings, userStats);
+    setDailyGoalRecord(updatedRecord);
+    setUserStats(updatedStats);
   };
 
   const handleRecordResult = (
@@ -84,9 +93,10 @@ export default function App() {
     rating: SpacedRepetitionRating, 
     userAnswer: string,
     isExact: boolean = false,
-    direction: RecallDirection = 'en_to_fr'
+    direction: RecallDirection = 'en_to_fr',
+    mode?: ReviewModeFilter
   ) => {
-    const { updatedProgress, updatedStats } = recordReviewResult(
+    const { updatedProgress, updatedStats, dailyGoalRecord: updatedDailyRecord } = recordReviewResult(
       wordId,
       isCorrect,
       rating,
@@ -95,16 +105,21 @@ export default function App() {
       userStats,
       settings,
       isExact,
-      direction
+      direction,
+      mode
     );
     setProgressMap(updatedProgress);
     setUserStats(updatedStats);
+    if (updatedDailyRecord) {
+      setDailyGoalRecord(updatedDailyRecord);
+    }
   };
 
   const handleResetProgress = () => {
     const { progress, stats } = resetAllProgress();
     setProgressMap(progress);
     setUserStats(stats);
+    setDailyGoalRecord(getOrCreateDailyGoalRecord());
     setPracticeWord(null);
     setReviewMode('due');
     setReviewBand(null);
@@ -194,6 +209,7 @@ export default function App() {
             progressMap={progressMap}
             userStats={userStats}
             settings={settings}
+            dailyGoalRecord={dailyGoalRecord}
             onNavigate={(tab) => {
               if (tab === 'review') {
                 setPracticeWord(null);
@@ -257,8 +273,10 @@ export default function App() {
         {currentTab === 'settings' && (
           <SettingsView
             settings={settings}
+            progressMap={progressMap}
             onUpdateSettings={handleUpdateSettings}
             onResetProgress={handleResetProgress}
+            onNavigate={setCurrentTab}
           />
         )}
       </main>

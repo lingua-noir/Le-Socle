@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
-import { UserSettings } from '../types';
-import { DEFAULT_USER_SETTINGS, SUPPORTED_NEW_INTAKE_SESSION_SIZES } from '../services/storage';
+import { UserSettings, WordProgress, NavigationTab } from '../types';
+import { MOCK_VOCABULARY } from '../data/vocabulary';
+import { getWeakWords } from '../services/progression';
+import { 
+  DEFAULT_USER_SETTINGS, 
+  SUPPORTED_NEW_INTAKE_SESSION_SIZES,
+  DEFAULT_DAILY_NEW_INTAKE_GOAL,
+  DEFAULT_DAILY_WEAK_WORDS_GOAL,
+  MIN_DAILY_GOAL_TARGET,
+  MAX_DAILY_NEW_INTAKE_GOAL,
+  MAX_DAILY_WEAK_WORDS_GOAL
+} from '../services/storage';
 import { evaluateFrenchAnswer } from '../services/evaluator';
 import { speakFrench, setTtsSpeechRate } from '../services/tts';
 import { 
@@ -15,19 +25,24 @@ import {
   XCircle,
   AlertCircle,
   Target,
-  BookOpen
+  BookOpen,
+  Award
 } from 'lucide-react';
 
 interface SettingsViewProps {
   settings: UserSettings;
   onUpdateSettings: (newSettings: UserSettings) => void;
   onResetProgress?: () => void;
+  progressMap?: Record<string, WordProgress>;
+  onNavigate?: (tab: NavigationTab) => void;
 }
 
 export const SettingsView: React.FC<SettingsViewProps> = ({
   settings,
   onUpdateSettings,
   onResetProgress,
+  progressMap,
+  onNavigate,
 }) => {
   const [localSettings, setLocalSettings] = useState<UserSettings>(settings);
   const [saveToast, setSaveToast] = useState(false);
@@ -47,6 +62,33 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
     setTtsSpeechRate(updated.speechRate);
     setSaveToast(true);
     setTimeout(() => setSaveToast(false), 2000);
+  };
+
+  const currentNewIntakeTarget = localSettings.dailyGoals?.newIntakeTarget ?? DEFAULT_DAILY_NEW_INTAKE_GOAL;
+  const currentWeakWordsTarget = localSettings.dailyGoals?.weakWordsTarget ?? DEFAULT_DAILY_WEAK_WORDS_GOAL;
+
+  const weakWordsPool = getWeakWords(
+    progressMap || {},
+    MOCK_VOCABULARY,
+    undefined,
+    localSettings.masteryStreakThreshold,
+    Boolean(localSettings.previewLockedLevels)
+  );
+  const weakWordsPoolSize = weakWordsPool.length;
+
+  const handleDailyGoalChange = (field: 'newIntakeTarget' | 'weakWordsTarget', rawVal: string | number) => {
+    let val = typeof rawVal === 'number' ? rawVal : parseInt(rawVal, 10);
+    if (isNaN(val)) val = field === 'newIntakeTarget' ? DEFAULT_DAILY_NEW_INTAKE_GOAL : DEFAULT_DAILY_WEAK_WORDS_GOAL;
+    val = Math.max(MIN_DAILY_GOAL_TARGET, Math.min(MAX_DAILY_NEW_INTAKE_GOAL, val));
+    const updated: UserSettings = {
+      ...localSettings,
+      dailyGoals: {
+        newIntakeTarget: currentNewIntakeTarget,
+        weakWordsTarget: currentWeakWordsTarget,
+        [field]: val,
+      },
+    };
+    handleUpdate(updated);
   };
 
   const handleIntervalChange = (key: keyof UserSettings['intervals'], valStr: string) => {
@@ -517,7 +559,234 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           </p>
         </div>
 
-        {/* SECTION 6: DEVELOPER TESTING BYPASS */}
+        {/* SECTION 6: DAILY STUDY GOALS */}
+        <div id="settings-daily-goals-section" className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <Award className="h-4.5 w-4.5 text-stone-700" />
+                <h2 className="font-serif text-lg font-bold text-stone-900">
+                  Daily Study Goals
+                </h2>
+              </div>
+              <p className="mt-1 text-xs text-stone-500 max-w-xl">
+                Configure independent daily targets for new vocabulary intake and weak words practice. Achieving both goals on a local calendar day advances your study streak.
+              </p>
+            </div>
+
+            <span className="rounded-xl bg-stone-900 px-3 py-1 font-mono text-xs font-bold text-stone-50 shrink-0">
+              {currentNewIntakeTarget} new • {currentWeakWordsTarget} weak
+            </span>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Control 1: Daily New Intake Target */}
+            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-4 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label htmlFor="daily-new-intake-target-input" className="text-sm font-bold text-stone-900 flex items-center gap-1.5">
+                    <BookOpen className="h-4 w-4 text-stone-600" />
+                    <span>Daily New Intake Target</span>
+                  </label>
+                  <span className="text-[10px] font-semibold text-stone-500 uppercase tracking-wider">
+                    Default: {DEFAULT_DAILY_NEW_INTAKE_GOAL}
+                  </span>
+                </div>
+                <p className="text-xs text-stone-500 mb-4">
+                  Target number of distinct unattempted words to discover and answer correctly in New Intake mode today (1–100).
+                </p>
+
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('newIntakeTarget', currentNewIntakeTarget - 5)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentNewIntakeTarget <= MIN_DAILY_GOAL_TARGET}
+                    aria-label="Decrease new intake target by 5"
+                  >
+                    -5
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('newIntakeTarget', currentNewIntakeTarget - 1)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentNewIntakeTarget <= MIN_DAILY_GOAL_TARGET}
+                    aria-label="Decrease new intake target by 1"
+                  >
+                    -1
+                  </button>
+                  <div className="flex-1 flex items-center justify-center">
+                    <input
+                      id="daily-new-intake-target-input"
+                      type="number"
+                      min={MIN_DAILY_GOAL_TARGET}
+                      max={MAX_DAILY_NEW_INTAKE_GOAL}
+                      step={1}
+                      value={currentNewIntakeTarget}
+                      onChange={(e) => handleDailyGoalChange('newIntakeTarget', e.target.value)}
+                      className="w-20 rounded-lg border border-stone-300 bg-white py-1.5 text-center font-mono text-base font-bold text-stone-900 shadow-2xs focus:border-stone-900 focus:outline-none"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('newIntakeTarget', currentNewIntakeTarget + 1)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentNewIntakeTarget >= MAX_DAILY_NEW_INTAKE_GOAL}
+                    aria-label="Increase new intake target by 1"
+                  >
+                    +1
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('newIntakeTarget', currentNewIntakeTarget + 5)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentNewIntakeTarget >= MAX_DAILY_NEW_INTAKE_GOAL}
+                    aria-label="Increase new intake target by 5"
+                  >
+                    +5
+                  </button>
+                </div>
+              </div>
+
+              <p className="mt-4 text-[11px] text-stone-400">
+                * Completely independent from the single-session batch size ({localSettings.newIntakeSessionSize ?? 25} words).
+              </p>
+            </div>
+
+            {/* Control 2: Daily Weak Words Target */}
+            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-4 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label htmlFor="daily-weak-words-target-input" className="text-sm font-bold text-stone-900 flex items-center gap-1.5">
+                    <Target className="h-4 w-4 text-amber-700" />
+                    <span>Daily Weak Words Target</span>
+                  </label>
+                  <span className="text-[10px] font-semibold text-stone-500 uppercase tracking-wider">
+                    Default: {DEFAULT_DAILY_WEAK_WORDS_GOAL}
+                  </span>
+                </div>
+                <p className="text-xs text-stone-500 mb-4">
+                  Target number of distinct unmastered words to reinforce in Weak Words mode today (1–100).
+                </p>
+
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('weakWordsTarget', currentWeakWordsTarget - 5)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentWeakWordsTarget <= MIN_DAILY_GOAL_TARGET}
+                    aria-label="Decrease weak words target by 5"
+                  >
+                    -5
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('weakWordsTarget', currentWeakWordsTarget - 1)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentWeakWordsTarget <= MIN_DAILY_GOAL_TARGET}
+                    aria-label="Decrease weak words target by 1"
+                  >
+                    -1
+                  </button>
+                  <div className="flex-1 flex items-center justify-center">
+                    <input
+                      id="daily-weak-words-target-input"
+                      type="number"
+                      min={MIN_DAILY_GOAL_TARGET}
+                      max={MAX_DAILY_WEAK_WORDS_GOAL}
+                      step={1}
+                      value={currentWeakWordsTarget}
+                      onChange={(e) => handleDailyGoalChange('weakWordsTarget', e.target.value)}
+                      className="w-20 rounded-lg border border-stone-300 bg-white py-1.5 text-center font-mono text-base font-bold text-stone-900 shadow-2xs focus:border-stone-900 focus:outline-none"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('weakWordsTarget', currentWeakWordsTarget + 1)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentWeakWordsTarget >= MAX_DAILY_WEAK_WORDS_GOAL}
+                    aria-label="Increase weak words target by 1"
+                  >
+                    +1
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDailyGoalChange('weakWordsTarget', currentWeakWordsTarget + 5)}
+                    className="h-9 w-9 flex items-center justify-center rounded-lg border border-stone-300 bg-white text-stone-700 text-xs font-bold hover:bg-stone-100 cursor-pointer disabled:opacity-40"
+                    disabled={currentWeakWordsTarget >= MAX_DAILY_WEAK_WORDS_GOAL}
+                    aria-label="Increase weak words target by 5"
+                  >
+                    +5
+                  </button>
+                </div>
+              </div>
+
+              <p className="mt-4 text-[11px] text-stone-400">
+                * Pool includes all unlocked words with streak &lt; {localSettings.masteryStreakThreshold}.
+              </p>
+            </div>
+          </div>
+
+          {/* Insufficient / Empty Weak Words Pool Handling */}
+          {weakWordsPoolSize < currentWeakWordsTarget && (
+            <div id="insufficient-weak-words-banner" className="mt-5 rounded-xl border border-amber-200 bg-amber-50/70 p-4 text-xs text-amber-900">
+              <div className="flex items-start gap-2.5">
+                <AlertCircle className="h-4 w-4 text-amber-700 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <h4 className="font-bold text-amber-950">
+                    {weakWordsPoolSize === 0 ? 'Weak Words Pool Is Empty' : 'Available Weak Words Pool Is Below Target'}
+                  </h4>
+                  <p className="mt-1 leading-relaxed text-amber-800">
+                    {weakWordsPoolSize === 0
+                      ? 'You currently have 0 unmastered words in your unlocked pool. All unlocked vocabulary has either reached Mastered status or new words have not yet been introduced.'
+                      : `Your pool currently contains ${weakWordsPoolSize} unmastered ${weakWordsPoolSize === 1 ? 'word' : 'words'}, which is less than your daily target of ${currentWeakWordsTarget}.`}
+                  </p>
+                  <p className="mt-1 text-[11px] text-amber-700 font-medium">
+                    Le Socle preserves your configured target and will never silently reduce it without your deliberate action.
+                  </p>
+
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    {weakWordsPoolSize > 0 ? (
+                      <button
+                        type="button"
+                        id="adjust-target-to-pool-btn"
+                        onClick={() => handleDailyGoalChange('weakWordsTarget', weakWordsPoolSize)}
+                        className="rounded-lg bg-amber-800 px-3 py-1.5 text-xs font-semibold text-white shadow-2xs hover:bg-amber-900 transition-colors cursor-pointer"
+                      >
+                        Set target to available pool ({weakWordsPoolSize} words)
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        id="adjust-target-to-one-btn"
+                        onClick={() => handleDailyGoalChange('weakWordsTarget', 1)}
+                        className="rounded-lg bg-amber-800 px-3 py-1.5 text-xs font-semibold text-white shadow-2xs hover:bg-amber-900 transition-colors cursor-pointer"
+                      >
+                        Adjust target to minimum (1 word)
+                      </button>
+                    )}
+
+                    {onNavigate && (
+                      <button
+                        type="button"
+                        onClick={() => onNavigate('learn')}
+                        className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-semibold text-amber-900 hover:bg-amber-100/60 transition-colors cursor-pointer"
+                      >
+                        Discover New Vocabulary in Learn
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <p className="mt-4 text-[11px] text-stone-400">
+            * Lowering a target to your current count can complete today&apos;s goal and award daily streak credit if not yet granted. Raising a target marks today incomplete if the new target exceeds today&apos;s progress, but preserves any earned streak credit. Streak credit is never duplicated.
+          </p>
+        </div>
+
+        {/* SECTION 7: DEVELOPER TESTING BYPASS */}
         <div className="rounded-2xl border border-amber-300 bg-amber-50/40 p-6 shadow-2xs sm:p-7">
           <div className="flex items-start justify-between gap-4">
             <div>

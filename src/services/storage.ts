@@ -8,7 +8,13 @@ import {
   SpacedRepetitionRating, 
   ReviewLogEntry,
   RecallQuality,
-  RecallDirection
+  RecallDirection,
+  DailyGoalSettings,
+  DailyGoalRecord,
+  DailyGoalHistory,
+  DailyGoalPracticeMode,
+  DailyGoalCompletionStatus,
+  ReviewModeFilter
 } from '../types';
 import { 
   calculateWordMasteryLevel, 
@@ -19,6 +25,31 @@ import {
 const PROGRESS_STORAGE_KEY = 'le_socle_word_progress_v1';
 const STATS_STORAGE_KEY = 'le_socle_user_stats_v1';
 const SETTINGS_STORAGE_KEY = 'le_socle_user_settings_v1';
+export const DAILY_GOALS_STORAGE_KEY = 'le_socle_daily_goals_v1';
+
+export const DEFAULT_DAILY_NEW_INTAKE_GOAL = 25;
+export const DEFAULT_DAILY_WEAK_WORDS_GOAL = 10;
+export const MIN_DAILY_GOAL_TARGET = 1;
+export const MAX_DAILY_NEW_INTAKE_GOAL = 100;
+export const MAX_DAILY_WEAK_WORDS_GOAL = 100;
+
+export const DEFAULT_DAILY_GOAL_SETTINGS: DailyGoalSettings = {
+  newIntakeTarget: DEFAULT_DAILY_NEW_INTAKE_GOAL,
+  weakWordsTarget: DEFAULT_DAILY_WEAK_WORDS_GOAL,
+};
+
+/**
+ * Validates whether a daily goal target is a positive integer within allowable bounds.
+ * Minimum is 1; maximum is documented and constrained (e.g. 100 words/day).
+ */
+export function isValidDailyGoalTarget(val: unknown, maxTarget: number = 100): val is number {
+  return (
+    typeof val === 'number' &&
+    Number.isInteger(val) &&
+    val >= MIN_DAILY_GOAL_TARGET &&
+    val <= maxTarget
+  );
+}
 
 export const SUPPORTED_NEW_INTAKE_SESSION_SIZES = [10, 15, 20, 25, 30, 50] as const;
 export type NewIntakeSessionSize = (typeof SUPPORTED_NEW_INTAKE_SESSION_SIZES)[number];
@@ -34,6 +65,7 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
   masteryStreakThreshold: DEFAULT_MASTERY_STREAK_THRESHOLD,
   previewLockedLevels: false,
   newIntakeSessionSize: DEFAULT_NEW_INTAKE_SESSION_SIZE,
+  dailyGoals: DEFAULT_DAILY_GOAL_SETTINGS,
   intervals: {
     again: 1,
     hard: 2,
@@ -59,6 +91,14 @@ export function loadUserSettings(): UserSettings {
       newIntakeSessionSize: isValidNewIntakeSessionSize(parsed.newIntakeSessionSize)
         ? parsed.newIntakeSessionSize
         : DEFAULT_NEW_INTAKE_SESSION_SIZE,
+      dailyGoals: {
+        newIntakeTarget: isValidDailyGoalTarget(parsed.dailyGoals?.newIntakeTarget, MAX_DAILY_NEW_INTAKE_GOAL)
+          ? parsed.dailyGoals.newIntakeTarget
+          : DEFAULT_DAILY_NEW_INTAKE_GOAL,
+        weakWordsTarget: isValidDailyGoalTarget(parsed.dailyGoals?.weakWordsTarget, MAX_DAILY_WEAK_WORDS_GOAL)
+          ? parsed.dailyGoals.weakWordsTarget
+          : DEFAULT_DAILY_WEAK_WORDS_GOAL,
+      },
       intervals: {
         again: typeof parsed.intervals?.again === 'number' ? parsed.intervals.again : DEFAULT_USER_SETTINGS.intervals.again,
         hard: typeof parsed.intervals?.hard === 'number' ? parsed.intervals.hard : DEFAULT_USER_SETTINGS.intervals.hard,
@@ -84,6 +124,84 @@ export function saveUserSettings(settings: UserSettings): void {
 function getTodayKey(): string {
   const now = new Date();
   return now.toISOString().split('T')[0];
+}
+
+/**
+ * Returns the calendar date formatted as YYYY-MM-DD in the user's local timezone.
+ * Used specifically for Daily Goals persistence so that daily targets align with the learner's local day.
+ */
+export function getLocalCalendarDateKey(date: Date = new Date()): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Calculates the difference in integer calendar days between two YYYY-MM-DD date strings.
+ * Returns (toDate - fromDate) in whole calendar days.
+ * E.g., ('2026-10-20', '2026-10-21') -> 1 (consecutive day).
+ * Safe against daylight saving time shifts and avoids raw millisecond / timestamp comparisons.
+ */
+export function getCalendarDayDifference(fromDateStr: string, toDateStr: string): number {
+  if (!fromDateStr || !toDateStr) return Infinity;
+  const parts1 = fromDateStr.split('-').map(Number);
+  const parts2 = toDateStr.split('-').map(Number);
+  if (parts1.length !== 3 || parts2.length !== 3) return Infinity;
+  const [y1, m1, d1] = parts1;
+  const [y2, m2, d2] = parts2;
+  if (isNaN(y1) || isNaN(m1) || isNaN(d1) || isNaN(y2) || isNaN(m2) || isNaN(d2)) {
+    return Infinity;
+  }
+  const utc1 = Date.UTC(y1, m1 - 1, d1);
+  const utc2 = Date.UTC(y2, m2 - 1, d2);
+  return Math.round((utc2 - utc1) / (1000 * 60 * 60 * 24));
+}
+
+/**
+ * Calculates the new study streak when both daily goals become complete for todayDateKey.
+ * - If the previous credited date is yesterday (1 calendar day difference), extends streak by 1.
+ * - If a calendar day was missed (>1 calendar day difference), restarts streak at 1.
+ * - For existing users on day 1 with prior study history, seamlessly extends their existing streak if
+ *   their last study date was yesterday or earlier today.
+ */
+export function calculateNextStreakDays(
+  todayDateKey: string,
+  history: DailyGoalHistory,
+  currentStreakDays: number,
+  lastStudyDate: string | null
+): number {
+  // Find all previously credited dates strictly before today
+  const priorCreditedDates = Object.keys(history)
+    .filter((d) => d < todayDateKey && history[d]?.isCompleted && history[d]?.streakCredited)
+    .sort();
+
+  if (priorCreditedDates.length > 0) {
+    const lastCreditedDate = priorCreditedDates[priorCreditedDates.length - 1];
+    const diff = getCalendarDayDifference(lastCreditedDate, todayDateKey);
+    if (diff === 1) {
+      // Consecutive calendar day completion -> extend streak
+      return Math.max(1, currentStreakDays + 1);
+    } else {
+      // Missed one or more days -> restart streak at 1
+      return 1;
+    }
+  }
+
+  // Fallback for existing learners with a legacy streak but no previous daily goals history:
+  if (lastStudyDate) {
+    const diff = getCalendarDayDifference(lastStudyDate, todayDateKey);
+    if (diff <= 1) {
+      // Last studied yesterday or earlier today -> preserve and advance existing streak
+      return Math.max(1, currentStreakDays + 1);
+    } else {
+      // Missed day -> restart streak at 1
+      return 1;
+    }
+  }
+
+  // Brand new learner achieving first completion
+  return 1;
 }
 
 /**
@@ -281,7 +399,7 @@ export function getDefaultUserStats(): UserStats {
     totalCorrect: 0,
     totalIncorrect: 0,
     streakDays: 1,
-    lastStudyDate: getTodayKey(),
+    lastStudyDate: getLocalCalendarDateKey(),
     reviewedTodayCount: 0,
     ratingDistribution: {
       again: 0,
@@ -362,8 +480,13 @@ export function recordReviewResult(
   currentStats: UserStats,
   settings: UserSettings,
   isExact: boolean = false,
-  direction: RecallDirection = 'en_to_fr'
-): { updatedProgress: Record<string, WordProgress>; updatedStats: UserStats } {
+  direction: RecallDirection = 'en_to_fr',
+  mode?: ReviewModeFilter
+): { 
+  updatedProgress: Record<string, WordProgress>; 
+  updatedStats: UserStats;
+  dailyGoalRecord?: DailyGoalRecord;
+} {
   const existing = currentProgressMap[wordId] || {
     wordId,
     mastery: 'new',
@@ -377,6 +500,9 @@ export function recordReviewResult(
     timesCorrect: 0,
     consecutiveCorrect: 0,
   };
+
+  const priorAttempts = existing.totalAttempts ?? existing.timesReviewed ?? 0;
+  const wasUnattempted = priorAttempts === 0;
 
   // Determine specific recall quality
   let recallQuality: RecallQuality;
@@ -489,24 +615,34 @@ export function recordReviewResult(
     direction,
   };
 
-  // Update overall user stats
-  const todayKey = getTodayKey();
-  const isNewDay = currentStats.lastStudyDate !== todayKey;
-  
-  let newStreak = currentStats.streakDays;
-  if (isNewDay) {
-    if (currentStats.lastStudyDate) {
-      const lastDate = new Date(currentStats.lastStudyDate);
-      const diffDays = Math.floor((now.getTime() - lastDate.getTime()) / (1000 * 3600 * 24));
-      if (diffDays <= 1) {
-        newStreak += 1;
-      } else {
-        newStreak = 1;
-      }
-    } else {
-      newStreak = 1;
+  // Daily Goals qualification & recording (local calendar day)
+  const todayLocalKey = getLocalCalendarDateKey();
+  const isSuccessfulAnswer = isCorrect && recallQuality !== 'revealed';
+
+  if (mode === 'new' && wasUnattempted && isSuccessfulAnswer) {
+    recordDailyGoalWord('new_intake', wordId, settings, todayLocalKey);
+  } else if (mode === 'weak' && isSuccessfulAnswer) {
+    recordDailyGoalWord('weak_words', wordId, settings, todayLocalKey);
+  }
+
+  // Evaluate Daily Goals completion & synchronize streak
+  const todayRecord = getOrCreateDailyGoalRecord(todayLocalKey);
+  const completion = checkDailyGoalCompletion(todayRecord, settings);
+  let updatedStreakDays = currentStats.streakDays;
+
+  if (completion.isFullyComplete && !todayRecord.streakCredited) {
+    const { updatedHistory, creditAwarded } = claimDailyGoalStreakCredit(todayLocalKey);
+    if (creditAwarded) {
+      updatedStreakDays = calculateNextStreakDays(
+        todayLocalKey,
+        updatedHistory,
+        currentStats.streakDays,
+        currentStats.lastStudyDate
+      );
     }
   }
+
+  const isNewDay = currentStats.lastStudyDate !== todayLocalKey;
 
   const prevDist = currentStats.ratingDistribution || { again: 0, hard: 0, good: 0, easy: 0 };
   const updatedRatingDist = {
@@ -520,8 +656,8 @@ export function recordReviewResult(
     totalReviewed: currentStats.totalReviewed + 1,
     totalCorrect: isCorrect ? currentStats.totalCorrect + 1 : currentStats.totalCorrect,
     totalIncorrect: !isCorrect ? (currentStats.totalIncorrect || 0) + 1 : (currentStats.totalIncorrect || 0),
-    streakDays: Math.max(1, newStreak),
-    lastStudyDate: todayKey,
+    streakDays: Math.max(1, updatedStreakDays),
+    lastStudyDate: todayLocalKey,
     reviewedTodayCount: isNewDay ? 1 : currentStats.reviewedTodayCount + 1,
     ratingDistribution: updatedRatingDist,
     recentHistory: updatedHistory,
@@ -530,13 +666,18 @@ export function recordReviewResult(
   saveWordProgressMap(updatedProgress);
   saveUserStats(updatedStats);
 
-  return { updatedProgress, updatedStats };
+  return { 
+    updatedProgress, 
+    updatedStats,
+    dailyGoalRecord: getOrCreateDailyGoalRecord(todayLocalKey)
+  };
 }
 
 export function resetAllProgress(): { progress: Record<string, WordProgress>; stats: UserStats } {
   if (typeof window !== 'undefined') {
     localStorage.removeItem(PROGRESS_STORAGE_KEY);
     localStorage.removeItem(STATS_STORAGE_KEY);
+    localStorage.removeItem(DAILY_GOALS_STORAGE_KEY);
     localStorage.setItem('le_socle_demo_cleanup_v3', 'true');
   }
 
@@ -547,7 +688,7 @@ export function resetAllProgress(): { progress: Record<string, WordProgress>; st
     totalCorrect: 0,
     totalIncorrect: 0,
     streakDays: 1,
-    lastStudyDate: getTodayKey(),
+    lastStudyDate: getLocalCalendarDateKey(),
     reviewedTodayCount: 0,
     ratingDistribution: {
       again: 0,
@@ -608,3 +749,302 @@ export function getDueWords(
 ) {
   return getSpacedDueWords(progressMap, MOCK_VOCABULARY, undefined, masteryThreshold, previewLockedLevels);
 }
+
+/* ==========================================================================
+   DAILY GOALS DATA MODEL & PERSISTENCE (STAGE 1)
+   ========================================================================== */
+
+/**
+ * Creates a clean default DailyGoalRecord for a specified local calendar date.
+ */
+export function createDefaultDailyGoalRecord(dateKey: string): DailyGoalRecord {
+  return {
+    date: dateKey,
+    newIntakeWordIds: [],
+    weakWordsWordIds: [],
+    isCompleted: false,
+    streakCredited: false,
+  };
+}
+
+/**
+ * Loads the complete daily goals history map from localStorage with validation and sanitization.
+ * Missing or malformed records are handled safely without throwing or corrupting application state.
+ */
+export function loadDailyGoalsHistory(): DailyGoalHistory {
+  if (typeof window === 'undefined') return {};
+  try {
+    const saved = localStorage.getItem(DAILY_GOALS_STORAGE_KEY);
+    if (!saved) return {};
+    const parsed = JSON.parse(saved);
+    if (!parsed || typeof parsed !== 'object') return {};
+
+    const validated: DailyGoalHistory = {};
+    for (const [dateKey, rawRecord] of Object.entries(parsed)) {
+      if (!rawRecord || typeof rawRecord !== 'object') continue;
+      const rec = rawRecord as any;
+      if (typeof rec.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(rec.date)) continue;
+
+      // Ensure distinct array of non-empty strings for word IDs
+      const newIntakeWordIds = Array.isArray(rec.newIntakeWordIds)
+        ? Array.from(new Set(rec.newIntakeWordIds.filter((id: unknown) => typeof id === 'string' && (id as string).trim().length > 0))) as string[]
+        : [];
+
+      const weakWordsWordIds = Array.isArray(rec.weakWordsWordIds)
+        ? Array.from(new Set(rec.weakWordsWordIds.filter((id: unknown) => typeof id === 'string' && (id as string).trim().length > 0))) as string[]
+        : [];
+
+      validated[dateKey] = {
+        date: rec.date,
+        newIntakeWordIds,
+        weakWordsWordIds,
+        isCompleted: typeof rec.isCompleted === 'boolean' ? rec.isCompleted : false,
+        completedAt: typeof rec.completedAt === 'string' ? rec.completedAt : undefined,
+        streakCredited: typeof rec.streakCredited === 'boolean' ? rec.streakCredited : false,
+        streakCreditedAt: typeof rec.streakCreditedAt === 'string' ? rec.streakCreditedAt : undefined,
+      };
+    }
+    return validated;
+  } catch (e) {
+    console.error('Failed to load daily goals history from localStorage', e);
+    return {};
+  }
+}
+
+/**
+ * Persists the daily goals history map to localStorage.
+ */
+export function saveDailyGoalsHistory(history: DailyGoalHistory): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(DAILY_GOALS_STORAGE_KEY, JSON.stringify(history));
+  } catch (e) {
+    console.error('Failed to save daily goals history to localStorage', e);
+  }
+}
+
+/**
+ * Retrieves the record for the given local calendar date, or initializes a clean default record if none exists.
+ */
+export function getOrCreateDailyGoalRecord(
+  dateKey: string = getLocalCalendarDateKey(),
+  history?: DailyGoalHistory
+): DailyGoalRecord {
+  const currentHistory = history ?? loadDailyGoalsHistory();
+  return currentHistory[dateKey] ?? createDefaultDailyGoalRecord(dateKey);
+}
+
+/**
+ * Evaluates the current completion status of a daily goal record against user settings.
+ */
+export function checkDailyGoalCompletion(
+  record: DailyGoalRecord | undefined,
+  settings: UserSettings
+): DailyGoalCompletionStatus {
+  const newIntakeTarget = isValidDailyGoalTarget(settings.dailyGoals?.newIntakeTarget, MAX_DAILY_NEW_INTAKE_GOAL)
+    ? settings.dailyGoals.newIntakeTarget
+    : DEFAULT_DAILY_NEW_INTAKE_GOAL;
+  const weakWordsTarget = isValidDailyGoalTarget(settings.dailyGoals?.weakWordsTarget, MAX_DAILY_WEAK_WORDS_GOAL)
+    ? settings.dailyGoals.weakWordsTarget
+    : DEFAULT_DAILY_WEAK_WORDS_GOAL;
+
+  const newIntakeCount = record?.newIntakeWordIds?.length ?? 0;
+  const weakWordsCount = record?.weakWordsWordIds?.length ?? 0;
+
+  const isNewIntakeComplete = newIntakeCount >= newIntakeTarget;
+  const isWeakWordsComplete = weakWordsCount >= weakWordsTarget;
+  const isFullyComplete = isNewIntakeComplete && isWeakWordsComplete;
+  const streakCredited = record?.streakCredited ?? false;
+
+  return {
+    newIntakeCount,
+    newIntakeTarget,
+    isNewIntakeComplete,
+    weakWordsCount,
+    weakWordsTarget,
+    isWeakWordsComplete,
+    isFullyComplete,
+    streakCredited,
+  };
+}
+
+/**
+ * Idempotently records a qualifying vocabulary word completion into the specified daily practice mode.
+ * Adding the same word multiple times on the same date will not duplicate the entry or inflate the count.
+ * Automatically checks and updates goal completion status and timestamp when thresholds are met.
+ */
+export function recordDailyGoalWord(
+  mode: DailyGoalPracticeMode,
+  wordId: string,
+  settings: UserSettings,
+  dateKey: string = getLocalCalendarDateKey(),
+  existingHistory?: DailyGoalHistory
+): {
+  updatedHistory: DailyGoalHistory;
+  record: DailyGoalRecord;
+  wasAdded: boolean;
+  justCompleted: boolean;
+} {
+  const history = existingHistory ?? loadDailyGoalsHistory();
+  const currentRecord = history[dateKey] ?? createDefaultDailyGoalRecord(dateKey);
+
+  let wasAdded = false;
+  let updatedNewIntake = currentRecord.newIntakeWordIds;
+  let updatedWeakWords = currentRecord.weakWordsWordIds;
+
+  if (mode === 'new_intake') {
+    if (!currentRecord.newIntakeWordIds.includes(wordId)) {
+      updatedNewIntake = [...currentRecord.newIntakeWordIds, wordId];
+      wasAdded = true;
+    }
+  } else if (mode === 'weak_words') {
+    if (!currentRecord.weakWordsWordIds.includes(wordId)) {
+      updatedWeakWords = [...currentRecord.weakWordsWordIds, wordId];
+      wasAdded = true;
+    }
+  }
+
+  const newIntakeTarget = isValidDailyGoalTarget(settings.dailyGoals?.newIntakeTarget, MAX_DAILY_NEW_INTAKE_GOAL)
+    ? settings.dailyGoals.newIntakeTarget
+    : DEFAULT_DAILY_NEW_INTAKE_GOAL;
+  const weakWordsTarget = isValidDailyGoalTarget(settings.dailyGoals?.weakWordsTarget, MAX_DAILY_WEAK_WORDS_GOAL)
+    ? settings.dailyGoals.weakWordsTarget
+    : DEFAULT_DAILY_WEAK_WORDS_GOAL;
+
+  const isNowComplete = updatedNewIntake.length >= newIntakeTarget && updatedWeakWords.length >= weakWordsTarget;
+  const justCompleted = !currentRecord.isCompleted && isNowComplete;
+
+  const updatedRecord: DailyGoalRecord = {
+    ...currentRecord,
+    newIntakeWordIds: updatedNewIntake,
+    weakWordsWordIds: updatedWeakWords,
+    isCompleted: currentRecord.isCompleted || isNowComplete,
+    completedAt: currentRecord.completedAt ?? (justCompleted ? new Date().toISOString() : undefined),
+  };
+
+  const updatedHistory: DailyGoalHistory = {
+    ...history,
+    [dateKey]: updatedRecord,
+  };
+
+  saveDailyGoalsHistory(updatedHistory);
+
+  return {
+    updatedHistory,
+    record: updatedRecord,
+    wasAdded,
+    justCompleted,
+  };
+}
+
+/**
+ * Grants streak credit for a completed daily goal record.
+ * Guarantees that a completed day can receive streak credit at most once.
+ */
+export function claimDailyGoalStreakCredit(
+  dateKey: string = getLocalCalendarDateKey(),
+  existingHistory?: DailyGoalHistory
+): {
+  updatedHistory: DailyGoalHistory;
+  creditAwarded: boolean;
+} {
+  const history = existingHistory ?? loadDailyGoalsHistory();
+  const currentRecord = history[dateKey];
+
+  if (!currentRecord || !currentRecord.isCompleted || currentRecord.streakCredited) {
+    return {
+      updatedHistory: history,
+      creditAwarded: false,
+    };
+  }
+
+  const updatedRecord: DailyGoalRecord = {
+    ...currentRecord,
+    streakCredited: true,
+    streakCreditedAt: new Date().toISOString(),
+  };
+
+  const updatedHistory: DailyGoalHistory = {
+    ...history,
+    [dateKey]: updatedRecord,
+  };
+
+  saveDailyGoalsHistory(updatedHistory);
+
+  return {
+    updatedHistory,
+    creditAwarded: true,
+  };
+}
+
+/**
+ * Synchronizes and re-evaluates today's daily goal record and streak credit when daily goal targets change in Settings.
+ * - If lowering a target causes an uncredited day to become complete, claims credit once and advances streak.
+ * - If raising a target causes today to no longer meet targets, updates isCompleted to false while preserving streakCredited and word IDs.
+ * - Guarantees that streak credit is never awarded more than once.
+ */
+export function syncDailyGoalOnSettingsChange(
+  settings: UserSettings,
+  currentStats: UserStats,
+  dateKey: string = getLocalCalendarDateKey()
+): {
+  updatedRecord: DailyGoalRecord;
+  updatedStats: UserStats;
+} {
+  const history = loadDailyGoalsHistory();
+  const currentRecord = history[dateKey] ?? createDefaultDailyGoalRecord(dateKey);
+
+  const completion = checkDailyGoalCompletion(currentRecord, settings);
+  const isNowComplete = completion.isFullyComplete;
+
+  let updatedRecord: DailyGoalRecord = { ...currentRecord };
+  let updatedStats: UserStats = { ...currentStats };
+
+  if (isNowComplete) {
+    if (!currentRecord.isCompleted) {
+      updatedRecord.isCompleted = true;
+      updatedRecord.completedAt = updatedRecord.completedAt ?? new Date().toISOString();
+    }
+
+    if (!currentRecord.streakCredited) {
+      // Award credit once
+      updatedRecord.streakCredited = true;
+      updatedRecord.streakCreditedAt = new Date().toISOString();
+      const updatedHistory: DailyGoalHistory = {
+        ...history,
+        [dateKey]: updatedRecord,
+      };
+      saveDailyGoalsHistory(updatedHistory);
+
+      const nextStreak = calculateNextStreakDays(
+        dateKey,
+        updatedHistory,
+        currentStats.streakDays,
+        currentStats.lastStudyDate
+      );
+      updatedStats = {
+        ...currentStats,
+        streakDays: Math.max(1, nextStreak),
+      };
+      saveUserStats(updatedStats);
+      return { updatedRecord, updatedStats };
+    }
+  } else {
+    // If target increased above current counts, mark isCompleted = false while preserving streakCredited
+    if (currentRecord.isCompleted) {
+      updatedRecord.isCompleted = false;
+    }
+  }
+
+  const updatedHistory: DailyGoalHistory = {
+    ...history,
+    [dateKey]: updatedRecord,
+  };
+  saveDailyGoalsHistory(updatedHistory);
+
+  return { updatedRecord, updatedStats };
+}
+
+// Alias for backwards compatibility
+export const evaluateDailyGoalsOnSettingsChange = syncDailyGoalOnSettingsChange;
+

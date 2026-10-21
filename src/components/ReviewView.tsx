@@ -52,7 +52,8 @@ interface ReviewViewProps {
     rating: SpacedRepetitionRating,
     userAnswer: string,
     isExact?: boolean,
-    direction?: RecallDirection
+    direction?: RecallDirection,
+    mode?: ReviewModeFilter
   ) => void;
   initialWord?: VocabularyItem | null;
   initialMode?: ReviewModeFilter;
@@ -107,6 +108,8 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
     },
   });
   const [isSessionComplete, setIsSessionComplete] = useState(false);
+  const [qualifyingNewIntakeIds, setQualifyingNewIntakeIds] = useState<string[]>([]);
+  const [qualifyingWeakWordsIds, setQualifyingWeakWordsIds] = useState<string[]>([]);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const masteryThreshold = settings.masteryStreakThreshold || DEFAULT_MASTERY_STREAK_THRESHOLD;
@@ -172,6 +175,8 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
       ratings: { again: 0, hard: 0, good: 0, easy: 0 },
     });
     setIsSessionComplete(false);
+    setQualifyingNewIntakeIds([]);
+    setQualifyingWeakWordsIds([]);
     focusInput();
   }, [masteryThreshold, previewLocked, newIntakeSessionSize, focusInput]);
 
@@ -257,8 +262,20 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
     const answerRecorded = wasRevealedWithoutTyping ? '' : userInput;
     const directionOfCard = currentDirection;
 
-    // Record review result with rating, isExact, settings, and card direction
-    onRecordResult(currentWord.id, isCorrect, rating, answerRecorded, isExact, directionOfCard);
+    // Record review result with rating, isExact, settings, card direction, and active mode
+    onRecordResult(currentWord.id, isCorrect, rating, answerRecorded, isExact, directionOfCard, selectedMode);
+
+    // Track session qualification for Daily Goals summary
+    const wordProgBeforeSession = progressMapRef.current[currentWord.id];
+    const priorAttempts = wordProgBeforeSession?.totalAttempts ?? wordProgBeforeSession?.timesReviewed ?? 0;
+    const wasUnattempted = priorAttempts === 0;
+    const isSuccessfulAnswer = isCorrect && !wasRevealedWithoutTyping;
+
+    if (selectedMode === 'new' && wasUnattempted && isSuccessfulAnswer) {
+      setQualifyingNewIntakeIds((prev) => prev.includes(currentWord.id) ? prev : [...prev, currentWord.id]);
+    } else if (selectedMode === 'weak' && isSuccessfulAnswer) {
+      setQualifyingWeakWordsIds((prev) => prev.includes(currentWord.id) ? prev : [...prev, currentWord.id]);
+    }
 
     setSessionStats((prev) => ({
       correct: isCorrect ? prev.correct + 1 : prev.correct,
@@ -442,6 +459,69 @@ export const ReviewView: React.FC<ReviewViewProps> = ({
                     <span className="block font-bold">Easy</span>
                     <span className="text-sm font-semibold">{sessionStats.ratings.easy}</span>
                   </div>
+                </div>
+              </div>
+
+              {/* Daily Goals Session Contribution Card */}
+              <div id="session-daily-goals-contribution" className="mb-6 rounded-xl border border-stone-200 bg-white p-4 text-left shadow-2xs">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <Award className="h-4 w-4 text-stone-700" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-stone-800">
+                      Daily Goals Contribution
+                    </span>
+                  </div>
+                  <span className="font-mono text-[11px] text-stone-400">
+                    Mode: {selectedMode === 'new' ? 'New Intake' : selectedMode === 'weak' ? 'Weak Words' : selectedMode === 'due' ? 'Due Review' : 'All Vocabulary'}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 mb-3 text-xs">
+                  <div className={`rounded-lg border p-2.5 ${selectedMode === 'new' ? 'border-stone-300 bg-stone-50' : 'border-stone-100 bg-stone-50/40 opacity-70'}`}>
+                    <span className="block text-[10px] font-semibold text-stone-500 uppercase tracking-wider">New Intake Goal</span>
+                    <span className="text-base font-bold text-stone-900 mt-0.5 block">
+                      +{qualifyingNewIntakeIds.length} <span className="text-xs font-normal text-stone-500">qualifying words</span>
+                    </span>
+                  </div>
+                  <div className={`rounded-lg border p-2.5 ${selectedMode === 'weak' ? 'border-amber-300 bg-amber-50/60' : 'border-stone-100 bg-stone-50/40 opacity-70'}`}>
+                    <span className="block text-[10px] font-semibold text-stone-500 uppercase tracking-wider">Weak Words Goal</span>
+                    <span className="text-base font-bold text-amber-900 mt-0.5 block">
+                      +{qualifyingWeakWordsIds.length} <span className="text-xs font-normal text-stone-500">qualifying words</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Explanation text depending on mode and contribution */}
+                <div className="text-[11px] leading-relaxed text-stone-500 border-t border-stone-100 pt-2.5">
+                  {selectedMode === 'new' && (
+                    qualifyingNewIntakeIds.length > 0 ? (
+                      <span className="text-emerald-700 font-medium">
+                        ✓ {qualifyingNewIntakeIds.length} {qualifyingNewIntakeIds.length === 1 ? 'word was' : 'words were'} newly introduced and successfully answered, advancing today&apos;s New Intake goal.
+                      </span>
+                    ) : (
+                      <span className="text-stone-500">
+                        0 words qualified towards the Daily New Intake goal. (Only genuinely unattempted words answered correctly without revealing qualify.)
+                      </span>
+                    )
+                  )}
+
+                  {selectedMode === 'weak' && (
+                    qualifyingWeakWordsIds.length > 0 ? (
+                      <span className="text-emerald-700 font-medium">
+                        ✓ {qualifyingWeakWordsIds.length} {qualifyingWeakWordsIds.length === 1 ? 'word was' : 'words were'} reinforced and successfully answered, advancing today&apos;s Weak Words goal.
+                      </span>
+                    ) : (
+                      <span className="text-stone-500">
+                        0 words qualified towards the Daily Weak Words goal. (Only answers submitted correctly without revealing qualify.)
+                      </span>
+                    )
+                  )}
+
+                  {(selectedMode === 'due' || selectedMode === 'all') && (
+                    <span className="text-stone-500">
+                      0 words contributed to Daily Goals. Reviews in {selectedMode === 'due' ? 'Due Review' : 'All Vocabulary'} mode preserve your spaced-retention schedule. To advance Daily Goals, use dedicated <strong>New Intake</strong> or <strong>Weak Words</strong> sessions.
+                    </span>
+                  )}
                 </div>
               </div>
             </>

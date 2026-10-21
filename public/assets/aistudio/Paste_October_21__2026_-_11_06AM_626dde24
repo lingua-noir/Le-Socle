@@ -1,0 +1,551 @@
+# LE SOCLE — IMPLEMENTATION SPECIFICATION
+## Configurable Daily Goals + Goal-Based Study Streaks
+
+**Project:** Le Socle — French Frequency Vocabulary Learning App  
+**Environment:** Existing Google AI Studio application / React + TypeScript + Vite  
+**Task type:** Targeted feature implementation in the existing codebase  
+**Priority:** Preserve existing functionality and learning data. Make the smallest safe changes necessary.
+
+---
+
+# 1. ROLE AND EXECUTION RULES
+
+Act as a senior React/TypeScript engineer implementing a carefully scoped feature in an existing vocabulary-learning application.
+
+Before modifying anything, inspect the current repository and trace the relevant implementations. Do not assume previous audit reports perfectly describe the current code.
+
+Inspect at minimum:
+
+- `src/types.ts`
+- `src/App.tsx`
+- `src/services/storage.ts`
+- `src/services/progression.ts`
+- `src/components/SettingsView.tsx`
+- `src/components/HomeView.tsx`
+- `src/components/ReviewView.tsx`
+- `src/components/StatsView.tsx`
+- Any other components or services that record review results, study dates, New Intake completion, Weak Words practice, statistics, or persistent progress.
+
+Then implement the feature against the actual current architecture.
+
+## Strict constraints
+
+1. Preserve all 2,500 production vocabulary entries, their ranks, IDs, linguistic fields, conjugations, examples and related-word mappings.
+2. Do not modify vocabulary content or any CSV dataset.
+3. Do not modify the existing Again, Hard, Good and Easy rating meanings or their configurable SRS intervals.
+4. Do not replace the current spaced-repetition algorithm with SM-2 or another scheduler.
+5. Preserve the existing New Intake session-size setting: 10, 15, 20, 25, 30 or 50 words, with its current default of 25.
+6. Preserve the existing 80% level-unlocking rules, mastery thresholds, typo evaluation, keyboard shortcuts and review queue priorities.
+7. Preserve the existing Reset Learning Progress behaviour and confirmation safeguards.
+8. Do not add authentication, cloud storage, external APIs, analytics or backend dependencies.
+9. Do not install a new dependency unless genuinely necessary. Prefer the current project stack.
+10. Do not perform unrelated refactoring or redesign the application.
+11. Back up every existing file before modifying it, using a clear backup filename that does not overwrite an earlier backup.
+12. Never silently discard existing learner progress or settings.
+13. Do not claim a test passed unless it was actually executed. Clearly distinguish executed tests from code inspection.
+14. After implementation, report every file changed, the reason for each change, test results and any remaining limitations.
+
+---
+
+# 2. FEATURE OBJECTIVE
+
+Add a configurable **Daily Goals** feature with two independent goals:
+
+### Goal A — Daily New Intake
+
+The user sets a target for the number of distinct new vocabulary words to learn per local calendar day.
+
+Only genuinely new words completed through the existing New Intake learning flow count toward this goal.
+
+### Goal B — Daily Weak Words Practice
+
+The user sets a target for the number of distinct weak vocabulary words practised per local calendar day.
+
+Only qualifying words practised through the existing Weak Words practice flow count toward this goal.
+
+### Streak rule
+
+The daily study streak increases by exactly one day when, and only when, both daily goals have been satisfied on the same local calendar day.
+
+Opening the app, opening a word, revealing an answer, or completing only one of the two goals must not award the daily streak.
+
+The feature must work across multiple study sessions during the same day and persist across page refreshes.
+
+---
+
+# 3. CONFIGURABLE GOALS
+
+Add a dedicated **Daily Goals** section to the existing Settings interface.
+
+Provide two independently configurable numeric targets:
+
+- Daily New Intake Goal
+- Daily Weak Words Practice Goal
+
+## Initial defaults
+
+Use the following proposed defaults unless the existing product settings architecture makes them unsuitable:
+
+- Daily New Intake Goal: 25 words
+- Daily Weak Words Practice Goal: 10 words
+
+These are initial defaults, not fixed limits.
+
+Allow the user to choose sensible positive integer targets using the existing UI design system. Use an appropriate numeric input or increment/decrement controls.
+
+Requirements:
+
+1. Both targets are independently editable.
+2. Reject zero, negative numbers, non-integer values and invalid input.
+3. Set a documented reasonable maximum to prevent unreasonable targets or accidental input errors. Choose a consistent maximum appropriate to this 2,500-word corpus and explain it in the implementation report.
+4. Clearly display the saved target for each goal.
+5. Settings persist across refreshes.
+6. Invalid or missing settings in older saved data fall back safely to defaults.
+7. Reset Settings to Defaults restores the two default goal targets.
+8. Resetting settings must not erase vocabulary progress or existing streak history.
+9. Changing a target must not delete the day's existing valid completion records.
+10. The UI must make clear that goals measure distinct qualifying words completed, not the number of times an answer was submitted.
+
+Follow the existing settings persistence and validation patterns wherever possible.
+
+---
+
+# 4. PRECISE WORD-COUNTING RULES
+
+This section is critical. Implement counting in the actual successful learning-result path, not through UI clicks or component mounting.
+
+## 4.1 New Intake counting
+
+A word counts toward the Daily New Intake Goal only when all of the following are true:
+
+- It is processed through the existing New Intake mode.
+- It is a genuine previously unpractised vocabulary item under the app's existing definition of a new word.
+- The learner completes the existing answer/evaluation flow for that word.
+- The completion is recorded successfully by the application.
+
+Count a qualifying word at most once toward the daily New Intake goal.
+
+Important edge cases:
+
+- Merely opening a card does not count.
+- Revealing an answer without completing the qualifying interaction does not count.
+- Repeating the same word during the same day does not increment the daily unique-word count more than once.
+- An incorrect answer must not be counted as a newly learned word if the existing product semantics treat that word as not successfully completed.
+- An accepted typo must follow the existing evaluator's semantics. Do not invent a new answer-acceptance rule.
+- If a new word is encountered in a different mode, do not automatically count it toward New Intake.
+- Reviewing an already-attempted word must not count as new intake.
+- The goal must not cause the intake queue to skip, reorder or repeat words incorrectly.
+
+Inspect the current answer flow to determine exactly when a New Intake word should qualify as completed. Use that existing successful-completion boundary and document it.
+
+If the existing product has no clear concept of successful completion for New Intake, implement the narrowest consistent rule and explain it explicitly.
+
+## 4.2 Weak Words counting
+
+A word counts toward the Daily Weak Words Practice Goal only when:
+
+- It is selected through the existing Weak Words practice mode or queue.
+- It is a valid member of the Weak Words queue when the qualifying practice interaction is completed.
+- The existing answer/evaluation interaction has actually completed and its result has been recorded.
+
+Count a qualifying word at most once per local calendar day toward this goal.
+
+Important edge cases:
+
+- Opening the Weak Words page does not count.
+- Revealing an answer alone does not count.
+- Repeating the same weak word multiple times on the same day does not increase the distinct-word count more than once.
+- A word practised through New Intake must not count toward Weak Words merely because it later becomes weak.
+- A word practised through the Due Review queue must not automatically count toward Weak Words.
+- If a word ceases to be weak during the session, follow a clearly defined, consistent rule based on its qualifying status when the practice interaction is completed.
+- Do not change mastery or SRS calculations merely to satisfy a daily goal.
+
+Use stable word IDs, not French display strings or array indexes, to prevent accidental double counting.
+
+---
+
+# 5. DAILY PROGRESS DATA MODEL
+
+Inspect the existing data structures before deciding where to store goal progress.
+
+Implement a small, explicit and versionable daily-goal progress structure.
+
+The structure should support at least:
+
+- Local calendar date for the record, using a documented format such as `YYYY-MM-DD`.
+- Distinct qualifying word IDs completed toward the New Intake Goal.
+- Distinct qualifying word IDs completed toward the Weak Words Goal.
+- Whether that day's two goals have been completed.
+- Whether that day's streak credit has already been awarded, if required by the existing streak architecture.
+
+Keep the two word-ID sets independent.
+
+A word may appear in both sets only if it legitimately qualified for each goal through its respective activity on that day.
+
+Do not store only aggregate counts if doing so would permit the same word to be counted repeatedly after refresh. Distinct IDs must be persisted so the application can deduplicate correctly.
+
+Use the existing storage architecture and migration patterns. Avoid introducing a new storage library or backend.
+
+## Persistence requirements
+
+- Daily goal progress survives a page refresh.
+- Daily goal progress accumulates across multiple sessions on the same day.
+- Duplicate completion events are idempotent.
+- A repeated save or repeated event does not award an extra word or an extra streak day.
+- Corrupt or partially missing goal data is handled safely.
+- Existing progress and statistics remain intact.
+- Do not initialize or rewrite the entire 2,500-word progress map unnecessarily when recording a goal event.
+- Avoid serializing large unrelated data structures more often than required.
+
+Document any localStorage keys or schema fields added.
+
+---
+
+# 6. LOCAL CALENDAR DAYS AND STREAK LOGIC
+
+Use the user's local calendar date consistently for goal tracking and streak decisions.
+
+Do not use raw elapsed-millisecond differences as a substitute for calendar-day comparisons.
+
+Inspect the existing study streak implementation and fix the previously reported timezone/date-boundary issue if confirmed. Keep this correction narrowly scoped.
+
+## Required daily behaviour
+
+### Case A — Both goals completed today
+
+- Mark today's goal record complete.
+- Award at most one streak credit for today.
+- Update the streak display immediately.
+- Persist the completion and streak state.
+- Additional practice on the same day must not increment the streak again.
+
+### Case B — Only one goal completed today
+
+- Preserve the completed goal's progress.
+- Keep the day's overall status incomplete.
+- Do not award today's streak credit yet.
+- When the other goal is subsequently completed, award the day's single streak credit.
+
+### Case C — Neither goal completed today
+
+- Do not award streak credit.
+- Preserve any previous streak until the existing calendar-day rules determine whether it has been interrupted.
+- Do not reset the streak just because the user opens the app without studying.
+
+### Case D — Consecutive completed calendar days
+
+If the previous calendar day and today both have valid completed goal records, today's completion extends the streak by one.
+
+### Case E — A missed calendar day
+
+If a whole local calendar day passes without both goals being completed, the next completed day starts a new streak of one, according to the chosen and documented streak convention.
+
+### Case F — Repeated events or refreshes
+
+Reloading the page, returning to Home, revisiting Settings, repeating a save, or re-rendering components must not increment the streak again.
+
+### Case G — Timezone and midnight
+
+- Use a consistent local date helper for today's date.
+- Handle study sessions around local midnight without assigning an event to the wrong calendar day.
+- Avoid comparing a `YYYY-MM-DD` date parsed at UTC midnight against local time via raw milliseconds.
+- Do not silently reinterpret historical date records.
+- Explain how a user's local date is determined and what happens if their system timezone changes.
+
+## Existing streak compatibility
+
+Preserve historical streak information wherever possible.
+
+If the current streak implementation cannot reliably determine historical daily completion because it stores only a single last-study date and no day-by-day history, do not fabricate historical completion records.
+
+Instead:
+
+1. Inspect the existing fields.
+2. Design a safe transition for existing users.
+3. Preserve the historical current/best streak values when possible.
+4. Start authoritative goal-based daily completion records from the feature's activation date.
+5. Document the transition and any limitations in the final report.
+
+Do not award retroactive streak credit for days where the application has no evidence that both new goals were completed.
+
+Do not automatically reset every user's streak simply because this feature is introduced.
+
+---
+
+# 7. INSUFFICIENT WEAK WORDS — REQUIRED PRODUCT BEHAVIOUR
+
+The user has explicitly selected this policy:
+
+**If fewer eligible Weak Words are available than the configured daily Weak Words Goal, let the user adjust the goal. Do not substitute Due Review words or New Intake words automatically.**
+
+Implement the following behaviour.
+
+1. Determine the number of distinct eligible words currently available through the existing Weak Words queue.
+2. Compare that availability with the user's configured Weak Words Goal.
+3. If enough words are available, show the normal goal and progress.
+4. If fewer words are available than the target, show a clear explanation, for example:
+
+   "You currently have 6 eligible weak words, but your daily goal is 10. You can lower today's goal to 6 or fewer."
+
+5. Offer an explicit action to adjust the Weak Words Goal to a valid lower number. The new value must be saved through the existing settings mechanism.
+6. Require a deliberate user action. Never silently lower the target.
+7. Do not count unavailable words, fabricated words or words from other practice modes.
+8. Do not automatically award streak credit merely because the goal has been lowered. The user must still complete the newly configured goal through qualifying Weak Words practice.
+9. If the weak-word pool is empty, explain that no eligible words are currently available and provide a clear route to change the goal or return to learning activities.
+10. Never set the goal to zero merely to make the daily goal appear complete. Both configured goals must remain positive integers.
+
+### Avoid retroactive goal manipulation
+
+If the user changes the Weak Words Goal after completing part of it, preserve valid word completions from that day.
+
+- Lowering the target may make the goal complete if the distinct qualifying count already meets the new target.
+- Raising the target may make an otherwise completed goal incomplete until more qualifying words are practised.
+- Do not award a second streak credit if the daily goal had already earned its credit.
+- Do not remove historical word IDs just because the target changes.
+- Recalculate today's completion state consistently using the current saved target and the valid completion records.
+
+Document this behaviour in the UI and final report.
+
+---
+
+# 8. HOME DASHBOARD UI
+
+Integrate a Daily Goals panel into the existing Home dashboard without redesigning the whole application.
+
+Respect the current Le Socle visual design:
+
+- Off-white background and existing charcoal/navy typography.
+- Existing Newsreader and Plus Jakarta Sans typography.
+- Restrained borders and rounded corners.
+- Minimal visual clutter.
+- Existing component and spacing conventions.
+
+The panel should show:
+
+1. Daily New Intake Goal progress, for example `18 / 25`.
+2. Daily Weak Words Practice Goal progress, for example `7 / 10`.
+3. A progress bar for each goal.
+4. A completed state for each goal.
+5. Overall daily status: `In progress` or `Daily goals complete`.
+6. The current study streak.
+7. A clear remaining-work message, such as:
+
+   "7 new words and 3 weak words remaining to complete today's goals."
+
+The numbers above are illustrative.
+
+### UI rules
+
+- Progress must update after qualifying word completion without requiring a page refresh.
+- Progress must remain correct after navigation between tabs.
+- Progress must remain correct after a page refresh.
+- Do not duplicate existing streak counters unnecessarily.
+- Use the existing shared state patterns and avoid creating independent, conflicting streak values in multiple components.
+- If the user changes goals in Settings, Home must reflect the new targets immediately.
+- If today's weak-word availability is below the target, display the insufficient-pool explanation and a direct way to adjust the goal.
+- Do not display more completed words than the target in the main progress indicator. It is acceptable to retain the full distinct-ID history internally.
+- Keep the design responsive on mobile and desktop.
+- Ensure text, controls, progress indicators and completion states are accessible.
+
+---
+
+# 9. SETTINGS UI
+
+Add a dedicated Daily Goals section to Settings.
+
+It should include:
+
+- New Intake daily target.
+- Weak Words daily target.
+- Current saved values.
+- Brief explanation that goals count distinct qualifying words per local calendar day.
+- A short explanation that the streak increases only after both goals are complete.
+- Input validation and clear save feedback consistent with existing settings.
+- A clear mechanism for lowering the Weak Words Goal when there are insufficient eligible weak words.
+
+Do not confuse these goals with the existing New Intake session length.
+
+The settings must remain independent:
+
+- New Intake Session Length controls how many new words appear in an individual intake session.
+- Daily New Intake Goal controls the number of distinct new words that must be completed across the entire day.
+
+For example, if session length is 15 and the daily New Intake Goal is 25, the user can complete one 15-word session and then a second session containing the remaining 10 qualifying new words. Daily progress should accumulate correctly.
+
+Do not modify the existing session-length choices or defaults.
+
+---
+
+# 10. STATE MANAGEMENT AND EVENT FLOW
+
+Trace the existing `App.tsx` state ownership and the ReviewView submission flow before implementing this feature.
+
+Use a single authoritative source for daily-goal progress and the study streak.
+
+Prefer a small storage service API for operations such as:
+
+- Loading daily-goal settings.
+- Loading today's goal progress.
+- Recording a qualifying New Intake completion.
+- Recording a qualifying Weak Words completion.
+- Determining whether each goal is complete.
+- Determining whether today's combined goals are complete.
+- Awarding a single streak credit for the completed day.
+- Handling a local date change.
+
+Use names that match the actual architecture; the above are conceptual responsibilities, not mandatory exported function names.
+
+The answer submission path should:
+
+1. Determine the active practice mode.
+2. Complete the existing answer evaluation and progress update.
+3. Determine whether the word qualifies for one of the daily goals.
+4. Record the qualifying word ID idempotently.
+5. Recompute goal progress and combined completion.
+6. Award streak credit once if both goals are satisfied and the day has not already received credit.
+7. Update shared UI state.
+8. Persist the result safely.
+
+Avoid awarding goal credit before the answer result is committed successfully.
+
+Avoid double-counting if multiple state updates or effects run for the same answer.
+
+Avoid relying on React component mount effects as the primary source of goal-completion events.
+
+Ensure React state and persisted storage remain consistent.
+
+---
+
+# 11. TESTING REQUIREMENTS
+
+Run the existing project checks and add focused tests if the current test infrastructure supports them. Do not add a new testing framework solely for this feature without explaining why it is necessary.
+
+At minimum, test the following cases. Distinguish actual executed tests from manual inspection.
+
+## A. Settings and persistence
+
+1. New users receive the documented default goal values.
+2. Existing users retain their current progress and settings.
+3. Both daily goals can be configured independently.
+4. Invalid values are rejected.
+5. Settings persist after refresh.
+6. Reset Settings to Defaults restores the goal defaults but does not erase learner progress or historical streaks.
+7. Existing New Intake Session Length behaviour remains unchanged.
+
+## B. New Intake counting
+
+8. A qualifying new word increments today's New Intake count by one.
+9. Repeating the same word on the same day does not increase the distinct count twice.
+10. Merely opening a word does not count.
+11. Revealing an answer alone does not count.
+12. An unsuccessful answer follows the documented qualification rule.
+13. An already-attempted word does not count as new intake.
+14. Words completed through Due Review or Weak Words do not count as New Intake.
+15. Multiple sessions accumulate progress correctly.
+16. Intake still follows strict ascending frequency rank.
+
+## C. Weak Words counting
+
+17. A qualifying Weak Words completion increments the distinct count.
+18. Repeating a word the same day does not count twice.
+19. New Intake and Due Review activity do not automatically count as Weak Words practice.
+20. Empty and insufficient weak-word pools show the correct explanation.
+21. The user can deliberately lower the Weak Words Goal.
+22. Lowering the target preserves existing daily word IDs and recomputes completion correctly.
+23. Raising the target requires additional qualifying practice when appropriate.
+24. No other activity type is silently substituted for Weak Words.
+
+## D. Streak logic
+
+25. Completing only New Intake does not award a streak day.
+26. Completing only Weak Words does not award a streak day.
+27. Completing both goals awards exactly one streak day.
+28. Additional activity on the same day does not award a second streak day.
+29. Refreshing after completion does not award another streak day.
+30. Completion of both goals on consecutive local calendar days increments the streak appropriately.
+31. Missing a calendar day breaks the consecutive-day streak according to the documented convention.
+32. Test events close to local midnight.
+33. Test a change in local timezone without fabricating historical completions.
+34. Existing streak data is migrated safely without blanket resets or invented history.
+
+## E. Regression and interface
+
+35. Reset Learning Progress continues to work as it did before.
+36. SRS intervals and rating meanings remain unchanged.
+37. Mastery and level unlocking remain unchanged.
+38. Keyboard shortcuts remain unchanged.
+39. Home progress updates immediately after qualifying practice.
+40. Settings changes are reflected on Home without refreshing.
+41. No duplicate counters or conflicting streak displays are introduced.
+42. Layout remains usable on mobile and desktop.
+43. No new console errors appear during the tested flows.
+
+If a test cannot be executed, mark it `NOT TESTED` and explain why. Never substitute a code-inspection claim for a browser-executed test.
+
+---
+
+# 12. IMPLEMENTATION ORDER
+
+Work in this order:
+
+**Step 1 — Inspect**
+
+Trace the actual data model, answer submission path, settings persistence, study date storage and streak calculation. Identify the minimum files that need changes.
+
+**Step 2 — Plan**
+
+Summarize the intended schema changes, qualifying-event rules, date semantics and migration strategy before editing.
+
+**Step 3 — Back up**
+
+Create separate, clearly named backups of every file about to be modified. Do not overwrite existing backup files.
+
+**Step 4 — Implement data and service logic**
+
+Add validated goal settings, daily unique-word tracking, idempotent completion events, goal evaluation and safe streak updates.
+
+**Step 5 — Wire the existing review flow**
+
+Connect the goal counters only to qualifying completed New Intake and Weak Words practice events. Avoid changing unrelated review modes.
+
+**Step 6 — Add Settings controls**
+
+Add the two independent goal inputs and the insufficient-Weak-Words adjustment flow.
+
+**Step 7 — Add the Home dashboard panel**
+
+Display both goals, progress, remaining work, combined completion and the authoritative streak.
+
+**Step 8 — Verify and report**
+
+Run TypeScript checks, production build and the available tests. Execute focused logic tests and browser tests where possible.
+
+**Step 9 — Regression audit**
+
+Verify that the vocabulary corpus is unchanged and all existing learning features still behave as before.
+
+Do not continue making unrelated improvements discovered during the audit. Record them separately.
+
+---
+
+# 13. REQUIRED FINAL IMPLEMENTATION REPORT
+
+When finished, provide:
+
+1. **Summary:** What was implemented.
+2. **Files changed:** Exact filenames and purpose of each modification.
+3. **Settings:** Default values, validation rules and maximum allowed targets.
+4. **Counting semantics:** Exact conditions under which a word counts toward each goal.
+5. **Streak semantics:** Calendar-day logic, award-once protection and missed-day behaviour.
+6. **Insufficient weak words:** How the adjustment flow works and how changing a goal affects today's progress.
+7. **Persistence and migration:** New storage keys or fields and compatibility with existing users.
+8. **Tests:** A matrix of PASS, FAIL and NOT TESTED results, with evidence for executed tests.
+9. **Regression checks:** Confirmation that SRS intervals, mastery, level unlocking, existing intake session size and all 2,500 vocabulary records remain unchanged.
+10. **Remaining risks:** Known limitations or unresolved cases.
+11. **Backup details:** Exact backup files created.
+
+Do not describe the feature as fully verified if browser tests were not run.
+
+## Final acceptance criterion
+
+The implementation is accepted only when the user can configure two separate daily targets, accumulate distinct qualifying words across sessions, see accurate live progress, adjust the Weak Words target when the pool is insufficient, and earn at most one daily streak credit after both goals are complete on the same local calendar day—without disrupting existing learning data or core functionality.
