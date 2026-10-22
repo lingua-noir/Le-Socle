@@ -1,5 +1,13 @@
-import React, { useState } from 'react';
-import { UserSettings, WordProgress, NavigationTab } from '../types';
+import React, { useState, useRef } from 'react';
+import { 
+  UserSettings, 
+  WordProgress, 
+  UserStats, 
+  DailyGoalRecord, 
+  NavigationTab,
+  LeSocleBackupPayload,
+  BackupPreview 
+} from '../types';
 import { MOCK_VOCABULARY } from '../data/vocabulary';
 import { getWeakWords } from '../services/progression';
 import { 
@@ -9,7 +17,14 @@ import {
   DEFAULT_DAILY_WEAK_WORDS_GOAL,
   MIN_DAILY_GOAL_TARGET,
   MAX_DAILY_NEW_INTAKE_GOAL,
-  MAX_DAILY_WEAK_WORDS_GOAL
+  MAX_DAILY_WEAK_WORDS_GOAL,
+  downloadBackupJson,
+  validateBackupPayload,
+  restoreBackupPayload,
+  loadWordProgressMap,
+  loadUserStats,
+  loadUserSettings,
+  getOrCreateDailyGoalRecord
 } from '../services/storage';
 import { evaluateFrenchAnswer } from '../services/evaluator';
 import { speakFrench, setTtsSpeechRate } from '../services/tts';
@@ -26,13 +41,22 @@ import {
   AlertCircle,
   Target,
   BookOpen,
-  Award
+  Award,
+  Download,
+  Upload,
+  Calendar
 } from 'lucide-react';
 
 interface SettingsViewProps {
   settings: UserSettings;
   onUpdateSettings: (newSettings: UserSettings) => void;
   onResetProgress?: () => void;
+  onRestoreBackup?: (restored: {
+    progress: Record<string, WordProgress>;
+    stats: UserStats;
+    settings: UserSettings;
+    dailyGoals: DailyGoalRecord;
+  }) => void;
   progressMap?: Record<string, WordProgress>;
   onNavigate?: (tab: NavigationTab) => void;
 }
@@ -41,6 +65,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   settings,
   onUpdateSettings,
   onResetProgress,
+  onRestoreBackup,
   progressMap,
   onNavigate,
 }) => {
@@ -49,6 +74,21 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [resetSuccessMessage, setResetSuccessMessage] = useState(false);
   const [showDefaultsConfirm, setShowDefaultsConfirm] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+  const [exportFeedback, setExportFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  // Import / Restore state
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [pendingRestore, setPendingRestore] = useState<{
+    payload: LeSocleBackupPayload;
+    preview: BackupPreview;
+  } | null>(null);
+  const [restoreFeedback, setRestoreFeedback] = useState<{
+    type: 'success' | 'error';
+    message: string;
+    rollbackFailed?: boolean;
+  } | null>(null);
+  const [isRestoring, setIsRestoring] = useState(false);
 
   // Mini-sandbox testing state
   const [testTarget, setTestTarget] = useState('décision');
@@ -123,6 +163,152 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
   const handleTestVoice = () => {
     speakFrench('Bonjour ! Ceci est un test de vitesse de prononciation.');
+  };
+
+  const handleDownloadBackup = () => {
+    setIsExporting(true);
+    setExportFeedback(null);
+    try {
+      const result = downloadBackupJson();
+      if (result.success) {
+        setExportFeedback({
+          type: 'success',
+          message: `Backup downloaded successfully as ${result.filename || 'le-socle-backup.json'}. All progress, stats, daily goals, and settings are saved.`,
+        });
+      } else {
+        setExportFeedback({
+          type: 'error',
+          message: result.error || 'Failed to download backup JSON file.',
+        });
+      }
+    } catch (err) {
+      setExportFeedback({
+        type: 'error',
+        message: err instanceof Error ? err.message : 'An unexpected error occurred during export.',
+      });
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+    if (!file) return;
+
+    setRestoreFeedback(null);
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const text = event.target?.result;
+        if (typeof text !== 'string') {
+          setRestoreFeedback({
+            type: 'error',
+            message: 'Failed to read backup file contents.',
+          });
+          return;
+        }
+
+        let parsed: unknown;
+        try {
+          parsed = JSON.parse(text);
+        } catch {
+          setRestoreFeedback({
+            type: 'error',
+            message: 'Malformed JSON: The selected file is not a valid JSON document.',
+          });
+          return;
+        }
+
+        const validation = validateBackupPayload(parsed);
+        if (!validation.isValid) {
+          setRestoreFeedback({
+            type: 'error',
+            message: validation.error,
+          });
+          return;
+        }
+
+        setPendingRestore({
+          payload: validation.payload,
+          preview: validation.preview,
+        });
+      } catch (err) {
+        setRestoreFeedback({
+          type: 'error',
+          message: err instanceof Error ? err.message : 'Unexpected error during file parsing.',
+        });
+      }
+    };
+
+    reader.onerror = () => {
+      setRestoreFeedback({
+        type: 'error',
+        message: 'Could not read backup file from disk.',
+      });
+    };
+
+    reader.readAsText(file);
+  };
+
+  const handleConfirmRestore = () => {
+    if (!pendingRestore) return;
+    setIsRestoring(true);
+    try {
+      const result = restoreBackupPayload(pendingRestore.payload);
+      if (!result.success) {
+        setRestoreFeedback({
+          type: 'error',
+          message: result.error || 'Failed to restore backup.',
+          rollbackFailed: result.rollbackFailed,
+        });
+        setPendingRestore(null);
+        return;
+      }
+
+      const restoredProg = loadWordProgressMap();
+      const restoredStats = loadUserStats();
+      const restoredSettings = loadUserSettings();
+      const restoredDailyRecord = getOrCreateDailyGoalRecord();
+
+      setLocalSettings(restoredSettings);
+      onUpdateSettings(restoredSettings);
+      setTtsSpeechRate(restoredSettings.speechRate);
+
+      if (onRestoreBackup) {
+        onRestoreBackup({
+          progress: restoredProg,
+          stats: restoredStats,
+          settings: restoredSettings,
+          dailyGoals: restoredDailyRecord,
+        });
+      }
+
+      const dateStr = pendingRestore.preview.exportedAt
+        ? new Date(pendingRestore.preview.exportedAt).toLocaleDateString()
+        : 'backup';
+
+      setRestoreFeedback({
+        type: 'success',
+        message: `Backup from ${dateStr} successfully restored! All ${pendingRestore.preview.progressCount} vocabulary records, lifetime statistics, and study settings have been applied.`,
+      });
+      setPendingRestore(null);
+    } catch (err) {
+      setRestoreFeedback({
+        type: 'error',
+        message: err instanceof Error ? err.message : 'An unexpected error occurred during restoration.',
+      });
+      setPendingRestore(null);
+    } finally {
+      setIsRestoring(false);
+    }
+  };
+
+  const handleCancelRestore = () => {
+    setPendingRestore(null);
   };
 
   return (
@@ -838,7 +1024,138 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           )}
         </div>
 
-        {/* SECTION 7: DATA MANAGEMENT & RESET */}
+        {/* SECTION 7: DATA BACKUP & RESTORE */}
+        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <Download className="h-4.5 w-4.5 text-stone-700" />
+                <h2 className="font-serif text-lg font-bold text-stone-900">
+                  Data Backup & Restore
+                </h2>
+              </div>
+              <p className="mt-1 text-xs text-stone-500 max-w-xl leading-relaxed">
+                Download a complete JSON snapshot of your learning data or restore a previously saved backup file. Includes all 2,500 word mastery levels, recall streaks, due dates, review history, Daily Goals progress, and personalized study settings.
+              </p>
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] text-stone-500">
+                <span className="flex items-center gap-1.5">
+                  <Check className="h-3 w-3 text-emerald-600 shrink-0" />
+                  <span>Word-level recall & due dates</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Check className="h-3 w-3 text-emerald-600 shrink-0" />
+                  <span>Daily Goals & streak history</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Check className="h-3 w-3 text-emerald-600 shrink-0" />
+                  <span>Configured study settings</span>
+                </span>
+              </div>
+            </div>
+
+            <div className="shrink-0 flex flex-col items-start sm:items-end gap-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  id="download-backup-btn"
+                  onClick={handleDownloadBackup}
+                  disabled={isExporting || isRestoring}
+                  className="flex items-center gap-2 rounded-xl bg-stone-900 px-4 py-2.5 text-xs font-semibold text-white shadow-xs hover:bg-stone-800 active:scale-98 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  <span>{isExporting ? 'Preparing Backup...' : 'Download Backup (.json)'}</span>
+                </button>
+
+                <button
+                  id="import-backup-btn"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isExporting || isRestoring}
+                  className="flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-xs font-semibold text-stone-800 shadow-2xs hover:bg-stone-50 active:scale-98 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Upload className="h-3.5 w-3.5 text-stone-600" />
+                  <span>Import Backup (.json)</span>
+                </button>
+
+                <input
+                  id="backup-file-input"
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".json,application/json"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
+              </div>
+
+              <span className="text-[10px] text-stone-400 font-mono">
+                Format: le-socle-backup (schema v1)
+              </span>
+            </div>
+          </div>
+
+          {/* In-app export feedback banner */}
+          {exportFeedback && (
+            <div
+              id="backup-export-status-alert"
+              className={`mt-4 flex items-center justify-between gap-3 rounded-xl border px-4 py-3 text-xs font-medium shadow-2xs animate-in fade-in duration-200 ${
+                exportFeedback.type === 'success'
+                  ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
+                  : 'border-rose-200 bg-rose-50 text-rose-800'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                {exportFeedback.type === 'success' ? (
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                ) : (
+                  <AlertCircle className="h-4 w-4 text-rose-600 shrink-0" />
+                )}
+                <span>{exportFeedback.message}</span>
+              </div>
+              <button
+                onClick={() => setExportFeedback(null)}
+                className="text-stone-400 hover:text-stone-600 font-bold text-xs"
+                aria-label="Dismiss export message"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+
+          {/* In-app restore feedback banner */}
+          {restoreFeedback && (
+            <div
+              id="backup-restore-status-alert"
+              className={`mt-4 flex items-start justify-between gap-3 rounded-xl border px-4 py-3 text-xs font-medium shadow-2xs animate-in fade-in duration-200 ${
+                restoreFeedback.type === 'success'
+                  ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
+                  : 'border-rose-200 bg-rose-50 text-rose-800'
+              }`}
+            >
+              <div className="flex items-start gap-2">
+                {restoreFeedback.type === 'success' ? (
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+                ) : (
+                  <AlertCircle className="h-4 w-4 text-rose-600 shrink-0 mt-0.5" />
+                )}
+                <div>
+                  <p>{restoreFeedback.message}</p>
+                  {restoreFeedback.rollbackFailed && (
+                    <p className="mt-1 font-bold text-rose-950">
+                      Warning: Automatic rollback could not restore previous storage. Please keep your backup file safe.
+                    </p>
+                  )}
+                </div>
+              </div>
+              <button
+                onClick={() => setRestoreFeedback(null)}
+                className="text-stone-400 hover:text-stone-600 font-bold text-xs shrink-0"
+                aria-label="Dismiss restore message"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* SECTION 8: DANGER ZONE & RESET */}
         {onResetProgress && (
           <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
             <div className="flex items-start justify-between gap-4">
@@ -963,6 +1280,108 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                 className="rounded-xl bg-stone-900 px-4 py-2 text-xs font-semibold text-stone-50 hover:bg-stone-800 transition-colors"
               >
                 Reset Defaults
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Safe Backup Import & Restore Confirmation Modal */}
+      {pendingRestore && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="restore-backup-modal-title"
+          aria-describedby="restore-backup-modal-desc"
+        >
+          <div className="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl border border-stone-200 sm:p-7 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-200">
+                <Upload className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <h3 id="restore-backup-modal-title" className="font-serif text-lg font-bold text-stone-900">
+                  Restore Backup Snapshot?
+                </h3>
+                <p id="restore-backup-modal-desc" className="mt-1 text-xs text-stone-600 leading-relaxed">
+                  Review the snapshot contents before proceeding. Restoring will replace your current learning progress, lifetime statistics, daily goals, and study settings with the data from this backup.
+                </p>
+              </div>
+            </div>
+
+            {/* Snapshot Summary Preview */}
+            <div className="mt-5 space-y-3 rounded-xl border border-stone-200 bg-stone-50/70 p-4 text-xs text-stone-700">
+              <div className="flex items-center justify-between border-b border-stone-200/60 pb-2.5">
+                <span className="font-medium text-stone-500 flex items-center gap-1.5">
+                  <Calendar className="h-3.5 w-3.5 text-stone-400" /> Exported At
+                </span>
+                <span className="font-mono text-stone-900 font-semibold">
+                  {new Date(pendingRestore.preview.exportedAt).toLocaleString()}
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between border-b border-stone-200/60 pb-2.5">
+                <span className="font-medium text-stone-500 flex items-center gap-1.5">
+                  <BookOpen className="h-3.5 w-3.5 text-stone-400" /> Vocabulary Progress
+                </span>
+                <span className="text-stone-900 font-medium">
+                  {pendingRestore.preview.progressCount} words (
+                  <strong className="text-emerald-700">{pendingRestore.preview.masteredCount} mastered</strong>, {pendingRestore.preview.reviewingCount} reviewing, {pendingRestore.preview.learningCount} learning)
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between border-b border-stone-200/60 pb-2.5">
+                <span className="font-medium text-stone-500 flex items-center gap-1.5">
+                  <Award className="h-3.5 w-3.5 text-stone-400" /> Lifetime Statistics
+                </span>
+                <span className="text-stone-900 font-medium">
+                  {pendingRestore.preview.totalReviewed} reviews • {pendingRestore.preview.streakDays}-day streak
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between border-b border-stone-200/60 pb-2.5">
+                <span className="font-medium text-stone-500 flex items-center gap-1.5">
+                  <Target className="h-3.5 w-3.5 text-stone-400" /> Daily Goals
+                </span>
+                <span className="text-stone-900 font-medium">
+                  Targets: {pendingRestore.preview.newIntakeTarget} new / {pendingRestore.preview.weakWordsTarget} weak ({pendingRestore.preview.dailyGoalsDatesCount} recorded days)
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-stone-500 flex items-center gap-1.5">
+                  <Sliders className="h-3.5 w-3.5 text-stone-400" /> Study Settings
+                </span>
+                <span className="text-stone-900 font-medium">
+                  Tolerance: {pendingRestore.payload.data.settings.typoTolerance}% • Rate: {pendingRestore.payload.data.settings.speechRate}x
+                </span>
+              </div>
+            </div>
+
+            {/* Guard Banner */}
+            <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900 leading-relaxed">
+              <strong className="font-semibold text-amber-950">Safety Guarantee:</strong> The full 2,500-word vocabulary dataset remains completely intact across Levels 1–5. Only your personal progress, stats, daily goals, and settings will be restored.
+            </div>
+
+            {/* Actions */}
+            <div className="mt-6 flex items-center justify-end gap-3 border-t border-stone-100 pt-4">
+              <button
+                id="cancel-restore-backup-btn"
+                onClick={handleCancelRestore}
+                disabled={isRestoring}
+                className="rounded-xl px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-stone-100 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                id="confirm-restore-backup-btn"
+                onClick={handleConfirmRestore}
+                disabled={isRestoring}
+                className="flex items-center gap-1.5 rounded-xl bg-amber-600 px-4 py-2 text-xs font-semibold text-white shadow-xs hover:bg-amber-700 active:scale-98 transition-colors disabled:opacity-50"
+              >
+                <Upload className="h-3.5 w-3.5" />
+                <span>{isRestoring ? 'Restoring...' : 'Confirm Restore'}</span>
               </button>
             </div>
           </div>

@@ -214,3 +214,40 @@ export type NavigationTab = 'home' | 'learn' | 'review' | 'stats' | 'search' | '
 
 export type ReviewModeFilter = 'due' | 'weak' | 'new' | 'all';
 
+export interface LeSocleBackupPayload {
+  format: 'le-socle-backup';
+  schemaVersion: 1;
+  exportedAt: string; // ISO 8601 string
+  appVersion: string;
+  data: {
+    progress: Record<string, WordProgress>;
+    stats: UserStats;
+    settings: UserSettings;
+    dailyGoals: DailyGoalHistory;
+  };
+}
+
+export interface BackupPreview {
+  exportedAt: string;
+  appVersion?: string;
+  progressCount: number;
+  masteredCount: number;
+  reviewingCount: number;
+  learningCount: number;
+  totalReviewed: number;
+  streakDays: number;
+  newIntakeTarget: number;
+  weakWordsTarget: number;
+  dailyGoalsDatesCount: number;
+}
+
+export type BackupValidationResult =
+  | { isValid: true; payload: LeSocleBackupPayload; preview: BackupPreview }
+  | { isValid: false; error: string };
+
+export interface RestoreBackupResult {
+  success: boolean;
+  error?: string;
+  rollbackFailed?: boolean;
+}
+

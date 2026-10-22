@@ -125,6 +125,21 @@ export default function App() {
     setReviewBand(null);
   };
 
+  const handleRestoreBackup = (restored: {
+    progress: Record<string, WordProgress>;
+    stats: UserStats;
+    settings: UserSettings;
+    dailyGoals: DailyGoalRecord;
+  }) => {
+    setProgressMap(restored.progress);
+    setUserStats(restored.stats);
+    setSettings(restored.settings);
+    setDailyGoalRecord(restored.dailyGoals);
+    setPracticeWord(null);
+    setReviewMode('due');
+    setReviewBand(null);
+  };
+
   const handleSeedDemoProgress = () => {
     const initialProg = getSampleDemoProgressMap();
     const initialStats: UserStats = {
@@ -276,6 +291,7 @@ export default function App() {
             progressMap={progressMap}
             onUpdateSettings={handleUpdateSettings}
             onResetProgress={handleResetProgress}
+            onRestoreBackup={handleRestoreBackup}
             onNavigate={setCurrentTab}
           />
         )}

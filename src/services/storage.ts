@@ -14,7 +14,11 @@ import {
   DailyGoalHistory,
   DailyGoalPracticeMode,
   DailyGoalCompletionStatus,
-  ReviewModeFilter
+  ReviewModeFilter,
+  LeSocleBackupPayload,
+  BackupPreview,
+  BackupValidationResult,
+  RestoreBackupResult
 } from '../types';
 import { 
   calculateWordMasteryLevel, 
@@ -22,9 +26,9 @@ import {
   getSpacedDueWords
 } from './progression';
 
-const PROGRESS_STORAGE_KEY = 'le_socle_word_progress_v1';
-const STATS_STORAGE_KEY = 'le_socle_user_stats_v1';
-const SETTINGS_STORAGE_KEY = 'le_socle_user_settings_v1';
+export const PROGRESS_STORAGE_KEY = 'le_socle_word_progress_v1';
+export const STATS_STORAGE_KEY = 'le_socle_user_stats_v1';
+export const SETTINGS_STORAGE_KEY = 'le_socle_user_settings_v1';
 export const DAILY_GOALS_STORAGE_KEY = 'le_socle_daily_goals_v1';
 
 export const DEFAULT_DAILY_NEW_INTAKE_GOAL = 25;
@@ -1047,4 +1051,455 @@ export function syncDailyGoalOnSettingsChange(
 
 // Alias for backwards compatibility
 export const evaluateDailyGoalsOnSettingsChange = syncDailyGoalOnSettingsChange;
+
+/* ==========================================================================
+   BACKUP & EXPORT (STAGE 1A)
+   ========================================================================== */
+
+export const BACKUP_FORMAT_IDENTIFIER = 'le-socle-backup' as const;
+export const BACKUP_SCHEMA_VERSION = 1;
+export const APP_VERSION = '1.0.0';
+
+export interface DownloadBackupResult {
+  success: boolean;
+  filename?: string;
+  error?: string;
+}
+
+/**
+ * Compiles a snapshot of all current user-specific learning data from localStorage
+ * without altering, resetting, or mutating any stored records.
+ * Explicitly excludes the vocabulary corpus, secrets, environment variables,
+ * and internal migration/demo cleanup flags.
+ */
+export function generateBackupPayload(): LeSocleBackupPayload {
+  const progress = loadWordProgressMap();
+  const stats = loadUserStats();
+  const settings = loadUserSettings();
+  const dailyGoals = loadDailyGoalsHistory();
+
+  return {
+    format: BACKUP_FORMAT_IDENTIFIER,
+    schemaVersion: BACKUP_SCHEMA_VERSION,
+    exportedAt: new Date().toISOString(),
+    appVersion: APP_VERSION,
+    data: {
+      progress,
+      stats,
+      settings,
+      dailyGoals,
+    },
+  };
+}
+
+/**
+ * Triggers a browser download of the current learning data backup as a formatted JSON file.
+ * Filename format: le-socle-backup-YYYY-MM-DD.json using the learner's local calendar day.
+ */
+export function downloadBackupJson(): DownloadBackupResult {
+  try {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return {
+        success: false,
+        error: 'Backup download is only supported in a browser environment.',
+      };
+    }
+
+    const payload = generateBackupPayload();
+    const jsonString = JSON.stringify(payload, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
+    const localDate = getLocalCalendarDateKey();
+    const filename = `le-socle-backup-${localDate}.json`;
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.setAttribute('style', 'display: none;');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Clean up the object URL after download trigger
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+    }, 1000);
+
+    return {
+      success: true,
+      filename,
+    };
+  } catch (err) {
+    const errorMsg = err instanceof Error ? err.message : 'Unknown error during export';
+    console.error('Failed to download backup JSON:', err);
+    return {
+      success: false,
+      error: errorMsg,
+    };
+  }
+}
+
+/**
+ * Validates an unknown candidate backup payload against the Le Socle backup specification.
+ * Fully checks envelope metadata, schema versions, all four required data sections,
+ * field types, numeric constraints, date formats, and word IDs against the 2,500-word corpus.
+ * Returns either { isValid: true, payload, preview } or { isValid: false, error }.
+ */
+export function validateBackupPayload(raw: unknown): BackupValidationResult {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
+    return { isValid: false, error: 'Malformed backup: Expected a JSON object at the root.' };
+  }
+
+  const candidate = raw as Record<string, any>;
+
+  // 1. Envelope validation
+  if (
+    !candidate.format ||
+    candidate.format !== BACKUP_FORMAT_IDENTIFIER ||
+    candidate.schemaVersion === undefined ||
+    candidate.schemaVersion === null
+  ) {
+    return {
+      isValid: false,
+      error: 'This file is not a valid Le Socle backup. Please select a JSON backup exported from Le Socle.',
+    };
+  }
+
+  if (candidate.schemaVersion !== BACKUP_SCHEMA_VERSION) {
+    return {
+      isValid: false,
+      error: `This backup uses an unsupported format version. Expected version ${BACKUP_SCHEMA_VERSION}.`,
+    };
+  }
+
+  if (typeof candidate.exportedAt !== 'string' || candidate.exportedAt.trim().length === 0 || isNaN(Date.parse(candidate.exportedAt))) {
+    return {
+      isValid: false,
+      error: 'Invalid backup timestamp: "exportedAt" must be a valid ISO 8601 date string.',
+    };
+  }
+
+  if (candidate.appVersion !== undefined && typeof candidate.appVersion !== 'string') {
+    return { isValid: false, error: 'Invalid "appVersion": expected string.' };
+  }
+
+  if (!candidate.data || typeof candidate.data !== 'object' || Array.isArray(candidate.data)) {
+    return { isValid: false, error: 'Malformed backup: Missing or invalid "data" container.' };
+  }
+
+  // 2. Required sections existence
+  if (!candidate.data.progress || typeof candidate.data.progress !== 'object' || Array.isArray(candidate.data.progress)) {
+    return { isValid: false, error: 'Missing required section: data.progress.' };
+  }
+
+  if (!candidate.data.stats || typeof candidate.data.stats !== 'object' || Array.isArray(candidate.data.stats)) {
+    return { isValid: false, error: 'Missing required section: data.stats.' };
+  }
+
+  if (!candidate.data.settings || typeof candidate.data.settings !== 'object' || Array.isArray(candidate.data.settings)) {
+    return { isValid: false, error: 'Missing required section: data.settings.' };
+  }
+
+  if (!candidate.data.dailyGoals || typeof candidate.data.dailyGoals !== 'object' || Array.isArray(candidate.data.dailyGoals)) {
+    return { isValid: false, error: 'Missing required section: data.dailyGoals.' };
+  }
+
+  const validWordIds = new Set(MOCK_VOCABULARY.map((w) => w.id));
+
+  // 3. Validate data.progress
+  const progressEntries = Object.entries(candidate.data.progress);
+  if (progressEntries.length !== MOCK_VOCABULARY.length) {
+    return {
+      isValid: false,
+      error: `Incomplete vocabulary progress records: expected all ${MOCK_VOCABULARY.length} corpus words, but found ${progressEntries.length}. Cannot restore partial progress without corrupting curriculum state.`,
+    };
+  }
+
+  const intProgressFields = [
+    'totalAttempts',
+    'totalExactCorrect',
+    'totalAcceptedTypo',
+    'totalIncorrect',
+    'totalRevealed',
+    'currentStreak',
+    'timesReviewed',
+    'timesCorrect',
+    'consecutiveCorrect',
+  ];
+
+  for (const [wordId, rec] of progressEntries) {
+    if (!validWordIds.has(wordId)) {
+      return {
+        isValid: false,
+        error: `Invalid word ID "${wordId}" in progress records: not found in the Le Socle 2,500-word corpus.`,
+      };
+    }
+    if (!rec || typeof rec !== 'object' || Array.isArray(rec)) {
+      return { isValid: false, error: `Malformed progress record for word ID "${wordId}".` };
+    }
+    const p = rec as any;
+    if (p.wordId !== wordId) {
+      return {
+        isValid: false,
+        error: `Inconsistent wordId in progress record: key "${wordId}" does not match internal wordId "${p.wordId}".`,
+      };
+    }
+    if (!['new', 'learning', 'reviewing', 'mastered'].includes(p.mastery)) {
+      return {
+        isValid: false,
+        error: `Invalid mastery level "${p.mastery}" for word ID "${wordId}".`,
+      };
+    }
+    for (const f of intProgressFields) {
+      if (typeof p[f] !== 'number' || !Number.isInteger(p[f]) || p[f] < 0) {
+        return {
+          isValid: false,
+          error: `Invalid numeric value for "${f}" in word ID "${wordId}": expected non-negative integer, found ${p[f]}.`,
+        };
+      }
+    }
+    if (p.lastRecallQuality !== undefined && !['exact_correct', 'accepted_typo', 'incorrect', 'revealed'].includes(p.lastRecallQuality)) {
+      return { isValid: false, error: `Invalid lastRecallQuality "${p.lastRecallQuality}" in word ID "${wordId}".` };
+    }
+    if (p.lastRating !== undefined && !['again', 'hard', 'good', 'easy'].includes(p.lastRating)) {
+      return { isValid: false, error: `Invalid lastRating "${p.lastRating}" in word ID "${wordId}".` };
+    }
+    if (p.lastReviewedAt !== undefined && (typeof p.lastReviewedAt !== 'string' || isNaN(Date.parse(p.lastReviewedAt)))) {
+      return { isValid: false, error: `Invalid lastReviewedAt timestamp in word ID "${wordId}".` };
+    }
+    if (p.nextDueAt !== undefined && (typeof p.nextDueAt !== 'string' || isNaN(Date.parse(p.nextDueAt)))) {
+      return { isValid: false, error: `Invalid nextDueAt timestamp in word ID "${wordId}".` };
+    }
+    for (const df of ['attemptsEnFr', 'correctEnFr', 'attemptsFrEn', 'correctFrEn']) {
+      if (p[df] !== undefined && (typeof p[df] !== 'number' || !Number.isInteger(p[df]) || p[df] < 0)) {
+        return { isValid: false, error: `Invalid directional stat "${df}" in word ID "${wordId}".` };
+      }
+    }
+    if (p.totalAttempts < p.totalExactCorrect + p.totalAcceptedTypo + p.totalIncorrect) {
+      return {
+        isValid: false,
+        error: `Inconsistent recall totals in word ID "${wordId}": total attempts (${p.totalAttempts}) is less than sum of correct and incorrect attempts.`,
+      };
+    }
+  }
+
+  // 4. Validate data.stats
+  const s = candidate.data.stats as any;
+  const statIntFields = ['totalReviewed', 'totalCorrect', 'totalIncorrect', 'streakDays', 'reviewedTodayCount'];
+  for (const sf of statIntFields) {
+    if (typeof s[sf] !== 'number' || !Number.isInteger(s[sf]) || s[sf] < 0) {
+      return { isValid: false, error: `Invalid statistics value for "${sf}": expected non-negative integer, found ${s[sf]}.` };
+    }
+  }
+  if (s.lastStudyDate !== null && (typeof s.lastStudyDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s.lastStudyDate) || isNaN(Date.parse(s.lastStudyDate)))) {
+    return { isValid: false, error: 'Invalid statistics value for "lastStudyDate": expected null or YYYY-MM-DD date string.' };
+  }
+  if (!s.ratingDistribution || typeof s.ratingDistribution !== 'object' || Array.isArray(s.ratingDistribution)) {
+    return { isValid: false, error: 'Missing or invalid "ratingDistribution" in statistics.' };
+  }
+  for (const rf of ['again', 'hard', 'good', 'easy']) {
+    if (typeof s.ratingDistribution[rf] !== 'number' || !Number.isInteger(s.ratingDistribution[rf]) || s.ratingDistribution[rf] < 0) {
+      return { isValid: false, error: `Invalid rating distribution count for "${rf}": expected non-negative integer.` };
+    }
+  }
+  if (!Array.isArray(s.recentHistory)) {
+    return { isValid: false, error: 'Invalid "recentHistory" in statistics: expected array.' };
+  }
+  for (const entry of s.recentHistory) {
+    if (
+      !entry ||
+      typeof entry !== 'object' ||
+      typeof entry.id !== 'string' ||
+      !validWordIds.has(entry.wordId) ||
+      typeof entry.isCorrect !== 'boolean' ||
+      !['again', 'hard', 'good', 'easy'].includes(entry.rating) ||
+      typeof entry.reviewedAt !== 'string' ||
+      isNaN(Date.parse(entry.reviewedAt))
+    ) {
+      return { isValid: false, error: 'Invalid review entry in statistics recentHistory.' };
+    }
+  }
+
+  // 5. Validate data.settings
+  const cfg = candidate.data.settings as any;
+  if (typeof cfg.typoTolerance !== 'number' || isNaN(cfg.typoTolerance) || cfg.typoTolerance < 50 || cfg.typoTolerance > 100) {
+    return { isValid: false, error: 'Invalid typoTolerance in settings: expected number between 50 and 100.' };
+  }
+  if (typeof cfg.speechRate !== 'number' || isNaN(cfg.speechRate) || cfg.speechRate < 0.5 || cfg.speechRate > 1.5) {
+    return { isValid: false, error: 'Invalid speechRate in settings: expected number between 0.5 and 1.5.' };
+  }
+  if (typeof cfg.masteryStreakThreshold !== 'number' || !Number.isInteger(cfg.masteryStreakThreshold) || cfg.masteryStreakThreshold < 1 || cfg.masteryStreakThreshold > 50) {
+    return { isValid: false, error: 'Invalid masteryStreakThreshold in settings: expected integer between 1 and 50.' };
+  }
+  if (!cfg.intervals || typeof cfg.intervals !== 'object' || Array.isArray(cfg.intervals)) {
+    return { isValid: false, error: 'Missing or invalid intervals configuration in settings.' };
+  }
+  for (const k of ['again', 'hard', 'good', 'easy']) {
+    if (typeof cfg.intervals[k] !== 'number' || isNaN(cfg.intervals[k]) || cfg.intervals[k] <= 0) {
+      return { isValid: false, error: `Invalid SRS interval value for "${k}": expected positive number.` };
+    }
+  }
+  if (!cfg.dailyGoals || typeof cfg.dailyGoals !== 'object' || Array.isArray(cfg.dailyGoals)) {
+    return { isValid: false, error: 'Missing dailyGoals configuration in settings.' };
+  }
+  if (!isValidDailyGoalTarget(cfg.dailyGoals.newIntakeTarget, MAX_DAILY_NEW_INTAKE_GOAL)) {
+    return {
+      isValid: false,
+      error: `Invalid newIntakeTarget in settings: expected integer between ${MIN_DAILY_GOAL_TARGET} and ${MAX_DAILY_NEW_INTAKE_GOAL}.`,
+    };
+  }
+  if (!isValidDailyGoalTarget(cfg.dailyGoals.weakWordsTarget, MAX_DAILY_WEAK_WORDS_GOAL)) {
+    return {
+      isValid: false,
+      error: `Invalid weakWordsTarget in settings: expected integer between ${MIN_DAILY_GOAL_TARGET} and ${MAX_DAILY_WEAK_WORDS_GOAL}.`,
+    };
+  }
+
+  // 6. Validate data.dailyGoals
+  const dg = candidate.data.dailyGoals as any;
+  for (const [dateKey, record] of Object.entries(dg)) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateKey) || isNaN(Date.parse(dateKey))) {
+      return { isValid: false, error: `Invalid date key in dailyGoals: "${dateKey}". Expected YYYY-MM-DD calendar date.` };
+    }
+    if (!record || typeof record !== 'object' || Array.isArray(record)) {
+      return { isValid: false, error: `Malformed daily goals record for date "${dateKey}".` };
+    }
+    const r = record as any;
+    if (r.date !== dateKey) {
+      return { isValid: false, error: `Inconsistent date in daily goals record: key "${dateKey}" does not match record date "${r.date}".` };
+    }
+    if (!Array.isArray(r.newIntakeWordIds) || !r.newIntakeWordIds.every((id: any) => typeof id === 'string' && validWordIds.has(id))) {
+      return { isValid: false, error: `Invalid newIntakeWordIds for date "${dateKey}": must be an array of valid word IDs from the corpus.` };
+    }
+    if (!Array.isArray(r.weakWordsWordIds) || !r.weakWordsWordIds.every((id: any) => typeof id === 'string' && validWordIds.has(id))) {
+      return { isValid: false, error: `Invalid weakWordsWordIds for date "${dateKey}": must be an array of valid word IDs from the corpus.` };
+    }
+    if (typeof r.isCompleted !== 'boolean' || typeof r.streakCredited !== 'boolean') {
+      return { isValid: false, error: `Invalid boolean completion flags in daily goals record for date "${dateKey}".` };
+    }
+    if (r.completedAt !== undefined && (typeof r.completedAt !== 'string' || isNaN(Date.parse(r.completedAt)))) {
+      return { isValid: false, error: `Invalid completedAt timestamp in daily goals record for date "${dateKey}".` };
+    }
+    if (r.streakCreditedAt !== undefined && (typeof r.streakCreditedAt !== 'string' || isNaN(Date.parse(r.streakCreditedAt)))) {
+      return { isValid: false, error: `Invalid streakCreditedAt timestamp in daily goals record for date "${dateKey}".` };
+    }
+  }
+
+  // 7. Compile preview summary
+  let masteredCount = 0;
+  let reviewingCount = 0;
+  let learningCount = 0;
+  for (const p of Object.values(candidate.data.progress) as any[]) {
+    if (p.mastery === 'mastered') masteredCount++;
+    else if (p.mastery === 'reviewing') reviewingCount++;
+    else if (p.mastery === 'learning') learningCount++;
+  }
+
+  const preview: BackupPreview = {
+    exportedAt: candidate.exportedAt,
+    appVersion: candidate.appVersion || '1.0.0',
+    progressCount: progressEntries.length,
+    masteredCount,
+    reviewingCount,
+    learningCount,
+    totalReviewed: candidate.data.stats.totalReviewed,
+    streakDays: candidate.data.stats.streakDays,
+    newIntakeTarget: candidate.data.settings.dailyGoals.newIntakeTarget,
+    weakWordsTarget: candidate.data.settings.dailyGoals.weakWordsTarget,
+    dailyGoalsDatesCount: Object.keys(candidate.data.dailyGoals).length,
+  };
+
+  return {
+    isValid: true,
+    payload: candidate as LeSocleBackupPayload,
+    preview,
+  };
+}
+
+/**
+ * Safely restores a validated Le Socle backup payload into browser localStorage.
+ * Performs a guarded atomic operation:
+ * 1. Takes a complete snapshot of all affected localStorage keys.
+ * 2. Attempts to write all 4 serialized sections.
+ * 3. If any write fails, immediately rolls back all keys to the original snapshot.
+ * 4. Never modifies demo cleanup flags or the vocabulary corpus.
+ */
+export function restoreBackupPayload(payload: LeSocleBackupPayload): RestoreBackupResult {
+  const validation = validateBackupPayload(payload);
+  if (!validation.isValid) {
+    return { success: false, error: validation.error };
+  }
+
+  if (typeof window === 'undefined' || typeof localStorage === 'undefined') {
+    return { success: false, error: 'Backup restoration requires a browser environment with localStorage.' };
+  }
+
+  const affectedKeys = [
+    PROGRESS_STORAGE_KEY,
+    STATS_STORAGE_KEY,
+    SETTINGS_STORAGE_KEY,
+    DAILY_GOALS_STORAGE_KEY,
+  ] as const;
+
+  // 1. Snapshot current values before touching anything
+  const snapshots = new Map<string, string | null>();
+  for (const key of affectedKeys) {
+    try {
+      snapshots.set(key, localStorage.getItem(key));
+    } catch (e) {
+      return {
+        success: false,
+        error: `Failed to create pre-restore snapshot: ${e instanceof Error ? e.message : 'Storage read error'}. No data was changed.`,
+      };
+    }
+  }
+
+  // 2. Prepare serialized replacements
+  const entriesToWrite: [string, string][] = [
+    [PROGRESS_STORAGE_KEY, JSON.stringify(payload.data.progress)],
+    [STATS_STORAGE_KEY, JSON.stringify(payload.data.stats)],
+    [SETTINGS_STORAGE_KEY, JSON.stringify(payload.data.settings)],
+    [DAILY_GOALS_STORAGE_KEY, JSON.stringify(payload.data.dailyGoals)],
+  ];
+
+  // 3. Perform guarded writes
+  const writtenKeys: string[] = [];
+  try {
+    for (const [key, value] of entriesToWrite) {
+      localStorage.setItem(key, value);
+      writtenKeys.push(key);
+    }
+    return { success: true };
+  } catch (writeErr) {
+    console.error('Storage write error during backup restore:', writeErr);
+    // 4. Attempt atomic rollback of written keys from snapshot
+    let rollbackFailed = false;
+    for (const key of writtenKeys) {
+      const originalValue = snapshots.get(key);
+      try {
+        if (originalValue === null || originalValue === undefined) {
+          localStorage.removeItem(key);
+        } else {
+          localStorage.setItem(key, originalValue);
+        }
+      } catch (rbErr) {
+        console.error(`Rollback failed for key "${key}":`, rbErr);
+        rollbackFailed = true;
+      }
+    }
+
+    if (rollbackFailed) {
+      return {
+        success: false,
+        rollbackFailed: true,
+        error: 'Critical: Restoration failed and automatic rollback could not completely restore the previous state. Please preserve your downloaded backup file.',
+      };
+    }
+
+    return {
+      success: false,
+      error: `Restoration failed: ${writeErr instanceof Error ? writeErr.message : 'localStorage write error'}. All data has been safely reverted to the pre-restore state.`,
+    };
+  }
+}
 
