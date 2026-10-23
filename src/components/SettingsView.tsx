@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   UserSettings, 
   WordProgress, 
@@ -26,6 +26,16 @@ import {
   loadUserSettings,
   getOrCreateDailyGoalRecord
 } from '../services/storage';
+import {
+  getFirebaseConfigStatus,
+  subscribeToAuthState,
+  loginWithEmail,
+  registerWithEmail,
+  loginWithGoogle,
+  logoutUser,
+  getFirebaseErrorMessage,
+} from '../services/firebase';
+import type { User as FirebaseUser } from 'firebase/auth';
 import { evaluateFrenchAnswer } from '../services/evaluator';
 import { speakFrench, setTtsSpeechRate } from '../services/tts';
 import { 
@@ -44,7 +54,10 @@ import {
   Award,
   Download,
   Upload,
-  Calendar
+  Calendar,
+  Cloud,
+  LogOut,
+  Loader2
 } from 'lucide-react';
 
 interface SettingsViewProps {
@@ -89,6 +102,26 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
     rollbackFailed?: boolean;
   } | null>(null);
   const [isRestoring, setIsRestoring] = useState(false);
+
+  // Firebase Auth state (Stage 2A)
+  const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [authActionLoading, setAuthActionLoading] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'register'>('signin');
+  const [authEmail, setAuthEmail] = useState('');
+  const [authPassword, setAuthPassword] = useState('');
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [authSuccessMsg, setAuthSuccessMsg] = useState<string | null>(null);
+
+  const firebaseConfig = getFirebaseConfigStatus();
+
+  useEffect(() => {
+    const unsubscribe = subscribeToAuthState((user) => {
+      setFirebaseUser(user);
+      setAuthLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
 
   // Mini-sandbox testing state
   const [testTarget, setTestTarget] = useState('décision');
@@ -309,6 +342,59 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
   const handleCancelRestore = () => {
     setPendingRestore(null);
+  };
+
+  const handleEmailAuth = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!authEmail || !authPassword) {
+      setAuthError('Please enter both email and password.');
+      return;
+    }
+    setAuthActionLoading(true);
+    setAuthError(null);
+    setAuthSuccessMsg(null);
+    try {
+      if (authMode === 'register') {
+        await registerWithEmail(authEmail, authPassword);
+        setAuthSuccessMsg('Account created successfully and signed in.');
+      } else {
+        await loginWithEmail(authEmail, authPassword);
+        setAuthSuccessMsg('Signed in successfully.');
+      }
+      setAuthPassword('');
+    } catch (err) {
+      setAuthError(getFirebaseErrorMessage(err));
+    } finally {
+      setAuthActionLoading(false);
+    }
+  };
+
+  const handleGoogleAuth = async () => {
+    setAuthActionLoading(true);
+    setAuthError(null);
+    setAuthSuccessMsg(null);
+    try {
+      await loginWithGoogle();
+      setAuthSuccessMsg('Signed in with Google successfully.');
+    } catch (err) {
+      setAuthError(getFirebaseErrorMessage(err));
+    } finally {
+      setAuthActionLoading(false);
+    }
+  };
+
+  const handleSignOut = async () => {
+    setAuthActionLoading(true);
+    setAuthError(null);
+    setAuthSuccessMsg(null);
+    try {
+      await logoutUser();
+      setAuthSuccessMsg('Signed out successfully. Your local study data remains completely safe.');
+    } catch (err) {
+      setAuthError(getFirebaseErrorMessage(err));
+    } finally {
+      setAuthActionLoading(false);
+    }
   };
 
   return (
@@ -1024,7 +1110,212 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           )}
         </div>
 
-        {/* SECTION 7: DATA BACKUP & RESTORE */}
+        {/* SECTION 7: ACCOUNT & CLOUD SYNC (STAGE 2A: AUTHENTICATION) */}
+        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-stone-100 pb-5 mb-5">
+            <div>
+              <div className="flex items-center gap-2">
+                <Cloud className="h-5 w-5 text-stone-700" />
+                <h2 className="font-serif text-lg font-bold text-stone-900">
+                  Account & Cloud Sync
+                </h2>
+                <span className="font-mono text-[10px] rounded bg-stone-100 px-2 py-0.5 font-bold text-stone-600">
+                  STAGE 2A
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-stone-500 max-w-xl leading-relaxed">
+                Connect your personal Le Socle account to enable authentication and prepare for multi-device sync across laptop and Android.
+              </p>
+            </div>
+
+            <div className="shrink-0 flex items-center gap-2">
+              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium ${
+                firebaseUser ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-stone-100 text-stone-600'
+              }`}>
+                <span className={`h-1.5 w-1.5 rounded-full ${firebaseUser ? 'bg-emerald-600 animate-pulse' : 'bg-stone-400'}`} />
+                {firebaseUser ? 'Authenticated' : 'Local Only'}
+              </span>
+            </div>
+          </div>
+
+          {!firebaseConfig.isConfigured ? (
+            <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-4 text-xs text-amber-900">
+              <div className="flex items-start gap-2.5">
+                <AlertCircle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                <div className="space-y-1.5">
+                  <p className="font-semibold text-amber-950">Firebase Web App Configuration Required</p>
+                  <p className="text-amber-800 leading-relaxed">
+                    Firebase project <code className="font-mono bg-amber-100/80 px-1 py-0.5 rounded text-amber-900">{firebaseConfig.projectId}</code> is targeted, but the Web SDK requires the API Key and App ID from your Firebase Console.
+                  </p>
+                  <div className="mt-2 text-[11px] font-mono bg-white/70 p-2.5 rounded-lg border border-amber-200/60 text-stone-700">
+                    Missing: {firebaseConfig.missingKeys.join(', ')}
+                  </div>
+                  <p className="text-[11px] text-amber-700 pt-1">
+                    Your offline study progress, active recall, SRS schedules, and local JSON backup/restore continue to function without interruption.
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : authLoading ? (
+            <div className="flex items-center justify-center py-8 text-stone-500 text-xs gap-2">
+              <Loader2 className="h-4 w-4 animate-spin text-stone-400" />
+              <span>Checking authentication status...</span>
+            </div>
+          ) : firebaseUser ? (
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl border border-stone-200 bg-stone-50/50">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-stone-900 text-stone-100 flex items-center justify-center font-bold text-sm">
+                    {firebaseUser.email ? firebaseUser.email.charAt(0).toUpperCase() : 'U'}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-semibold text-stone-900">
+                        {firebaseUser.displayName || firebaseUser.email}
+                      </p>
+                      <span className="text-[10px] bg-stone-200 px-1.5 py-0.5 rounded font-mono text-stone-700">
+                        {firebaseUser.providerData[0]?.providerId === 'google.com' ? 'Google' : 'Email/Password'}
+                      </span>
+                    </div>
+                    <p className="text-xs text-stone-500 font-mono">
+                      {firebaseUser.email}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  id="auth-signout-btn"
+                  type="button"
+                  onClick={handleSignOut}
+                  disabled={authActionLoading}
+                  className="flex items-center gap-1.5 rounded-lg border border-stone-300 bg-white px-3.5 py-2 text-xs font-semibold text-stone-700 shadow-2xs hover:bg-stone-50 transition-colors disabled:opacity-50"
+                >
+                  <LogOut className="h-3.5 w-3.5" />
+                  <span>{authActionLoading ? 'Signing out...' : 'Sign Out'}</span>
+                </button>
+              </div>
+
+              <div className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-xs text-stone-600">
+                <strong>Safe Local Baseline:</strong> Your 2,500-word learning progress is stored in this browser. Cross-device cloud sync will be activated in Stage 2B.
+              </div>
+            </div>
+          ) : (
+            <div className="max-w-md space-y-4">
+              <div className="flex rounded-lg border border-stone-200 bg-stone-100 p-0.5 text-xs font-medium">
+                <button
+                  type="button"
+                  onClick={() => { setAuthMode('signin'); setAuthError(null); }}
+                  className={`flex-1 py-1.5 text-center rounded-md transition-colors ${
+                    authMode === 'signin' ? 'bg-white text-stone-900 font-semibold shadow-2xs' : 'text-stone-600 hover:text-stone-900'
+                  }`}
+                >
+                  Sign In
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setAuthMode('register'); setAuthError(null); }}
+                  className={`flex-1 py-1.5 text-center rounded-md transition-colors ${
+                    authMode === 'register' ? 'bg-white text-stone-900 font-semibold shadow-2xs' : 'text-stone-600 hover:text-stone-900'
+                  }`}
+                >
+                  Create Account
+                </button>
+              </div>
+
+              <form onSubmit={handleEmailAuth} className="space-y-3">
+                <div>
+                  <label htmlFor="auth-email-input" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Email Address
+                  </label>
+                  <input
+                    id="auth-email-input"
+                    type="email"
+                    value={authEmail}
+                    onChange={(e) => setAuthEmail(e.target.value)}
+                    required
+                    placeholder="you@example.com"
+                    className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 shadow-2xs focus:border-stone-900 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="auth-password-input" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Password
+                  </label>
+                  <input
+                    id="auth-password-input"
+                    type="password"
+                    value={authPassword}
+                    onChange={(e) => setAuthPassword(e.target.value)}
+                    required
+                    minLength={6}
+                    placeholder="At least 6 characters"
+                    className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-xs text-stone-900 shadow-2xs focus:border-stone-900 focus:outline-none"
+                  />
+                </div>
+
+                <button
+                  id="auth-submit-btn"
+                  type="submit"
+                  disabled={authActionLoading}
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-2.5 text-xs font-semibold text-white shadow-xs hover:bg-stone-800 transition-colors disabled:opacity-50"
+                >
+                  {authActionLoading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : authMode === 'register' ? (
+                    <span>Create Account</span>
+                  ) : (
+                    <span>Sign In with Email</span>
+                  )}
+                </button>
+              </form>
+
+              <div className="relative flex py-1 items-center">
+                <div className="flex-grow border-t border-stone-200" />
+                <span className="flex-shrink mx-3 text-[11px] text-stone-400 uppercase tracking-wider font-semibold">or</span>
+                <div className="flex-grow border-t border-stone-200" />
+              </div>
+
+              <button
+                id="auth-google-btn"
+                type="button"
+                onClick={handleGoogleAuth}
+                disabled={authActionLoading}
+                className="w-full flex items-center justify-center gap-2.5 rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-xs font-semibold text-stone-700 shadow-2xs hover:bg-stone-50 transition-colors disabled:opacity-50"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                </svg>
+                <span>Continue with Google</span>
+              </button>
+            </div>
+          )}
+
+          {authError && (
+            <div id="auth-error-alert" className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-medium text-rose-800 animate-in fade-in duration-200">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="h-4 w-4 text-rose-600 shrink-0" />
+                <span>{authError}</span>
+              </div>
+              <button onClick={() => setAuthError(null)} className="text-rose-700 hover:text-rose-900 font-bold text-xs" aria-label="Dismiss error">✕</button>
+            </div>
+          )}
+
+          {authSuccessMsg && (
+            <div id="auth-success-alert" className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-medium text-emerald-800 animate-in fade-in duration-200">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                <span>{authSuccessMsg}</span>
+              </div>
+              <button onClick={() => setAuthSuccessMsg(null)} className="text-emerald-700 hover:text-emerald-900 font-bold text-xs" aria-label="Dismiss notification">✕</button>
+            </div>
+          )}
+        </div>
+
+        {/* SECTION 8: DATA BACKUP & RESTORE */}
         <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-2xs sm:p-7">
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
             <div>

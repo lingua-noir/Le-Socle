@@ -337,26 +337,7 @@ export function loadWordProgressMap(): Record<string, WordProgress> {
       }
     });
 
-    // 2. Migration check: if old demo seed is present or old browser state has not migrated
-    if (!hasMigrated) {
-      const attemptedKeys = Object.keys(parsed).filter(
-        (k) => (parsed[k]?.totalAttempts ?? 0) > 0 || parsed[k]?.mastery !== 'new'
-      );
-      // Check if it's the exact old demo sample state (only v-1, v-2, v-3 had attempts)
-      const isDemoSampleSeed =
-        attemptedKeys.length <= 3 &&
-        attemptedKeys.every((k) => k === 'v-1' || k === 'v-2' || k === 'v-3');
-
-      if (isDemoSampleSeed || hasMutated) {
-        const fresh = getDefaultWordProgressMap();
-        saveWordProgressMap(fresh);
-        localStorage.setItem(migrationKey, 'true');
-        return fresh;
-      }
-      localStorage.setItem(migrationKey, 'true');
-    }
-
-    // 3. Ensure any vocabulary items missing from parsed get a clean default entry
+    // 2. Ensure any vocabulary items missing from parsed get a clean default entry
     MOCK_VOCABULARY.forEach((item) => {
       if (!parsed[item.id]) {
         parsed[item.id] = {
@@ -379,6 +360,11 @@ export function loadWordProgressMap(): Record<string, WordProgress> {
 
     if (hasMutated) {
       saveWordProgressMap(parsed);
+    }
+
+    // Ensure migration key is recorded so future checks confirm storage is current
+    if (!hasMigrated) {
+      localStorage.setItem(migrationKey, 'true');
     }
 
     return parsed;
@@ -427,12 +413,6 @@ export function loadUserStats(): UserStats {
     }
     const parsed = JSON.parse(saved);
     const validWordIds = new Set(MOCK_VOCABULARY.map((item) => item.id));
-
-    // If stats were the old hardcoded demo seed (10 reviews, 8 correct), reset to default clean stats
-    if (parsed.totalReviewed === 10 && parsed.totalCorrect === 8) {
-      saveUserStats(defaultStats);
-      return defaultStats;
-    }
 
     const filteredHistory = Array.isArray(parsed.recentHistory)
       ? parsed.recentHistory.filter(
